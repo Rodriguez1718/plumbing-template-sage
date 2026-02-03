@@ -1,0 +1,44 @@
+---
+title: "Locations"
+description: "Our network of indoor digital billboards is located within retail and restaurant venues across your local community."
+keywords: "indoor billboard locations Denver, digital signage locations Denver, screen advertising venues Denver, billboard network locations, Denver advertising venues, high traffic advertising locations"
+---
+
+import { HeroPage } from "@/components/sections/HeroPage"
+import { FeaturesSection } from "@/components/sections/FeaturesSection"
+import { LocationsSection } from "@/components/sections/LocationsSection"
+import { CTASection } from "@/components/sections/CTASection"
+
+<HeroPage
+  client:load
+  badge="Indoor Billboard Network"
+  title="Our Network Partners"
+  description="Check out where you could be seen in the community with our screen advertising network."
+  image="https://ucarecdn.com/e1c81688-43c9-461a-bc8d-0d8c502cdef8/-/preview/1000x667/"
+  imageAlt="Indoor billboard network locations across Denver"
+  ctaText="START ADVERTISING"
+  ctaHref="/screen-advertising"
+/>
+
+<LocationsSection
+  client:load
+  title="Our Locations"
+  description="Our <a href='/screen-advertising'>screens</a> can be found in many popular locations throughout the community. Our screens offer a unique format - keeping you in front of your customers in your business, even when other ads are playing. Interested in hosting a screen? <a href='/venue-partner'>Become a venue partner</a>."
+  variant="half"
+  mapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d196269.87416878447!2d-104.93920979746093!3d39.76846682145779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b80aa231f17cf%3A0x118ef4f8278a36d6!2sDenver%2C%20CO%2C%20USA!5e0!3m2!1sen!2sph!4v1763534588820!5m2!1sen!2sph"
+  locations={[
+    { name: "Aurora", href: "/locations/aurora" },
+    { name: "Lakewood", href: "/locations/lakewood" },
+    { name: "Arvada", href: "/locations/arvada" },
+    { name: "Centennial", href: "/locations/centennial" }
+  ]}
+/>
+
+<CTASection
+  client:load
+  variant="bold"
+  title="Ready to Get Your Brand Seen?"
+  description="Whether you want to advertise or host a screen, we've got you covered. Get your brand in front of thousands of local customers with our indoor billboard network."
+  buttonText="Get In Touch"
+  buttonHref="/contact"
+/>

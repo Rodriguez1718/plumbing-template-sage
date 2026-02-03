@@ -1,0 +1,32 @@
+---
+title: "Contact Us"
+description: "Get in touch with us to learn more about our services and how we can help your business grow."
+keywords: "contact Denver marketing agency, marketing agency Denver contact, get in touch marketing services, free marketing consultation Denver, Denver marketing agency phone"
+---
+
+import { HeroPage } from "@/components/sections/HeroPage"
+import { ContactSection } from "@/components/sections/ContactSection"
+
+<HeroPage
+  client:load
+  badge="Let's Work Together"
+  title="Get Started Today"
+  description="Contact Us to Get Started!"
+  image="https://img.freepik.com/premium-photo/customer-support-center-contact-us-businessman-using-computer-laptop-with-contact-icons-virtual-screen-customer-support-hotline-people-connection_568137-2336.jpg"
+  imageAlt="Customer support contact center representative"
+/>
+
+<ContactSection
+  client:load
+  variant="split"
+  title="Contact Us"
+  description="Ready to take your marketing to the next level? We'd love to hear from you. Whether you're looking for a complete marketing strategy, need help with a specific project, or just have questions about our services, our team is here to help."
+  secondaryDescription="Fill out the form and we'll get back to you within 24 hours. We're excited to learn about your business and explore how we can help you achieve your goals."
+  contactInfo={{
+    phone: "+17206056959",
+    phoneFormatted: "(720) 605-6959",
+    email: "info@Denvermarketing.com",
+    location: "Denver, Colorado"
+  }}
+  submitText="SUBMIT FORM"
+/>

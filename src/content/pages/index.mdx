@@ -1,0 +1,157 @@
+---
+title: "Denver Digital Marketing | Billboard Ads & Web Design"
+description: "Denver's premier digital marketing agency. Indoor billboards, web design, PPC, social media & Connected TV ads. Free consultation!"
+keywords: "digital marketing Denver, indoor billboard advertising Denver, local advertising Denver, website design Denver, PPC advertising Colorado, social media marketing Denver, Connected TV advertising, OTT ads Denver"
+---
+
+import HeroHomeStatic from "@/components/sections/HeroHomeStatic.astro"
+import { FeaturesSection } from "@/components/sections/FeaturesSection"
+import { ContentSection } from "@/components/sections/ContentSection"
+import { CTASection } from "@/components/sections/CTASection"
+import { FAQSection } from "@/components/sections/FAQSection"
+import { LocationsSection } from "@/components/sections/LocationsSection"
+
+<HeroHomeStatic 
+  badge="Premium Marketing Solutions"
+  title="Local Advertising and Digital Marketing Pros in {city}"
+  subtitle="Helping Businesses Get Noticed—On Screens and Online"
+  buttonText="Talk to Our Team"
+  buttonHref="/contact"
+  image="https://ntv-template-1.vercel.app/images/home.avif"
+/>
+
+<FeaturesSection
+  client:visible
+  badge="Explore Our Digital Marketing Services"
+  title="Local Advertising Solutions for {city} Businesses"
+  description="As your trusted {city} marketing pros, our billboard network gives you access to high-traffic locations where your ideal customers spend time. From gyms and restaurants to retail stores and office buildings, we help you get noticed in the moments that matter."
+  columns={4}
+  features={[
+    {
+      icon: "monitor",
+      title: "Indoor Billboard Advertising",
+      description: "High-impact <a href='/screen-advertising'>screen advertising</a> in premium indoor locations across {city}"
+    },
+    {
+      icon: "share",
+      title: "Social Media Marketing",
+      description: "Build and engage your audience with strategic <a href='/social-media-management'>social media content</a>"
+    },
+    {
+      icon: "globe",
+      title: "Custom Website Design",
+      description: "Professional <a href='/website-design'>websites</a> that convert visitors into customers"
+    },
+    {
+      icon: "target",
+      title: "Targeted Lead Generation",
+      description: "Strategic <a href='/geofencing'>geofencing campaigns</a> that generate quality leads and maximize ROI"
+    }
+  ]}
+/>
+
+
+<ContentSection
+  client:visible
+  variant="card"
+  title="{city}'s Premier Venue Partner Network"
+  description="Our digital marketing pros have built exclusive partnerships with {city}'s most popular venues and businesses. Our <a href='/screen-advertising'>screen network</a> reaches customers when they're relaxed, engaged, and ready to take action—whether they're working out, dining, shopping, or waiting for service."
+  features={[
+    { text: "Exclusive venue partnerships", icon: "target" },
+    { text: "High-dwell-time locations", icon: "clock" },
+    { text: "Targeted audience reach", icon: "zap" },
+    { text: "Flexible campaign options", icon: "check" }
+  ]}
+  buttonText="View Venue Partners"
+  buttonHref="/venue-partner"
+  image="https://ucarecdn.com/0e3826a3-0f1c-427b-9095-7521710df5e4/-/preview/964x667/"
+  imageAlt="Denver venue partners and indoor billboard locations"
+  imagePosition="left"
+/>
+
+<ContentSection
+  client:visible
+  title="Full-Service Digital Marketing from {city} Pros"
+  description="Beyond screen ads, our {city} marketing pros provide full-scale digital marketing to help your business show up, stand out, and grow. Whether you're just getting started or need help scaling your outreach, we've got the tools and the team to support you."
+  features={[
+    { text: "<a href='/google-business'>Google Business Profile Setup</a>", icon: "google" },
+    { text: "<a href='/website-design'>Professional Website Design</a>", icon: "palette" },
+    { text: "<a href='/social-media-management'>Social Media Strategy</a>", icon: "megaphone" },
+    { text: "<a href='/ppc'>PPC Campaign Management</a>", icon: "trending" }
+  ]}
+  buttonText="View All Marketing Solutions"
+  buttonHref="/solutions"
+  image="https://ucarecdn.com/c59e5bdc-0ef3-42d3-bc11-6557c2271ca0/-/preview/1000x750/"
+  imageAlt="Digital marketing services including website design and social media"
+  imagePosition="right"
+/>
+
+<ContentSection
+  client:visible
+  variant="overlap"
+  title="Your Trusted {city} Marketing Partners"
+  description="We're not just another agency. We're {city} marketing pros and locals who understand the market, know the neighborhoods, and have the relationships that get results. Our clients choose us because we deliver measurable outcomes, transparent reporting, and personalized service that treats your business like our own. From <a href='/website-design'>web design</a> to <a href='/ppc'>PPC campaigns</a>, we've got you covered."
+  buttonText="Get Started Today"
+  buttonHref="/contact"
+  image="https://ucarecdn.com/8529435f-9a11-404a-92b2-016259ec5f33/-/preview/1000x666/"
+  imageAlt="Denver marketing team collaborating on client campaigns"
+  imagePosition="left"
+/>
+
+<CTASection
+  client:visible
+  variant="bold"
+  title="Partner with {city}'s Local Advertising & Digital Marketing Pros"
+  description="Whether you're looking for screen ads, a new website, or a complete digital marketing strategy in {city}, we're here to help. Contact us today for a free consultation and let's discuss how we can grow your business."
+  buttonText="Schedule Free Consultation"
+  buttonHref="/contact"
+/>
+
+<FAQSection
+  client:visible
+  badge="FAQs"
+  title="Frequently Asked Questions"
+  description="Everything you need to know about our services"
+  variant="accordion"
+  faqs={[
+    {
+      question: "What is Indoor Digital Signage Advertising?",
+      answer: "It's the placement of your ads on TV screens located inside high-traffic venues, offering brand visibility where people are already engaged. Learn more about our <a href='/screen-advertising'>indoor billboard advertising</a> services."
+    },
+    {
+      question: "Do you offer packages that include screens and online ads?",
+      answer: "Yes! We offer bundled packages that combine indoor billboards with digital marketing services like <a href='/social-media-advertising'>social ads</a>, <a href='/ppc'>Google Ads</a>, and SEO to maximize your reach both online and offline."
+    },
+    {
+      question: "Can you help my business rank on Google?",
+      answer: "Absolutely. We provide SEO services, <a href='/google-business'>Google Business setup</a>, and local search strategies to help your business show up when customers are searching for your services in {city}."
+    },
+    {
+      question: "What other advertising options do you offer?",
+      answer: "Beyond screen ads, we offer <a href='/connected-tv'>Connected TV advertising</a>, <a href='/streaming-audio'>streaming audio ads</a>, and <a href='/geofencing'>geofencing</a> to reach your audience wherever they are."
+    }
+  ]}
+/>
+
+<LocationsSection
+  client:visible
+  variant="overlay"
+  badge="Service Areas"
+  title="We Put Local Brands on the Map"
+  description="Our billboard network spans across {city}'s most popular neighborhoods and venues"
+  locations={[
+    { name: "Aurora", href: "/locations/aurora", description: "East Denver Metro" },
+    { name: "Lakewood", href: "/locations/lakewood", description: "West Denver Metro" },
+    { name: "Arvada", href: "/locations/arvada", description: "Northwest Denver" },
+    { name: "Centennial", href: "/locations/centennial", description: "South Denver Metro" }
+  ]}
+/>
+
+<CTASection
+  client:visible
+  variant="banner"
+  title="Ready to get started?"
+  description="Contact us today to learn how we can help grow your business."
+  buttonText="Get In Touch"
+  buttonHref="/contact"
+/>
