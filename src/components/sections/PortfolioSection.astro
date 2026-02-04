@@ -1,0 +1,36 @@
+---
+interface Props {
+  badge?: string;
+  title: string;
+  images?: string[];
+  columns?: number;
+}
+
+const { badge = "Portfolio", title, images = [], columns = 4 } = Astro.props;
+const placeholderCount = images.length > 0 ? images.length : 8;
+---
+
+<section class="py-16 md:py-24 bg-muted/30">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="text-sm font-semibold text-primary uppercase tracking-wide">{badge}</span>
+      <h2 class="text-3xl md:text-4xl font-bold mt-4">{title}</h2>
+    </div>
+    
+    <div class={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-${columns} gap-4`}>
+      {images.length > 0 ? (
+        images.map((img, i) => (
+          <div class="aspect-square rounded-lg overflow-hidden">
+            <img src={img} alt={`Project ${i + 1}`} class="w-full h-full object-cover hover:scale-105 transition-transform" />
+          </div>
+        ))
+      ) : (
+        Array.from({ length: placeholderCount }).map((_, i) => (
+          <div class="aspect-square bg-muted rounded-lg flex items-center justify-center">
+            <span class="text-muted-foreground text-sm">Project {i + 1}</span>
+          </div>
+        ))
+      )}
+    </div>
+  </div>
+</section>

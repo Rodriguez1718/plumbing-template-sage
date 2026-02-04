@@ -1,0 +1,31 @@
+---
+interface Coupon {
+  label: string;
+  discount: string;
+  description: string;
+  expires: string;
+}
+
+interface Props {
+  coupons: Coupon[];
+}
+
+const { coupons } = Astro.props;
+---
+
+<section class="py-16 md:py-24">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-3 gap-6">
+      {coupons.map((coupon) => (
+        <div class="bg-card border rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <span class="text-sm font-semibold text-primary uppercase tracking-wide">{coupon.label}</span>
+          <h3 class="text-xl font-bold mt-2 mb-4">Coupon</h3>
+          <p class="text-sm text-muted-foreground mb-4">Redeem & Save Today</p>
+          <div class="text-5xl font-bold text-primary mb-4">{coupon.discount}</div>
+          <p class="text-sm text-muted-foreground mb-4">{coupon.description}</p>
+          <p class="text-xs text-muted-foreground">Offer Expires: {coupon.expires}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

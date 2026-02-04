@@ -1,0 +1,59 @@
+---
+import { Siren, Award } from "lucide-react"
+
+interface Feature {
+  icon: "siren" | "award" | "phone" | "clock" | "shield" | "wrench";
+  text: string;
+}
+
+interface Props {
+  buttonText?: string;
+  buttonHref?: string;
+  phoneLabel?: string;
+  phone?: string;
+  features?: Feature[];
+}
+
+const { 
+  buttonText = "SCHEDULE NOW", 
+  buttonHref = "/contact",
+  phoneLabel = "Call or Text for Great Service",
+  phone = "123-456-7890",
+  features = [
+    { icon: "siren", text: "24/7 Emergency Service" },
+    { icon: "award", text: "Experienced & Certified Technicians" }
+  ]
+} = Astro.props;
+
+const iconMap = {
+  siren: Siren,
+  award: Award
+};
+---
+
+<section class="py-8 bg-primary text-primary-foreground">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex flex-col sm:flex-row items-center gap-6">
+        <a href={buttonHref} class="inline-flex items-center justify-center rounded-md bg-background text-foreground px-8 py-4 text-lg font-semibold hover:bg-background/90 transition-colors">
+          {buttonText}
+        </a>
+        <div class="text-center sm:text-left">
+          <p class="text-sm opacity-90">{phoneLabel}</p>
+          <a href={`tel:${phone}`} class="text-2xl font-bold hover:underline">{phone}</a>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-6">
+        {features.map((feature) => {
+          const IconComponent = iconMap[feature.icon as keyof typeof iconMap];
+          return (
+            <div class="flex items-center gap-2">
+              {IconComponent && <IconComponent className="w-6 h-6" />}
+              <span class="text-sm font-medium">{feature.text}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</section>

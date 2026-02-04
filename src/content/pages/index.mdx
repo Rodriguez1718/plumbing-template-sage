@@ -1,157 +1,230 @@
 ---
-title: "Denver Digital Marketing | Billboard Ads & Web Design"
-description: "Denver's premier digital marketing agency. Indoor billboards, web design, PPC, social media & Connected TV ads. Free consultation!"
-keywords: "digital marketing Denver, indoor billboard advertising Denver, local advertising Denver, website design Denver, PPC advertising Colorado, social media marketing Denver, Connected TV advertising, OTT ads Denver"
+title: "Home"
+description: "ABC Plumbers - Expert plumbing services in Los Angeles and surrounding areas"
 ---
 
-import HeroHomeStatic from "@/components/sections/HeroHomeStatic.astro"
-import { FeaturesSection } from "@/components/sections/FeaturesSection"
-import { ContentSection } from "@/components/sections/ContentSection"
-import { CTASection } from "@/components/sections/CTASection"
-import { FAQSection } from "@/components/sections/FAQSection"
-import { LocationsSection } from "@/components/sections/LocationsSection"
+import HeroSection from "@/components/sections/HeroSection.astro"
+import TrustBadges from "@/components/sections/TrustBadges.astro"
+import CouponsSection from "@/components/sections/CouponsSection.astro"
+import ContentSection from "@/components/sections/ContentSection.astro"
+import ServicesSection from "@/components/sections/ServicesSection.astro"
+import MaintenancePlanSection from "@/components/sections/MaintenancePlanSection.astro"
+import FinancingSection from "@/components/sections/FinancingSection.astro"
+import PortfolioSection from "@/components/sections/PortfolioSection.astro"
+import TestimonialsSection from "@/components/sections/TestimonialsSection.astro"
+import CTAStrip from "@/components/sections/CTAStrip.astro"
+import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
-<HeroHomeStatic 
-  badge="Premium Marketing Solutions"
-  title="Local Advertising and Digital Marketing Pros in {city}"
-  subtitle="Helping Businesses Get Noticed—On Screens and Online"
-  buttonText="Talk to Our Team"
-  buttonHref="/contact"
-  image="https://ntv-template-1.vercel.app/images/home.avif"
+<HeroSection
+  badge="5% OFF all plumbing services for new commercial construction projects"
+  title="Building Your Dream Business? We're Here To Help!"
+  subtitle="Professional plumbing solutions for residential and commercial properties in Los Angeles."
+  buttonText="Call Now"
+  buttonHref="tel:123-456-7890"
 />
 
-<FeaturesSection
-  client:visible
-  badge="Explore Our Digital Marketing Services"
-  title="Local Advertising Solutions for {city} Businesses"
-  description="As your trusted {city} marketing pros, our billboard network gives you access to high-traffic locations where your ideal customers spend time. From gyms and restaurants to retail stores and office buildings, we help you get noticed in the moments that matter."
-  columns={4}
-  features={[
+<TrustBadges
+  badges={[
+    { name: "Yelp", color: "text-red-600" },
+    { name: "nextdoor", color: "text-green-600" },
+    { name: "Google", rating: "★★★★★" }
+  ]}
+/>
+
+<CouponsSection
+  coupons={[
     {
-      icon: "monitor",
-      title: "Indoor Billboard Advertising",
-      description: "High-impact <a href='/screen-advertising'>screen advertising</a> in premium indoor locations across {city}"
+      label: "Senior & Military",
+      discount: "10% OFF",
+      description: "Senior & Military Discount. Cannot be combined with any other offer.",
+      expires: "December 2024"
     },
     {
-      icon: "share",
-      title: "Social Media Marketing",
-      description: "Build and engage your audience with strategic <a href='/social-media-management'>social media content</a>"
+      label: "Free Camera Inspection",
+      discount: "FREE",
+      description: "Sewer Camera Inspection with any standard drain cleaning.",
+      expires: "December 2024"
     },
     {
-      icon: "globe",
-      title: "Custom Website Design",
-      description: "Professional <a href='/website-design'>websites</a> that convert visitors into customers"
-    },
-    {
-      icon: "target",
-      title: "Targeted Lead Generation",
-      description: "Strategic <a href='/geofencing'>geofencing campaigns</a> that generate quality leads and maximize ROI"
+      label: "Plumbing",
+      discount: "$50 OFF",
+      description: "Any Repair of $500 or More. Contact us now to get $50 Off today.",
+      expires: "December 2024"
     }
   ]}
 />
 
-
 <ContentSection
-  client:visible
-  variant="card"
-  title="{city}'s Premier Venue Partner Network"
-  description="Our digital marketing pros have built exclusive partnerships with {city}'s most popular venues and businesses. Our <a href='/screen-advertising'>screen network</a> reaches customers when they're relaxed, engaged, and ready to take action—whether they're working out, dining, shopping, or waiting for service."
+  badge="Welcome to ABC Plumbers"
+  title="Expert Plumbing Services You Can Trust"
+  description="With over 20 years of experience, ABC Plumbers has been the trusted choice for plumbing services in Los Angeles. Our licensed and insured plumbers provide quality solutions for residential and commercial properties, ensuring every job is done right the first time. From leaky faucets to complete pipe installations, we're here to help."
   features={[
-    { text: "Exclusive venue partnerships", icon: "target" },
-    { text: "High-dwell-time locations", icon: "clock" },
-    { text: "Targeted audience reach", icon: "zap" },
-    { text: "Flexible campaign options", icon: "check" }
+    "Licensed & Insured Plumbers",
+    "Affordable Pricing with No Hidden Costs",
+    "High-Quality Workmanship Guaranteed",
+    "Fast Response Times"
   ]}
-  buttonText="View Venue Partners"
-  buttonHref="/venue-partner"
-  image="https://ucarecdn.com/0e3826a3-0f1c-427b-9095-7521710df5e4/-/preview/964x667/"
-  imageAlt="Denver venue partners and indoor billboard locations"
+  buttonText="LEARN MORE"
+  buttonHref="/about"
   imagePosition="left"
 />
 
-<ContentSection
-  client:visible
-  title="Full-Service Digital Marketing from {city} Pros"
-  description="Beyond screen ads, our {city} marketing pros provide full-scale digital marketing to help your business show up, stand out, and grow. Whether you're just getting started or need help scaling your outreach, we've got the tools and the team to support you."
-  features={[
-    { text: "<a href='/google-business'>Google Business Profile Setup</a>", icon: "google" },
-    { text: "<a href='/website-design'>Professional Website Design</a>", icon: "palette" },
-    { text: "<a href='/social-media-management'>Social Media Strategy</a>", icon: "megaphone" },
-    { text: "<a href='/ppc'>PPC Campaign Management</a>", icon: "trending" }
-  ]}
-  buttonText="View All Marketing Solutions"
-  buttonHref="/solutions"
-  image="https://ucarecdn.com/c59e5bdc-0ef3-42d3-bc11-6557c2271ca0/-/preview/1000x750/"
-  imageAlt="Digital marketing services including website design and social media"
-  imagePosition="right"
-/>
 
-<ContentSection
-  client:visible
-  variant="overlap"
-  title="Your Trusted {city} Marketing Partners"
-  description="We're not just another agency. We're {city} marketing pros and locals who understand the market, know the neighborhoods, and have the relationships that get results. Our clients choose us because we deliver measurable outcomes, transparent reporting, and personalized service that treats your business like our own. From <a href='/website-design'>web design</a> to <a href='/ppc'>PPC campaigns</a>, we've got you covered."
-  buttonText="Get Started Today"
-  buttonHref="/contact"
-  image="https://ucarecdn.com/8529435f-9a11-404a-92b2-016259ec5f33/-/preview/1000x666/"
-  imageAlt="Denver marketing team collaborating on client campaigns"
-  imagePosition="left"
-/>
-
-<CTASection
-  client:visible
-  variant="bold"
-  title="Partner with {city}'s Local Advertising & Digital Marketing Pros"
-  description="Whether you're looking for screen ads, a new website, or a complete digital marketing strategy in {city}, we're here to help. Contact us today for a free consultation and let's discuss how we can grow your business."
-  buttonText="Schedule Free Consultation"
-  buttonHref="/contact"
-/>
-
-<FAQSection
-  client:visible
-  badge="FAQs"
-  title="Frequently Asked Questions"
-  description="Everything you need to know about our services"
-  variant="accordion"
-  faqs={[
+<ServicesSection
+  title="Our Professional Plumbing Services"
+  description="We specialize in providing top-notch plumbing solutions tailored to meet your needs. Whether you're dealing with an urgent repair or planning a plumbing upgrade, our team is here to deliver reliable, efficient, and affordable services."
+  categories={[
     {
-      question: "What is Indoor Digital Signage Advertising?",
-      answer: "It's the placement of your ads on TV screens located inside high-traffic venues, offering brand visibility where people are already engaged. Learn more about our <a href='/screen-advertising'>indoor billboard advertising</a> services."
+      title: "Residential Plumbing Services",
+      services: [
+        { title: "Kitchen Plumbing", description: "Complete kitchen plumbing solutions", href: "/services/kitchen-plumbing" },
+        { title: "Bathroom Plumbing", description: "Expert bathroom plumbing services", href: "/services/bathroom-plumbing" },
+        { title: "Leak Detection and Repair", description: "Find and fix leaks fast", href: "/services/leak-detection" },
+        { title: "Water Heaters", description: "Installation and repair services", href: "/services/water-heaters" },
+        { title: "Drain and Sewer Services", description: "Keep your drains flowing", href: "/services/drain-sewer" },
+        { title: "New & Remodel Plumbing", description: "New construction and remodels", href: "/services/remodel-plumbing" }
+      ]
     },
     {
-      question: "Do you offer packages that include screens and online ads?",
-      answer: "Yes! We offer bundled packages that combine indoor billboards with digital marketing services like <a href='/social-media-advertising'>social ads</a>, <a href='/ppc'>Google Ads</a>, and SEO to maximize your reach both online and offline."
+      title: "Commercial Plumbing Services",
+      services: [
+        { title: "Building Plumbing Systems", description: "Complete commercial systems", href: "/services/building-plumbing" },
+        { title: "Drain and Sewer Services", description: "Commercial drain solutions", href: "/services/commercial-drain" },
+        { title: "Gas Plumbing", description: "Safe gas line services", href: "/services/gas-plumbing" },
+        { title: "Backflow Prevention", description: "Protect your water supply", href: "/services/backflow-prevention" },
+        { title: "Water Heaters", description: "Commercial water heating", href: "/services/commercial-water-heaters" },
+        { title: "View All Commercial Plumbing →", description: "See all our commercial services", href: "/services/commercial" }
+      ]
     },
     {
-      question: "Can you help my business rank on Google?",
-      answer: "Absolutely. We provide SEO services, <a href='/google-business'>Google Business setup</a>, and local search strategies to help your business show up when customers are searching for your services in {city}."
+      title: "Specialty Plumbing Services",
+      services: [
+        { title: "Advanced Leak Detection", description: "State-of-the-art detection", href: "/services/advanced-leak-detection" },
+        { title: "Sewer Line Services", description: "Complete sewer solutions", href: "/services/sewer-line" },
+        { title: "Water Filtration", description: "Clean water systems", href: "/services/water-filtration" },
+        { title: "Green Plumbing Solutions", description: "Eco-friendly options", href: "/services/green-plumbing" },
+        { title: "Hydro Jetting", description: "High-pressure cleaning", href: "/services/hydro-jetting" },
+        { title: "View All Specialty Plumbing →", description: "See all specialty services", href: "/services/specialty" }
+      ]
     },
     {
-      question: "What other advertising options do you offer?",
-      answer: "Beyond screen ads, we offer <a href='/connected-tv'>Connected TV advertising</a>, <a href='/streaming-audio'>streaming audio ads</a>, and <a href='/geofencing'>geofencing</a> to reach your audience wherever they are."
+      title: "Maintenance Services",
+      services: [
+        { title: "Preventative Maintenance", description: "Stay ahead of problems", href: "/services/preventative-maintenance" },
+        { title: "Drain and Sewer Maintenance", description: "Keep drains clear", href: "/services/drain-maintenance" },
+        { title: "Leak Prevention", description: "Prevent costly damage", href: "/services/leak-prevention" },
+        { title: "Appliance Maintenance", description: "Keep appliances running", href: "/services/appliance-maintenance" },
+        { title: "Gas System Maintenance", description: "Safe gas system care", href: "/services/gas-maintenance" },
+        { title: "View All Maintenance Services →", description: "See all maintenance options", href: "/services/maintenance" }
+      ]
     }
   ]}
 />
 
-<LocationsSection
-  client:visible
-  variant="overlay"
-  badge="Service Areas"
-  title="We Put Local Brands on the Map"
-  description="Our billboard network spans across {city}'s most popular neighborhoods and venues"
-  locations={[
-    { name: "Aurora", href: "/locations/aurora", description: "East Denver Metro" },
-    { name: "Lakewood", href: "/locations/lakewood", description: "West Denver Metro" },
-    { name: "Arvada", href: "/locations/arvada", description: "Northwest Denver" },
-    { name: "Centennial", href: "/locations/centennial", description: "South Denver Metro" }
+<MaintenancePlanSection
+  title="Protect Your Plumbing for the Long Term"
+  description="Regular maintenance is key to preventing costly repairs and ensuring the efficiency of your plumbing system. At ABC Plumbers, our Plumbing Maintenance Plans are designed to keep your home or business running smoothly year-round."
+  includedItems={[
+    { title: "Annual Inspections", description: "Comprehensive checkups to detect leaks, corrosion, or potential issues" },
+    { title: "Drain Cleaning", description: "Keep your drains free of clogs and buildup to maintain smooth flow" },
+    { title: "Water Heater Maintenance", description: "Optimize performance and extend the lifespan of your water heater" },
+    { title: "Priority Scheduling", description: "Get fast-track service when you need it most" },
+    { title: "Discounted Repairs", description: "Enjoy exclusive discounts on parts and labor for any required repairs" }
+  ]}
+  benefits={[
+    "Prevent unexpected breakdowns",
+    "Improve efficiency and lower utility bills",
+    "Extend the lifespan of your plumbing system",
+    "Gain peace of mind knowing your plumbing is in expert hands"
+  ]}
+  buttonText="LEARN MORE"
+  buttonHref="/maintenance-plans"
+/>
+
+
+<FinancingSection
+  badge="Financing"
+  title="Plumbing Solutions Made Affordable"
+  description="At ABC Plumbers, we believe that every home and business deserves access to reliable plumbing services, no matter the budget. That's why we offer flexible financing options to make your plumbing projects manageable and stress-free."
+  paymentPlans={[
+    "Spread the cost of major repairs or installations over time",
+    "Low-interest and no-interest plans available for qualified applicants",
+    "Choose a payment schedule that fits your budget"
+  ]}
+  financingOptions={[
+    "Water heater replacements",
+    "Pipe repairs and replacements",
+    "Bathroom and kitchen upgrades",
+    "Sewer line repairs and more"
+  ]}
+  steps={[
+    { title: "Contact Us", description: "Contact us to discuss your plumbing needs" },
+    { title: "Choose a Plan", description: "Choose a plan and payment option that works for you" },
+    { title: "Enjoy Quality Service", description: "Enjoy high-quality plumbing service with affordable terms" }
   ]}
 />
 
-<CTASection
-  client:visible
-  variant="banner"
-  title="Ready to get started?"
-  description="Contact us today to learn how we can help grow your business."
-  buttonText="Get In Touch"
+<PortfolioSection
+  badge="Portfolio"
+  title="Our Featured Works"
+/>
+
+<TestimonialsSection
+  badge="Testimonials"
+  title="What Our Clients Say"
+  description="At ABC Plumbers, we believe that every home and business deserves access to reliable plumbing services, no matter the budget. That's why we offer flexible financing options to make your plumbing projects manageable and stress-free."
+  testimonials={[
+    {
+      name: "Mark Porter",
+      initials: "MP",
+      date: "1 year ago",
+      rating: 5,
+      content: "The team was professional and efficient. They fixed our plumbing issue quickly and at a fair price. Highly recommend their services!"
+    },
+    {
+      name: "Eric Borges",
+      initials: "EB",
+      date: "1 year ago",
+      rating: 5,
+      content: "Outstanding service from start to finish. The plumber was knowledgeable and took the time to explain everything. Will definitely use again!"
+    },
+    {
+      name: "Nicholas Abraczinskas",
+      initials: "NA",
+      date: "1 year ago",
+      rating: 5,
+      content: "ABC Plumbers has been such a great partner for our business. Their commercial plumbing expertise is unmatched in the LA area."
+    },
+    {
+      name: "David Einstein",
+      initials: "DE",
+      date: "1 year ago",
+      rating: 5,
+      content: "I couldn't be more grateful for the incredible experience. From the moment I called, the support provided was exceptional."
+    }
+  ]}
+/>
+
+<CTAStrip
+  buttonText="SCHEDULE NOW"
   buttonHref="/contact"
+  phoneLabel="Call or Text for Great Service"
+  phone="123-456-7890"
+  features={[
+    { icon: "siren", text: "24/7 Emergency Service" },
+    { icon: "award", text: "Experienced & Certified Technicians" }
+  ]}
+/>
+
+<ServiceAreaSection
+  title="Expert Plumbing Services in Los Angeles and Surrounding Areas"
+  description="Looking for reliable plumbing services in Los Angeles? We provide expert residential and commercial solutions across the city, from Hollywood Hills to Santa Monica. Whether you need leak detection, drain cleaning, water heater repairs, or advanced options like trenchless sewer repair and whole-house water filtration, our team is here to help. We also offer routine maintenance and 24/7 emergency services to keep your plumbing in top shape. Serving neighborhoods like Downtown LA, Beverly Hills, and Pasadena, we're committed to quality, efficiency, and customer satisfaction. Call us today to schedule your service!"
+  areas={[
+    "Santa Monica", "Pasadena", "Glendale", "Downtown Los Angeles", "Hollywood",
+    "Beverly Hills", "Venice", "Westwood", "Culver City", "San Fernando Valley",
+    "Studio City", "North Hollywood", "Sherman Oaks", "Encino", "Burbank",
+    "Torrance", "Long Beach", "Inglewood", "El Segundo", "Brentwood",
+    "Silver Lake", "Echo Park", "Hancock Park", "Marina del Rey", "Manhattan Beach"
+  ]}
+  mapAddress="Los Angeles, CA"
 />
