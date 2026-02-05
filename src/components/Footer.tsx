@@ -39,7 +39,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Us Column */}
           <div>
-            <h3 className="text-sm font-bold tracking-wide mb-4">ABOUT US</h3>
+            <h3 className="text-sm font-bold tracking-wide mb-4 flex items-center gap-2">
+              <span className="w-1 h-4 bg-[#A3032B] rounded-full"></span>
+              ABOUT US
+            </h3>
             <p className="text-sm text-white/70 leading-relaxed mb-6">
               We specialize in residential and commercial plumbing solutions. From repairs and maintenance to advanced leak detection and installations, our team is here to keep your plumbing running smoothly. Contact us today!
             </p>
@@ -86,7 +89,10 @@ export function Footer() {
 
           {/* Quick Links Column */}
           <div>
-            <h3 className="text-sm font-bold tracking-wide mb-4">QUICK LINKS</h3>
+            <h3 className="text-sm font-bold tracking-wide mb-4 flex items-center gap-2">
+              <span className="w-1 h-4 bg-[#A3032B] rounded-full"></span>
+              QUICK LINKS
+            </h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -103,7 +109,10 @@ export function Footer() {
 
           {/* Services Offer Column */}
           <div>
-            <h3 className="text-sm font-bold tracking-wide mb-4">SERVICES OFFER</h3>
+            <h3 className="text-sm font-bold tracking-wide mb-4 flex items-center gap-2">
+              <span className="w-1 h-4 bg-[#A3032B] rounded-full"></span>
+              SERVICES OFFER
+            </h3>
             <ul className="space-y-2">
               {servicesOffer.map((service) => (
                 <li key={service.href}>
@@ -120,7 +129,10 @@ export function Footer() {
 
           {/* Contact Information Column */}
           <div>
-            <h3 className="text-sm font-bold tracking-wide mb-4">CONTACT INFORMATION</h3>
+            <h3 className="text-sm font-bold tracking-wide mb-4 flex items-center gap-2">
+              <span className="w-1 h-4 bg-[#A3032B] rounded-full"></span>
+              CONTACT INFORMATION
+            </h3>
             <ul className="space-y-2">
               <li className="text-sm text-white/70">
                 <span className="text-brand-secondary">PHONE:</span> {siteConfig.contact.phoneFormatted}

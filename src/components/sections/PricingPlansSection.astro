@@ -1,0 +1,62 @@
+---
+interface PlanFeature {
+  text: string;
+}
+
+interface Plan {
+  ribbon: string;
+  ribbonColor?: "great" | "better" | "best";
+  title: string;
+  price: string;
+  period?: string;
+  features: string[];
+}
+
+interface Props {
+  title: string;
+  description: string;
+  plans: Plan[];
+}
+
+const { title, description, plans } = Astro.props;
+
+const ribbonColors = {
+  great: "bg-muted text-foreground",
+  better: "bg-secondary text-secondary-foreground",
+  best: "bg-accent text-accent-foreground"
+};
+---
+
+<section class="py-16 md:py-24">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+      <p class="text-muted-foreground max-w-3xl mx-auto">{description}</p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {plans.map((plan) => (
+        <div class="relative bg-card border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+          <div class={`text-center py-2 text-sm font-bold uppercase ${ribbonColors[plan.ribbonColor || "great"]}`}>
+            {plan.ribbon}
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-center mb-4">{plan.title}</h3>
+            <div class="text-center mb-6">
+              <span class="text-4xl font-bold">{plan.price}</span>
+              {plan.period && <span class="text-muted-foreground"> {plan.period}</span>}
+            </div>
+            <ul class="space-y-3">
+              {plan.features.map((feature) => (
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-accent/10 text-accent flex items-center justify-center text-xs shrink-0 mt-0.5 font-bold">✓</span>
+                  <span class="text-sm">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

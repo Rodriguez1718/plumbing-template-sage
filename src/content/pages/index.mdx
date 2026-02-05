@@ -7,7 +7,7 @@ import HeroSection from "@/components/sections/HeroSection.astro"
 import TrustBadges from "@/components/sections/TrustBadges.astro"
 import CouponsSection from "@/components/sections/CouponsSection.astro"
 import ContentSection from "@/components/sections/ContentSection.astro"
-import ServicesSection from "@/components/sections/ServicesSection.astro"
+import ServicesSection from "@/components/sections/ServicesSection"
 import MaintenancePlanSection from "@/components/sections/MaintenancePlanSection.astro"
 import FinancingSection from "@/components/sections/FinancingSection.astro"
 import PortfolioSection from "@/components/sections/PortfolioSection.astro"
@@ -21,13 +21,17 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   subtitle="Professional plumbing solutions for residential and commercial properties in Los Angeles."
   buttonText="Call Now"
   buttonHref="tel:123-456-7890"
+  image="https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
 />
 
 <TrustBadges
   badges={[
-    { name: "Yelp", color: "text-red-600" },
-    { name: "nextdoor", color: "text-green-600" },
-    { name: "Google", rating: "★★★★★" }
+    { name: "BBB & Angie's List", image: "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/BBB_Angies-List.webp" },
+    { name: "Google Reviews", image: "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/google-review.webp" },
+    { name: "Nextdoor", image: "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/Nextdoor-logo.webp", small: true },
+    { name: "HomeAdvisor", image: "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/HomeAdvisor.webp" },
+    { name: "BBB A+", image: "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/bbb-logo-a-plus.webp" },
+    { name: "Google Reviews 2", image: "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/google-review.webp" }
   ]}
 />
 
@@ -66,11 +70,16 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   ]}
   buttonText="LEARN MORE"
   buttonHref="/about"
+  images={[
+    "https://ucarecdn.com/514fa2a4-9e6c-417b-8e38-fdab8ec5364a/-/preview/999x1000/",
+    "https://ucarecdn.com/315825d3-5856-474f-8ac1-f793441976f7/-/preview/1000x666/"
+  ]}
   imagePosition="left"
 />
 
 
 <ServicesSection
+  client:load
   title="Our Professional Plumbing Services"
   description="We specialize in providing top-notch plumbing solutions tailored to meet your needs. Whether you're dealing with an urgent repair or planning a plumbing upgrade, our team is here to deliver reliable, efficient, and affordable services."
   categories={[
@@ -138,7 +147,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
     "Gain peace of mind knowing your plumbing is in expert hands"
   ]}
   buttonText="LEARN MORE"
-  buttonHref="/maintenance-plans"
+  buttonHref="/maintenance-plan"
 />
 
 
@@ -167,6 +176,16 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 <PortfolioSection
   badge="Portfolio"
   title="Our Featured Works"
+  images={[
+    "https://ucarecdn.com/904d12f4-36c2-4c11-99c9-c22ebbc905fe/-/preview/1000x666/",
+    "https://ucarecdn.com/b2b720dc-bf04-4366-a627-124001e3746e/-/preview/1000x666/",
+    "https://ucarecdn.com/075a53c5-b442-4211-bd8d-baf6977b3f87/-/preview/1000x666/",
+    "https://ucarecdn.com/f0f1f6f3-d381-4c74-8d86-0a5cb24648f0/-/preview/1000x666/",
+    "https://ucarecdn.com/a6fafe41-c916-4595-adf6-9657af91fbbc/ReliableGarbageDisposalRepairandReplacement.webp",
+    "https://ucarecdn.com/f2844f4a-fb1f-4bae-af04-38db79fe8902/-/preview/1000x562/",
+    "https://ucarecdn.com/14cf294e-225e-4857-a4cb-6b31611cffec/-/preview/1000x750/",
+    "https://ucarecdn.com/c43ed716-6e4c-4c93-9461-5fcd2aa79166/-/preview/1000x753/"
+  ]}
 />
 
 <TestimonialsSection

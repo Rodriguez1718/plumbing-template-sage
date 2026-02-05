@@ -6,41 +6,82 @@ interface Props {
   buttonText?: string;
   buttonHref?: string;
   image?: string;
+  variant?: "default" | "subpage";
 }
 
-const { badge, title, subtitle, buttonText = "Call Now", buttonHref = "tel:123-456-7890", image } = Astro.props;
+const { badge, title, subtitle, buttonText = "Call Now", buttonHref = "tel:123-456-7890", image, variant = "default" } = Astro.props;
 ---
 
-<section class="relative bg-gradient-to-br from-primary/10 to-background py-20 md:py-32">
-  <div class="container mx-auto px-4">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div class="text-center md:text-left">
-        {badge && (
-          <span class="inline-block bg-destructive text-destructive-foreground text-sm font-semibold px-4 py-2 rounded-full mb-6">
-            {badge}
-          </span>
-        )}
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          {title}
-        </h1>
-        {subtitle && (
-          <p class="text-xl text-muted-foreground mb-8">
-            {subtitle}
-          </p>
-        )}
-        <a href={buttonHref} class="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-8 py-4 text-lg font-semibold hover:bg-primary/90 transition-colors">
-          {buttonText}
-        </a>
-      </div>
-      <div class="hidden md:block">
-        {image ? (
-          <img src={image} alt={title} class="rounded-lg w-full" />
-        ) : (
-          <div class="aspect-video bg-muted rounded-lg flex items-center justify-center">
-            <span class="text-muted-foreground">Hero Image</span>
+{variant === "subpage" ? (
+  <section class="relative bg-primary">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 min-h-[400px] md:min-h-[450px]">
+        <div class="relative flex items-center py-12 md:py-16 pr-8">
+          {badge && (
+            <div class="absolute top-0 left-0 right-0">
+              <span class="inline-block text-accent text-sm font-semibold uppercase tracking-wider pt-8">
+                {badge}
+              </span>
+            </div>
+          )}
+          <div class="pt-8">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4 leading-tight">
+              {title}
+            </h1>
+            {subtitle && (
+              <p class="text-lg text-primary-foreground/80 mb-6 max-w-md">
+                {subtitle}
+              </p>
+            )}
+            <a href={buttonHref} class="inline-flex items-center justify-center rounded-md bg-accent text-accent-foreground px-6 py-3 font-semibold hover:bg-accent/90 transition-colors">
+              {buttonText}
+            </a>
           </div>
-        )}
+        </div>
+        <div class="hidden md:block relative -mr-4 md:-mr-[calc((100vw-100%)/2+1rem)]">
+          {image ? (
+            <img src={image} alt={title} class="absolute inset-0 w-full h-full object-cover" />
+          ) : (
+            <div class="absolute inset-0 bg-muted flex items-center justify-center">
+              <span class="text-muted-foreground">Hero Image</span>
+            </div>
+          )}
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+) : (
+  <section class="relative bg-gradient-to-br from-primary/10 to-background py-20 md:py-32">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="text-center md:text-left">
+          {badge && (
+            <span class="inline-block bg-destructive text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
+              {badge}
+            </span>
+          )}
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            {title}
+          </h1>
+          {subtitle && (
+            <p class="text-xl text-muted-foreground mb-8">
+              {subtitle}
+            </p>
+          )}
+          <a href={buttonHref} class="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-8 py-4 text-lg font-semibold hover:bg-primary/90 transition-colors">
+            {buttonText}
+          </a>
+        </div>
+        <div class="hidden md:block">
+          {image ? (
+            <img src={image} alt={title} class="rounded-lg w-full" />
+          ) : (
+            <div class="aspect-video bg-muted rounded-lg flex items-center justify-center">
+              <span class="text-muted-foreground">Hero Image</span>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+)}

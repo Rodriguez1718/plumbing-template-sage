@@ -1,24 +1,96 @@
 ---
+interface Badge {
+  name: string;
+  image: string;
+  alt?: string;
+  small?: boolean;
+}
+
 interface Props {
-  badges?: Array<{ name: string; color?: string; rating?: string }>;
+  badges?: Badge[];
 }
 
 const { badges = [
-  { name: "Yelp", color: "text-red-600" },
-  { name: "nextdoor", color: "text-green-600" },
-  { name: "Google", rating: "★★★★★" }
+  { name: "BBB & Angie's List", image: "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/BBB_Angies-List.webp" },
+  { name: "Google Reviews", image: "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/google-review.webp" },
+  { name: "Nextdoor", image: "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/Nextdoor-logo.webp", small: true },
+  { name: "HomeAdvisor", image: "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/HomeAdvisor.webp" },
+  { name: "BBB A+", image: "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/bbb-logo-a-plus.webp" },
+  { name: "Google Reviews 2", image: "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/google-review.webp" },
 ] } = Astro.props;
+
+// Triple the badges for extra smooth seamless loop
+const duplicatedBadges = [...badges, ...badges, ...badges];
 ---
 
-<section class="py-12 bg-muted/50">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-      {badges.map((badge) => (
-        <div class="flex items-center gap-2">
-          <span class={`text-2xl font-bold ${badge.color || ''}`}>{badge.name}</span>
-          {badge.rating && <div class="flex text-yellow-500">{badge.rating}</div>}
+<section class="py-8 bg-brand-tertiary dark:bg-brand-primary/40 overflow-hidden border-y border-brand-secondary/20">
+  <div class="carousel-container">
+    <div class="carousel-track">
+      {duplicatedBadges.map((badge) => (
+        <div class="carousel-item">
+          <img 
+            src={badge.image} 
+            alt={badge.alt || badge.name}
+            class={badge.small ? 'small' : ''}
+            loading="lazy"
+          />
         </div>
       ))}
     </div>
   </div>
 </section>
+
+<style>
+  .carousel-container {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .carousel-track {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    width: max-content;
+    animation: scroll 25s linear infinite;
+  }
+
+  .carousel-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-item img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .carousel-item img.small {
+    height: 35px;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% / 3));
+    }
+  }
+
+  @media (min-width: 768px) {
+    .carousel-track {
+      gap: 5rem;
+    }
+    
+    .carousel-item img {
+      height: 60px;
+    }
+
+    .carousel-item img.small {
+      height: 42px;
+    }
+  }
+</style>

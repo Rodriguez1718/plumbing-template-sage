@@ -13,7 +13,7 @@ const placeholderCount = images.length > 0 ? images.length : 8;
 <section class="py-16 md:py-24 bg-muted/30">
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
-      <span class="text-sm font-semibold text-primary uppercase tracking-wide">{badge}</span>
+      <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wide border-b-2 border-accent pb-1">{badge}</span>
       <h2 class="text-3xl md:text-4xl font-bold mt-4">{title}</h2>
     </div>
     
@@ -21,7 +21,7 @@ const placeholderCount = images.length > 0 ? images.length : 8;
       {images.length > 0 ? (
         images.map((img, i) => (
           <div class="aspect-square rounded-lg overflow-hidden">
-            <img src={img} alt={`Project ${i + 1}`} class="w-full h-full object-cover hover:scale-105 transition-transform" />
+            <img src={img} alt={`Project ${i + 1}`} class="w-full h-full object-cover hover:scale-105 transition-transform ring-2 ring-transparent hover:ring-accent/50" />
           </div>
         ))
       ) : (

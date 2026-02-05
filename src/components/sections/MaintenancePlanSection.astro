@@ -28,9 +28,12 @@ const { title, description, includedItems, benefits, buttonText = "LEARN MORE", 
         <h3 class="text-xl font-bold mb-6">What's Included in Our Maintenance Plans?</h3>
         <ul class="space-y-4">
           {includedItems.map((item) => (
-            <li>
-              <span class="font-semibold">{item.title}</span>
-              <p class="text-sm text-muted-foreground">{item.description}</p>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></span>
+              <div>
+                <span class="font-semibold">{item.title}</span>
+                <p class="text-sm text-muted-foreground">{item.description}</p>
+              </div>
             </li>
           ))}
         </ul>
@@ -41,7 +44,7 @@ const { title, description, includedItems, benefits, buttonText = "LEARN MORE", 
         <ul class="space-y-4">
           {benefits.map((benefit) => (
             <li class="flex items-start gap-3">
-              <span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm shrink-0 mt-0.5">✓</span>
+              <span class="w-6 h-6 rounded-full bg-accent/10 text-accent flex items-center justify-center text-sm shrink-0 mt-0.5 font-bold">✓</span>
               <span>{benefit}</span>
             </li>
           ))}
