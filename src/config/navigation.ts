@@ -23,7 +23,7 @@ export const topNavItems: NavItem[] = [
     title: "About Us", 
     href: "/about",
     children: [
-      { title: "Specials and Offers", href: "/about/specials" },
+      { title: "Specials and Offers", href: "/specials-and-offers" },
       { title: "Reviews", href: "/about/reviews" },
     ]
   },

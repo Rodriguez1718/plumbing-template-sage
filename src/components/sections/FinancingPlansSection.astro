@@ -1,0 +1,88 @@
+---
+import { Percent, CircleDollarSign, Calendar, CheckCircle, Home, Building2, Wrench, Settings, ArrowRight } from "lucide-react"
+
+interface Item {
+  title: string;
+  text?: string;
+  href?: string;
+  icon?: string;
+}
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  items: Item[];
+  variant?: "plans" | "services";
+}
+
+const { title, subtitle, items, variant = "plans" } = Astro.props;
+
+const iconMap = {
+  "percent": Percent,
+  "zero": CircleDollarSign,
+  "calendar": Calendar,
+  "check": CheckCircle,
+  "home": Home,
+  "building": Building2,
+  "wrench": Wrench,
+  "settings": Settings
+};
+
+const defaultIcon = variant === "services" ? Wrench : CheckCircle;
+---
+
+{variant === "services" ? (
+  <section class="py-10 md:py-14 relative overflow-hidden">
+    <div class="absolute inset-0 top-0 h-1/2" style="background-color: #f5f8fd;"></div>
+    <div class="absolute inset-0 top-1/2 h-1/2" style="background-color: #0b273f;"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold">{title}</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto items-start pt-8">
+        {items.map((item, index) => {
+          const IconComponent = iconMap[item.icon as keyof typeof iconMap] || defaultIcon;
+          const isRaised = index === 1 || index === 3;
+          return (
+            <div 
+              class={`relative bg-card rounded-lg pt-12 pb-6 px-5 text-center shadow-sm ${isRaised ? 'lg:-mt-8' : 'lg:mt-8'}`}
+            >
+              <div class="absolute -top-7 left-1/2 -translate-x-1/2">
+                <div class="w-14 h-14 rounded-full bg-accent flex items-center justify-center shadow-lg">
+                  <IconComponent className="w-7 h-7 text-white" />
+                </div>
+              </div>
+              <h3 class="font-bold text-sm mb-3 uppercase tracking-wide">{item.title}</h3>
+              {item.text && <p class="text-sm text-muted-foreground leading-relaxed">{item.text}</p>}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+) : (
+  <section class="py-16 md:py-24">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+        {subtitle && <p class="text-muted-foreground max-w-3xl mx-auto">{subtitle}</p>}
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        {items.map((item) => {
+          const IconComponent = iconMap[item.icon as keyof typeof iconMap] || defaultIcon;
+          return (
+            <div class="bg-card border rounded-lg p-6 text-center hover:shadow-lg hover:border-accent/30 transition-all">
+              <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center">
+                <IconComponent className="w-8 h-8 text-accent" />
+              </div>
+              <h3 class="text-lg font-bold mb-2">{item.title}</h3>
+              {item.text && <p class="text-sm text-muted-foreground">{item.text}</p>}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+)}

@@ -1,0 +1,81 @@
+---
+title: "Specials and Offers"
+description: "Check out our latest specials and offers on plumbing services. Save money on repairs, installations, and maintenance with ABC Plumbers."
+---
+
+import HeroSection from "@/components/sections/HeroSection.astro"
+import CouponsSection from "@/components/sections/CouponsSection.astro"
+import CTAStrip from "@/components/sections/CTAStrip.astro"
+import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
+
+<HeroSection
+  variant="subpage"
+  badge="Limited Time Offers"
+  title="Specials and Offers"
+  subtitle="Discover Exciting Specials and Unbeatable Offers!"
+  buttonText="CALL: 123-456-7890"
+  buttonHref="tel:123-456-7890"
+  image="https://ucarecdn.com/f2844f4a-fb1f-4bae-af04-38db79fe8902/-/preview/1000x562/"
+/>
+
+<CouponsSection
+  variant="minimal"
+  coupons={[
+    {
+      label: "Until March",
+      discount: "SAVE $75",
+      description: "on ANY Plumbing Repair. *Minimum $250 Invoice. Limit one per household. Cannot be combined with other offers or discounts.",
+      expires: "March 2026"
+    },
+    {
+      label: "March Offer",
+      discount: "20% OFF",
+      description: "ALL Emergency Plumbing Services",
+      expires: "March 2026"
+    },
+    {
+      label: "March Offer",
+      discount: "ONLY $99",
+      description: "Water Leak Verification. *Does not include cost of repairs.",
+      expires: "March 2026"
+    },
+    {
+      label: "February Offer",
+      discount: "FREE ESTIMATE",
+      description: "Tankless Water Heaters",
+      expires: "February 2026"
+    },
+    {
+      label: "February Offer",
+      discount: "$200 OFF",
+      description: "Whole-Home Water Filtration",
+      expires: "February 2026"
+    },
+    {
+      label: "March Offer",
+      discount: "SAVE $100",
+      description: "On ANY New Toilet",
+      expires: "March 2026"
+    }
+  ]}
+/>
+
+<CTAStrip
+  buttonText="SCHEDULE NOW"
+  buttonHref="/contact"
+  phoneLabel="Call or Text for Great Service"
+  phone="123-456-7890"
+  features={[
+    { icon: "siren", text: "24/7 Emergency Service" },
+    { icon: "award", text: "Experienced & Certified Technicians" }
+  ]}
+/>
+
+<ServiceAreaSection
+  variant="compact"
+  title="Proudly Serving Los Angeles"
+  description="We provide reliable residential plumbing services throughout Los Angeles and nearby areas like Santa Monica, Pasadena, and Glendale. Contact us to see if we serve your neighborhood!"
+  buttonText="SERVICE AREAS"
+  buttonHref="/service-areas"
+  mapAddress="Los Angeles, CA"
+/>
