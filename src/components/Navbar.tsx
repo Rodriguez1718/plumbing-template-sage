@@ -117,10 +117,12 @@ function ServiceNavItem({ item }: { item: MegaMenuItem }) {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <button className="flex items-center gap-1 text-sm font-semibold text-white hover:bg-white/10 transition-colors px-4 h-full">
-        {item.title}
+      <div className="flex items-center gap-1 text-sm font-semibold text-white hover:bg-white/10 transition-colors px-4 h-full">
+        <a href={item.href} className="hover:underline">
+          {item.title}
+        </a>
         <ChevronDown className={`h-3 w-3 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-      </button>
+      </div>
       {isOpen && <MegaMenu item={item} isOpen={isOpen} />}
     </div>
   )

@@ -50,7 +50,7 @@ export const quickActions = [
 export const mainNavItems: MegaMenuItem[] = [
   {
     title: "Residential Plumbing",
-    href: "/residential",
+    href: "/residential-plumbing",
     categories: [
       {
         title: "Kitchen Plumbing",

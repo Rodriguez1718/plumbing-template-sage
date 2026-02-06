@@ -1,6 +1,6 @@
 ---
-title: "Santa Monica Plumbing Services"
-description: "Expert plumbing solutions for homes and businesses in Santa Monica, CA. Reliable and efficient services with 24/7 emergency support. Call 123-456-7890!"
+title: "Glendale Plumbing Services"
+description: "Expert plumbing solutions for homes and businesses in Glendale, CA. Reliable and efficient services with 24/7 emergency support. Call 123-456-7890!"
 ---
 
 import HeroSection from "@/components/sections/HeroSection.astro"
@@ -8,6 +8,7 @@ import TrustBadges from "@/components/sections/TrustBadges.astro"
 import ContentSection from "@/components/sections/ContentSection.astro"
 import ContentSectionAlt from "@/components/sections/ContentSectionAlt.astro"
 import FinancingPlansSection from "@/components/sections/FinancingPlansSection.astro"
+import ImageCardsSection from "@/components/sections/ImageCardsSection.astro"
 import PromoTilesSection from "@/components/sections/PromoTilesSection.astro"
 import ServicesSection from "@/components/sections/ServicesSection"
 import PortfolioSection from "@/components/sections/PortfolioSection.astro"
@@ -17,57 +18,49 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
 <HeroSection
   variant="subpage"
-  title="Santa Monica"
-  subtitle="Providing expert plumbing solutions to homes and businesses in Santa Monica — ensuring reliable and efficient services every time. Call us at 123-456-7890 for expert assistance!"
+  title="Glendale"
+  subtitle="Providing expert plumbing solutions to homes and businesses in Glendale, ensuring reliable and efficient services every time. Call us at 123-456-7890 for expert assistance!"
   buttonText="SCHEDULE SERVICE"
   buttonHref="/contact"
   image="https://ucarecdn.com/f2844f4a-fb1f-4bae-af04-38db79fe8902/-/preview/1000x562/"
+  trustIndicators={[
+    "Serving New York for 20 Years",
+    "Quality Service",
+    "24-Hour Emergency Service Available"
+  ]}
 />
+
 
 <ContentSectionAlt
   badge="SERVICE AREAS"
-  title="Reliable Plumbing Solutions in"
-  titleHighlight="Santa Monica, CA"
-  description="Regular maintenance is key to preventing costly repairs and ensuring the efficiency of your plumbing systems. At Your Company Name, our Plumbing Maintenance Plans are designed to keep your home or business running smoothly year-round."
-  featuresTitle="Why Santa Monica Residents Trust Us"
+  title="Trusted Plumbing Services in"
+  titleHighlight="Glendale"
+  description="For reliable, affordable plumbing solutions in Glendale, turn to ABC Plumbers. Our licensed and insured experts handle everything from leaky faucets and clogged drains to emergency repairs and installations. With years of experience, ABC Plumbers is dedicated to delivering high-quality, cost-effective services for homes and businesses."
+  featuresTitle="Key Benefits"
   features={[
     {
-      title: "Local Knowledge",
-      description: "With years of experience serving Santa Monica, we understand the specific plumbing requirements of the area."
+      title: "Experienced Professionals",
+      description: "Our team brings years of expertise to every job, ensuring quality workmanship."
     },
     {
-      title: "Prompt Response",
-      description: "We're committed to addressing your plumbing issues quickly and effectively."
+      title: "24/7 Emergency Services",
+      description: "We're available around the clock for urgent plumbing needs."
     },
     {
-      title: "Comprehensive Services",
-      description: "From minor repairs to major installations, we handle it all with precision and care."
+      title: "Transparent Pricing",
+      description: "No hidden fees — you'll know exactly what to expect before we start."
+    },
+    {
+      title: "Modern Equipment",
+      description: "We use the latest tools and technology for efficient, lasting repairs."
+    },
+    {
+      title: "Customer Satisfaction Guaranteed",
+      description: "Your satisfaction is our top priority on every project."
     }
   ]}
   image="https://ucarecdn.com/514fa2a4-9e6c-417b-8e38-fdab8ec5364a/-/preview/999x1000/"
   imagePosition="left"
-/>
-
-<FinancingPlansSection
-  variant="features"
-  title="Why Santa Monica Residents Trust Us"
-  items={[
-    {
-      icon: "map",
-      title: "Local Knowledge",
-      text: "With years of experience serving Santa Monica, we understand the specific plumbing needs of the area."
-    },
-    {
-      icon: "clock",
-      title: "Prompt Response",
-      text: "We prioritize fast and reliable service, ensuring issues are resolved quickly and efficiently."
-    },
-    {
-      icon: "wrench",
-      title: "Comprehensive Services",
-      text: "From minor repairs to major installations, we handle it all with precision and care."
-    }
-  ]}
 />
 
 <PromoTilesSection
@@ -216,13 +209,13 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
 <ServiceAreaSection
   title="Expert Plumbing Services in Los Angeles and Surrounding Areas"
-  description="Looking for reliable plumbing services in Los Angeles? We provide expert residential and commercial solutions across the city, from Hollywood Hills to Santa Monica. Whether you need leak detection, drain cleaning, water heater repairs, or advanced pipe relining, our licensed team serves your area with speed, skill, and care. We offer reliable maintenance and 24/7 emergency services to keep your plumbing in top shape. Serving neighborhoods like Downtown LA, Beverly Hills, and Pasadena, we are committed to quality, efficiency, and customer satisfaction. Call us today to schedule your service!"
+  description="Looking for reliable plumbing services in Los Angeles? We provide expert residential and commercial solutions across the city, from Hollywood Hills to Santa Monica. Whether you need leak detection, drain cleaning, water heater repairs, or advanced pipe relining, our licensed team serves your area with speed, skill, and care. We offer reliable maintenance and 24/7 emergency services to keep your plumbing in top shape. Serving neighborhoods like Downtown LA, Beverly Hills, and Glendale, we are committed to quality, efficiency, and customer satisfaction. Call us today to schedule your service!"
   areas={[
-    "Santa Monica", "Pasadena", "Culver City", "Downtown Los Angeles", "Hollywood",
-    "Beverly Hills", "Venice", "Westwood", "Culver City", "San Fernando Valley",
-    "San Diego", "El Monte", "Hollywood", "Santa Monica", "Beverly Hills",
+    "Santa Monica", "Pasadena", "Glendale", "Culver City", "Downtown Los Angeles", "Hollywood",
+    "Beverly Hills", "Venice", "Westwood", "San Fernando Valley",
+    "San Diego", "El Monte", "Santa Monica", "Beverly Hills",
     "Torrance", "Long Beach", "Inglewood", "El Segundo", "Brentwood",
     "Silver Lake", "Echo Park", "Hancock Park", "Marina del Rey", "Manhattan Beach"
   ]}
-  mapAddress="Santa Monica, CA"
+  mapAddress="Glendale, CA"
 />

@@ -1,0 +1,65 @@
+---
+interface ServiceCard {
+  image: string;
+  icon: string;
+  title: string;
+  href?: string;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  services: ServiceCard[];
+}
+
+const { title, description, services } = Astro.props;
+
+const iconMap: Record<string, string> = {
+  kitchen: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>`,
+  bathroom: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/><line x1="10" x2="8" y1="5" y2="7"/><line x1="2" x2="22" y1="12" y2="12"/><line x1="7" x2="7" y1="19" y2="21"/><line x1="17" x2="17" y1="19" y2="21"/></svg>`,
+  leak: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>`,
+  waterheater: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c-2-2.67-4-4-4-5.5a4 4 0 1 1 8 0c0 1.5-2 2.83-4 5.5Z"/><path d="M12 22v-4"/><path d="M12 14v-2"/><rect x="6" y="14" width="12" height="8" rx="2"/></svg>`,
+  drain: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16"/><path d="M4 22V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v18"/><path d="M12 6v4"/><path d="M12 14v4"/><circle cx="12" cy="12" r="2"/></svg>`,
+  pipe: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 6 4-4 4 4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg>`
+};
+---
+
+<section class="py-16 md:py-24 bg-primary">
+  <div class="container mx-auto px-4">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary-foreground">{title}</h2>
+      {description && (
+        <p class="text-primary-foreground/80 mt-4 max-w-2xl mx-auto">{description}</p>
+      )}
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid md:grid-cols-3 gap-6">
+      {services.map((service) => (
+        <a href={service.href || "#"} class="group block">
+          <div class="relative rounded-lg overflow-hidden bg-card">
+            <!-- Image -->
+            <div class="aspect-[4/3] overflow-hidden">
+              <img 
+                src={service.image} 
+                alt={service.title} 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            
+            <!-- Icon overlay -->
+            <div class="absolute top-4 left-4 w-12 h-12 rounded-lg bg-secondary/90 text-white flex items-center justify-center shadow-lg">
+              <Fragment set:html={iconMap[service.icon] || iconMap.kitchen} />
+            </div>
+            
+            <!-- Title bar -->
+            <div class="bg-secondary text-white py-3 px-4 text-center">
+              <span class="font-semibold">{service.title}</span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
