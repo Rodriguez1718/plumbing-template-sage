@@ -7,13 +7,14 @@ interface Props {
   buttonHref?: string;
   image?: string;
   variant?: "default" | "subpage";
+  trustIndicators?: string[];
 }
 
-const { badge, title, subtitle, buttonText = "Call Now", buttonHref = "tel:123-456-7890", image, variant = "default" } = Astro.props;
+const { badge, title, subtitle, buttonText = "Call Now", buttonHref = "tel:123-456-7890", image, variant = "default", trustIndicators = [] } = Astro.props;
 ---
 
 {variant === "subpage" ? (
-  <section class="relative bg-primary">
+  <section class="relative bg-primary overflow-hidden">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 min-h-[400px] md:min-h-[450px]">
         <div class="relative flex items-center py-12 md:py-16 pr-8">
@@ -36,6 +37,19 @@ const { badge, title, subtitle, buttonText = "Call Now", buttonHref = "tel:123-4
             <a href={buttonHref} class="inline-flex items-center justify-center rounded-md bg-accent text-accent-foreground px-6 py-3 font-semibold hover:bg-accent/90 transition-colors">
               {buttonText}
             </a>
+            {trustIndicators.length > 0 && (
+              <div class="flex flex-wrap gap-4 mt-6">
+                {trustIndicators.map((indicator) => (
+                  <div class="flex items-center gap-2 text-primary-foreground/90 text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <span>{indicator}</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
         <div class="hidden md:block relative -mr-4 md:-mr-[calc((100vw-100%)/2+1rem)]">

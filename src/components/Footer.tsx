@@ -135,13 +135,13 @@ export function Footer() {
             </h3>
             <ul className="space-y-2">
               <li className="text-sm text-white/70">
-                <span className="text-brand-secondary">PHONE:</span> {siteConfig.contact.phoneFormatted}
+                PHONE:  {siteConfig.contact.phoneFormatted}
               </li>
               <li className="text-sm text-white/70">
-                <span className="text-brand-secondary">EMAIL:</span> {siteConfig.contact.email.toUpperCase()}
+                EMAIL:  {siteConfig.contact.email.toUpperCase()}
               </li>
               <li className="text-sm text-white/70">
-                <span className="text-brand-secondary">ADDRESS:</span> {siteConfig.location.city.toUpperCase()}, {siteConfig.location.state.toUpperCase()}
+                ADDRESS:  {siteConfig.location.city.toUpperCase()}, {siteConfig.location.state.toUpperCase()}
               </li>
             </ul>
           </div>

@@ -1,0 +1,54 @@
+---
+interface JobOpening {
+  title: string;
+  type?: string;
+  responsibilities: string;
+  buttonText?: string;
+  buttonHref?: string;
+}
+
+interface Props {
+  badge?: string;
+  title: string;
+  description?: string;
+  jobs: JobOpening[];
+  introTitle?: string;
+  introDescription?: string;
+}
+
+const { badge, title, description, jobs, introTitle, introDescription } = Astro.props;
+---
+
+<section class="py-16 md:py-24 bg-muted/30">
+  <div class="container mx-auto px-4">
+    {introTitle && (
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">{introTitle}</h2>
+        {introDescription && <p class="text-muted-foreground text-balance mx-auto">{introDescription}</p>}
+      </div>
+    )}
+
+    <div class="text-center mb-12">
+      <h3 class="text-2xl md:text-3xl font-bold mb-4">{title}</h3>
+      {description && <p class="text-muted-foreground max-w-3xl mx-auto">{description}</p>}
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {jobs.map((job) => (
+        <div class="bg-muted/50 border-l-4 border-accent rounded-lg p-6">
+          <h3 class="text-lg font-bold text-accent mb-2">{job.title}</h3>
+          <p class="text-sm text-muted-foreground mb-3">{job.type || "Full-time position"}</p>
+          <p class="text-sm text-muted-foreground mb-6">
+            <span class="font-semibold text-foreground">Responsibilities:</span> {job.responsibilities}
+          </p>
+          <a 
+            href={job.buttonHref || "/quote"} 
+            class="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold hover:bg-primary/90 transition-colors"
+          >
+            {job.buttonText || "APPLY NOW"}
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

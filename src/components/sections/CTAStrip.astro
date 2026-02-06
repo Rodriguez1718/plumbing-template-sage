@@ -12,6 +12,7 @@ interface Props {
   phoneLabel?: string;
   phone?: string;
   features?: Feature[];
+  borderColor?: string;
 }
 
 const { 
@@ -22,16 +23,19 @@ const {
   features = [
     { icon: "siren", text: "24/7 Emergency Service" },
     { icon: "award", text: "Experienced & Certified Technicians" }
-  ]
+  ],
+  borderColor
 } = Astro.props;
 
 const iconMap = {
   siren: Siren,
   award: Award
 };
+
+const borderStyle = borderColor ? `border-top: 4px solid ${borderColor}; border-bottom: 4px solid ${borderColor};` : "";
 ---
 
-<section class="py-8 bg-primary text-primary-foreground">
+<section class="py-8 bg-primary text-primary-foreground" style={borderStyle}>
   <div class="container mx-auto px-4">
     <div class="flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="flex flex-col sm:flex-row items-center gap-6">

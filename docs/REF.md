@@ -1,53 +1,31 @@
-Hero Section (Specials)
+Hero Section (Service Area – Pasadena)
 
-Headline: Specials and Offers
-Subheadline: Discover Exciting Specials and Unbeatable Offers!
-CTA Button: CALL: 123-456-7890
+Headline: Pasadena
+Body Text: Providing expert plumbing solutions to homes and businesses in Pasadena, ensuring reliable and efficient services every time. Call us at 123-456-7890 for expert assistance!
+CTA Button: SCHEDULE SERVICE
 
-Specials Section
+Trust Indicators
 
-Headline: Special Discounts & Promotions
-Body Text: Check this page regularly for the latest special offers and promotions from ABC Plumbers. We also offer financing.
+Point 1: Serving New York for 20 Years
+Point 2: Quality Service
+Point 3: 24-Hour Emergency Service Available
 
-Promotion Card 1
+Main Content Section
 
-Ribbon: UNTIL MARCH
-Headline Line 1: SAVE
-Headline Line 2: $75
-Badge: LIMITED TIME OFFER
-Offer Text: on ANY Plumbing Repair
-Fine Print Line 1: *Minimum $250 Invoice. Limit one per household.
-Fine Print Line 2: Cannot be combined with other offers or discounts.
+Headline: Trusted Plumbing Services in Pasadena
 
-Promotion Card 2
+Body Text:
+For reliable, affordable plumbing solutions in Pasadena, turn to ABC Plumbers. Our licensed and insured experts handle everything from leaky faucets and clogged drains to emergency repairs and installations. With years of experience, ABC Plumbers is dedicated to delivering high-quality, cost-effective services for homes and businesses.
 
-Ribbon: MARCH OFFER
-Headline: GET 20% OFF
-Offer Text Line 1: ALL Emergency
-Offer Text Line 2: Plumbing Services
+Key Benefits
 
-Promotion Card 3
+Benefit 1: Experienced Professionals
+Benefit 2: 24/7 Emergency Services
+Benefit 3: Transparent Pricing
+Benefit 4: Modern Equipment
+Benefit 5: Customer Satisfaction Guaranteed
 
-Ribbon: MARCH OFFER
-Headline: WATER LEAK VERIFICATION
-Fine Print: * Does not include cost of repairs.
-Price Callout: ONLY $99
+(Add a section with 3 image cards here)
 
-Promotion Card 4
 
-Ribbon: FEBRUARY OFFER
-Headline Line 1: FREE
-Headline Line 2: ESTIMATE
-Offer Text: Tankless Water Heaters
 
-Promotion Card 5
-
-Ribbon: FEBRUARY OFFER
-Headline: $200 OFF
-Offer Text: Whole-Home Water Filtration
-
-Promotion Card 6
-
-Ribbon: MARCH OFFER
-Headline: SAVE $100
-Offer Text: On ANY New Toilet

@@ -4,6 +4,7 @@ description: "Get the plumbing repairs and upgrades you need today with flexible
 ---
 
 import HeroSection from "@/components/sections/HeroSection.astro"
+import CouponsSection from "@/components/sections/CouponsSection.astro"
 import FinancingIntroSection from "@/components/sections/FinancingIntroSection.astro"
 import SignupBannerSection from "@/components/sections/SignupBannerSection.astro"
 import FinancingPlansSection from "@/components/sections/FinancingPlansSection.astro"
@@ -19,29 +20,6 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   buttonText="SCHEDULE SERVICE"
   buttonHref="/contact"
   image="https://ucarecdn.com/f2844f4a-fb1f-4bae-af04-38db79fe8902/-/preview/1000x562/"
-/>
-
-<CouponsSection
-  coupons={[
-    {
-      label: "Senior & Military",
-      discount: "10% OFF",
-      description: "Senior & Military Discount. Cannot be combined with any other offer.",
-      expires: "December 2024"
-    },
-    {
-      label: "Free Camera Inspection",
-      discount: "FREE",
-      description: "Sewer Camera Inspection with any standard drain cleaning.",
-      expires: "December 2024"
-    },
-    {
-      label: "Plumbing",
-      discount: "$50 OFF",
-      description: "Any Repair of $500 or More. Contact us now to get $50 Off today.",
-      expires: "December 2024"
-    }
-  ]}
 />
 
 <FinancingIntroSection
@@ -98,7 +76,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   items={[
     { 
       title: "Residential Plumbing Services", 
-      text: "Comprehensive plumbing solutions for your home including repairs, installations, and maintenance.",
+      text: "Comprehensive plumbing solutions for your home including installations and maintenance.",
       href: "/residential", 
       icon: "home" 
     },

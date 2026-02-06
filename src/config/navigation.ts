@@ -24,18 +24,18 @@ export const topNavItems: NavItem[] = [
     href: "/about",
     children: [
       { title: "Specials and Offers", href: "/specials-and-offers" },
-      { title: "Reviews", href: "/about/reviews" },
+      { title: "Reviews", href: "/reviews" },
     ]
   },
-  { title: "Contact Us", href: "/contact" },
+  { title: "Contact Us", href: "/quote" },
   { title: "Careers", href: "/careers" },
   { 
     title: "Service Areas", 
     href: "/service-areas",
     children: [
-      { title: "Santa Monica", href: "/service-areas/santa-monica" },
-      { title: "Pasadena", href: "/service-areas/pasadena" },
-      { title: "Glendale", href: "/service-areas/glendale" },
+      { title: "Santa Monica", href: "/santa-monica" },
+      { title: "Pasadena", href: "/pasadena" },
+      { title: "Glendale", href: "/glendale" },
     ]
   },
 ]

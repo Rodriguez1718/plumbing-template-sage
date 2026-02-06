@@ -1,0 +1,118 @@
+---
+interface FeatureItem {
+  icon?: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  badge?: string;
+  title: string;
+  titleHighlight?: string;
+  description: string;
+  featuresTitle?: string;
+  features?: FeatureItem[];
+  buttonText?: string;
+  buttonHref?: string;
+  imagePosition?: "left" | "right";
+  image?: string;
+  imageAlt?: string;
+}
+
+const { 
+  badge, 
+  title, 
+  titleHighlight,
+  description, 
+  featuresTitle,
+  features = [], 
+  buttonText, 
+  buttonHref,
+  imagePosition = "left",
+  image,
+  imageAlt = "Section image"
+} = Astro.props;
+---
+
+<section class="py-16 md:py-24">
+  <div class="container mx-auto px-4">
+    {/* Header - centered above the two columns */}
+    <div class="text-center mb-12">
+      {badge && (
+        <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wide mb-4">{badge}</span>
+      )}
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold">
+        {title}{" "}
+        {titleHighlight && (
+          <span class="text-accent">{titleHighlight}</span>
+        )}
+      </h2>
+      <p class="text-muted-foreground mt-4 max-w-3xl mx-auto">{description}</p>
+    </div>
+
+    {/* Two column layout */}
+    <div class={`grid md:grid-cols-2 gap-8 lg:gap-12 items-start ${imagePosition === "right" ? "" : ""}`}>
+      {imagePosition === "left" && (
+        <div class="rounded-lg overflow-hidden max-h-[400px]">
+          {image ? (
+            <img src={image} alt={imageAlt} class="w-full h-full object-cover" />
+          ) : (
+            <div class="aspect-video bg-muted flex items-center justify-center">
+              <span class="text-muted-foreground text-sm">Image</span>
+            </div>
+          )}
+        </div>
+      )}
+
+      <div class="space-y-2">
+        {features.length > 0 && (
+          <>
+            {featuresTitle && (
+              <h3 class="text-xl md:text-2xl font-bold mb-6">{featuresTitle}</h3>
+            )}
+            <ul class="space-y-6">
+              {features.map((feature) => (
+                <li class="flex gap-4">
+                  <div class="flex-shrink-0 w-10 h-10 rounded-full bg-accent/10 text-accent flex items-center justify-center">
+                    {feature.icon ? (
+                      <span class="text-lg" set:html={feature.icon} />
+                    ) : (
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                      </svg>
+                    )}
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-foreground">{feature.title}</h4>
+                    <p class="text-muted-foreground text-sm mt-1">{feature.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+
+        {buttonText && buttonHref && (
+          <div class="pt-6">
+            <a href={buttonHref} class="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-6 py-3 font-semibold hover:bg-primary/90 transition-colors">
+              {buttonText}
+            </a>
+          </div>
+        )}
+      </div>
+
+      {imagePosition === "right" && (
+        <div class="rounded-lg overflow-hidden max-h-[300px]">
+          {image ? (
+            <img src={image} alt={imageAlt} class="w-full h-full object-cover" />
+          ) : (
+            <div class="aspect-video bg-muted flex items-center justify-center">
+              <span class="text-muted-foreground text-sm">Image</span>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+</section>
