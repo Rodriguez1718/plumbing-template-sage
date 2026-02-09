@@ -94,7 +94,7 @@ const embedUrl = mapEmbed || (mapAddress ? getMapEmbedUrl(mapAddress) : null);
         
         <div>
           {embedUrl ? (
-            <div class="aspect-square rounded-lg overflow-hidden">
+            <div class="aspect-[4/3] rounded-lg overflow-hidden">
               <iframe
                 src={embedUrl}
                 width="100%"
@@ -109,7 +109,7 @@ const embedUrl = mapEmbed || (mapAddress ? getMapEmbedUrl(mapAddress) : null);
           ) : mapImage ? (
             <img src={mapImage} alt="Service Area Map" class="rounded-lg w-full" />
           ) : (
-            <div class="aspect-square bg-muted rounded-lg flex items-center justify-center">
+            <div class="aspect-[4/3] bg-muted rounded-lg flex items-center justify-center">
               <span class="text-muted-foreground">Map - Service Area</span>
             </div>
           )}
