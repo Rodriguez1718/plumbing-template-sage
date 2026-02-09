@@ -3,7 +3,7 @@ import { useState } from 'react';
 interface Service {
   title: string;
   description: string;
-  href: string;
+  href?: string;
 }
 
 interface ServiceCategory {
@@ -63,19 +63,22 @@ export function ServicesSection({ title, description, categories }: Props) {
                 <div className="w-16 h-0.5 bg-accent mx-auto mt-2 rounded-full"></div>
               </div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-                {category.services.map((service, serviceIndex) => (
-                  <a
-                    key={serviceIndex}
-                    href={service.href}
-                    className="group bg-card border rounded-lg p-5 hover:shadow-md hover:border-accent/30 transition-all animate-in fade-in slide-in-from-bottom-2 duration-300"
-                    style={{ animationDelay: `${serviceIndex * 50}ms` }}
-                  >
-                    <h4 className="font-semibold mb-1 group-hover:text-accent transition-colors">
-                      {service.title}
-                    </h4>
-                    <p className="text-sm text-muted-foreground">{service.description}</p>
-                  </a>
-                ))}
+                {category.services.map((service, serviceIndex) => {
+                  const Tag = service.href ? 'a' : 'div';
+                  return (
+                    <Tag
+                      key={serviceIndex}
+                      {...(service.href ? { href: service.href } : {})}
+                      className={`group bg-card border rounded-lg p-5 transition-all animate-in fade-in slide-in-from-bottom-2 duration-300 ${service.href ? 'hover:shadow-md hover:border-accent/30 cursor-pointer' : 'cursor-default'}`}
+                      style={{ animationDelay: `${serviceIndex * 50}ms` }}
+                    >
+                      <h4 className={`font-semibold mb-1 ${service.href ? 'group-hover:text-accent' : ''} transition-colors`}>
+                        {service.title}
+                      </h4>
+                      <p className="text-sm text-muted-foreground">{service.description}</p>
+                    </Tag>
+                  );
+                })}
               </div>
             </div>
           ))}

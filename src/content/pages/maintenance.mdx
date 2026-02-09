@@ -1,0 +1,162 @@
+---
+title: "Maintenance Services"
+description: "Preventative plumbing maintenance services in Los Angeles. Regular inspections, drain cleaning, leak prevention, gas system checks, and appliance maintenance to keep your plumbing running smoothly."
+---
+
+import HeroSection from "@/components/sections/HeroSection.astro"
+import TrustBadges from "@/components/sections/TrustBadges.astro"
+import ServiceCardsGridSection from "@/components/sections/ServiceCardsGridSection.astro"
+import ContentSection from "@/components/sections/ContentSection.astro"
+import PricingPlansSection from "@/components/sections/PricingPlansSection.astro"
+import SignupBannerSection from "@/components/sections/SignupBannerSection.astro"
+import FAQSection from "@/components/sections/FAQSection.astro"
+import CTAStrip from "@/components/sections/CTAStrip.astro"
+import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
+
+<HeroSection
+  variant="subpage"
+  badge="Prevent Costly Repairs"
+  title="Plumbing Maintenance Services"
+  subtitle="Stay ahead of plumbing problems with routine inspections, cleaning, and preventative care that saves you money and extends the life of your system."
+  buttonText="SCHEDULE SERVICE"
+  buttonHref="/contact"
+  image="https://ucarecdn.com/2b601f20-60cd-4006-b1db-f80cf1763faa/-/preview/968x644/"
+/>
+
+<TrustBadges
+  badges={[
+    { name: "BBB & Angie's List", image: "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/BBB_Angies-List.webp" },
+    { name: "Google Reviews", image: "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/google-review.webp" },
+    { name: "Nextdoor", image: "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/Nextdoor-logo.webp", small: true },
+    { name: "HomeAdvisor", image: "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/HomeAdvisor.webp" },
+    { name: "BBB A+", image: "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/bbb-logo-a-plus.webp" },
+    { name: "Google Reviews 2", image: "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/google-review.webp" }
+  ]}
+/>
+
+<ServiceCardsGridSection
+  title="Our Maintenance Services"
+  description="Regular maintenance keeps your plumbing efficient, prevents emergencies, and extends the life of your pipes, fixtures, and appliances."
+  services={[
+    { image: "https://ucarecdn.com/904d12f4-36c2-4c11-99c9-c22ebbc905fe/-/preview/1000x666/", icon: "pipe", title: "Preventative Maintenance", href: "/residential/maintenance/preventative/plumbing-inspections" },
+    { image: "https://ucarecdn.com/b2b720dc-bf04-4366-a627-124001e3746e/-/preview/1000x666/", icon: "drain", title: "Drain & Sewer Maintenance", href: "/residential/maintenance/drain-sewer/routine-drain-cleaning" },
+    { image: "https://ucarecdn.com/075a53c5-b442-4211-bd8d-baf6977b3f87/-/preview/1000x666/", icon: "leak", title: "Leak Prevention", href: "/residential/maintenance/leak-prevention/valve-seal-checks" },
+    { image: "https://ucarecdn.com/f0f1f6f3-d381-4c74-8d86-0a5cb24648f0/-/preview/1000x666/", icon: "pipe", title: "Gas System Maintenance", href: "/residential/maintenance/gas-system/annual-gas-testing" },
+    { image: "https://ucarecdn.com/a6fafe41-c916-4595-adf6-9657af91fbbc/ReliableGarbageDisposalRepairandReplacement.webp", icon: "kitchen", title: "Appliance Maintenance", href: "/residential/maintenance/appliance/garbage-disposal-cleaning" }
+  ]}
+/>
+
+<ContentSection
+  badge="Why Maintenance Matters"
+  title="Protect Your Plumbing Investment"
+  description="Most plumbing emergencies are preventable. Regular maintenance catches small issues before they become expensive repairs, keeps your water flowing efficiently, and extends the lifespan of your entire plumbing system. Our maintenance programs are designed to give you peace of mind year-round."
+  features={[
+    "Prevent Unexpected Breakdowns",
+    "Lower Utility Bills Through Efficiency",
+    "Extend the Life of Pipes and Fixtures",
+    "Priority Scheduling for Plan Members"
+  ]}
+  buttonText="VIEW MAINTENANCE PLANS"
+  buttonHref="/maintenance-plan"
+  images={[
+    "https://ucarecdn.com/514fa2a4-9e6c-417b-8e38-fdab8ec5364a/-/preview/999x1000/",
+    "https://ucarecdn.com/315825d3-5856-474f-8ac1-f793441976f7/-/preview/1000x666/"
+  ]}
+  imagePosition="left"
+/>
+
+<PricingPlansSection
+  title="Maintenance Plans That Fit Your Budget"
+  description="Choose a plan that works for you and enjoy year-round protection for your plumbing system."
+  plans={[
+    {
+      ribbon: "GREAT",
+      ribbonColor: "great",
+      title: "BASIC PLAN",
+      price: "$9.99",
+      period: "/month",
+      features: [
+        "Annual plumbing system inspection",
+        "Priority scheduling for emergency repairs",
+        "5% discount on all repairs and services"
+      ]
+    },
+    {
+      ribbon: "BEST DEAL",
+      ribbonColor: "best",
+      title: "PREMIUM PLAN",
+      price: "$29.99",
+      period: "/month",
+      features: [
+        "Everything in the Standard Plan",
+        "Sewer line inspection with a camera",
+        "Emergency service fee waived",
+        "15% discount on all repairs and services"
+      ]
+    },
+    {
+      ribbon: "BETTER",
+      ribbonColor: "better",
+      title: "STANDARD PLAN",
+      price: "$19.99",
+      period: "/month",
+      features: [
+        "Everything in the Basic Plan",
+        "Annual water heater inspection and flush",
+        "Leak detection service for pipes and fixtures",
+        "10% discount on all repairs and services"
+      ]
+    }
+  ]}
+/>
+
+<SignupBannerSection
+  title="Sign Up for a Maintenance Plan Today!"
+  description="Protect your home and save money with ABC Plumbers Maintenance Plans. Choose the option that is right for you and enjoy peace of mind all year long."
+  calloutText="Call us at 123-456-7890 or Sign Up Online today to get started!"
+  phone="123-456-7890"
+  buttonText="Sign Up Online"
+  buttonHref="/contact"
+/>
+
+<FAQSection
+  title="Maintenance Services FAQs"
+  faqs={[
+    {
+      question: "How often should I have my plumbing inspected?",
+      answer: "We recommend an annual plumbing inspection for most homes. Older homes or properties with known issues may benefit from more frequent checkups."
+    },
+    {
+      question: "What does a plumbing maintenance visit include?",
+      answer: "A typical visit includes inspection of all visible pipes and fixtures, water pressure testing, drain flow checks, water heater evaluation, and a written report of findings and recommendations."
+    },
+    {
+      question: "Can maintenance really prevent emergencies?",
+      answer: "Yes. The majority of plumbing emergencies like burst pipes, sewer backups, and water heater failures can be prevented with regular maintenance and early detection of wear."
+    },
+    {
+      question: "Do maintenance plan members get priority service?",
+      answer: "Absolutely. All maintenance plan members receive priority scheduling, which means faster response times when you need service."
+    }
+  ]}
+/>
+
+<CTAStrip
+  buttonText="SCHEDULE NOW"
+  buttonHref="/contact"
+  phoneLabel="Call or Text for Great Service"
+  phone="123-456-7890"
+  features={[
+    { icon: "siren", text: "24/7 Emergency Service" },
+    { icon: "award", text: "Experienced & Certified Technicians" }
+  ]}
+/>
+
+<ServiceAreaSection
+  variant="compact"
+  title="Proudly Serving Los Angeles"
+  description="Our maintenance services are available throughout Los Angeles and surrounding areas including Santa Monica, Pasadena, and Glendale."
+  buttonText="SERVICE AREAS"
+  buttonHref="/service-areas"
+  mapAddress="Los Angeles, CA"
+/>

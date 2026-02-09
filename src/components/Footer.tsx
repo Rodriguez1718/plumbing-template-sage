@@ -16,10 +16,10 @@ export function Footer() {
   const quickLinks = [
     { title: "HOME", href: "/" },
     { title: "ABOUT US", href: "/about" },
-    { title: "SPECIALS", href: "/about/specials" },
+    { title: "SPECIALS", href: "/specials-and-offers" },
     { title: "MAINTENANCE PLAN", href: "/maintenance-plan" },
     { title: "FINANCING", href: "/financing" },
-    { title: "REVIEWS", href: "/about/reviews" },
+    { title: "REVIEWS", href: "/reviews" },
     { title: "CAREERS", href: "/careers" },
     { title: "SERVICES AREAS", href: "/service-areas" },
     { title: "CONTACT US", href: "/contact" },

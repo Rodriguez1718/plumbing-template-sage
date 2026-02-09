@@ -228,7 +228,7 @@ export function Navbar() {
               className="bg-accent hover:bg-accent/90 text-white font-semibold px-6 rounded-full ml-4"
               asChild
             >
-              <a href="/quote">GET A QUOTE</a>
+              <a href="/contact">GET A QUOTE</a>
             </Button>
           </div>
         </div>
@@ -383,7 +383,7 @@ function MobileNav({ onClose }: { onClose: () => void }) {
           className="w-full bg-accent hover:bg-accent/90 text-white font-semibold py-6 rounded-full text-base"
           asChild
         >
-          <a href="/quote" onClick={onClose}>GET A QUOTE</a>
+          <a href="/contact" onClick={onClose}>GET A QUOTE</a>
         </Button>
       </div>
     </div>

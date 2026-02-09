@@ -2,7 +2,7 @@
 interface Service {
   title: string;
   description: string;
-  href: string;
+  href?: string;
 }
 
 interface ServiceCategory {
@@ -36,10 +36,17 @@ const { title, description, categories } = Astro.props;
           </h3>
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {category.services.map((service) => (
-              <a href={service.href} class="group bg-card border rounded-lg p-6 hover:shadow-md hover:border-accent/30 transition-all">
-                <h4 class="font-semibold mb-2 group-hover:text-accent transition-colors">{service.title}</h4>
-                <p class="text-sm text-muted-foreground">{service.description}</p>
-              </a>
+              service.href ? (
+                <a href={service.href} class="group bg-card border rounded-lg p-6 hover:shadow-md hover:border-accent/30 transition-all cursor-pointer">
+                  <h4 class="font-semibold mb-2 group-hover:text-accent transition-colors">{service.title}</h4>
+                  <p class="text-sm text-muted-foreground">{service.description}</p>
+                </a>
+              ) : (
+                <div class="bg-card border rounded-lg p-6 cursor-default">
+                  <h4 class="font-semibold mb-2">{service.title}</h4>
+                  <p class="text-sm text-muted-foreground">{service.description}</p>
+                </div>
+              )
             ))}
           </div>
         </div>

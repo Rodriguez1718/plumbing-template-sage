@@ -27,7 +27,7 @@ export const topNavItems: NavItem[] = [
       { title: "Reviews", href: "/reviews" },
     ]
   },
-  { title: "Contact Us", href: "/quote" },
+  { title: "Contact Us", href: "/contact" },
   { title: "Careers", href: "/careers" },
   { 
     title: "Service Areas", 
@@ -114,8 +114,8 @@ export const mainNavItems: MegaMenuItem[] = [
         title: "Building Plumbing Systems",
         icon: "building",
         items: [
-          { title: "Design and Installation for New Construction", href: "/commercial/building/new-construction" },
-          { title: "Plumbing Fixture Installation", href: "/commercial/building/fixtures" },
+          { title: "Design and Installation for New Construction", href: "/commercial/building-plumbing/new-construction" },
+          { title: "Plumbing Fixture Installation", href: "/commercial/building-plumbing/fixture-installation" },
         ]
       },
       {
@@ -130,32 +130,32 @@ export const mainNavItems: MegaMenuItem[] = [
         title: "Drain and Sewer Services",
         icon: "waves",
         items: [
-          { title: "Sewer Camera Inspections", href: "/commercial/drain/camera" },
-          { title: "Commercial Drain Cleaning", href: "/commercial/drain/cleaning" },
+          { title: "Sewer Camera Inspections", href: "/commercial/drain-sewer/camera-inspections" },
+          { title: "Commercial Drain Cleaning", href: "/commercial/drain-sewer/drain-cleaning" },
         ]
       },
       {
         title: "Specialty Piping",
         icon: "pipette",
         items: [
-          { title: "Grease Trap Installation", href: "/commercial/piping/grease-trap" },
-          { title: "Industrial Pipe Installation and Repair", href: "/commercial/piping/industrial" },
+          { title: "Grease Trap Installation", href: "/commercial/specialty-piping/grease-trap" },
+          { title: "Industrial Pipe Installation and Repair", href: "/commercial/specialty-piping/industrial-pipe" },
         ]
       },
       {
         title: "Gas Plumbing",
         icon: "zap",
         items: [
-          { title: "Gas Line Installation and Repair", href: "/commercial/gas/installation" },
-          { title: "Gas Leak Detection", href: "/commercial/gas/leak-detection" },
+          { title: "Gas Line Installation and Repair", href: "/commercial/gas-plumbing/gas-line" },
+          { title: "Gas Leak Detection", href: "/commercial/gas-plumbing/leak-detection" },
         ]
       },
       {
         title: "Backflow Prevention",
         icon: "shield",
         items: [
-          { title: "Backflow Testing and Certification", href: "/commercial/backflow/testing" },
-          { title: "Installation and Repair of Backflow Prevention Devices", href: "/commercial/backflow/installation" },
+          { title: "Backflow Testing and Certification", href: "/commercial/backflow-prevention/testing-certification" },
+          { title: "Installation and Repair of Backflow Prevention Devices", href: "/commercial/backflow-prevention/device-installation" },
         ]
       },
     ]
@@ -168,47 +168,47 @@ export const mainNavItems: MegaMenuItem[] = [
         title: "Advanced Leak Detection",
         icon: "search",
         items: [
-          { title: "Infrared Camera Leak Detection", href: "/specialty/leak/infrared" },
-          { title: "Hydrostatic Pressure Testing", href: "/specialty/leak/pressure-testing" },
+          { title: "Infrared Camera Leak Detection", href: "/residential/specialty/advanced-leak-detection/infrared-camera" },
+          { title: "Hydrostatic Pressure Testing", href: "/residential/specialty/advanced-leak-detection/hydrostatic-pressure-testing" },
         ]
       },
       {
         title: "Hydro Jetting",
         icon: "zap",
         items: [
-          { title: "High-Pressure Drain Cleaning for Tough Clogs", href: "/specialty/hydro-jetting" },
+          { title: "High-Pressure Drain Cleaning for Tough Clogs", href: "/residential/specialty/hydro-jetting/high-pressure-drain-cleaning" },
         ]
       },
       {
         title: "Sewer Line Services",
         icon: "pipette",
         items: [
-          { title: "Trenchless Sewer Repair", href: "/specialty/sewer/trenchless" },
-          { title: "Pipe Bursting and Lining", href: "/specialty/sewer/pipe-bursting" },
+          { title: "Trenchless Sewer Repair", href: "/residential/specialty/sewer-line-services/trenchless-sewer-repair" },
+          { title: "Pipe Bursting and Lining", href: "/residential/specialty/sewer-line-services/pipe-bursting-lining" },
         ]
       },
       {
         title: "Emergency Plumbing",
         icon: "alert",
         items: [
-          { title: "24/7 Emergency Leak and Repair Services", href: "/specialty/emergency/leak-repair" },
-          { title: "Burst Pipe Response", href: "/specialty/emergency/burst-pipe" },
+          { title: "24/7 Emergency Leak and Repair Services", href: "/residential/specialty/emergency-plumbing/emergency-leak-repair" },
+          { title: "Burst Pipe Response", href: "/residential/specialty/emergency-plumbing/burst-pipe-response" },
         ]
       },
       {
         title: "Water Filtration",
         icon: "filter",
         items: [
-          { title: "Whole-House Water Filtration Systems", href: "/specialty/filtration/whole-house" },
-          { title: "Water Softener Installation", href: "/specialty/filtration/softener" },
+          { title: "Whole-House Water Filtration Systems", href: "/residential/specialty/water-filtration/whole-house-filtration" },
+          { title: "Water Softener Installation", href: "/residential/specialty/water-filtration/water-softener" },
         ]
       },
       {
         title: "Green Plumbing Solutions",
         icon: "leaf",
         items: [
-          { title: "Water Conservation Retrofits", href: "/specialty/green/conservation" },
-          { title: "Solar Water Heater Installation", href: "/specialty/green/solar" },
+          { title: "Water Conservation Retrofits", href: "/residential/specialty/green-plumbing/water-conservation-retrofits" },
+          { title: "Solar Water Heater Installation", href: "/residential/specialty/green-plumbing/solar-water-heater" },
         ]
       },
     ]
@@ -221,40 +221,40 @@ export const mainNavItems: MegaMenuItem[] = [
         title: "Preventative Maintenance",
         icon: "clipboard",
         items: [
-          { title: "Regular Plumbing Inspections", href: "/maintenance/preventative/inspections" },
-          { title: "Water Heater Flushing and Maintenance", href: "/maintenance/preventative/water-heater" },
+          { title: "Regular Plumbing Inspections", href: "/residential/maintenance/preventative/plumbing-inspections" },
+          { title: "Water Heater Flushing and Maintenance", href: "/residential/maintenance/preventative/water-heater-flushing" },
         ]
       },
       {
         title: "Drain and Sewer Maintenance",
         icon: "waves",
         items: [
-          { title: "Routine Drain Cleaning", href: "/maintenance/drain/cleaning" },
-          { title: "Scheduled Sewer Inspections", href: "/maintenance/drain/inspections" },
+          { title: "Routine Drain Cleaning", href: "/residential/maintenance/drain-sewer/routine-drain-cleaning" },
+          { title: "Scheduled Sewer Inspections", href: "/residential/maintenance/drain-sewer/sewer-inspections" },
         ]
       },
       {
         title: "Leak Prevention",
         icon: "droplet",
         items: [
-          { title: "Valve and Seal Checks", href: "/maintenance/leak/valve-seal" },
-          { title: "Pressure Testing for Pipes", href: "/maintenance/leak/pressure-testing" },
+          { title: "Valve and Seal Checks", href: "/residential/maintenance/leak-prevention/valve-seal-checks" },
+          { title: "Pressure Testing for Pipes", href: "/residential/maintenance/leak-prevention/pressure-testing" },
         ]
       },
       {
         title: "Gas System Maintenance",
         icon: "zap",
         items: [
-          { title: "Annual Testing for Gas Appliances", href: "/maintenance/gas/testing" },
-          { title: "Gas Line Inspection", href: "/maintenance/gas/inspection" },
+          { title: "Annual Testing for Gas Appliances", href: "/residential/maintenance/gas-system/annual-gas-testing" },
+          { title: "Gas Line Inspection", href: "/residential/maintenance/gas-system/gas-line-inspection" },
         ]
       },
       {
         title: "Appliance Maintenance",
         icon: "settings",
         items: [
-          { title: "Garbage Disposal Cleaning", href: "/maintenance/appliance/disposal" },
-          { title: "Dishwasher Plumbing Checks", href: "/maintenance/appliance/dishwasher" },
+          { title: "Garbage Disposal Cleaning", href: "/residential/maintenance/appliance/garbage-disposal-cleaning" },
+          { title: "Dishwasher Plumbing Checks", href: "/residential/maintenance/appliance/dishwasher-plumbing-checks" },
         ]
       },
     ]
