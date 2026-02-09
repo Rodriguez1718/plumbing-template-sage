@@ -1,0 +1,108 @@
+---
+title: "Standard Water Heater Repair and Replacement"
+description: "Expert standard water heater repair and replacement services in Los Angeles."
+---
+
+import HeroSection from "@/components/sections/HeroSection.astro"
+import PlaceholderContentSection from "@/components/sections/PlaceholderContentSection.astro"
+import PromoTilesSection from "@/components/sections/PromoTilesSection.astro"
+import FinancingPlansSection from "@/components/sections/FinancingPlansSection.astro"
+import FAQSection from "@/components/sections/FAQSection.astro"
+import CTAStrip from "@/components/sections/CTAStrip.astro"
+import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
+
+<HeroSection
+  variant="subpage"
+  title="Standard Water Heater Repair and Replacement"
+  subtitle="Reliable repair and replacement for standard tank water heaters."
+  buttonText="SCHEDULE SERVICE"
+  buttonHref="/quote"
+  image="https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
+/>
+
+<PlaceholderContentSection
+  title="TO BE DETERMINED"
+  subtitle="BASED ON THE CLIENT DISCOVERY CONVERSATION"
+/>
+
+<PromoTilesSection
+  tiles={[
+    {
+      type: "maintenance",
+      title: "MAINTENANCE PLAN",
+      priceLabel: ["Starting at", "$94.33", "per month"],
+      phone: "123-456-7890",
+      buttonText: "LEARN MORE",
+      buttonHref: "/maintenance-plan",
+      bgImage: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80"
+    },
+    {
+      type: "financing",
+      headline: ["NO INTEREST", "NO PAYMENT", "UNTIL 2026"],
+      subtext: "Subject to credit approval",
+      phone: "123-456-7890",
+      buttonText: "LEARN MORE",
+      buttonHref: "/financing",
+      bgImage: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
+    },
+    {
+      type: "emergency",
+      tag: "Limited Time Offer",
+      discount: "20% OFF",
+      subheadline: ["ALL PLUMBING", "SERVICES"],
+      phone: "123-456-7890",
+      buttonText: "SCHEDULE NOW",
+      buttonHref: "/quote",
+      bgImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+    }
+  ]}
+/>
+
+<FinancingPlansSection
+  variant="services"
+  title="Related Services"
+  items={[
+    { title: "Kitchen Remodel Plumbing", text: "Complete plumbing solutions for your kitchen renovation project.", href: "/residential/kitchen/remodel", image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" },
+    { title: "Garbage Disposal Repair and Replacement", text: "Fast repairs and new installations for all disposal brands.", href: "/residential/kitchen/garbage-disposal", image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80" },
+    { title: "Dishwasher Hookups", text: "Professional installation and connection services.", href: "/residential/kitchen/dishwasher", image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80" },
+    { title: "Maintenance Services", text: "Keep your plumbing running smoothly year-round.", href: "/maintenance", image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" }
+  ]}
+/>
+
+<FAQSection
+  title="Frequently Asked Questions"
+  faqs={[
+    {
+      question: "How long does a standard water heater last?",
+      answer: "A standard tank water heater typically lasts 8-12 years with proper maintenance. Regular flushing and anode rod replacement can help extend its lifespan."
+    },
+    {
+      question: "What are signs my water heater needs repair?",
+      answer: "Look for inconsistent water temperature, rusty or discolored water, rumbling or popping noises, leaks around the base, and a noticeable decrease in hot water supply."
+    },
+    {
+      question: "Should I repair or replace my water heater?",
+      answer: "If your water heater is over 10 years old and needs frequent repairs, replacement is usually more cost-effective. We assess the condition and help you decide the best option."
+    }
+  ]}
+/>
+
+<CTAStrip
+  buttonText="SCHEDULE NOW"
+  buttonHref="/quote"
+  phoneLabel="Call or Text for Great Service"
+  phone="123-456-7890"
+  features={[
+    { icon: "siren", text: "24/7 Emergency Service" },
+    { icon: "award", text: "Experienced and Certified Technicians" }
+  ]}
+/>
+
+<ServiceAreaSection
+  variant="compact"
+  title="Proudly Serving Los Angeles"
+  description="We provide reliable plumbing services for the entire Los Angeles area, including Santa Monica, Pasadena, and Glendale. Contact us today for quality plumbing solutions and Maintenance Plans to keep your home in top shape."
+  mapAddress="Los Angeles, CA"
+  buttonText="SERVICE AREAS"
+  buttonHref="/service-areas"
+/>

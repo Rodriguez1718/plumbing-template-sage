@@ -1,0 +1,108 @@
+---
+title: "Sewer Camera Inspections"
+description: "Advanced sewer camera inspection services for commercial properties to diagnose plumbing issues in Los Angeles."
+---
+
+import HeroSection from "@/components/sections/HeroSection.astro"
+import PlaceholderContentSection from "@/components/sections/PlaceholderContentSection.astro"
+import PromoTilesSection from "@/components/sections/PromoTilesSection.astro"
+import FinancingPlansSection from "@/components/sections/FinancingPlansSection.astro"
+import FAQSection from "@/components/sections/FAQSection.astro"
+import CTAStrip from "@/components/sections/CTAStrip.astro"
+import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
+
+<HeroSection
+  variant="subpage"
+  title="Sewer Camera Inspections"
+  subtitle="Your #1 Destination for all your plumbing needs. Fast, Reliable, Fair Prices, No Hassle."
+  buttonText="SCHEDULE SERVICE"
+  buttonHref="/quote"
+  image="https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
+/>
+
+<PlaceholderContentSection
+  title="TO BE DETERMINED"
+  subtitle="BASED ON THE CLIENT DISCOVERY CONVERSATION"
+/>
+
+<PromoTilesSection
+  tiles={[
+    {
+      type: "maintenance",
+      title: "MAINTENANCE PLAN",
+      priceLabel: ["Starting at", "$94.33", "per month"],
+      phone: "123-456-7890",
+      buttonText: "LEARN MORE",
+      buttonHref: "/maintenance-plan",
+      bgImage: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80"
+    },
+    {
+      type: "financing",
+      headline: ["NO INTEREST", "NO PAYMENT", "UNTIL 2026"],
+      subtext: "Subject to credit approval",
+      phone: "123-456-7890",
+      buttonText: "LEARN MORE",
+      buttonHref: "/financing",
+      bgImage: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
+    },
+    {
+      type: "emergency",
+      tag: "Limited Time Offer",
+      discount: "20% OFF",
+      subheadline: ["ALL PLUMBING", "SERVICES"],
+      phone: "123-456-7890",
+      buttonText: "SCHEDULE NOW",
+      buttonHref: "/quote",
+      bgImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+    }
+  ]}
+/>
+
+<FinancingPlansSection
+  variant="services"
+  title="Related Services"
+  items={[
+    { title: "Commercial Drain Cleaning", text: "Professional drain cleaning for commercial properties.", href: "/commercial/drain-sewer/drain-cleaning", image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" },
+    { title: "Grease Trap Installation", text: "Code-compliant grease trap solutions for restaurants.", href: "/commercial/specialty-piping/grease-trap", image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80" },
+    { title: "Industrial Pipe Repair", text: "Expert pipe installation and repair for commercial facilities.", href: "/commercial/specialty-piping/industrial-pipe", image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80" },
+    { title: "Maintenance Services", text: "Keep your plumbing running smoothly year-round.", href: "/maintenance-plan", image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" }
+  ]}
+/>
+
+<FAQSection
+  title="Frequently Asked Questions"
+  faqs={[
+    {
+      question: "What can a sewer camera inspection detect?",
+      answer: "Our high-definition sewer cameras can identify blockages, tree root intrusion, pipe cracks, corrosion, bellied pipes, and joint separations — all without any digging or disruption to your property."
+    },
+    {
+      question: "How long does a commercial sewer camera inspection take?",
+      answer: "Most inspections are completed within one to two hours depending on the length and complexity of your sewer system. You'll receive a detailed video report of the findings."
+    },
+    {
+      question: "When should I schedule a sewer camera inspection?",
+      answer: "We recommend inspections for recurring drain issues, before purchasing a commercial property, after major plumbing work, or as part of routine preventive maintenance. Call 123-456-7890 to book."
+    }
+  ]}
+/>
+
+<CTAStrip
+  buttonText="SCHEDULE NOW"
+  buttonHref="/quote"
+  phoneLabel="Call or Text for Great Service"
+  phone="123-456-7890"
+  features={[
+    { icon: "siren", text: "24/7 Emergency Service" },
+    { icon: "award", text: "Experienced and Certified Technicians" }
+  ]}
+/>
+
+<ServiceAreaSection
+  variant="compact"
+  title="Proudly Serving Los Angeles"
+  description="We provide reliable plumbing services for the entire Los Angeles area, including Santa Monica, Pasadena, and Glendale. Contact us today for quality plumbing solutions and Maintenance Plans to keep your home in top shape."
+  mapAddress="Los Angeles, CA"
+  buttonText="SERVICE AREAS"
+  buttonHref="/service-areas"
+/>

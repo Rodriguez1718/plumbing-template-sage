@@ -1,0 +1,108 @@
+---
+title: "Routine Drain Cleaning"
+description: "Scheduled drain cleaning services to prevent clogs and keep your plumbing flowing freely."
+---
+
+import HeroSection from "@/components/sections/HeroSection.astro"
+import PlaceholderContentSection from "@/components/sections/PlaceholderContentSection.astro"
+import PromoTilesSection from "@/components/sections/PromoTilesSection.astro"
+import FinancingPlansSection from "@/components/sections/FinancingPlansSection.astro"
+import FAQSection from "@/components/sections/FAQSection.astro"
+import CTAStrip from "@/components/sections/CTAStrip.astro"
+import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
+
+<HeroSection
+  variant="subpage"
+  title="Routine Drain Cleaning"
+  subtitle="Prevent clogs before they happen with regular drain maintenance."
+  buttonText="SCHEDULE SERVICE"
+  buttonHref="/quote"
+  image="https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
+/>
+
+<PlaceholderContentSection
+  title="TO BE DETERMINED"
+  subtitle="BASED ON THE CLIENT DISCOVERY CONVERSATION"
+/>
+
+<PromoTilesSection
+  tiles={[
+    {
+      type: "maintenance",
+      title: "MAINTENANCE PLAN",
+      priceLabel: ["Starting at", "$94.33", "per month"],
+      phone: "123-456-7890",
+      buttonText: "LEARN MORE",
+      buttonHref: "/maintenance-plan",
+      bgImage: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80"
+    },
+    {
+      type: "financing",
+      headline: ["NO INTEREST", "NO PAYMENT", "UNTIL 2026"],
+      subtext: "Subject to credit approval",
+      phone: "123-456-7890",
+      buttonText: "LEARN MORE",
+      buttonHref: "/financing",
+      bgImage: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
+    },
+    {
+      type: "emergency",
+      tag: "Limited Time Offer",
+      discount: "20% OFF",
+      subheadline: ["ALL PLUMBING", "SERVICES"],
+      phone: "123-456-7890",
+      buttonText: "SCHEDULE NOW",
+      buttonHref: "/quote",
+      bgImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+    }
+  ]}
+/>
+
+<FinancingPlansSection
+  variant="services"
+  title="Related Services"
+  items={[
+    { title: "Scheduled Sewer Inspections", text: "Camera inspections to monitor your sewer line health.", href: "/residential/maintenance/drain-sewer/sewer-inspections", image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" },
+    { title: "Hydro Jetting", text: "High-pressure cleaning for tough clogs and buildup.", href: "/residential/specialty/hydro-jetting/high-pressure-drain-cleaning", image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80" },
+    { title: "Drain Cleaning", text: "Professional drain cleaning for all types of clogs.", href: "/residential/drain/cleaning", image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80" },
+    { title: "Maintenance Plan", text: "Comprehensive plans to keep your plumbing in top shape.", href: "/maintenance-plan", image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" }
+  ]}
+/>
+
+<FAQSection
+  title="Frequently Asked Questions"
+  faqs={[
+    {
+      question: "How often should drains be professionally cleaned?",
+      answer: "We recommend professional drain cleaning at least once a year as preventive maintenance. Kitchens and bathrooms with heavy use may benefit from cleaning every six months."
+    },
+    {
+      question: "What causes recurring drain clogs?",
+      answer: "Common causes include grease and soap buildup, hair accumulation, food particles, mineral deposits from hard water, and tree root intrusion in older pipes."
+    },
+    {
+      question: "Is routine drain cleaning worth the cost?",
+      answer: "Yes. Regular cleaning prevents major blockages that can lead to sewage backups, pipe damage, and expensive emergency repairs. It's one of the most cost-effective maintenance investments you can make."
+    }
+  ]}
+/>
+
+<CTAStrip
+  buttonText="SCHEDULE NOW"
+  buttonHref="/quote"
+  phoneLabel="Call or Text for Great Service"
+  phone="123-456-7890"
+  features={[
+    { icon: "siren", text: "24/7 Emergency Service" },
+    { icon: "award", text: "Experienced and Certified Technicians" }
+  ]}
+/>
+
+<ServiceAreaSection
+  variant="compact"
+  title="Proudly Serving Los Angeles"
+  description="We provide reliable plumbing services for the entire Los Angeles area, including Santa Monica, Pasadena, and Glendale. Contact us today for quality plumbing solutions and Maintenance Plans to keep your home in top shape."
+  mapAddress="Los Angeles, CA"
+  buttonText="SERVICE AREAS"
+  buttonHref="/service-areas"
+/>

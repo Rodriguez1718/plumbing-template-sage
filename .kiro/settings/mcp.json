@@ -25,7 +25,9 @@
         "-y",
         "mcp-bun@latest"
       ],
-      "autoApprove": []
+      "autoApprove": [
+        "run-bun-eval"
+      ]
     }
   }
 }

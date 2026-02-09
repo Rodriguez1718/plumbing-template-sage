@@ -1,0 +1,108 @@
+---
+title: "Burst Pipe Response"
+description: "Immediate burst pipe emergency response to minimize water damage and restore your plumbing."
+---
+
+import HeroSection from "@/components/sections/HeroSection.astro"
+import PlaceholderContentSection from "@/components/sections/PlaceholderContentSection.astro"
+import PromoTilesSection from "@/components/sections/PromoTilesSection.astro"
+import FinancingPlansSection from "@/components/sections/FinancingPlansSection.astro"
+import FAQSection from "@/components/sections/FAQSection.astro"
+import CTAStrip from "@/components/sections/CTAStrip.astro"
+import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
+
+<HeroSection
+  variant="subpage"
+  title="Burst Pipe Response"
+  subtitle="Rapid emergency service to stop water damage in its tracks."
+  buttonText="SCHEDULE SERVICE"
+  buttonHref="/quote"
+  image="https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
+/>
+
+<PlaceholderContentSection
+  title="TO BE DETERMINED"
+  subtitle="BASED ON THE CLIENT DISCOVERY CONVERSATION"
+/>
+
+<PromoTilesSection
+  tiles={[
+    {
+      type: "maintenance",
+      title: "MAINTENANCE PLAN",
+      priceLabel: ["Starting at", "$94.33", "per month"],
+      phone: "123-456-7890",
+      buttonText: "LEARN MORE",
+      buttonHref: "/maintenance-plan",
+      bgImage: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80"
+    },
+    {
+      type: "financing",
+      headline: ["NO INTEREST", "NO PAYMENT", "UNTIL 2026"],
+      subtext: "Subject to credit approval",
+      phone: "123-456-7890",
+      buttonText: "LEARN MORE",
+      buttonHref: "/financing",
+      bgImage: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
+    },
+    {
+      type: "emergency",
+      tag: "Limited Time Offer",
+      discount: "20% OFF",
+      subheadline: ["ALL PLUMBING", "SERVICES"],
+      phone: "123-456-7890",
+      buttonText: "SCHEDULE NOW",
+      buttonHref: "/quote",
+      bgImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+    }
+  ]}
+/>
+
+<FinancingPlansSection
+  variant="services"
+  title="Related Services"
+  items={[
+    { title: "24/7 Emergency Leak and Repair", text: "Round-the-clock emergency plumbing services.", href: "/residential/specialty/emergency-plumbing/emergency-leak-repair", image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" },
+    { title: "Repiping Services", text: "Full and partial home repiping solutions.", href: "/residential/piping/repiping", image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80" },
+    { title: "Water Line Repair", text: "Professional water line repair and replacement.", href: "/residential/piping/water-line", image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80" },
+    { title: "Maintenance Services", text: "Keep your plumbing running smoothly year-round.", href: "/maintenance-plan", image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" }
+  ]}
+/>
+
+<FAQSection
+  title="Frequently Asked Questions"
+  faqs={[
+    {
+      question: "What causes pipes to burst?",
+      answer: "Pipes can burst due to freezing temperatures, corrosion, high water pressure, aging materials, or physical damage. Tree root intrusion and shifting soil can also put stress on underground pipes, leading to cracks and bursts."
+    },
+    {
+      question: "How do I know if I have a burst pipe?",
+      answer: "Signs include a sudden drop in water pressure, water stains on walls or ceilings, unexplained puddles, the sound of running water when fixtures are off, and a spike in your water bill. If you notice any of these, call us immediately."
+    },
+    {
+      question: "Can a burst pipe cause structural damage?",
+      answer: "Yes, a burst pipe can cause significant structural damage if not addressed quickly, including foundation damage, mold growth, and ruined drywall and flooring. That's why our rapid response service is designed to minimize damage."
+    }
+  ]}
+/>
+
+<CTAStrip
+  buttonText="SCHEDULE NOW"
+  buttonHref="/quote"
+  phoneLabel="Call or Text for Great Service"
+  phone="123-456-7890"
+  features={[
+    { icon: "siren", text: "24/7 Emergency Service" },
+    { icon: "award", text: "Experienced and Certified Technicians" }
+  ]}
+/>
+
+<ServiceAreaSection
+  variant="compact"
+  title="Proudly Serving Los Angeles"
+  description="We provide reliable plumbing services for the entire Los Angeles area, including Santa Monica, Pasadena, and Glendale. Contact us today for quality plumbing solutions and Maintenance Plans to keep your home in top shape."
+  mapAddress="Los Angeles, CA"
+  buttonText="SERVICE AREAS"
+  buttonHref="/service-areas"
+/>

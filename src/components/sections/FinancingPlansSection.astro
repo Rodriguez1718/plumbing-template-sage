@@ -6,6 +6,7 @@ interface Item {
   text?: string;
   href?: string;
   icon?: string;
+  image?: string;
 }
 
 interface Props {
@@ -42,6 +43,7 @@ const defaultIcon = variant === "services" ? Wrench : CheckCircle;
           <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wide border-b-2 border-accent pb-1">{badge}</span>
         )}
         <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4">{title}</h2>
+        <div class="w-16 h-1 bg-accent mx-auto mb-4 rounded-full"></div>
         {subtitle && <p class="text-muted-foreground max-w-3xl mx-auto">{subtitle}</p>}
       </div>
       
@@ -62,29 +64,27 @@ const defaultIcon = variant === "services" ? Wrench : CheckCircle;
     </div>
   </section>
 ) : variant === "services" ? (
-  <section class="py-10 md:py-14 relative overflow-hidden">
-    <div class="absolute inset-0 top-0 h-1/2" style="background-color: #f5f8fd;"></div>
-    <div class="absolute inset-0 top-1/2 h-1/2" style="background-color: #0b273f;"></div>
-    <div class="container mx-auto px-4 relative z-10">
+  <section class="py-16 md:py-24 bg-muted/30">
+    <div class="container mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold">{title}</h2>
+        <div class="w-16 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+        {subtitle && <p class="text-muted-foreground max-w-3xl mx-auto mt-4">{subtitle}</p>}
       </div>
       
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto items-start pt-8">
-        {items.map((item, index) => {
-          const IconComponent = iconMap[item.icon as keyof typeof iconMap] || defaultIcon;
-          const isRaised = index === 1 || index === 3;
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-8xl mx-auto">
+        {items.map((item) => {
           return (
-            <div 
-              class={`relative bg-card rounded-lg pt-12 pb-6 px-5 text-center shadow-sm ${isRaised ? 'lg:-mt-8' : 'lg:mt-8'}`}
-            >
-              <div class="absolute -top-7 left-1/2 -translate-x-1/2">
-                <div class="w-14 h-14 rounded-full bg-accent flex items-center justify-center shadow-lg">
-                  <IconComponent className="w-7 h-7 text-white" />
+            <div class="bg-card rounded-xl border overflow-hidden hover:shadow-lg transition-all">
+              {item.image && (
+                <div class="w-full h-48 bg-muted/50 flex items-center justify-center overflow-hidden">
+                  <img src={item.image} alt={item.title} class="w-full h-full object-cover" />
                 </div>
+              )}
+              <div class="p-6 text-center">
+                <h3 class="text-lg font-bold mb-2">{item.title}</h3>
+                {item.text && <p class="text-sm text-muted-foreground leading-relaxed">{item.text}</p>}
               </div>
-              <h3 class="font-bold text-sm mb-3 uppercase tracking-wide">{item.title}</h3>
-              {item.text && <p class="text-sm text-muted-foreground leading-relaxed min-h-[4.5rem]">{item.text}</p>}
             </div>
           );
         })}
@@ -96,6 +96,7 @@ const defaultIcon = variant === "services" ? Wrench : CheckCircle;
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+        <div class="w-16 h-1 bg-accent mx-auto mb-4 rounded-full"></div>
         {subtitle && <p class="text-muted-foreground max-w-3xl mx-auto">{subtitle}</p>}
       </div>
       
