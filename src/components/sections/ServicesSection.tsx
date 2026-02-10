@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface Service {
   title: string;
@@ -19,17 +19,34 @@ interface Props {
 
 export function ServicesSection({ title, description, categories }: Props) {
   const [activeTab, setActiveTab] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="py-16 md:py-24">
+    <section ref={sectionRef} className="py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-10">
+        <div className={`text-center mb-10 transition-all duration-600 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
           <p className="text-muted-foreground max-w-3xl mx-auto">{description}</p>
         </div>
 
-        {/* Tab buttons */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
+        <div className={`flex flex-wrap justify-center gap-2 mb-8 transition-all duration-600 ease-out delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {categories.map((category, index) => (
             <button
               key={index}

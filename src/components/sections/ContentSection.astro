@@ -28,7 +28,7 @@ const {
   <div class="container mx-auto px-4">
     <div class={`grid md:grid-cols-2 gap-12 items-center ${imagePosition === "right" ? "md:flex-row-reverse" : ""}`}>
       {imagePosition === "left" && (
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-2 gap-4" data-animate="fade-right">
           {images.length > 0 ? (
             images.map((img, i) => (
               <div class="aspect-square rounded-lg overflow-hidden">
@@ -47,7 +47,7 @@ const {
           )}
         </div>
       )}
-      <div>
+      <div data-animate="fade-up">
         {badge && (
           <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wide border-b-2 border-accent pb-1">{badge}</span>
         )}
@@ -70,7 +70,7 @@ const {
         )}
       </div>
       {imagePosition === "right" && (
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-2 gap-4" data-animate="fade-left">
           {images.length > 0 ? (
             images.map((img, i) => (
               <div class="aspect-square rounded-lg overflow-hidden">

@@ -22,7 +22,7 @@ const { badge, title, description, jobs, introTitle, introDescription } = Astro.
 <section class="py-16 md:py-24 bg-muted/30">
   <div class="container mx-auto px-4">
     {introTitle && (
-      <div class="text-center mb-12">
+      <div class="text-center mb-12" data-animate="fade-up">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">{introTitle}</h2>
         {introDescription && <p class="text-muted-foreground text-balance mx-auto">{introDescription}</p>}
       </div>
@@ -33,7 +33,7 @@ const { badge, title, description, jobs, introTitle, introDescription } = Astro.
       {description && <p class="text-muted-foreground max-w-3xl mx-auto">{description}</p>}
     </div>
     
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" data-animate-stagger>
       {jobs.map((job) => (
         <div class="bg-muted/50 border-l-4 border-accent rounded-lg p-6">
           <h3 class="text-lg font-bold text-accent mb-2">{job.title}</h3>

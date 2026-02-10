@@ -68,7 +68,7 @@ const { badge, title, subtitle, buttonText = "Call Now", buttonHref = "tel:123-4
   <section class="relative bg-gradient-to-br from-primary/10 to-background py-20 md:py-32">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="text-center md:text-left">
+        <div class="text-center md:text-left" data-animate="fade-right">
           {badge && (
             <span class="inline-block bg-destructive text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
               {badge}
@@ -86,7 +86,7 @@ const { badge, title, subtitle, buttonText = "Call Now", buttonHref = "tel:123-4
             {buttonText}
           </a>
         </div>
-        <div class="hidden md:block">
+        <div class="hidden md:block" data-animate="fade-left">
           {image ? (
             <img src={image} alt={title} class="rounded-lg w-full" />
           ) : (

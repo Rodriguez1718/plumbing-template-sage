@@ -38,14 +38,14 @@ const iconMap: Record<string, string> = {
   <div class="container mx-auto px-4">
     <div class="grid md:grid-cols-2 gap-12 items-start">
       <!-- Image with border -->
-      <div class="relative">
+      <div class="relative" data-animate="fade-right">
         <div class="border-4 border-secondary rounded-lg overflow-hidden max-h-[350px]">
           <img src={image} alt={imageAlt} class="w-full h-full object-cover" />
         </div>
       </div>
 
       <!-- Content -->
-      <div>
+      <div data-animate="fade-left">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">
           {title}
           {highlightedText && <span class="text-secondary"> {highlightedText}</span>}

@@ -27,7 +27,7 @@ const iconMap: Record<string, string> = {
 <section class="py-16 md:py-24 bg-primary">
   <div class="container mx-auto px-4">
     <!-- Header -->
-    <div class="text-center mb-12">
+    <div class="text-center mb-12" data-animate="fade-up">
       <h2 class="text-3xl md:text-4xl font-bold text-primary-foreground">{title}</h2>
       {description && (
         <p class="text-primary-foreground/80 mt-4 max-w-2xl mx-auto">{description}</p>
@@ -35,7 +35,7 @@ const iconMap: Record<string, string> = {
     </div>
 
     <!-- Services Grid -->
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-3 gap-6" data-animate-stagger>
       {services.map((service) => (
         <a href={service.href || "#"} class="group block">
           <div class="relative rounded-lg overflow-hidden bg-card">

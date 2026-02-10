@@ -1,0 +1,49 @@
+---
+// Floating offer button that triggers the popup modal
+// Only visible on desktop (md and up), hides when scrolled to bottom
+---
+
+<div id="free-scan-wrapper" class="hidden md:block fixed bottom-8 right-8 z-40">
+  <!-- Floating tag / ribbon style -->
+  <button
+    id="free-scan-trigger"
+    class="relative flex items-center gap-3 pl-4 pr-5 py-3 bg-accent text-accent-foreground font-semibold text-sm rounded-full shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 group"
+    aria-label="Get $50 off your next service"
+  >
+    <!-- Animated icon -->
+    <span class="relative flex items-center justify-center w-9 h-9 bg-white/20 rounded-full group-hover:bg-white/30 transition-colors">
+      <svg
+        class="w-5 h-5 group-hover:rotate-12 transition-transform duration-300"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+      </svg>
+
+    </span>
+
+    <span class="flex flex-col items-start leading-tight">
+      <span class="text-[10px] font-normal opacity-80 uppercase tracking-wider">Limited Offer</span>
+      <span class="text-sm font-bold">$50 OFF — Claim Now</span>
+    </span>
+  </button>
+</div>
+
+<style>
+  #free-scan-wrapper {
+    animation: slide-up 0.5s ease-out 1s both;
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

@@ -19,7 +19,7 @@ const isMinimal = variant === 'minimal';
 
 <section class="py-16 md:py-24 bg-brand-tertiary/50 dark:bg-brand-primary/20">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-10">
+    <div class="text-center mb-10" data-animate="fade-up">
       {!isMinimal && (
         <span class="inline-flex items-center gap-2 bg-accent text-accent-foreground text-sm font-bold px-4 py-1 rounded-full mb-4 animate-pulse">
           <Flame class="w-4 h-4" />
@@ -35,7 +35,7 @@ const isMinimal = variant === 'minimal';
         </p>
       )}
     </div>
-    <div class={isMinimal ? 'grid sm:grid-cols-2 lg:grid-cols-3 gap-4' : 'grid md:grid-cols-3 gap-6'}>
+    <div class={isMinimal ? 'grid sm:grid-cols-2 lg:grid-cols-3 gap-4' : 'grid md:grid-cols-3 gap-6'} data-animate-stagger>
       {coupons.map((coupon) => (
         isMinimal ? (
           <div class="bg-card border border-border rounded-lg p-5 hover:border-accent/50 transition-colors">

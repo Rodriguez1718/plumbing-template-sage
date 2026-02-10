@@ -38,7 +38,7 @@ const defaultIcon = variant === "services" ? Wrench : CheckCircle;
 {variant === "features" ? (
   <section class="py-16 md:py-24 bg-muted/30">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
+      <div class="text-center mb-12" data-animate="fade-up">
         {badge && (
           <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wide border-b-2 border-accent pb-1">{badge}</span>
         )}
@@ -47,7 +47,7 @@ const defaultIcon = variant === "services" ? Wrench : CheckCircle;
         {subtitle && <p class="text-muted-foreground max-w-3xl mx-auto">{subtitle}</p>}
       </div>
       
-      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto" data-animate-stagger>
         {items.map((item) => {
           const IconComponent = iconMap[item.icon as keyof typeof iconMap] || CheckCircle;
           return (
@@ -66,13 +66,13 @@ const defaultIcon = variant === "services" ? Wrench : CheckCircle;
 ) : variant === "services" ? (
   <section class="py-16 md:py-24 bg-muted/30">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
+      <div class="text-center mb-12" data-animate="fade-up">
         <h2 class="text-3xl md:text-4xl font-bold">{title}</h2>
         <div class="w-16 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
         {subtitle && <p class="text-muted-foreground max-w-3xl mx-auto mt-4">{subtitle}</p>}
       </div>
       
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-8xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-8xl mx-auto" data-animate-stagger>
         {items.map((item) => {
           return (
             <div class="bg-card rounded-xl border overflow-hidden hover:shadow-lg transition-all">
@@ -94,13 +94,13 @@ const defaultIcon = variant === "services" ? Wrench : CheckCircle;
 ) : (
   <section class="py-16 md:py-24">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
+      <div class="text-center mb-12" data-animate="fade-up">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
         <div class="w-16 h-1 bg-accent mx-auto mb-4 rounded-full"></div>
         {subtitle && <p class="text-muted-foreground max-w-3xl mx-auto">{subtitle}</p>}
       </div>
       
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto" data-animate-stagger>
         {items.map((item) => {
           const IconComponent = iconMap[item.icon as keyof typeof iconMap] || defaultIcon;
           return (

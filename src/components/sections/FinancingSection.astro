@@ -18,13 +18,13 @@ const { badge = "Financing", title, description, paymentPlans, financingOptions,
 
 <section class="py-16 md:py-24">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-12">
+    <div class="text-center mb-12" data-animate="fade-up">
       <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wide border-b-2 border-accent pb-1">{badge}</span>
       <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4">{title}</h2>
       <p class="text-muted-foreground max-w-3xl mx-auto">{description}</p>
     </div>
     
-    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12" data-animate-stagger>
       <div class="bg-card border rounded-lg p-8">
         <h3 class="text-xl font-bold mb-6">Flexible Payment Plans</h3>
         <ul class="space-y-3">
@@ -52,7 +52,7 @@ const { badge = "Financing", title, description, paymentPlans, financingOptions,
     
     <div class="max-w-4xl mx-auto">
       <h3 class="text-xl font-bold mb-8 text-center">How to Apply</h3>
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-3 gap-6" data-animate-stagger>
         {steps.map((step, index) => (
           <div class="text-center">
             <div class="w-12 h-12 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-xl font-bold mx-auto mb-4">{index + 1}</div>
