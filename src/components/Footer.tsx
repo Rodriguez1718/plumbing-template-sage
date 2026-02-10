@@ -4,7 +4,7 @@ import { Facebook } from "lucide-react"
 // X (Twitter) icon component since lucide doesn't have the new X logo
 function XIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
     </svg>
   )
@@ -52,9 +52,10 @@ export function Footer() {
                   href={siteConfig.social.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Facebook"
                   className="w-8 h-8 rounded bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
                 >
-                  <Facebook className="w-4 h-4" />
+                  <Facebook className="w-4 h-4" aria-hidden="true" />
                 </a>
               )}
               {siteConfig.social.twitter && (
@@ -62,9 +63,10 @@ export function Footer() {
                   href={siteConfig.social.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="X (Twitter)"
                   className="w-8 h-8 rounded bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
                 >
-                  <XIcon className="w-4 h-4" />
+                  <XIcon className="w-4 h-4" aria-hidden="true" />
                 </a>
               )}
               {/* Default social icons if none configured */}
@@ -72,15 +74,17 @@ export function Footer() {
                 <>
                   <a
                     href="#"
+                    aria-label="Facebook"
                     className="w-8 h-8 rounded bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
                   >
-                    <Facebook className="w-4 h-4" />
+                    <Facebook className="w-4 h-4" aria-hidden="true" />
                   </a>
                   <a
                     href="#"
+                    aria-label="X (Twitter)"
                     className="w-8 h-8 rounded bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
                   >
-                    <XIcon className="w-4 h-4" />
+                    <XIcon className="w-4 h-4" aria-hidden="true" />
                   </a>
                 </>
               )}
