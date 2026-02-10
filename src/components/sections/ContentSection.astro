@@ -8,6 +8,7 @@ interface Props {
   buttonHref?: string;
   imagePosition?: "left" | "right";
   images?: string[];
+  imageAlts?: string[];
 }
 
 const { 
@@ -18,7 +19,8 @@ const {
   buttonText, 
   buttonHref,
   imagePosition = "left",
-  images = []
+  images = [],
+  imageAlts = []
 } = Astro.props;
 ---
 
@@ -30,7 +32,7 @@ const {
           {images.length > 0 ? (
             images.map((img, i) => (
               <div class="aspect-square rounded-lg overflow-hidden">
-                <img src={img} alt={`Image ${i + 1}`} class="w-full h-full object-cover" />
+                <img src={img} alt={imageAlts[i] || `${title} - photo ${i + 1}`} class="w-full h-full object-cover" loading="lazy" />
               </div>
             ))
           ) : (
@@ -72,7 +74,7 @@ const {
           {images.length > 0 ? (
             images.map((img, i) => (
               <div class="aspect-square rounded-lg overflow-hidden">
-                <img src={img} alt={`Image ${i + 1}`} class="w-full h-full object-cover" />
+                <img src={img} alt={imageAlts[i] || `${title} - photo ${i + 1}`} class="w-full h-full object-cover" loading="lazy" />
               </div>
             ))
           ) : (

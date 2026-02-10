@@ -50,6 +50,7 @@ const { tiles } = Astro.props;
               <a 
                 href={tile.buttonHref || "/contact"} 
                 class="inline-flex items-center justify-center rounded-md bg-accent text-white px-6 py-3 font-semibold hover:bg-accent/90 transition-colors mb-4"
+                aria-label={`${tile.buttonText} - ${tile.title || 'maintenance plan'}`}
               >
                 {tile.buttonText}
               </a>
@@ -82,6 +83,7 @@ const { tiles } = Astro.props;
               <a 
                 href={tile.buttonHref || "/financing"} 
                 class="inline-flex items-center justify-center gap-2 rounded-md bg-white text-brand-secondary px-6 py-3 font-semibold hover:bg-white/90 transition-colors mb-4"
+                aria-label={`${tile.buttonText} - ${tile.headline?.join(' ') || 'financing options'}`}
               >
                 {tile.buttonText}
                 <ArrowRight className="w-4 h-4" />
@@ -123,6 +125,7 @@ const { tiles } = Astro.props;
               <a 
                 href={tile.buttonHref || "/contact"} 
                 class="inline-flex items-center justify-center rounded-md bg-white text-accent px-6 py-3 font-semibold hover:bg-white/90 transition-colors"
+                aria-label={`${tile.buttonText} - ${tile.discount || ''} ${tile.subheadline?.join(' ') || 'special offer'}`}
               >
                 {tile.buttonText}
               </a>

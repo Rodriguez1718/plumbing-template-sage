@@ -52,6 +52,30 @@ const canonical = new URL(Astro.url.pathname, siteConfig.seo.siteUrl).href
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content={siteConfig.colors.primary} />
     
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={siteConfig.seo.twitterHandle} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": siteConfig.business.name,
+      "description": description,
+      "url": siteConfig.seo.siteUrl,
+      "telephone": siteConfig.contact.phoneFormatted,
+      "email": siteConfig.contact.email,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": siteConfig.location.address,
+        "addressLocality": siteConfig.location.city,
+        "addressRegion": siteConfig.location.state
+      }
+    })} />
+    
     <!-- Hubot Sans from jsDelivr CDN -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/hubot-sans@5.2.5/index.css" />
