@@ -54,7 +54,16 @@ const { badge, title, subtitle, buttonText = "Call Now", buttonHref = "tel:123-4
         </div>
         <div class="hidden md:block relative -mr-4 md:-mr-[calc((100vw-100%)/2+1rem)]">
           {image ? (
-            <img src={image} alt={title} class="absolute inset-0 w-full h-full object-cover" />
+            <img 
+              src={image.includes('ucarecdn.com') ? image.replace(/\/preview\/\d+x\d+/, '/preview/800x600').concat('-/format/webp/') : image} 
+              alt={title} 
+              class="absolute inset-0 w-full h-full object-cover" 
+              width="800"
+              height="600"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
           ) : (
             <div class="absolute inset-0 bg-muted flex items-center justify-center">
               <span class="text-muted-foreground">Hero Image</span>
@@ -88,7 +97,16 @@ const { badge, title, subtitle, buttonText = "Call Now", buttonHref = "tel:123-4
         </div>
         <div class="hidden md:block" data-animate="fade-left">
           {image ? (
-            <img src={image} alt={title} class="rounded-lg w-full" />
+            <img 
+              src={image.includes('ucarecdn.com') ? image.replace(/\/preview\/\d+x\d+/, '/preview/800x450').concat('-/format/webp/') : image} 
+              alt={title} 
+              class="rounded-lg w-full" 
+              width="800"
+              height="450"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
           ) : (
             <div class="aspect-video bg-muted rounded-lg flex items-center justify-center">
               <span class="text-muted-foreground">Hero Image</span>

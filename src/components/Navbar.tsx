@@ -158,6 +158,8 @@ export function Navbar() {
                 width={56}
                 height={56}
                 decoding="async"
+                loading="eager"
+                fetchPriority="high"
               />
               <div className="hidden sm:block">
                 <span className="font-bold text-lg text-brand-secondary">{siteConfig.business.name}</span>

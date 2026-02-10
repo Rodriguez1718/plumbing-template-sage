@@ -32,7 +32,15 @@ const {
           {images.length > 0 ? (
             images.map((img, i) => (
               <div class="aspect-square rounded-lg overflow-hidden">
-                <img src={img} alt={imageAlts[i] || `${title} - photo ${i + 1}`} class="w-full h-full object-cover" loading="lazy" />
+                <img 
+                  src={img.includes('ucarecdn.com') ? img.replace(/\/preview\/\d+x\d+/, '/preview/480x480').concat('-/format/webp/') : img} 
+                  alt={imageAlts[i] || `${title} - photo ${i + 1}`} 
+                  class="w-full h-full object-cover" 
+                  loading="lazy"
+                  width="480"
+                  height="480"
+                  decoding="async"
+                />
               </div>
             ))
           ) : (
@@ -74,7 +82,15 @@ const {
           {images.length > 0 ? (
             images.map((img, i) => (
               <div class="aspect-square rounded-lg overflow-hidden">
-                <img src={img} alt={imageAlts[i] || `${title} - photo ${i + 1}`} class="w-full h-full object-cover" loading="lazy" />
+                <img 
+                  src={img.includes('ucarecdn.com') ? img.replace(/\/preview\/\d+x\d+/, '/preview/480x480').concat('-/format/webp/') : img} 
+                  alt={imageAlts[i] || `${title} - photo ${i + 1}`} 
+                  class="w-full h-full object-cover" 
+                  loading="lazy"
+                  width="480"
+                  height="480"
+                  decoding="async"
+                />
               </div>
             ))
           ) : (

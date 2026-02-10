@@ -135,7 +135,8 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Hubot Sans', system-ui, sans-serif;
+    font-family: 'Hubot Sans', system-ui, -apple-system, sans-serif;
+    font-display: swap;
   }
   .container {
     @apply max-w-7xl;
