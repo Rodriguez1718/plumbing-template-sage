@@ -24,25 +24,151 @@ const { badge = "Testimonials", title, description, testimonials } = Astro.props
       <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4">{title}</h2>
       {description && <p class="text-muted-foreground max-w-3xl mx-auto">{description}</p>}
     </div>
-    
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" data-animate-stagger>
-      {testimonials.map((testimonial) => (
-        <div class="bg-card border rounded-lg p-6 hover:border-accent/30 transition-colors">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-full bg-muted flex items-center justify-center">
-              <span class="text-lg font-semibold">{testimonial.initials}</span>
-            </div>
-            <div>
-              <p class="font-semibold">{testimonial.name}</p>
-              <p class="text-xs text-muted-foreground">{testimonial.date}</p>
+
+    <div class="testimonials-carousel overflow-hidden cursor-grab active:cursor-grabbing select-none" data-animate="fade-up">
+      <div class="testimonials-marquee flex" style="will-change: transform;">
+        {/* Render cards twice for seamless loop */}
+        {[...testimonials, ...testimonials].map((testimonial) => (
+          <div class="flex-shrink-0 w-[300px] sm:w-[340px] px-3">
+            <div class="bg-card border rounded-lg p-6 hover:border-accent/30 transition-colors h-full flex flex-col">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 rounded-full bg-muted flex items-center justify-center">
+                  <span class="text-lg font-semibold">{testimonial.initials}</span>
+                </div>
+                <div>
+                  <p class="font-semibold">{testimonial.name}</p>
+                  <p class="text-xs text-muted-foreground">{testimonial.date}</p>
+                </div>
+              </div>
+              <div class="flex text-yellow-500 mb-3" aria-label={`${testimonial.rating} out of 5 stars`}>
+                {Array.from({ length: testimonial.rating }).map(() => "★").join("")}
+              </div>
+              <p class="text-sm text-muted-foreground flex-1">{testimonial.content}</p>
             </div>
           </div>
-          <div class="flex text-yellow-500 mb-3">
-            {Array.from({ length: testimonial.rating }).map(() => "★").join("")}
-          </div>
-          <p class="text-sm text-muted-foreground">{testimonial.content}</p>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  function initTestimonialsMarquee() {
+    document.querySelectorAll<HTMLElement>('.testimonials-carousel').forEach((carousel) => {
+      const marquee = carousel.querySelector<HTMLElement>('.testimonials-marquee');
+      if (!marquee) return;
+
+      // Prevent re-init
+      if (marquee.dataset.init === 'true') return;
+      marquee.dataset.init = 'true';
+
+      let offset = 0;
+      let speed = 0.5; // px per frame
+      let paused = false;
+      let dragging = false;
+      let dragStartX = 0;
+      let dragOffsetStart = 0;
+      let momentum = 0;
+      let rafId: number;
+
+      // Half-width = width of the original set of cards (before duplication)
+      function getHalfWidth(): number {
+        return marquee!.scrollWidth / 2;
+      }
+
+      function wrapOffset() {
+        const half = getHalfWidth();
+        if (half > 0) {
+          offset = ((offset % half) + half) % half;
+        }
+      }
+
+      function animate() {
+        if (dragging) {
+          // During drag, offset is set directly by pointer events
+        } else if (momentum !== 0) {
+          offset += momentum;
+          momentum *= 0.95;
+          if (Math.abs(momentum) < 0.1) momentum = 0;
+        } else if (!paused) {
+          offset += speed;
+        }
+        wrapOffset();
+        marquee!.style.transform = `translateX(-${offset}px)`;
+        rafId = requestAnimationFrame(animate);
+      }
+
+      // Auto-scroll pause on hover (only when not dragging)
+      carousel.addEventListener('mouseenter', () => { if (!dragging) paused = true; });
+      carousel.addEventListener('mouseleave', () => { paused = false; dragging = false; });
+
+      // --- Mouse drag ---
+      carousel.addEventListener('mousedown', (e: MouseEvent) => {
+        dragging = true;
+        paused = true;
+        momentum = 0;
+        dragStartX = e.clientX;
+        dragOffsetStart = offset;
+        e.preventDefault();
+      });
+
+      window.addEventListener('mousemove', (e: MouseEvent) => {
+        if (!dragging) return;
+        const delta = dragStartX - e.clientX;
+        offset = dragOffsetStart + delta;
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (!dragging) return;
+        dragging = false;
+        // Calculate momentum from final drag delta
+        momentum = offset - dragOffsetStart > 0 ? 2 : offset - dragOffsetStart < 0 ? -2 : 0;
+      });
+
+      // --- Touch drag ---
+      let touchStartX = 0;
+      let lastTouchX = 0;
+
+      carousel.addEventListener('touchstart', (e: TouchEvent) => {
+        dragging = true;
+        paused = true;
+        momentum = 0;
+        touchStartX = e.touches[0].clientX;
+        lastTouchX = touchStartX;
+        dragOffsetStart = offset;
+      }, { passive: true });
+
+      carousel.addEventListener('touchmove', (e: TouchEvent) => {
+        if (!dragging) return;
+        const currentX = e.touches[0].clientX;
+        const delta = touchStartX - currentX;
+        offset = dragOffsetStart + delta;
+        lastTouchX = currentX;
+      }, { passive: true });
+
+      carousel.addEventListener('touchend', () => {
+        if (!dragging) return;
+        dragging = false;
+        const totalDelta = offset - dragOffsetStart;
+        momentum = totalDelta > 0 ? 2 : totalDelta < 0 ? -2 : 0;
+        // Resume auto-scroll after a short delay
+        setTimeout(() => { paused = false; }, 2000);
+      }, { passive: true });
+
+      // Respect reduced motion
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        paused = true;
+      }
+
+      rafId = requestAnimationFrame(animate);
+
+      // Cleanup on page transition
+      document.addEventListener('astro:before-swap', () => {
+        cancelAnimationFrame(rafId);
+      }, { once: true });
+    });
+  }
+
+  initTestimonialsMarquee();
+  document.addEventListener('astro:page-load', initTestimonialsMarquee);
+</script>
