@@ -4,7 +4,7 @@ description: "Learn about ABC Plumbers - expert plumbing services you can trust 
 ---
 
 import HeroSection from "@/components/sections/HeroSection.astro"
-import ContentSection from "@/components/sections/ContentSection.astro"
+import PlaceholderContentSection from "@/components/sections/PlaceholderContentSection.astro"
 import PromoTilesSection from "@/components/sections/PromoTilesSection.astro"
 import FinancingPlansSection from "@/components/sections/FinancingPlansSection.astro"
 import FAQSection from "@/components/sections/FAQSection.astro"
@@ -17,17 +17,12 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   subtitle="With a dedication to quality workmanship, customer satisfaction, and transparent pricing."
   buttonText="SCHEDULE SERVICE"
   buttonHref="/contact"
-  image="https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
+  image="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1000&q=80"
 />
 
-<ContentSection
+<PlaceholderContentSection
   title="TO BE DETERMINED"
-  description="BASED ON THE CLIENT DISCOVERY CONVERSATION"
-  images={[
-    "https://ucarecdn.com/514fa2a4-9e6c-417b-8e38-fdab8ec5364a/-/preview/999x1000/",
-    "https://ucarecdn.com/315825d3-5856-474f-8ac1-f793441976f7/-/preview/1000x666/"
-  ]}
-  imagePosition="right"
+  subtitle="BASED ON THE CLIENT DISCOVERY CONVERSATION"
 />
 
 <PromoTilesSection
@@ -38,7 +33,8 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
       priceLabel: ["Starting at", "$14.33", "Priority Service"],
       phone: "(555) 123-4567",
       buttonText: "View Maintenance Plans",
-      buttonHref: "/maintenance-plan"
+      buttonHref: "/maintenance-plan",
+      bgImage: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80"
     },
     {
       type: "financing",
@@ -46,7 +42,8 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
       subtext: "Affordable payment plans available",
       phone: "(555) 123-4567",
       buttonText: "Apply Now",
-      buttonHref: "/financing"
+      buttonHref: "/financing",
+      bgImage: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
     },
     {
       type: "emergency",
@@ -55,7 +52,8 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
       subheadline: ["All Plumbing", "Repair Services"],
       phone: "(555) 123-4567",
       buttonText: "Call Now",
-      buttonHref: "/contact"
+      buttonHref: "/contact",
+      bgImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
     }
   ]}
 />
