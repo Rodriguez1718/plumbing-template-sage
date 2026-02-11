@@ -16,12 +16,31 @@ import CTAStrip from "@/components/sections/CTAStrip.astro"
 import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
 <HeroSection
-  badge="5% OFF all plumbing services for new commercial construction projects"
-  title="Building Your Dream Business? We're Here To Help!"
-  subtitle="Professional plumbing solutions for residential and commercial properties in Los Angeles."
   buttonText="Call Now"
   buttonHref="tel:123-456-7890"
-  image="https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
+  slides={[
+    {
+      title: "Building Your Dream Business? We're Here To Help!",
+      subtitle: "Professional plumbing solutions for residential and commercial properties in Los Angeles.",
+      image: "https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/",
+      promoTitle: "5% OFF",
+      promoText: "for new commercial projects"
+    },
+    {
+      title: "Shower Installation Special!",
+      subtitle: "Upgrade to a luxurious rain shower, a convenient walk-in shower, or a relaxing jetted shower.",
+      image: "https://59d9vvag7y.ucarecd.net/e8a4f4fd-5048-4e3d-8e91-763d685d5bd4/-/preview/1000x665/",
+      promoTitle: "15% OFF",
+      promoText: "all new shower installations during your bathroom remodel."
+    },
+    {
+      title: "Toilet Overflows & Burst Pipes? We're Your 24/7 Rescue!",
+      subtitle: "Don't let water damage ruin your day. Call us now!",
+      image: "https://59d9vvag7y.ucarecd.net/4029464b-0696-4b67-b02b-1870e3986759/-/preview/1000x562/",
+      promoTitle: "Get 20% OFF",
+      promoText: "All emergency plumbing services for bathroom issues."
+    }
+  ]}
 />
 
 <TrustBadges

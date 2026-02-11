@@ -1,0 +1,129 @@
+---
+title: "Service Areas"
+description: "Providing expert plumbing solutions across Los Angeles and surrounding areas. Residential and commercial plumbing services with 24/7 emergency support. Call 123-456-7890!"
+---
+
+import HeroSection from "@/components/sections/HeroSection.astro"
+import ContentSectionAlt from "@/components/sections/ContentSectionAlt.astro"
+import CouponsSection from "@/components/sections/CouponsSection.astro"
+import ServiceCardsGridSection from "@/components/sections/ServiceCardsGridSection.astro"
+import CTAStrip from "@/components/sections/CTAStrip.astro"
+import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
+
+<HeroSection
+  variant="subpage"
+  title="Service Areas"
+  subtitle="Providing expert plumbing solutions to homes and businesses across Los Angeles, ensuring reliable and efficient services every time. Call us at 123-456-7890 for expert assistance!"
+  buttonText="SCHEDULE SERVICE"
+  buttonHref="/contact"
+  image="https://ucarecdn.com/f2844f4a-fb1f-4bae-af04-38db79fe8902/-/preview/1000x562/"
+  trustIndicators={[
+    "Serving New York for 20 Years",
+    "24-Hour Emergency Service Available",
+    "Quality Service"
+  ]}
+/>
+
+
+<ContentSectionAlt
+  badge="SERVICE AREAS"
+  title="Expert Plumbing Solutions for"
+  titleHighlight="Los Angeles, CA"
+  description="At ABC Plumbers, we proudly serve a wide range of communities across Los Angeles and the surrounding areas. Our team of licensed and insured plumbing professionals is dedicated to providing top-quality plumbing services, covering everything from routine maintenance to emergency repairs."
+  featuresTitle="Key Benefits"
+  features={[
+    {
+      title: "Local Expertise",
+      description: "Deep knowledge of Los Angeles plumbing systems and local building codes."
+    },
+    {
+      title: "Mobile Service",
+      description: "Fully equipped service vehicles ready to respond across all service areas."
+    },
+    {
+      title: "24/7 Emergency Support",
+      description: "Round-the-clock emergency plumbing services available in all areas we serve."
+    }
+  ]}
+  image="https://ucarecdn.com/514fa2a4-9e6c-417b-8e38-fdab8ec5364a/-/preview/999x1000/"
+  imagePosition="left"
+/>
+
+<CouponsSection
+  coupons={[
+    {
+      label: "Senior & Military",
+      discount: "10% OFF",
+      description: "Senior & Military Discounts. Cannot be combined with any other offer.",
+      expires: "Coupon Expires 12/31"
+    },
+    {
+      label: "Free Camera Inspection",
+      discount: "FREE",
+      description: "Free Camera Inspection with any drain cleaning. Call for details.",
+      expires: "Coupon Expires 12/31"
+    },
+    {
+      label: "Plumbing",
+      discount: "50% OFF",
+      description: "Any Typical Drill Line. Cannot be combined with any other offer.",
+      expires: "Offer Expires 12/31"
+    }
+  ]}
+/>
+
+<ServiceCardsGridSection
+  title="Related Services"
+  services={[
+    {
+      image: "https://ucarecdn.com/904d12f4-36c2-4c11-99c9-c22ebbc905fe/-/preview/1000x666/",
+      icon: "kitchen",
+      title: "Residential Plumbing Services",
+      href: "/residential-plumbing"
+    },
+    {
+      image: "https://ucarecdn.com/b2b720dc-bf04-4366-a627-124001e3746e/-/preview/1000x666/",
+      icon: "building",
+      title: "Commercial Plumbing Services",
+      href: "/commercial"
+    },
+    {
+      image: "https://ucarecdn.com/075a53c5-b442-4211-bd8d-baf6977b3f87/-/preview/1000x666/",
+      icon: "leak",
+      title: "Specialty Plumbing Services",
+      href: "/specialty"
+    },
+    {
+      image: "https://ucarecdn.com/f0f1f6f3-d381-4c74-8d86-0a5cb24648f0/-/preview/1000x666/",
+      icon: "pipe",
+      title: "Maintenance Services",
+      href: "/maintenance"
+    }
+  ]}
+/>
+
+<CTAStrip
+  buttonText="SCHEDULE NOW"
+  buttonHref="/contact"
+  phoneLabel="Call or Text for Great Service"
+  phone="123-456-7890"
+  features={[
+    { icon: "siren", text: "24/7 Emergency Service" },
+    { icon: "award", text: "Experienced and Certified Technicians" }
+  ]}
+/>
+
+<ServiceAreaSection
+  title="Expert Plumbing Services in Los Angeles and Surrounding Areas"
+  description="Looking for reliable plumbing services in Los Angeles? We provide expert residential and commercial solutions across the city, from Hollywood Hills to Santa Monica. Whether you need leak detection, drain cleaning, water heater repairs, or advanced pipe relining, our licensed team serves your area with speed, skill, and care. We offer reliable maintenance and 24/7 emergency services to keep your plumbing in top shape. Serving neighborhoods like Downtown LA, Beverly Hills, and Glendale, we are committed to quality, efficiency, and customer satisfaction. Call us today to schedule your service!"
+  areas={[
+    "Santa Monica", "Pasadena", "Glendale", "Culver City", "Downtown Los Angeles", "Hollywood",
+    "Beverly Hills", "Venice", "Westwood", "San Fernando Valley",
+    "San Diego", "El Monte", "West Hollywood", "Beverly Hills", "Encino",
+    "Los Feliz/Silverlake", "Burbank", "San Gabriel Valley", "Arcadia",
+    "Torrance", "Long Beach", "Inglewood", "El Segundo", "Brentwood",
+    "Silver Lake", "Echo Park", "Hancock Park", "Marina del Rey", "Manhattan Beach",
+    "El Segundo", "Brentwood", "Sherman Oaks", "Torrance Park", "Gardena/Harbor City", "Silverlake/Echo"
+  ]}
+  mapAddress="Los Angeles, CA"
+/>

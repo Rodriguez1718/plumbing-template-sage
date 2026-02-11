@@ -122,9 +122,7 @@ const {
     popup.classList.remove("hidden");
     popup.classList.add("flex");
     document.body.style.overflow = "hidden";
-    if (popup.getAttribute("data-show-once") === "true") {
-      sessionStorage.setItem("popup-shown", "true");
-    }
+    sessionStorage.setItem("popup-shown", "true");
   }
 
   function closePopup() {
@@ -139,9 +137,8 @@ const {
     const popup = document.getElementById("popup-modal");
     if (!popup) return;
 
-    const showOnce = popup.getAttribute("data-show-once") === "true";
+    const alreadyShown = sessionStorage.getItem("popup-shown") === "true";
     const triggerId = popup.getAttribute("data-trigger-id");
-    const alreadyShown = showOnce && sessionStorage.getItem("popup-shown");
 
     document.getElementById("close-popup")?.addEventListener("click", closePopup);
     document.getElementById("close-popup-bottom")?.addEventListener("click", closePopup);
@@ -153,7 +150,9 @@ const {
     if (triggerId) {
       document.getElementById(triggerId)?.addEventListener("click", (e) => {
         e.preventDefault();
-        showPopup();
+        if (sessionStorage.getItem("popup-shown") !== "true") {
+          showPopup();
+        }
       });
     }
 
@@ -163,11 +162,6 @@ const {
     }
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initPopup);
-  } else {
-    initPopup();
-  }
   document.addEventListener("astro:page-load", initPopup);
 </script>
 

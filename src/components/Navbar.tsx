@@ -45,10 +45,10 @@ function TopNavDropdown({ item }: { item: typeof topNavItems[0] }) {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <button className="flex items-center gap-1 text-sm font-medium text-white hover:opacity-80 transition-opacity py-2">
-        {item.title}
+      <div className="flex items-center gap-1 text-sm font-medium text-white hover:opacity-80 transition-opacity py-2">
+        <a href={item.href}>{item.title}</a>
         <ChevronDown className={`h-3 w-3 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-      </button>
+      </div>
       {isOpen && (
         <>
           {/* Invisible bridge to prevent dropdown from closing */}
@@ -118,7 +118,7 @@ function ServiceNavItem({ item }: { item: MegaMenuItem }) {
       onMouseLeave={() => setIsOpen(false)}
     >
       <div className="flex items-center gap-1 text-sm font-semibold text-white hover:bg-white/10 transition-colors px-4 h-full">
-        <a href={item.href} className="hover:underline">
+        <a href={item.href}>
           {item.title}
         </a>
         <ChevronDown className={`h-3 w-3 transition-transform ${isOpen ? 'rotate-180' : ''}`} />

@@ -1,4 +1,13 @@
 ---
+interface HeroSlide {
+  title: string;
+  subtitle?: string;
+  image: string;
+  promoTitle?: string;
+  promoText?: string;
+  buttonText?: string;
+}
+
 interface Props {
   badge?: string;
   title: string;
@@ -6,21 +15,33 @@ interface Props {
   buttonText?: string;
   buttonHref?: string;
   image?: string;
-  variant?: "default" | "subpage";
-  trustIndicators?: string[];
+  slides?: HeroSlide[];
+  variant?: "default" | "subpage" | "category";
 }
 
-const { badge, title, subtitle, buttonText = "Call Now", buttonHref = "tel:123-456-7890", image, variant = "default", trustIndicators = [] } = Astro.props;
+const {
+  badge,
+  title,
+  subtitle,
+  buttonText = "Call Now",
+  buttonHref = "tel:123-456-7890",
+  image,
+  slides = [],
+  variant = "default",
+} = Astro.props;
+
+const hasSlideshow = slides.length > 1;
 ---
 
 {variant === "subpage" ? (
-  <section class="relative bg-primary overflow-hidden">
+  <section class="relative bg-primary">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 min-h-[400px] md:min-h-[450px]">
         <div class="relative flex items-center py-12 md:py-16 pr-8">
           {badge && (
-            <div class="absolute top-0 left-0 right-0">
-              <span class="inline-block text-[#7eb8e7] text-sm font-semibold uppercase tracking-wider pt-8">
+            <div class="absolute top-0 left-0 right-0 pt-8">
+              <span class="inline-flex items-center gap-2 text-white/80 text-xs font-bold uppercase tracking-[0.2em]">
+                <span class="w-8 h-px bg-white/60"></span>
                 {badge}
               </span>
             </div>
@@ -37,33 +58,11 @@ const { badge, title, subtitle, buttonText = "Call Now", buttonHref = "tel:123-4
             <a href={buttonHref} class="inline-flex items-center justify-center rounded-md bg-accent text-accent-foreground px-6 py-3 font-semibold hover:bg-accent/90 transition-colors">
               {buttonText}
             </a>
-            {trustIndicators.length > 0 && (
-              <div class="flex flex-wrap gap-4 mt-6">
-                {trustIndicators.map((indicator) => (
-                  <div class="flex items-center gap-2 text-primary-foreground/90 text-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                      <polyline points="22 4 12 14.01 9 11.01" />
-                    </svg>
-                    <span>{indicator}</span>
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
         </div>
         <div class="hidden md:block relative -mr-4 md:-mr-[calc((100vw-100%)/2+1rem)]">
           {image ? (
-            <img 
-              src={image.includes('ucarecdn.com') ? image.replace(/\/preview\/\d+x\d+/, '/preview/800x600').concat('-/format/webp/') : image} 
-              alt={title} 
-              class="absolute inset-0 w-full h-full object-cover" 
-              width="800"
-              height="600"
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-            />
+            <img src={image} alt={title} class="absolute inset-0 w-full h-full object-cover" />
           ) : (
             <div class="absolute inset-0 bg-muted flex items-center justify-center">
               <span class="text-muted-foreground">Hero Image</span>
@@ -73,11 +72,12 @@ const { badge, title, subtitle, buttonText = "Call Now", buttonHref = "tel:123-4
       </div>
     </div>
   </section>
-) : (
+) : variant === "category" ? (
+  <!-- Category hero: gradient background with side image -->
   <section class="relative bg-gradient-to-br from-primary/10 to-background py-20 md:py-32">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="text-center md:text-left" data-animate="fade-right">
+        <div class="text-center md:text-left">
           {badge && (
             <span class="inline-block bg-destructive text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
               {badge}
@@ -95,18 +95,9 @@ const { badge, title, subtitle, buttonText = "Call Now", buttonHref = "tel:123-4
             {buttonText}
           </a>
         </div>
-        <div class="hidden md:block" data-animate="fade-left">
+        <div class="hidden md:block">
           {image ? (
-            <img 
-              src={image.includes('ucarecdn.com') ? image.replace(/\/preview\/\d+x\d+/, '/preview/800x450').concat('-/format/webp/') : image} 
-              alt={title} 
-              class="rounded-lg w-full" 
-              width="800"
-              height="450"
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-            />
+            <img src={image} alt={title} class="rounded-lg w-full aspect-video object-cover" />
           ) : (
             <div class="aspect-video bg-muted rounded-lg flex items-center justify-center">
               <span class="text-muted-foreground">Hero Image</span>
@@ -116,4 +107,314 @@ const { badge, title, subtitle, buttonText = "Call Now", buttonHref = "tel:123-4
       </div>
     </div>
   </section>
+) : slides.length > 0 ? (
+  <!-- Slideshow hero -->
+  <section class="hero-slideshow relative overflow-hidden bg-primary" style="min-height: 540px;">
+    <!-- Background images -->
+    {slides.map((slide, i) => (
+      <div
+        class:list={[
+          "hero-bg absolute inset-0 transition-opacity duration-1000 ease-in-out",
+          i === 0 ? "opacity-100" : "opacity-0"
+        ]}
+        data-bg-index={i}
+      >
+        <img
+          src={slide.image}
+          alt={slide.title}
+          class="absolute inset-0 w-full h-full object-cover"
+          loading={i === 0 ? "eager" : "lazy"}
+          fetchpriority={i === 0 ? "high" : "low"}
+          decoding="async"
+        />
+        <div class="absolute inset-0 bg-primary/85"></div>
+      </div>
+    ))}
+
+    <!-- Content layer -->
+    <div class="relative z-10 container mx-auto px-4 py-16 md:py-24 lg:py-28">
+      <div class="grid md:grid-cols-5 gap-8 lg:gap-12 items-center min-h-[380px]">
+
+        <!-- Left: text content -->
+        <div class="md:col-span-3 relative" style="min-height: 260px;">
+          {slides.map((slide, i) => (
+            <div
+              class:list={[
+                "hero-text absolute inset-0 flex flex-col justify-center transition-all duration-700",
+                i === 0 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              ]}
+              data-text-index={i}
+            >
+              <h1 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground mb-4 leading-tight">
+                {slide.title}
+              </h1>
+              {slide.subtitle && (
+                <p class="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-xl">
+                  {slide.subtitle}
+                </p>
+              )}
+              <div>
+                <a
+                  href={buttonHref}
+                  class="inline-flex items-center justify-center rounded-md bg-accent text-accent-foreground px-8 py-4 text-lg font-semibold hover:bg-accent/90 transition-colors"
+                >
+                  {slide.buttonText || buttonText}
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Right: promo box -->
+        <div class="md:col-span-2 flex justify-center md:justify-end relative" style="min-height: 260px;">
+          {slides.map((slide, i) => (
+            slide.promoTitle && (
+              <div
+                class:list={[
+                  "hero-promo absolute inset-0 flex items-center justify-center md:justify-end transition-all duration-700",
+                  i === 0 ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                ]}
+                data-promo-index={i}
+              >
+                <div class="promo-card relative max-w-[280px] w-full">
+                  <!-- Decorative corner accent -->
+                  <div class="absolute -top-3 -right-3 w-16 h-16 bg-secondary rounded-full opacity-30 blur-md"></div>
+                  <div class="absolute -bottom-2 -left-2 w-12 h-12 bg-secondary rounded-full opacity-20 blur-md"></div>
+
+                  <!-- Card body -->
+                  <div class="relative overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)]">
+                    <!-- Top ribbon -->
+                    <div class="bg-secondary px-5 py-2.5 text-center">
+                      <span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary-foreground">Limited Time Offer</span>
+                    </div>
+
+                    <!-- Main content area -->
+                    <div class="bg-accent px-6 py-8 text-center relative">
+                      <!-- Subtle radial glow behind the number -->
+                      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.08)_0%,_transparent_70%)]"></div>
+
+                      <!-- Discount value -->
+                      <div class="relative">
+                        <div class="promo-value text-5xl md:text-6xl font-black text-accent-foreground leading-none tracking-tight">
+                          {slide.promoTitle}
+                        </div>
+                      </div>
+
+                      <!-- Divider -->
+                      <div class="flex items-center gap-3 my-5">
+                        <div class="flex-1 h-px bg-accent-foreground/20"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-accent-foreground/40" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 0L13.5 9.5L24 12L13.5 14.5L12 24L10.5 14.5L0 12L10.5 9.5Z" />
+                        </svg>
+                        <div class="flex-1 h-px bg-accent-foreground/20"></div>
+                      </div>
+
+                      <!-- Description -->
+                      <p class="relative text-sm md:text-base text-accent-foreground/90 leading-relaxed">
+                        {slide.promoText}
+                      </p>
+                    </div>
+
+                    <!-- Bottom edge accent -->
+                    <div class="h-1.5 bg-gradient-to-r from-secondary via-accent to-secondary"></div>
+                  </div>
+                </div>
+              </div>
+            )
+          ))}
+        </div>
+      </div>
+
+      <!-- Progress bar indicators -->
+      {hasSlideshow && (
+        <div class="hero-progress flex gap-3 mt-8 max-w-xs">
+          {slides.map((_, i) => (
+            <button
+              type="button"
+              class="hero-progress-bar group relative h-1 flex-1 rounded-full bg-primary-foreground/20 overflow-hidden cursor-pointer"
+              data-progress-index={i}
+              aria-label={`Go to slide ${i + 1}`}
+            >
+              <span
+                class:list={[
+                  "hero-fill absolute inset-y-0 left-0 bg-accent rounded-full",
+                  i === 0 ? "w-0 animate-hero-fill" : "w-0"
+                ]}
+                data-fill-index={i}
+              ></span>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+) : (
+  <!-- Static single-image hero (original) -->
+  <section class="relative bg-gradient-to-br from-primary/10 to-background py-20 md:py-32">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="text-center md:text-left">
+          {badge && (
+            <span class="inline-block bg-destructive text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
+              {badge}
+            </span>
+          )}
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            {title}
+          </h1>
+          {subtitle && (
+            <p class="text-xl text-muted-foreground mb-8">
+              {subtitle}
+            </p>
+          )}
+          <a href={buttonHref} class="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-8 py-4 text-lg font-semibold hover:bg-primary/90 transition-colors">
+            {buttonText}
+          </a>
+        </div>
+        <div class="hidden md:block">
+          {image ? (
+            <img src={image} alt={title} class="rounded-lg w-full" />
+          ) : (
+            <div class="aspect-video bg-muted rounded-lg flex items-center justify-center">
+              <span class="text-muted-foreground">Hero Image</span>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  @keyframes hero-fill {
+    from { width: 0%; }
+    to { width: 100%; }
+  }
+  .animate-hero-fill {
+    animation: hero-fill 5s linear forwards;
+  }
+
+  /* Promo card shimmer on the discount value */
+  .promo-value {
+    background: linear-gradient(
+      110deg,
+      var(--accent-foreground) 0%,
+      var(--accent-foreground) 40%,
+      rgba(255,255,255,0.95) 50%,
+      var(--accent-foreground) 60%,
+      var(--accent-foreground) 100%
+    );
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: promo-shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes promo-shimmer {
+    0%, 100% { background-position: 100% center; }
+    50% { background-position: 0% center; }
+  }
+
+  /* Subtle float for the promo card */
+  .promo-card {
+    animation: promo-float 4s ease-in-out infinite;
+  }
+
+  @keyframes promo-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+</style>
+
+{hasSlideshow && (
+  <script>
+    function initHeroSlideshow() {
+      const bgs = document.querySelectorAll<HTMLElement>('.hero-bg');
+      const texts = document.querySelectorAll<HTMLElement>('.hero-text');
+      const promos = document.querySelectorAll<HTMLElement>('.hero-promo');
+      const fills = document.querySelectorAll<HTMLElement>('.hero-fill');
+      const bars = document.querySelectorAll<HTMLButtonElement>('.hero-progress-bar');
+
+      if (bgs.length < 2) return;
+
+      let current = 0;
+      const total = bgs.length;
+      const duration = 5000;
+      let timer: ReturnType<typeof setTimeout>;
+
+      function goTo(index: number) {
+        // Background crossfade
+        bgs.forEach((bg, i) => {
+          bg.classList.toggle('opacity-100', i === index);
+          bg.classList.toggle('opacity-0', i !== index);
+        });
+
+        // Text slide
+        texts.forEach((t, i) => {
+          if (i === index) {
+            t.classList.remove('opacity-0', 'translate-y-4');
+            t.classList.add('opacity-100', 'translate-y-0');
+          } else {
+            t.classList.remove('opacity-100', 'translate-y-0');
+            t.classList.add('opacity-0', 'translate-y-4');
+          }
+        });
+
+        // Promo box
+        promos.forEach((p, i) => {
+          if (i === index) {
+            p.classList.remove('opacity-0', 'scale-95');
+            p.classList.add('opacity-100', 'scale-100');
+          } else {
+            p.classList.remove('opacity-100', 'scale-100');
+            p.classList.add('opacity-0', 'scale-95');
+          }
+        });
+
+        // Progress fills
+        fills.forEach((f, i) => {
+          f.classList.remove('animate-hero-fill');
+          f.style.width = i < index ? '100%' : '0%';
+          if (i === index) {
+            // Force reflow to restart animation
+            void f.offsetWidth;
+            f.style.width = '';
+            f.classList.add('animate-hero-fill');
+          }
+        });
+
+        current = index;
+      }
+
+      function next() {
+        goTo((current + 1) % total);
+        scheduleNext();
+      }
+
+      function scheduleNext() {
+        clearTimeout(timer);
+        timer = setTimeout(next, duration);
+      }
+
+      // Click on progress bars
+      bars.forEach((bar) => {
+        bar.addEventListener('click', () => {
+          const idx = Number(bar.dataset.progressIndex);
+          goTo(idx);
+          scheduleNext();
+        });
+      });
+
+      // Start autoplay
+      scheduleNext();
+    }
+
+    document.addEventListener('astro:page-load', initHeroSlideshow);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initHeroSlideshow);
+    } else {
+      initHeroSlideshow();
+    }
+  </script>
 )}
