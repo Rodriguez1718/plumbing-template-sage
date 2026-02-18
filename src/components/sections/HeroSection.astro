@@ -1,4 +1,6 @@
 ---
+import { getLocationText } from "@/config/site"
+
 interface HeroSlide {
   title: string;
   subtitle?: string;
@@ -19,16 +21,47 @@ interface Props {
   variant?: "default" | "subpage" | "category";
 }
 
+interface Props {
+  badge?: string;
+  title: string;
+  subtitle?: string;
+  buttonText?: string;
+  buttonHref?: string;
+  image?: string;
+  slides?: HeroSlide[];
+  variant?: "default" | "subpage" | "category";
+  trustIndicators?: string[];
+}
+
 const {
   badge,
-  title,
-  subtitle,
-  buttonText = "Call Now",
-  buttonHref = "tel:123-456-7890",
+  title: rawTitle,
+  subtitle: rawSubtitle,
+  buttonText: rawButtonText = "Call Now",
+  buttonHref: rawButtonHref = "tel:{phoneRaw}",
   image,
-  slides = [],
+  slides: rawSlides = [],
   variant = "default",
+  trustIndicators: rawTrustIndicators,
 } = Astro.props;
+
+// Process all text placeholders
+const title = rawTitle ? getLocationText(rawTitle) : "";
+const subtitle = rawSubtitle ? getLocationText(rawSubtitle) : undefined;
+const badge_processed = badge ? getLocationText(badge) : undefined;
+const buttonText = getLocationText(rawButtonText);
+const buttonHref = getLocationText(rawButtonHref);
+const trustIndicators = rawTrustIndicators ? rawTrustIndicators.map(t => getLocationText(t)) : undefined;
+
+// Process slide text
+const slides = rawSlides.map(slide => ({
+  ...slide,
+  title: getLocationText(slide.title),
+  subtitle: slide.subtitle ? getLocationText(slide.subtitle) : undefined,
+  promoTitle: slide.promoTitle ? getLocationText(slide.promoTitle) : undefined,
+  promoText: slide.promoText ? getLocationText(slide.promoText) : undefined,
+  buttonText: slide.buttonText ? getLocationText(slide.buttonText) : undefined,
+}));
 
 const hasSlideshow = slides.length > 1;
 ---
@@ -38,11 +71,11 @@ const hasSlideshow = slides.length > 1;
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 min-h-[400px] md:min-h-[450px]">
         <div class="relative flex items-center py-12 md:py-16 pr-8">
-          {badge && (
+          {badge_processed && (
             <div class="absolute top-0 left-0 right-0 pt-8">
               <span class="inline-flex items-center gap-2 text-white/80 text-xs font-bold uppercase tracking-[0.2em]">
                 <span class="w-8 h-px bg-white/60"></span>
-                {badge}
+                {badge_processed}
               </span>
             </div>
           )}

@@ -1,4 +1,6 @@
 ---
+import { getLocationText } from "@/config/site"
+
 interface JobOpening {
   title: string;
   type?: string;
@@ -16,7 +18,14 @@ interface Props {
   introDescription?: string;
 }
 
-const { badge, title, description, jobs, introTitle, introDescription } = Astro.props;
+const { badge: raw_badge, title: raw_title, description: raw_description, jobs, introTitle: raw_introTitle, introDescription: raw_introDescription } = Astro.props;
+
+// Process text placeholders
+const title = raw_title ? getLocationText(raw_title) : raw_title;
+const description = raw_description ? getLocationText(raw_description) : raw_description;
+const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
+const introTitle = raw_introTitle ? getLocationText(raw_introTitle) : raw_introTitle;
+const introDescription = raw_introDescription ? getLocationText(raw_introDescription) : raw_introDescription;
 ---
 
 <section class="py-16 md:py-24 bg-muted/30">

@@ -1,6 +1,7 @@
 ---
 import { getEntry } from "astro:content"
 import BaseLayout from "@/layouts/BaseLayout.astro"
+import { getLocationText } from "@/config/site"
 
 const page = await getEntry("pages", "index")
 if (!page) throw new Error("index.mdx not found in src/content/pages/")
@@ -8,8 +9,8 @@ const { Content } = await page.render()
 ---
 
 <BaseLayout 
-  title={page.data.title} 
-  description={page.data.description}
+  title={getLocationText(page.data.title)} 
+  description={getLocationText(page.data.description || "")}
   keywords={page.data.keywords}
   ogImage={page.data.ogImage}
 >

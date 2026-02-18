@@ -1,6 +1,6 @@
 ---
 title: "Get a Quote - Contact Us"
-description: "Get in touch with ABC Plumbers for fast, reliable plumbing solutions. Request a quote, schedule service, or ask questions. Call 123-456-7890!"
+description: "Get in touch with {fullName} for fast, reliable plumbing solutions. Request a quote, schedule service, or ask questions. Call {phone}!"
 ---
 
 import HeroSection from "@/components/sections/HeroSection.astro"
@@ -8,10 +8,11 @@ import ContactFormSection from "@/components/sections/ContactFormSection.astro"
 import CTAStrip from "@/components/sections/CTAStrip.astro"
 import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
+
 <HeroSection
   variant="subpage"
   title="Contact Us"
-  subtitle="Get in touch for fast, reliable plumbing solutions in Your City/Service Area. We're here to help with all your plumbing needs, big or small."
+  subtitle="Get in touch for fast, reliable plumbing solutions in {city} and surrounding areas. We're here to help with all your plumbing needs, big or small."
   buttonText="SCHEDULE SERVICE"
   buttonHref="#contact-form"
   image="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1000&q=80"
@@ -23,21 +24,21 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 />
 
 <ContactFormSection
-  title="Get in Touch with ABC Plumbers"
+  title="Get in Touch with {fullName}"
   description="Fill out the form, and a member of our team will get back to you promptly. Whether you're looking for a quick repair, a detailed quote, or general advice, we've got you covered."
   image="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80"
-  phone="123-456-7890"
-  email="domain@domain.com"
-  address="Los Angeles, CA"
+  phone="{phone}"
+  email={"{email}"}
+  address="{city}, {state}"
   serviceOptions={["Residential Plumbing", "Commercial Plumbing", "Emergency Service", "Drain Cleaning", "Water Heater", "Maintenance", "Other"]}
   planOptions={["Yes", "No", "Not Sure"]}
 />
 
 <CTAStrip
   buttonText="SCHEDULE NOW"
-  buttonHref="tel:123-456-7890"
+  buttonHref="tel:{phoneRaw}"
   phoneLabel="Call or Text for Great Service"
-  phone="123-456-7890"
+  phone="{phone}"
   borderColor="#7dd3fc"
   features={[
     { icon: "siren", text: "24/7 Emergency Service" },
@@ -47,14 +48,14 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
 
 <ServiceAreaSection
-  title="Expert Plumbing Services in Los Angeles and Surrounding Areas"
-  description="Looking for reliable plumbing services in Los Angeles? We provide expert residential and commercial solutions across the city, from Hollywood Hills to Santa Monica. Whether you need leak detection, drain cleaning, water heater repairs, or advanced pipe relining, our licensed team serves your area with speed, skill, and care."
+  title="Expert Plumbing Services in {city} and Surrounding Areas"
+  description="Looking for reliable plumbing services in {city}? We provide expert residential and commercial solutions across the city. Whether you need leak detection, drain cleaning, water heater repairs, or advanced pipe relining, our licensed team serves your area with speed, skill, and care."
   areas={[
-    "Santa Monica", "Pasadena", "Glendale", "Downtown Los Angeles", "Hollywood",
+    "Santa Monica", "Pasadena", "Glendale", "Downtown {city}", "Hollywood",
     "Beverly Hills", "Venice", "Westwood", "Culver City", "San Fernando Valley",
     "Sherman Oaks", "Encino", "Burbank", "Torrance", "Long Beach", "Inglewood",
     "El Segundo", "Brentwood", "Silver Lake", "Echo Park", "Hancock Park",
     "Marina del Rey", "Manhattan Beach"
   ]}
-  mapAddress="Los Angeles, CA"
+  mapAddress="{city}, {state}"
 />

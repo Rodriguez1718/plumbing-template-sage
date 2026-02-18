@@ -1,6 +1,6 @@
 ---
 title: "Standard Water Heater Repair and Replacement"
-description: "Expert standard water heater repair and replacement services in Los Angeles."
+description: "Expert standard water heater repair and replacement services in {city}."
 ---
 
 import HeroSection from "@/components/sections/HeroSection.astro"
@@ -10,6 +10,7 @@ import FinancingPlansSection from "@/components/sections/FinancingPlansSection.a
 import FAQSection from "@/components/sections/FAQSection.astro"
 import CTAStrip from "@/components/sections/CTAStrip.astro"
 import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
+
 
 <HeroSection
   variant="subpage"
@@ -31,7 +32,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
       type: "maintenance",
       title: "MAINTENANCE PLAN",
       priceLabel: ["Starting at", "$94.33", "per month"],
-      phone: "123-456-7890",
+      phone: "{phone}",
       buttonText: "View Maintenance Plans",
       buttonHref: "/maintenance-plan",
       bgImage: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80"
@@ -40,7 +41,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
       type: "financing",
       headline: ["NO INTEREST", "NO PAYMENT", "UNTIL 2026"],
       subtext: "Subject to credit approval",
-      phone: "123-456-7890",
+      phone: "{phone}",
       buttonText: "Explore Financing Options",
       buttonHref: "/financing",
       bgImage: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
@@ -50,7 +51,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
       tag: "Limited Time Offer",
       discount: "20% OFF",
       subheadline: ["ALL PLUMBING", "SERVICES"],
-      phone: "123-456-7890",
+      phone: "{phone}",
       buttonText: "SCHEDULE NOW",
       buttonHref: "/contact",
       bgImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
@@ -91,7 +92,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   buttonText="SCHEDULE NOW"
   buttonHref="/contact"
   phoneLabel="Call or Text for Great Service"
-  phone="123-456-7890"
+  phone="{phone}"
   features={[
     { icon: "siren", text: "24/7 Emergency Service" },
     { icon: "award", text: "Experienced and Certified Technicians" }
@@ -100,9 +101,9 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
 <ServiceAreaSection
   variant="compact"
-  title="Proudly Serving Los Angeles"
-  description="We provide reliable plumbing services for the entire Los Angeles area, including Santa Monica, Pasadena, and Glendale. Contact us today for quality plumbing solutions and Maintenance Plans to keep your home in top shape."
-  mapAddress="Los Angeles, CA"
+  title="Proudly Serving {city}"
+  description="We provide reliable plumbing services for the entire {city} area, including Santa Monica, Pasadena, and Glendale. Contact us today for quality plumbing solutions and Maintenance Plans to keep your home in top shape."
+  mapAddress="{city}, {state}"
   buttonText="SERVICE AREAS"
   buttonHref="/service-areas"
 />

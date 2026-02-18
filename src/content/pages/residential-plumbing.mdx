@@ -1,6 +1,6 @@
 ---
 title: "Residential Plumbing Services"
-description: "Professional residential plumbing services in Los Angeles. From kitchen and bathroom plumbing to leak detection, water heaters, and drain services — ABC Plumbers has you covered."
+description: "Professional residential plumbing services in {city}. From kitchen and bathroom plumbing to leak detection, water heaters, and drain services — {fullName} has you covered."
 ---
 
 import HeroSection from "@/components/sections/HeroSection.astro"
@@ -12,6 +12,7 @@ import CouponsSection from "@/components/sections/CouponsSection.astro"
 import FAQSection from "@/components/sections/FAQSection.astro"
 import CTAStrip from "@/components/sections/CTAStrip.astro"
 import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
+
 
 <HeroSection
   variant="category"
@@ -48,9 +49,9 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 />
 
 <ContentSection
-  badge="Why Choose ABC Plumbers"
+  badge="Why Choose {fullName}"
   title="Your Home Deserves the Best Plumbing Care"
-  description="With over 20 years of experience serving Los Angeles homeowners, ABC Plumbers combines expert craftsmanship with honest pricing. We treat every home like our own, providing lasting repairs and installations backed by our satisfaction guarantee."
+  description="With over 20 years of experience serving {city} homeowners, {fullName} combines expert craftsmanship with honest pricing. We treat every home like our own, providing lasting repairs and installations backed by our satisfaction guarantee."
   features={[
     "Licensed, Insured & Background-Checked Plumbers",
     "Upfront Pricing — No Surprises",
@@ -115,7 +116,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   buttonText="SCHEDULE NOW"
   buttonHref="/contact"
   phoneLabel="Call or Text for Great Service"
-  phone="123-456-7890"
+  phone="{phone}"
   features={[
     { icon: "siren", text: "24/7 Emergency Service" },
     { icon: "award", text: "Experienced & Certified Technicians" }
@@ -124,9 +125,9 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
 <ServiceAreaSection
   variant="compact"
-  title="Proudly Serving Los Angeles"
-  description="We provide reliable residential plumbing services throughout Los Angeles and nearby areas like Santa Monica, Pasadena, and Glendale. Contact us to see if we serve your neighborhood!"
+  title="Proudly Serving {city}"
+  description="We provide reliable residential plumbing services throughout {city} and nearby areas like Santa Monica, Pasadena, and Glendale. Contact us to see if we serve your neighborhood!"
   buttonText="SERVICE AREAS"
   buttonHref="/service-areas"
-  mapAddress="Los Angeles, CA"
+  mapAddress="{city}, {state}"
 />

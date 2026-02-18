@@ -1,4 +1,6 @@
 ---
+import { getLocationText } from "@/config/site"
+
 import { Percent, CircleDollarSign, Calendar, CheckCircle, Home, Building2, Wrench, Settings, ArrowRight, MapPin, Clock } from "lucide-react"
 
 interface Item {
@@ -17,7 +19,12 @@ interface Props {
   variant?: "plans" | "services" | "features";
 }
 
-const { badge, title, subtitle, items, variant = "plans" } = Astro.props;
+const { badge: raw_badge, title: raw_title, subtitle: raw_subtitle, items, variant = "plans" } = Astro.props;
+
+// Process text placeholders
+const title = raw_title ? getLocationText(raw_title) : raw_title;
+const subtitle = raw_subtitle ? getLocationText(raw_subtitle) : raw_subtitle;
+const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
 
 const iconMap = {
   "percent": Percent,

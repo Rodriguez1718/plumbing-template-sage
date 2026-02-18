@@ -1,4 +1,6 @@
 ---
+import { getLocationText } from "@/config/site"
+
 interface Props {
   title?: string;
   subtitle?: string;
@@ -6,10 +8,14 @@ interface Props {
 }
 
 const { 
-  title = "TO BE DETERMINED", 
-  subtitle = "BASED ON THE CLIENT DISCOVERY CONVERSATION",
+  title: raw_title = "TO BE DETERMINED", 
+  subtitle: raw_subtitle = "BASED ON THE CLIENT DISCOVERY CONVERSATION",
   bgImage
 } = Astro.props;
+
+// Process text placeholders
+const title = raw_title ? getLocationText(raw_title) : raw_title;
+const subtitle = raw_subtitle ? getLocationText(raw_subtitle) : raw_subtitle;
 ---
 
 <section class="relative py-24 md:py-32 overflow-hidden bg-muted/30">

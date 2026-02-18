@@ -46,87 +46,76 @@
 
 :root {
   --radius: 0.625rem;
-  /* Brand colors */
-  --brand-primary: #0b273f;
-  --brand-secondary: #196496;
-  --brand-tertiary: #e9f1fb;
-  --brand-quaternary: #fafeff;
-  --brand-accent: #A3032B;
+  /* Brand colors are set dynamically by ThemeProvider.astro from site.ts */
+  /* --brand-primary, --brand-secondary, --brand-tertiary, --brand-quaternary, --brand-accent */
   
   /* Theme colors using brand palette */
-  --background: #fafeff;
-  --foreground: #0b273f;
+  --background: var(--brand-quaternary);
+  --foreground: var(--brand-primary);
   --card: #ffffff;
-  --card-foreground: #0b273f;
+  --card-foreground: var(--brand-primary);
   --popover: #ffffff;
-  --popover-foreground: #0b273f;
-  --primary: #0b273f;
-  --primary-foreground: #fafeff;
-  --secondary: #196496;
-  --secondary-foreground: #fafeff;
-  --muted: #e9f1fb;
-  --muted-foreground: #0b273f;
-  --accent: #A3032B;
-  --accent-foreground: #fafeff;
-  --destructive: #A3032B;
-  --border: #e9f1fb;
-  --input: #e9f1fb;
-  --ring: #196496;
-  --chart-1: #0b273f;
-  --chart-2: #196496;
-  --chart-3: #A3032B;
-  --chart-4: #e9f1fb;
-  --chart-5: #fafeff;
-  --sidebar: #fafeff;
-  --sidebar-foreground: #0b273f;
-  --sidebar-primary: #0b273f;
-  --sidebar-primary-foreground: #fafeff;
-  --sidebar-accent: #e9f1fb;
-  --sidebar-accent-foreground: #0b273f;
-  --sidebar-border: #e9f1fb;
-  --sidebar-ring: #196496;
+  --popover-foreground: var(--brand-primary);
+  --primary: var(--brand-primary);
+  --primary-foreground: var(--brand-quaternary);
+  --secondary: var(--brand-secondary);
+  --secondary-foreground: var(--brand-quaternary);
+  --muted: var(--brand-tertiary);
+  --muted-foreground: var(--brand-primary);
+  --accent: var(--brand-accent, var(--brand-secondary));
+  --accent-foreground: var(--brand-quaternary);
+  --destructive: var(--brand-accent, #dc2626);
+  --border: var(--brand-tertiary);
+  --input: var(--brand-tertiary);
+  --ring: var(--brand-secondary);
+  --chart-1: var(--brand-primary);
+  --chart-2: var(--brand-secondary);
+  --chart-3: var(--brand-accent, var(--brand-secondary));
+  --chart-4: var(--brand-tertiary);
+  --chart-5: var(--brand-quaternary);
+  --sidebar: var(--brand-quaternary);
+  --sidebar-foreground: var(--brand-primary);
+  --sidebar-primary: var(--brand-primary);
+  --sidebar-primary-foreground: var(--brand-quaternary);
+  --sidebar-accent: var(--brand-tertiary);
+  --sidebar-accent-foreground: var(--brand-primary);
+  --sidebar-border: var(--brand-tertiary);
+  --sidebar-ring: var(--brand-secondary);
 }
 
 .dark {
-  /* Brand colors remain the same */
-  --brand-primary: #0b273f;
-  --brand-secondary: #196496;
-  --brand-tertiary: #e9f1fb;
-  --brand-quaternary: #fafeff;
-  --brand-accent: #A3032B;
-  
   /* Dark theme using brand palette */
-  --background: #0b273f;
-  --foreground: #fafeff;
-  --card: #0f3251;
-  --card-foreground: #fafeff;
-  --popover: #0f3251;
-  --popover-foreground: #fafeff;
-  --primary: #fafeff;
-  --primary-foreground: #0b273f;
-  --secondary: #196496;
-  --secondary-foreground: #fafeff;
-  --muted: #0f3251;
-  --muted-foreground: #e9f1fb;
-  --accent: #A3032B;
-  --accent-foreground: #fafeff;
-  --destructive: #A3032B;
-  --border: rgba(25, 100, 150, 0.3);
-  --input: rgba(25, 100, 150, 0.3);
-  --ring: #196496;
-  --chart-1: #fafeff;
-  --chart-2: #196496;
-  --chart-3: #A3032B;
-  --chart-4: #e9f1fb;
-  --chart-5: #0b273f;
-  --sidebar: #0f3251;
-  --sidebar-foreground: #fafeff;
-  --sidebar-primary: #196496;
-  --sidebar-primary-foreground: #fafeff;
-  --sidebar-accent: #0f3251;
-  --sidebar-accent-foreground: #fafeff;
-  --sidebar-border: rgba(25, 100, 150, 0.3);
-  --sidebar-ring: #196496;
+  --background: var(--brand-primary);
+  --foreground: var(--brand-quaternary);
+  --card: color-mix(in srgb, var(--brand-primary) 85%, white);
+  --card-foreground: var(--brand-quaternary);
+  --popover: color-mix(in srgb, var(--brand-primary) 85%, white);
+  --popover-foreground: var(--brand-quaternary);
+  --primary: var(--brand-quaternary);
+  --primary-foreground: var(--brand-primary);
+  --secondary: var(--brand-secondary);
+  --secondary-foreground: var(--brand-quaternary);
+  --muted: color-mix(in srgb, var(--brand-primary) 85%, white);
+  --muted-foreground: var(--brand-tertiary);
+  --accent: var(--brand-accent, var(--brand-secondary));
+  --accent-foreground: var(--brand-quaternary);
+  --destructive: var(--brand-accent, #dc2626);
+  --border: color-mix(in srgb, var(--brand-secondary) 30%, transparent);
+  --input: color-mix(in srgb, var(--brand-secondary) 30%, transparent);
+  --ring: var(--brand-secondary);
+  --chart-1: var(--brand-quaternary);
+  --chart-2: var(--brand-secondary);
+  --chart-3: var(--brand-accent, var(--brand-secondary));
+  --chart-4: var(--brand-tertiary);
+  --chart-5: var(--brand-primary);
+  --sidebar: color-mix(in srgb, var(--brand-primary) 85%, white);
+  --sidebar-foreground: var(--brand-quaternary);
+  --sidebar-primary: var(--brand-secondary);
+  --sidebar-primary-foreground: var(--brand-quaternary);
+  --sidebar-accent: color-mix(in srgb, var(--brand-primary) 85%, white);
+  --sidebar-accent-foreground: var(--brand-quaternary);
+  --sidebar-border: color-mix(in srgb, var(--brand-secondary) 30%, transparent);
+  --sidebar-ring: var(--brand-secondary);
 }
 
 @layer base {

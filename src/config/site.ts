@@ -8,32 +8,33 @@ export const siteConfig = {
   // Business Information
   business: {
     name: "Dealer Template",
-    fullName: "John Doe",
-    tagline: "Premium Marketing Solutions",
-    description: "Local Advertising and Digital Marketing Pros",
+    fullName: "ABC Company Heating and Cooling",
+    tagline: "Heating and Cooling",
+    description: "Professional HVAC Services",
   },
 
   // Location
   location: {
-    city: "Denver",
-    state: "Colorado",
-    address: "123 Main Street",
-    fullAddress: "123 Main St, Denver, CO 80202",
+    city: "New York",
+    state: "SC",
+    address: "3648 Rorance Road",
+    fullAddress: "3648 Rorance Road, New York, SC 29170",
   },
 
   // Contact
   contact: {
-    email: "hello@acmeinc.com",
-    phone: "3035551234",
-    phoneFormatted: "(303) 555-1234",
+    email: "dealer@domain.com",
+    phone: "0123456789",
+    phoneFormatted: "012-345-6789",
   },
 
   // Brand Colors (used in CSS variables)
   colors: {
-    primary: "#110133",      // Most dominant - buttons, headers, main accents
-    secondary: "#00918E",    // Semi dominant - secondary buttons, highlights
-    tertiary: "#4DD599",     // Subtle accent
-    quaternary: "#FFDC34",   // Subtle accent
+    primary: "#0b273f",      // Most dominant - text, headers
+    secondary: "#196496",    // Semi dominant - buttons, highlights, accent
+    tertiary: "#e9f1fb",     // Subtle accent - muted backgrounds
+    quaternary: "#fafeff",   // Subtle accent - page background
+    accent: "#A3032B",       // Secondary accent - red
   },
 
   // Logo
@@ -70,9 +71,20 @@ export const siteConfig = {
 }
 
 // Helper to get location-aware text
-export function getLocationText(text: string) {
+export function getLocationText(text: string): string {
+  if (!text) return "";
   return text
     .replaceAll("{city}", siteConfig.location.city)
     .replaceAll("{state}", siteConfig.location.state)
     .replaceAll("{business}", siteConfig.business.name)
+    .replaceAll("{fullName}", siteConfig.business.fullName)
+    .replaceAll("{phone}", siteConfig.contact.phoneFormatted)
+    .replaceAll("{phoneRaw}", siteConfig.contact.phone)
+    .replaceAll("{email}", siteConfig.contact.email)
+    .replaceAll("{address}", siteConfig.location.fullAddress)
+}
+
+// Process an array of strings through getLocationText
+export function processLocationArray(arr: string[]): string[] {
+  return arr.map(getLocationText)
 }

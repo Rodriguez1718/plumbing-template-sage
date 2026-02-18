@@ -1,4 +1,6 @@
 ---
+import { getLocationText } from "@/config/site"
+
 interface Props {
   badge?: string;
   title: string;
@@ -6,7 +8,11 @@ interface Props {
   columns?: number;
 }
 
-const { badge = "Portfolio", title, images = [], columns = 4 } = Astro.props;
+const { badge: raw_badge = "Portfolio", title: raw_title, images = [], columns = 4 } = Astro.props;
+
+// Process text placeholders
+const title = raw_title ? getLocationText(raw_title) : raw_title;
+const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
 const placeholderCount = images.length > 0 ? images.length : 8;
 ---
 

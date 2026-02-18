@@ -1,4 +1,6 @@
 ---
+import { getLocationText } from "@/config/site"
+
 interface FAQItem {
   question: string;
   answer?: string;
@@ -9,7 +11,15 @@ interface Props {
   faqs: FAQItem[];
 }
 
-const { title, faqs } = Astro.props;
+const { title: raw_title, faqs: rawFaqs } = Astro.props;
+
+// Process text placeholders
+const title = raw_title ? getLocationText(raw_title) : "";
+const faqs = rawFaqs.map(faq => ({
+  ...faq,
+  question: getLocationText(faq.question),
+  answer: faq.answer ? getLocationText(faq.answer) : undefined,
+}));
 ---
 
 <section class="py-16 md:py-24 bg-muted/30">

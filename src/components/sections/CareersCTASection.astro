@@ -1,4 +1,6 @@
 ---
+import { getLocationText } from "@/config/site"
+
 interface Props {
   title: string;
   description?: string;
@@ -9,13 +11,17 @@ interface Props {
 }
 
 const { 
-  title, 
-  description, 
+  title: raw_title, 
+  description: raw_description, 
   buttonText = "APPLY TODAY", 
   buttonHref = "/contact",
   image,
   imageAlt = "Join our team"
 } = Astro.props;
+
+// Process text placeholders
+const title = raw_title ? getLocationText(raw_title) : raw_title;
+const description = raw_description ? getLocationText(raw_description) : raw_description;
 ---
 
 <section class="py-16 md:py-24 bg-primary">

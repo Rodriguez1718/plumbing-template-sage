@@ -1,5 +1,6 @@
 ---
 import { Flame, Scissors, Clock } from '@lucide/astro';
+import { getLocationText } from "@/config/site"
 
 interface Coupon {
   label: string;
@@ -31,7 +32,7 @@ const isMinimal = variant === 'minimal';
       </h2>
       {isMinimal && (
         <p class="text-muted-foreground mt-3 max-w-2xl mx-auto">
-          Check this page regularly for the latest special offers and promotions from ABC Plumbers. We also offer financing.
+          Check this page regularly for the latest special offers and promotions from {getLocationText("{fullName}")}. We also offer financing.
         </p>
       )}
     </div>

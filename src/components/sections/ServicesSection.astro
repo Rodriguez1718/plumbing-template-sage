@@ -1,4 +1,6 @@
 ---
+import { getLocationText } from "@/config/site"
+
 interface Service {
   title: string;
   description: string;
@@ -16,7 +18,11 @@ interface Props {
   categories: ServiceCategory[];
 }
 
-const { title, description, categories } = Astro.props;
+const { title: raw_title, description: raw_description, categories } = Astro.props;
+
+// Process text placeholders
+const title = raw_title ? getLocationText(raw_title) : raw_title;
+const description = raw_description ? getLocationText(raw_description) : raw_description;
 ---
 
 <section class="py-16 md:py-24">

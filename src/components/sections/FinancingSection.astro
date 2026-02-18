@@ -1,4 +1,6 @@
 ---
+import { getLocationText } from "@/config/site"
+
 interface Step {
   title: string;
   description: string;
@@ -13,7 +15,12 @@ interface Props {
   steps: Step[];
 }
 
-const { badge = "Financing", title, description, paymentPlans, financingOptions, steps } = Astro.props;
+const { badge: raw_badge = "Financing", title: raw_title, description: raw_description, paymentPlans, financingOptions, steps } = Astro.props;
+
+// Process text placeholders
+const title = raw_title ? getLocationText(raw_title) : raw_title;
+const description = raw_description ? getLocationText(raw_description) : raw_description;
+const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
 ---
 
 <section class="py-16 md:py-24">

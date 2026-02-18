@@ -1,6 +1,6 @@
 ---
 title: "Home"
-description: "ABC Plumbers - Expert plumbing services in Los Angeles and surrounding areas"
+description: "{fullName} - Expert plumbing services in {city} and surrounding areas"
 ---
 
 import HeroSection from "@/components/sections/HeroSection.astro"
@@ -15,13 +15,14 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection.astro
 import CTAStrip from "@/components/sections/CTAStrip.astro"
 import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
+
 <HeroSection
   buttonText="Call Now"
-  buttonHref="tel:123-456-7890"
+  buttonHref="tel:{phoneRaw}"
   slides={[
     {
-      title: "Building Your Dream Business? We're Here To Help!",
-      subtitle: "Professional plumbing solutions for residential and commercial properties in Los Angeles.",
+      title: `Building Your Dream Business? We're Here To Help!`,
+      subtitle: `Professional plumbing solutions for residential and commercial properties in {city}.`,
       image: "https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/",
       promoTitle: "5% OFF",
       promoText: "for new commercial projects"
@@ -78,9 +79,9 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 />
 
 <ContentSection
-  badge="Welcome to ABC Plumbers"
+  badge="Welcome to {fullName}"
   title="Expert Plumbing Services You Can Trust"
-  description="With over 20 years of experience, ABC Plumbers has been the trusted choice for plumbing services in Los Angeles. Our licensed and insured plumbers provide quality solutions for residential and commercial properties, ensuring every job is done right the first time. From leaky faucets to complete pipe installations, we're here to help."
+  description="With over 20 years of experience, {fullName} has been the trusted choice for plumbing services in {city}. Our licensed and insured plumbers provide quality solutions for residential and commercial properties, ensuring every job is done right the first time. From leaky faucets to complete pipe installations, we're here to help."
   features={[
     "Licensed & Insured Plumbers",
     "Affordable Pricing with No Hidden Costs",
@@ -151,7 +152,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
 <MaintenancePlanSection
   title="Protect Your Plumbing for the Long Term"
-  description="Regular maintenance is key to preventing costly repairs and ensuring the efficiency of your plumbing system. At ABC Plumbers, our Plumbing Maintenance Plans are designed to keep your home or business running smoothly year-round."
+  description="Regular maintenance is key to preventing costly repairs and ensuring the efficiency of your plumbing system. At {fullName}, our Plumbing Maintenance Plans are designed to keep your home or business running smoothly year-round."
   includedItems={[
     { title: "Annual Inspections", description: "Comprehensive checkups to detect leaks, corrosion, or potential issues" },
     { title: "Drain Cleaning", description: "Keep your drains free of clogs and buildup to maintain smooth flow" },
@@ -173,7 +174,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 <FinancingSection
   badge="Financing"
   title="Plumbing Solutions Made Affordable"
-  description="At ABC Plumbers, we believe that every home and business deserves access to reliable plumbing services, no matter the budget. That's why we offer flexible financing options to make your plumbing projects manageable and stress-free."
+  description="At {fullName}, we believe that every home and business deserves access to reliable plumbing services, no matter the budget. That's why we offer flexible financing options to make your plumbing projects manageable and stress-free."
   paymentPlans={[
     "Spread the cost of major repairs or installations over time",
     "Low-interest and no-interest plans available for qualified applicants",
@@ -210,7 +211,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 <TestimonialsSection
   badge="Testimonials"
   title="What Our Clients Say"
-  description="At ABC Plumbers, we believe that every home and business deserves access to reliable plumbing services, no matter the budget. That's why we offer flexible financing options to make your plumbing projects manageable and stress-free."
+  description="At {fullName}, we believe that every home and business deserves access to reliable plumbing services, no matter the budget. That's why we offer flexible financing options to make your plumbing projects manageable and stress-free."
   testimonials={[
     {
       name: "Mark Porter",
@@ -231,7 +232,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
       initials: "NA",
       date: "1 year ago",
       rating: 5,
-      content: "ABC Plumbers has been such a great partner for our business. Their commercial plumbing expertise is unmatched in the LA area."
+      content: `{fullName} has been such a great partner for our business. Their commercial plumbing expertise is unmatched in the {city} area.`
     },
     {
       name: "David Einstein",
@@ -266,7 +267,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
       initials: "JO",
       date: "3 months ago",
       rating: 5,
-      content: "We've used ABC Plumbers for our restaurant for years. Their grease trap maintenance keeps us code-compliant without any hassle."
+      content: `We've used {fullName} for our restaurant for years. Their grease trap maintenance keeps us code-compliant without any hassle.`
     },
     {
       name: "Patricia Gomez",
@@ -303,7 +304,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   buttonText="SCHEDULE NOW"
   buttonHref="/contact"
   phoneLabel="Call or Text for Great Service"
-  phone="123-456-7890"
+  phone="{phone}"
   features={[
     { icon: "siren", text: "24/7 Emergency Service" },
     { icon: "award", text: "Experienced & Certified Technicians" }
@@ -311,14 +312,14 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 />
 
 <ServiceAreaSection
-  title="Expert Plumbing Services in Los Angeles and Surrounding Areas"
-  description="Looking for reliable plumbing services in Los Angeles? We provide expert residential and commercial solutions across the city, from Hollywood Hills to Santa Monica. Whether you need leak detection, drain cleaning, water heater repairs, or advanced options like trenchless sewer repair and whole-house water filtration, our team is here to help. We also offer routine maintenance and 24/7 emergency services to keep your plumbing in top shape. Serving neighborhoods like Downtown LA, Beverly Hills, and Pasadena, we're committed to quality, efficiency, and customer satisfaction. Call us today to schedule your service!"
+  title="Expert Plumbing Services in {city} and Surrounding Areas"
+  description="Looking for reliable plumbing services in {city}? We provide expert residential and commercial solutions across the city. Whether you need leak detection, drain cleaning, water heater repairs, or advanced options like trenchless sewer repair and whole-house water filtration, our team is here to help. We also offer routine maintenance and 24/7 emergency services to keep your plumbing in top shape. Call us today to schedule your service!"
   areas={[
-    "Santa Monica", "Pasadena", "Glendale", "Downtown Los Angeles", "Hollywood",
+    "Santa Monica", "Pasadena", "Glendale", "Downtown {city}", "Hollywood",
     "Beverly Hills", "Venice", "Westwood", "Culver City", "San Fernando Valley",
     "Studio City", "North Hollywood", "Sherman Oaks", "Encino", "Burbank",
     "Torrance", "Long Beach", "Inglewood", "El Segundo", "Brentwood",
     "Silver Lake", "Echo Park", "Hancock Park", "Marina del Rey", "Manhattan Beach"
   ]}
-  mapAddress="Los Angeles, CA"
+  mapAddress="{city}, {state}"
 />

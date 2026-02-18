@@ -1,5 +1,6 @@
 ---
 import { Siren, Award } from "lucide-react"
+import { getLocationText } from "@/config/site"
 
 interface Feature {
   icon: "siren" | "award" | "phone" | "clock" | "shield" | "wrench";
@@ -16,16 +17,22 @@ interface Props {
 }
 
 const { 
-  buttonText = "SCHEDULE NOW", 
+  buttonText: rawButtonText = "SCHEDULE NOW", 
   buttonHref = "/contact",
-  phoneLabel = "Call or Text for Great Service",
-  phone = "123-456-7890",
-  features = [
+  phoneLabel: rawPhoneLabel = "Call or Text for Great Service",
+  phone: rawPhone = "{phone}",
+  features: rawFeatures = [
     { icon: "siren", text: "24/7 Emergency Service" },
     { icon: "award", text: "Experienced & Certified Technicians" }
   ],
   borderColor
 } = Astro.props;
+
+// Process text placeholders
+const buttonText = getLocationText(rawButtonText);
+const phoneLabel = getLocationText(rawPhoneLabel);
+const phone = getLocationText(rawPhone);
+const features = rawFeatures.map(f => ({ ...f, text: getLocationText(f.text) }));
 
 const iconMap = {
   siren: Siren,

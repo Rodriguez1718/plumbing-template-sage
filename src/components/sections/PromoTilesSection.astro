@@ -1,5 +1,6 @@
 ---
 import { Phone, ArrowRight } from "lucide-react";
+import { getLocationText } from "@/config/site"
 
 interface PromoTile {
   type: "maintenance" | "financing" | "emergency";
@@ -10,7 +11,7 @@ interface PromoTile {
   subtext?: string;
   discount?: string;
   subheadline?: string[];
-  phone: string;
+  phone?: string;
   buttonText: string;
   buttonHref?: string;
   bgImage?: string;
@@ -20,7 +21,21 @@ interface Props {
   tiles: PromoTile[];
 }
 
-const { tiles } = Astro.props;
+const { tiles: rawTiles } = Astro.props;
+
+// Process all text in tiles through getLocationText
+const tiles = rawTiles.map(tile => ({
+  ...tile,
+  tag: tile.tag ? getLocationText(tile.tag) : undefined,
+  title: tile.title ? getLocationText(tile.title) : undefined,
+  priceLabel: tile.priceLabel ? tile.priceLabel.map(getLocationText) : undefined,
+  headline: tile.headline ? tile.headline.map(getLocationText) : undefined,
+  subtext: tile.subtext ? getLocationText(tile.subtext) : undefined,
+  discount: tile.discount ? getLocationText(tile.discount) : undefined,
+  subheadline: tile.subheadline ? tile.subheadline.map(getLocationText) : undefined,
+  phone: tile.phone ? getLocationText(tile.phone) : undefined,
+  buttonText: getLocationText(tile.buttonText),
+}));
 ---
 
 <section class="py-16 md:py-24">

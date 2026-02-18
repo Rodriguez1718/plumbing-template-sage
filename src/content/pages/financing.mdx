@@ -12,6 +12,7 @@ import FAQSection from "@/components/sections/FAQSection.astro"
 import CTAStrip from "@/components/sections/CTAStrip.astro"
 import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
+
 <HeroSection
   variant="subpage"
   badge="Quick Approval Available"
@@ -24,8 +25,8 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
 <FinancingIntroSection
   title="Financing Options for Every Budget"
-  description="At ABC Plumbers, we understand that keeping your home comfortable shouldn't be a financial burden. To help you select the best plumbing solutions for your needs, we offer a range of financing options designed to fit any budget."
-  subtitle="Why Choose Financing Through ABC Plumbers?"
+  description="At {fullName}, we understand that keeping your home comfortable shouldn't be a financial burden. To help you select the best plumbing solutions for your needs, we offer a range of financing options designed to fit any budget."
+  subtitle="Why Choose Financing Through {fullName}?"
   benefits={[
     "Flexible promotions and competitive interest rates",
     "Quick credit decisions and funding",
@@ -38,7 +39,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   title="Apply for Financing and Get Approved in Minutes!"
   description="Don't let budget concerns delay your plumbing repairs. Our quick and easy application process gets you approved fast."
   calloutText="Start your application today and get the plumbing services you need!"
-  phone="123-456-7890"
+  phone="{phone}"
   buttonText="APPLY NOW"
   buttonHref="/contact"
 />
@@ -105,7 +106,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   title="Frequently Asked Questions"
   faqs={[
     {
-      question: "What financing options does ABC Plumbers offer?",
+      question: `What financing options does {fullName} offer?`,
       answer: "We offer a variety of financing options including low-interest plans, no-interest options for qualified customers (0% for up to 12 months), and custom payment terms to fit your budget."
     },
     {
@@ -123,7 +124,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   buttonText="SCHEDULE NOW"
   buttonHref="/contact"
   phoneLabel="Call or Text for Great Service"
-  phone="123-456-7890"
+  phone="{phone}"
   features={[
     { icon: "siren", text: "24/7 Emergency Service" },
     { icon: "award", text: "Experienced & Certified Technicians" }
@@ -132,9 +133,9 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
 <ServiceAreaSection
   variant="compact"
-  title="Proudly Serving Los Angeles"
-  description="We provide reliable residential plumbing services throughout Los Angeles and nearby areas like Santa Monica, Pasadena, and Glendale. Contact us to see if we serve your neighborhood!"
+  title="Proudly Serving {city}"
+  description="We provide reliable residential plumbing services throughout {city} and nearby areas. Contact us to see if we serve your neighborhood!"
   buttonText="SERVICE AREAS"
   buttonHref="/service-areas"
-  mapAddress="Los Angeles, CA"
+  mapAddress="{city}, {state}"
 />

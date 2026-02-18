@@ -1,6 +1,6 @@
 ---
 title: "Careers"
-description: "Build your career with ABC Plumbers. Join our team of skilled professionals and grow with us. View current job openings and apply today!"
+description: "Build your career with {fullName}. Join our team of skilled professionals and grow with us. View current job openings and apply today!"
 ---
 
 import HeroSection from "@/components/sections/HeroSection.astro"
@@ -11,18 +11,19 @@ import ReviewsSection from "@/components/sections/ReviewsSection.astro"
 import CTAStrip from "@/components/sections/CTAStrip.astro"
 import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
+
 <HeroSection
   variant="subpage"
-  title="Build Your Career with ABC Plumbers"
-  subtitle="Join a team that values your skills, supports your growth, and offers competitive benefits. At ABC Plumbers, we're more than just a company—we're a family dedicated to excellence in plumbing services."
+  title="Build Your Career with {fullName}"
+  subtitle="Join a team that values your skills, supports your growth, and offers competitive benefits. At {fullName}, we're more than just a company—we're a family dedicated to excellence in plumbing services."
   buttonText="VIEW OPENINGS"
   buttonHref="#openings"
   image="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1000&q=80"
 />
 
 <JobOpeningsSection
-  introTitle="Careers at ABC Plumbers"
-  introDescription="At ABC Plumbers, we're not just a team—we're a family. We're dedicated to providing top-notch plumbing solutions while fostering a supportive and growth-oriented work environment. If you're passionate about delivering exceptional service and want to grow your career in the plumbing industry, we'd love to hear from you!"
+  introTitle="Careers at {fullName}"
+  introDescription="At {fullName}, we're not just a team—we're a family. We're dedicated to providing top-notch plumbing solutions while fostering a supportive and growth-oriented work environment. If you're passionate about delivering exceptional service and want to grow your career in the plumbing industry, we'd love to hear from you!"
   title="Current Openings"
   jobs={[
     {
@@ -50,7 +51,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 />
 
 <CareersCTASection
-  title="Join the ABC Plumbers Family Today!"
+  title="Join the {fullName} Family Today!"
   description="If you're passionate about plumbing and want to be part of a team that values quality, integrity, and customer satisfaction, we want to hear from you. Submit your application today and take the first step toward a rewarding career."
   buttonText="APPLY TODAY"
   buttonHref="/contact"
@@ -60,18 +61,18 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 <ReviewsSection
   badge="GOOGLE REVIEW"
   title="What Our Client Says"
-  description="At ABC Plumbers, we believe that every home and business deserves access to reliable plumbing services, no matter the budget. That's why we offer flexible financing options to make your plumbing projects manageable and stress-free."
+  description="At {fullName}, we believe that every home and business deserves access to reliable plumbing services, no matter the budget. That's why we offer flexible financing options to make your plumbing projects manageable and stress-free."
   reviews={[
     {
       name: "Coleman Mockbee",
       time: "1 year ago",
-      content: "I've been working with ABC Plumbers for over 5 years now. The team is incredibly supportive and the management truly cares about employee growth.",
+      content: `I've been working with {fullName} for over 5 years now. The team is incredibly supportive and the management truly cares about employee growth.`,
       readMoreHref: "#"
     },
     {
       name: "Angel Nicolai",
       time: "1 year ago",
-      content: "Best decision I ever made was joining ABC Plumbers. The training program helped me get my license and now I'm a lead technician.",
+      content: `Best decision I ever made was joining {fullName}. The training program helped me get my license and now I'm a lead technician.`,
       readMoreHref: "#"
     },
     {
@@ -83,7 +84,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
     {
       name: "Paul Moss",
       time: "1 year ago",
-      content: "Started as an apprentice and worked my way up. ABC Plumbers gave me the opportunity to build a real career in plumbing.",
+      content: `Started as an apprentice and worked my way up. {fullName} gave me the opportunity to build a real career in plumbing.`,
       readMoreHref: "#"
     }
   ]}
@@ -94,7 +95,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   buttonText="SCHEDULE NOW"
   buttonHref="/contact"
   phoneLabel="Call or Text for Great Service"
-  phone="123-456-7890"
+  phone="{phone}"
   features={[
     { icon: "siren", text: "24/7 Emergency Service" },
     { icon: "award", text: "Experienced & Certified Technicians" }
@@ -102,14 +103,14 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 />
 
 <ServiceAreaSection
-  title="Expert Plumbing Services in Los Angeles and Surrounding Areas"
-  description="Looking for reliable plumbing services in Los Angeles? We provide expert residential and commercial solutions across the city, from Hollywood Hills to Santa Monica. Whether you need leak detection, drain cleaning, water heater repairs, or advanced options like trenchless sewer repair and whole-house water filtration, our team is here to help. We also offer routine maintenance and 24/7 emergency services to keep your plumbing in top shape. Serving neighborhoods like Downtown LA, Beverly Hills, and Pasadena, we're committed to quality, efficiency, and customer satisfaction. Call us today to schedule your service!"
+  title="Expert Plumbing Services in {city} and Surrounding Areas"
+  description="Looking for reliable plumbing services in {city}? We provide expert residential and commercial solutions across the city, from Hollywood Hills to Santa Monica. Whether you need leak detection, drain cleaning, water heater repairs, or advanced options like trenchless sewer repair and whole-house water filtration, our team is here to help. We also offer routine maintenance and 24/7 emergency services to keep your plumbing in top shape. Serving neighborhoods like Downtown LA, Beverly Hills, and Pasadena, we're committed to quality, efficiency, and customer satisfaction. Call us today to schedule your service!"
   areas={[
-    "Santa Monica", "Pasadena", "Glendale", "Downtown Los Angeles", "Hollywood",
+    "Santa Monica", "Pasadena", "Glendale", "Downtown {city}", "Hollywood",
     "Beverly Hills", "Venice", "Westwood", "Culver City", "San Fernando Valley",
     "Studio City", "North Hollywood", "Sherman Oaks", "Encino", "Burbank",
     "Torrance", "Long Beach", "Inglewood", "El Segundo", "Brentwood",
     "Silver Lake", "Echo Park", "Hancock Park", "Marina del Rey", "Manhattan Beach"
   ]}
-  mapAddress="Los Angeles, CA"
+  mapAddress="{city}, {state}"
 />

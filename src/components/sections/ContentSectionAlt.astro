@@ -1,4 +1,6 @@
 ---
+import { getLocationText } from "@/config/site"
+
 interface FeatureItem {
   icon?: string;
   title: string;
@@ -20,10 +22,10 @@ interface Props {
 }
 
 const { 
-  badge, 
-  title, 
+  badge: raw_badge, 
+  title: raw_title, 
   titleHighlight,
-  description, 
+  description: raw_description, 
   featuresTitle,
   features = [], 
   buttonText, 
@@ -32,6 +34,11 @@ const {
   image,
   imageAlt = "Section image"
 } = Astro.props;
+
+// Process text placeholders
+const title = raw_title ? getLocationText(raw_title) : raw_title;
+const description = raw_description ? getLocationText(raw_description) : raw_description;
+const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
 ---
 
 <section class="py-16 md:py-24">

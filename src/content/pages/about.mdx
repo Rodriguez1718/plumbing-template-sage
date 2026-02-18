@@ -1,6 +1,6 @@
 ---
 title: "About Us"
-description: "Learn about ABC Plumbers - expert plumbing services you can trust in Los Angeles and surrounding areas."
+description: "Learn about {fullName} - expert plumbing services you can trust in {city} and surrounding areas."
 ---
 
 import HeroSection from "@/components/sections/HeroSection.astro"
@@ -10,6 +10,7 @@ import FinancingPlansSection from "@/components/sections/FinancingPlansSection.a
 import FAQSection from "@/components/sections/FAQSection.astro"
 import CTAStrip from "@/components/sections/CTAStrip.astro"
 import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
+
 
 <HeroSection
   variant="subpage"
@@ -31,7 +32,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
       type: "maintenance",
       title: "Maintenance Plan",
       priceLabel: ["Starting at", "$14.33", "Priority Service"],
-      phone: "(555) 123-4567",
+      phone: "{phone}",
       buttonText: "View Maintenance Plans",
       buttonHref: "/maintenance-plan",
       bgImage: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80"
@@ -40,7 +41,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
       type: "financing",
       headline: ["No Interest", "No Payment", "Until 2026!"],
       subtext: "Affordable payment plans available",
-      phone: "(555) 123-4567",
+      phone: "{phone}",
       buttonText: "Apply Now",
       buttonHref: "/financing",
       bgImage: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
@@ -50,7 +51,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
       tag: "24/7 Service",
       discount: "20% OFF",
       subheadline: ["All Plumbing", "Repair Services"],
-      phone: "(555) 123-4567",
+      phone: "{phone}",
       buttonText: "Call Now",
       buttonHref: "/contact",
       bgImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
@@ -94,7 +95,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
     },
     {
       question: "What areas do you serve?",
-      answer: "We proudly serve Los Angeles and surrounding areas including Santa Monica, Pasadena, Glendale, Beverly Hills, Hollywood, Downtown LA, and many more neighborhoods across the greater Los Angeles region."
+      answer: `We proudly serve {city} and surrounding areas. Contact us to find out if we cover your neighborhood.`
     },
     {
       question: "How much do your services cost?",
@@ -107,7 +108,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   buttonText="SCHEDULE NOW"
   buttonHref="/contact"
   phoneLabel="Call or Text for Great Service"
-  phone="123-456-7890"
+  phone="{phone}"
   features={[
     { icon: "siren", text: "24/7 Emergency Service" },
     { icon: "award", text: "Experienced & Certified Technicians" }
@@ -115,14 +116,14 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 />
 
 <ServiceAreaSection
-  title="Proudly Serving Los Angeles"
-  description="We provide expert residential and commercial plumbing solutions across the city, from Hollywood Hills to Santa Monica. Whether you need leak detection, drain cleaning, water heater repairs, or advanced options like trenchless sewer repair and whole-house water filtration, our team is here to help. We also offer routine maintenance and 24/7 emergency services to keep your plumbing in top shape."
+  title="Proudly Serving {city}"
+  description="We provide expert residential and commercial plumbing solutions across the city. Whether you need leak detection, drain cleaning, water heater repairs, or advanced options like trenchless sewer repair and whole-house water filtration, our team is here to help. We also offer routine maintenance and 24/7 emergency services to keep your plumbing in top shape."
   areas={[
-    "Santa Monica", "Pasadena", "Glendale", "Downtown Los Angeles", "Hollywood",
+    "Santa Monica", "Pasadena", "Glendale", "Downtown {city}", "Hollywood",
     "Beverly Hills", "Venice", "Westwood", "Culver City", "San Fernando Valley",
     "Studio City", "North Hollywood", "Sherman Oaks", "Encino", "Burbank",
     "Torrance", "Long Beach", "Inglewood", "El Segundo", "Brentwood",
     "Silver Lake", "Echo Park", "Hancock Park", "Marina del Rey", "Manhattan Beach"
   ]}
-  mapAddress="Los Angeles, CA"
+  mapAddress="{city}, {state}"
 />

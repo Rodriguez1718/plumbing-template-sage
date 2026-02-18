@@ -5,12 +5,29 @@ import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
+/**
+ * Custom Vite plugin: when site.ts is saved, force a full page reload
+ * so every component that imports getLocationText picks up the new values.
+ */
+function siteConfigReloadPlugin() {
+  return {
+    name: 'site-config-reload',
+    handleHotUpdate({ file, server }) {
+      const normalized = file.replace(/\\/g, '/');
+      if (normalized.endsWith('/src/config/site.ts')) {
+        server.ws.send({ type: 'full-reload' });
+        return []; // prevent default HMR (we already triggered reload)
+      }
+    },
+  };
+}
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://acmeinc.com', // Update with actual domain
   
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), siteConfigReloadPlugin()],
     build: {
       cssMinify: true,
       cssCodeSplit: true,

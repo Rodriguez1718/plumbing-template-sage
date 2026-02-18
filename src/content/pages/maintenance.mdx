@@ -1,6 +1,6 @@
 ---
 title: "Maintenance Services"
-description: "Preventative plumbing maintenance services in Los Angeles. Regular inspections, drain cleaning, leak prevention, gas system checks, and appliance maintenance to keep your plumbing running smoothly."
+description: "Preventative plumbing maintenance services in {city}. Regular inspections, drain cleaning, leak prevention, gas system checks, and appliance maintenance to keep your plumbing running smoothly."
 ---
 
 import HeroSection from "@/components/sections/HeroSection.astro"
@@ -12,6 +12,7 @@ import SignupBannerSection from "@/components/sections/SignupBannerSection.astro
 import FAQSection from "@/components/sections/FAQSection.astro"
 import CTAStrip from "@/components/sections/CTAStrip.astro"
 import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
+
 
 <HeroSection
   variant="category"
@@ -112,9 +113,9 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
 <SignupBannerSection
   title="Sign Up for a Maintenance Plan Today!"
-  description="Protect your home and save money with ABC Plumbers Maintenance Plans. Choose the option that is right for you and enjoy peace of mind all year long."
-  calloutText="Call us at 123-456-7890 or Sign Up Online today to get started!"
-  phone="123-456-7890"
+  description="Protect your home and save money with {fullName} Maintenance Plans. Choose the option that is right for you and enjoy peace of mind all year long."
+  calloutText="Call us at {phone} or Sign Up Online today to get started!"
+  phone="{phone}"
   buttonText="Sign Up Online"
   buttonHref="/contact"
 />
@@ -145,7 +146,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   buttonText="SCHEDULE NOW"
   buttonHref="/contact"
   phoneLabel="Call or Text for Great Service"
-  phone="123-456-7890"
+  phone="{phone}"
   features={[
     { icon: "siren", text: "24/7 Emergency Service" },
     { icon: "award", text: "Experienced & Certified Technicians" }
@@ -154,9 +155,9 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
 <ServiceAreaSection
   variant="compact"
-  title="Proudly Serving Los Angeles"
-  description="Our maintenance services are available throughout Los Angeles and surrounding areas including Santa Monica, Pasadena, and Glendale."
+  title="Proudly Serving {city}"
+  description="Our maintenance services are available throughout {city} and surrounding areas including Santa Monica, Pasadena, and Glendale."
   buttonText="SERVICE AREAS"
   buttonHref="/service-areas"
-  mapAddress="Los Angeles, CA"
+  mapAddress="{city}, {state}"
 />

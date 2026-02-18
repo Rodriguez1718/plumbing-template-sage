@@ -1,6 +1,6 @@
 ---
 title: "Specials and Offers"
-description: "Check out our latest specials and offers on plumbing services. Save money on repairs, installations, and maintenance with ABC Plumbers."
+description: "Check out our latest specials and offers on plumbing services. Save money on repairs, installations, and maintenance with {fullName}."
 ---
 
 import HeroSection from "@/components/sections/HeroSection.astro"
@@ -8,13 +8,14 @@ import CouponsSection from "@/components/sections/CouponsSection.astro"
 import CTAStrip from "@/components/sections/CTAStrip.astro"
 import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
+
 <HeroSection
   variant="subpage"
   badge="Limited Time Offers"
   title="Specials and Offers"
   subtitle="Discover Exciting Specials and Unbeatable Offers!"
-  buttonText="CALL: 123-456-7890"
-  buttonHref="tel:123-456-7890"
+  buttonText="CALL: {phone}"
+  buttonHref="tel:{phoneRaw}"
   image="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1000&q=80"
 />
 
@@ -64,7 +65,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   buttonText="SCHEDULE NOW"
   buttonHref="/contact"
   phoneLabel="Call or Text for Great Service"
-  phone="123-456-7890"
+  phone="{phone}"
   features={[
     { icon: "siren", text: "24/7 Emergency Service" },
     { icon: "award", text: "Experienced & Certified Technicians" }
@@ -73,9 +74,9 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
 <ServiceAreaSection
   variant="compact"
-  title="Proudly Serving Los Angeles"
-  description="We provide reliable residential plumbing services throughout Los Angeles and nearby areas like Santa Monica, Pasadena, and Glendale. Contact us to see if we serve your neighborhood!"
+  title="Proudly Serving {city}"
+  description="We provide reliable residential plumbing services throughout {city} and nearby areas like Santa Monica, Pasadena, and Glendale. Contact us to see if we serve your neighborhood!"
   buttonText="SERVICE AREAS"
   buttonHref="/service-areas"
-  mapAddress="Los Angeles, CA"
+  mapAddress="{city}, {state}"
 />

@@ -1,6 +1,6 @@
 ---
 title: "Specialty Plumbing Services"
-description: "Advanced specialty plumbing services in Los Angeles. Leak detection, hydro jetting, trenchless sewer repair, emergency plumbing, water filtration, and green plumbing solutions."
+description: "Advanced specialty plumbing services in {city}. Leak detection, hydro jetting, trenchless sewer repair, emergency plumbing, water filtration, and green plumbing solutions."
 ---
 
 import HeroSection from "@/components/sections/HeroSection.astro"
@@ -11,6 +11,7 @@ import CouponsSection from "@/components/sections/CouponsSection.astro"
 import FAQSection from "@/components/sections/FAQSection.astro"
 import CTAStrip from "@/components/sections/CTAStrip.astro"
 import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
+
 
 <HeroSection
   variant="category"
@@ -112,7 +113,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   buttonText="SCHEDULE NOW"
   buttonHref="/contact"
   phoneLabel="Call or Text for Great Service"
-  phone="123-456-7890"
+  phone="{phone}"
   features={[
     { icon: "siren", text: "24/7 Emergency Service" },
     { icon: "award", text: "Experienced & Certified Technicians" }
@@ -121,9 +122,9 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
 <ServiceAreaSection
   variant="compact"
-  title="Proudly Serving Los Angeles"
-  description="Our specialty plumbing services are available throughout Los Angeles and surrounding areas including Santa Monica, Pasadena, and Glendale."
+  title="Proudly Serving {city}"
+  description="Our specialty plumbing services are available throughout {city} and surrounding areas including Santa Monica, Pasadena, and Glendale."
   buttonText="SERVICE AREAS"
   buttonHref="/service-areas"
-  mapAddress="Los Angeles, CA"
+  mapAddress="{city}, {state}"
 />

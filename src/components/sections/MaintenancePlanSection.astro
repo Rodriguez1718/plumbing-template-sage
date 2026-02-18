@@ -1,4 +1,6 @@
 ---
+import { getLocationText } from "@/config/site"
+
 interface IncludedItem {
   title: string;
   description: string;
@@ -13,7 +15,11 @@ interface Props {
   buttonHref?: string;
 }
 
-const { title, description, includedItems, benefits, buttonText = "LEARN MORE", buttonHref = "/maintenance-plans" } = Astro.props;
+const { title: raw_title, description: raw_description, includedItems, benefits, buttonText = "LEARN MORE", buttonHref = "/maintenance-plans" } = Astro.props;
+
+// Process text placeholders
+const title = raw_title ? getLocationText(raw_title) : raw_title;
+const description = raw_description ? getLocationText(raw_description) : raw_description;
 ---
 
 <section class="py-16 md:py-24 bg-primary/5">

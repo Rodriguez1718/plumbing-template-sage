@@ -1,6 +1,6 @@
 ---
 title: "Glendale Plumbing Services"
-description: "Expert plumbing solutions for homes and businesses in Glendale, CA. Reliable and efficient services with 24/7 emergency support. Call 123-456-7890!"
+description: "Expert plumbing solutions for homes and businesses in Glendale, CA. Reliable and efficient services with 24/7 emergency support. Call {phone}!"
 ---
 
 import HeroSection from "@/components/sections/HeroSection.astro"
@@ -16,15 +16,16 @@ import ReviewsSection from "@/components/sections/ReviewsSection.astro"
 import CTAStrip from "@/components/sections/CTAStrip.astro"
 import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
+
 <HeroSection
   variant="subpage"
   title="Glendale"
-  subtitle="Providing expert plumbing solutions to homes and businesses in Glendale, ensuring reliable and efficient services every time. Call us at 123-456-7890 for expert assistance!"
+  subtitle="Providing expert plumbing solutions to homes and businesses in Glendale, ensuring reliable and efficient services every time. Call us at {phone} for expert assistance!"
   buttonText="SCHEDULE SERVICE"
   buttonHref="/contact"
   image="https://ucarecdn.com/f2844f4a-fb1f-4bae-af04-38db79fe8902/-/preview/1000x562/"
   trustIndicators={[
-    "Serving New York for 20 Years",
+    `Serving {city} for 20 Years`,
     "Quality Service",
     "24-Hour Emergency Service Available"
   ]}
@@ -35,7 +36,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   badge="SERVICE AREAS"
   title="Trusted Plumbing Services in"
   titleHighlight="Glendale"
-  description="For reliable, affordable plumbing solutions in Glendale, turn to ABC Plumbers. Our licensed and insured experts handle everything from leaky faucets and clogged drains to emergency repairs and installations. With years of experience, ABC Plumbers is dedicated to delivering high-quality, cost-effective services for homes and businesses."
+  description="For reliable, affordable plumbing solutions in Glendale, turn to {fullName}. Our licensed and insured experts handle everything from leaky faucets and clogged drains to emergency repairs and installations. With years of experience, {fullName} is dedicated to delivering high-quality, cost-effective services for homes and businesses."
   featuresTitle="Key Benefits"
   features={[
     {
@@ -71,7 +72,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
       priceLabel: ["STARTS AT", "$14.33", "PER MONTH"],
       buttonText: "Contact Us",
       buttonHref: "/contact",
-      phone: "+123-456-7890",
+      phone: "{phone}",
       bgImage: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80"
     },
     {
@@ -80,7 +81,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
       subtext: "WITH APPROVED FINANCING",
       buttonText: "Explore Financing Options",
       buttonHref: "/financing",
-      phone: "+123-456-7890",
+      phone: "{phone}",
       bgImage: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
     },
     {
@@ -90,11 +91,12 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
       subheadline: ["ALL EMERGENCY", "PLUMBING SERVICES"],
       buttonText: "BOOK NOW",
       buttonHref: "/contact",
-      phone: "+123-456-7890",
+      phone: "{phone}",
       bgImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
     }
   ]}
 />
+
 
 <ServicesSection
   client:load
@@ -166,18 +168,18 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 <ReviewsSection
   badge="GOOGLE REVIEWS"
   title="What Our Clients Say"
-  description="At Your Company Name, we believe that every home and business deserves access to reliable plumbing services, no matter the budget. That's why we offer flexible financing options to make your plumbing projects more manageable and stress-free."
+  description="At {fullName}, we believe that every home and business deserves access to reliable plumbing services, no matter the budget. That's why we offer flexible financing options to make your plumbing projects more manageable and stress-free."
   reviews={[
     {
       name: "Eric Rogers",
       time: "1 year ago",
-      content: "Over the past 15 years or so my wife and I have needed a few repairs or maintenance items in our home, and each time Your Company Name has been there to take care of our needs.",
+      content: `Over the past 15 years or so my wife and I have needed a few repairs or maintenance items in our home, and each time {fullName} has been there to take care of our needs.`,
       readMoreHref: "#"
     },
     {
       name: "Michael Abrocincks",
       time: "1 year ago",
-      content: "Your Company Name has been such a great company to work with — from our initial consult to the final repair. Highly recommended!",
+      content: `{fullName} has been such a great company to work with — from our initial consult to the final repair. Highly recommended!`,
       readMoreHref: "#"
     },
     {
@@ -200,7 +202,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   buttonText="SCHEDULE NOW"
   buttonHref="/contact"
   phoneLabel="Call or Text for Great Service"
-  phone="123-456-7890"
+  phone="{phone}"
   features={[
     { icon: "siren", text: "24/7 Emergency Service" },
     { icon: "award", text: "Experienced and Certified Technicians" }
@@ -208,10 +210,10 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 />
 
 <ServiceAreaSection
-  title="Expert Plumbing Services in Los Angeles and Surrounding Areas"
-  description="Looking for reliable plumbing services in Los Angeles? We provide expert residential and commercial solutions across the city, from Hollywood Hills to Santa Monica. Whether you need leak detection, drain cleaning, water heater repairs, or advanced pipe relining, our licensed team serves your area with speed, skill, and care. We offer reliable maintenance and 24/7 emergency services to keep your plumbing in top shape. Serving neighborhoods like Downtown LA, Beverly Hills, and Glendale, we are committed to quality, efficiency, and customer satisfaction. Call us today to schedule your service!"
+  title="Expert Plumbing Services in {city} and Surrounding Areas"
+  description="Looking for reliable plumbing services in {city}? We provide expert residential and commercial solutions across the city, from Hollywood Hills to Santa Monica. Whether you need leak detection, drain cleaning, water heater repairs, or advanced pipe relining, our licensed team serves your area with speed, skill, and care. We offer reliable maintenance and 24/7 emergency services to keep your plumbing in top shape. Serving neighborhoods like Downtown LA, Beverly Hills, and Glendale, we are committed to quality, efficiency, and customer satisfaction. Call us today to schedule your service!"
   areas={[
-    "Santa Monica", "Pasadena", "Glendale", "Culver City", "Downtown Los Angeles", "Hollywood",
+    "Santa Monica", "Pasadena", "Glendale", "Culver City", "Downtown {city}", "Hollywood",
     "Beverly Hills", "Venice", "Westwood", "San Fernando Valley",
     "San Diego", "El Monte", "Santa Monica", "Beverly Hills",
     "Torrance", "Long Beach", "Inglewood", "El Segundo", "Brentwood",

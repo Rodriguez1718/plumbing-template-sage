@@ -1,4 +1,6 @@
 ---
+import { getLocationText, processLocationArray } from "@/config/site"
+
 interface Props {
   title: string;
   description: string;
@@ -12,16 +14,23 @@ interface Props {
 }
 
 const { 
-  title, 
-  description, 
-  areas, 
+  title: rawTitle, 
+  description: rawDescription, 
+  areas: rawAreas, 
   mapImage, 
   mapEmbed, 
-  mapAddress,
+  mapAddress: rawMapAddress,
   variant = "full",
-  buttonText = "SERVICE AREAS",
+  buttonText: rawButtonText = "SERVICE AREAS",
   buttonHref = "/service-areas"
 } = Astro.props;
+
+// Process all text through getLocationText
+const title = getLocationText(rawTitle);
+const description = getLocationText(rawDescription);
+const areas = rawAreas ? processLocationArray(rawAreas) : undefined;
+const mapAddress = rawMapAddress ? getLocationText(rawMapAddress) : undefined;
+const buttonText = getLocationText(rawButtonText);
 
 // Generate Google Maps embed URL from address if mapEmbed not provided
 const getMapEmbedUrl = (address: string) => {

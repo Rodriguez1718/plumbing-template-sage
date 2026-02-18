@@ -1,4 +1,6 @@
 ---
+import { getLocationText } from "@/config/site"
+
 interface Testimonial {
   name: string;
   initials: string;
@@ -14,7 +16,16 @@ interface Props {
   testimonials: Testimonial[];
 }
 
-const { badge = "Testimonials", title, description, testimonials } = Astro.props;
+const { badge: raw_badge = "Testimonials", title: raw_title, description: raw_description, testimonials: rawTestimonials } = Astro.props;
+
+// Process text placeholders
+const title = raw_title ? getLocationText(raw_title) : raw_title;
+const description = raw_description ? getLocationText(raw_description) : raw_description;
+const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
+const testimonials = rawTestimonials.map(t => ({
+  ...t,
+  content: getLocationText(t.content),
+}));
 ---
 
 <section class="py-16 md:py-24">

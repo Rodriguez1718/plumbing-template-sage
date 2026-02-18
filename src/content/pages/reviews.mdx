@@ -1,6 +1,6 @@
 ---
 title: "Reviews"
-description: "Read customer reviews and testimonials from satisfied ABC Plumbers clients in Los Angeles and surrounding areas."
+description: "Read customer reviews and testimonials from satisfied {fullName} clients in {city} and surrounding areas."
 ---
 
 import HeroSection from "@/components/sections/HeroSection.astro"
@@ -10,11 +10,12 @@ import ReviewsSection from "@/components/sections/ReviewsSection.astro"
 import PromoTilesSection from "@/components/sections/PromoTilesSection.astro"
 import FinancingPlansSection from "@/components/sections/FinancingPlansSection.astro"
 
+
 <HeroSection
   variant="subpage"
   badge="About Us"
   title="Customer Reviews"
-  subtitle="Hear from our happy customers! See why ABC Plumbers is your go-to for reliable, professional plumbing services in Los Angeles."
+  subtitle="Hear from our happy customers! See why {fullName} is your go-to for reliable, professional plumbing services in {city}."
   buttonText="SCHEDULE SERVICE"
   buttonHref="/contact"
   image="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1000&q=80"
@@ -33,7 +34,7 @@ import FinancingPlansSection from "@/components/sections/FinancingPlansSection.a
     {
       name: "Sarah Johnson",
       time: "1 month ago",
-      content: "ABC Plumbers saved the day when we had a major leak. They responded within an hour and had everything fixed same day. Outstanding work!"
+      content: `{fullName} saved the day when we had a major leak. They responded within an hour and had everything fixed same day. Outstanding work!`
     },
     {
       name: "Mike Davis",
@@ -55,7 +56,7 @@ import FinancingPlansSection from "@/components/sections/FinancingPlansSection.a
       type: "maintenance",
       title: "Maintenance Plan",
       priceLabel: ["Starting at", "$19.99/mo", "Priority Service"],
-      phone: "(555) 123-4567",
+      phone: "{phone}",
       buttonText: "View Maintenance Plans",
       buttonHref: "/maintenance-plan",
       bgImage: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80"
@@ -64,7 +65,7 @@ import FinancingPlansSection from "@/components/sections/FinancingPlansSection.a
       type: "financing",
       headline: ["Flexible", "Financing Options"],
       subtext: "Affordable payment plans available",
-      phone: "(555) 123-4567",
+      phone: "{phone}",
       buttonText: "Apply Now",
       buttonHref: "/financing",
       bgImage: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
@@ -74,7 +75,7 @@ import FinancingPlansSection from "@/components/sections/FinancingPlansSection.a
       tag: "24/7 Service",
       discount: "$50 OFF",
       subheadline: ["Emergency", "Plumbing Service"],
-      phone: "(555) 123-4567",
+      phone: "{phone}",
       buttonText: "Call Now",
       buttonHref: "/contact",
       bgImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
@@ -83,7 +84,7 @@ import FinancingPlansSection from "@/components/sections/FinancingPlansSection.a
 />
 
 <FinancingPlansSection
-  title="Why Choose ABC Plumbers?"
+  title="Why Choose {fullName}?"
   subtitle="We're committed to providing exceptional plumbing services with integrity and professionalism."
   items={[
     {
@@ -111,11 +112,11 @@ import FinancingPlansSection from "@/components/sections/FinancingPlansSection.a
 />
 
 <ServiceAreaSection
-  title="Expert Plumbing Services in Los Angeles and Surrounding Areas"
-  description="Looking for reliable plumbing services in Los Angeles? We provide expert residential and commercial solutions across the city."
+  title="Expert Plumbing Services in {city} and Surrounding Areas"
+  description="Looking for reliable plumbing services in {city}? We provide expert residential and commercial solutions across the city."
   areas={[
-    "Santa Monica", "Pasadena", "Glendale", "Downtown Los Angeles", "Hollywood",
+    "Santa Monica", "Pasadena", "Glendale", "Downtown {city}", "Hollywood",
     "Beverly Hills", "Venice", "Westwood", "Culver City", "San Fernando Valley"
   ]}
-  mapAddress="Los Angeles, CA"
+  mapAddress="{city}, {state}"
 />
