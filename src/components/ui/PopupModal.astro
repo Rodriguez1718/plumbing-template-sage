@@ -155,9 +155,7 @@ const phoneFormatted = siteConfig.contact.phoneFormatted;
     if (triggerId) {
       document.getElementById(triggerId)?.addEventListener("click", (e) => {
         e.preventDefault();
-        if (sessionStorage.getItem("popup-shown") !== "true") {
-          showPopup();
-        }
+        showPopup();
       });
     }
 

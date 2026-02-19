@@ -28,6 +28,14 @@ export default defineConfig({
   
   vite: {
     plugins: [tailwindcss(), siteConfigReloadPlugin()],
+    server: {
+      hmr: {
+        timeout: 120000
+      }
+    },
+    optimizeDeps: {
+      include: ['react', 'react-dom', 'react/jsx-runtime', 'react/jsx-dev-runtime', 'react-dom/server']
+    },
     build: {
       cssMinify: true,
       cssCodeSplit: true,

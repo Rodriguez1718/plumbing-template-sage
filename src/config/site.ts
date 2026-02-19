@@ -7,7 +7,7 @@
 export const siteConfig = {
   // Business Information
   business: {
-    name: "Dealer Template",
+    name: "Plumbing Template",
     fullName: "ABC Company Heating and Cooling",
     tagline: "Heating and Cooling",
     description: "Professional HVAC Services",
