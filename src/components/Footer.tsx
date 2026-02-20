@@ -26,7 +26,7 @@ export function Footer() {
   ]
 
   const servicesOffer = [
-    { title: "RESIDENTIAL PLUMBING SERVICES", href: "/residential" },
+    { title: "RESIDENTIAL PLUMBING SERVICES", href: "/residential-plumbing" },
     { title: "COMMERCIAL PLUMBING SERVICES", href: "/commercial" },
     { title: "SPECIALTY PLUMBING SERVICES", href: "/specialty" },
     { title: "MAINTENANCE SERVICES", href: "/maintenance" },

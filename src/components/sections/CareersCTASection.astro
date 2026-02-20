@@ -30,7 +30,7 @@ const description = raw_description ? getLocationText(raw_description) : raw_des
       <div class="text-primary-foreground" data-animate="fade-right">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
         {description && (
-          <p class="text-primary-foreground/80 mb-6 max-w-lg">{description}</p>
+          <p class="text-primary-foreground/80 mb-6 max-w-lg" set:html={description} />
         )}
         <a 
           href={buttonHref} 

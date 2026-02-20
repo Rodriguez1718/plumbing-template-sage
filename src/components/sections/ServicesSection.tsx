@@ -53,7 +53,7 @@ export function ServicesSection({ title, description, categories }: Props) {
       <div className="container mx-auto px-4">
         <div className={`text-center mb-10 transition-all duration-600 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
-          <p className="text-muted-foreground max-w-3xl mx-auto">{description}</p>
+          <p className="text-muted-foreground max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: description }} />
         </div>
 
         <div className={`flex flex-wrap justify-center gap-2 mb-8 transition-all duration-600 ease-out delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -120,7 +120,7 @@ export function ServicesSection({ title, description, categories }: Props) {
                         <h4 className={`font-semibold mb-1 ${service.href ? 'group-hover:text-accent' : ''} transition-colors`}>
                           {service.title}
                         </h4>
-                        <p className="text-sm text-muted-foreground">{service.description}</p>
+                        <p className="text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: service.description }} />
                       </div>
                     </Tag>
                   );

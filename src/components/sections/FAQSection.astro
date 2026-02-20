@@ -39,9 +39,7 @@ const faqs = rawFaqs.map(faq => ({
               </span>
             </summary>
             {faq.answer && (
-              <div class="px-6 pb-6 text-muted-foreground">
-                {faq.answer}
-              </div>
+              <div class="px-6 pb-6 text-muted-foreground" set:html={faq.answer} />
             )}
           </details>
         ))}

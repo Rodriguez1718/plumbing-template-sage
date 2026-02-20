@@ -27,7 +27,7 @@ const { cards } = Astro.props;
           {(card.title || card.description) && (
             <div class="p-4">
               {card.title && <h3 class="font-semibold text-lg mb-2">{card.title}</h3>}
-              {card.description && <p class="text-muted-foreground text-sm">{card.description}</p>}
+              {card.description && <p class="text-muted-foreground text-sm" set:html={card.description} />}
             </div>
           )}
         </div>

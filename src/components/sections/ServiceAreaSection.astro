@@ -70,7 +70,7 @@ const embedUrl = mapEmbed || (mapAddress ? getMapEmbedUrl(mapAddress) : null);
         
         <div class="order-1 md:order-2 text-center md:text-left">
           <h2 class="text-2xl md:text-3xl font-bold mb-4">{title}</h2>
-          <p class="text-muted-foreground mb-6">{description}</p>
+          <p class="text-muted-foreground mb-6" set:html={description} />
           <a href={buttonHref} class="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-6 py-3 font-semibold hover:bg-primary/90 transition-colors">
             {buttonText}
           </a>
@@ -84,7 +84,7 @@ const embedUrl = mapEmbed || (mapAddress ? getMapEmbedUrl(mapAddress) : null);
       <div class="grid md:grid-cols-2 gap-12">
         <div data-animate="fade-right">
           <h2 class="text-3xl md:text-4xl font-bold mb-6">{title}</h2>
-          <p class="text-muted-foreground mb-8">{description}</p>
+          <p class="text-muted-foreground mb-8" set:html={description} />
           
           {areas && areas.length > 0 && (
             <>

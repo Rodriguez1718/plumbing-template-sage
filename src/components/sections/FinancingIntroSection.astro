@@ -21,7 +21,7 @@ const subtitle = raw_subtitle ? getLocationText(raw_subtitle) : raw_subtitle;
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-10" data-animate="fade-up">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">{title}</h2>
-        <p class="text-lg text-muted-foreground">{description}</p>
+        <p class="text-lg text-muted-foreground" set:html={description} />
       </div>
       
       {subtitle && benefits.length > 0 && (

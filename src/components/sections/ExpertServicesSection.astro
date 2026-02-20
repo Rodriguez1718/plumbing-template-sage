@@ -57,9 +57,7 @@ const iconMap: Record<string, string> = {
           {highlightedText && <span class="text-secondary"> {highlightedText}</span>}
         </h2>
         
-        <p class="text-muted-foreground mb-8 leading-relaxed">
-          At <span class="font-semibold text-foreground">{getLocationText("{fullName}")}</span>, {description}
-        </p>
+        <p class="text-muted-foreground mb-8 leading-relaxed" set:html={`At <span class="font-semibold text-foreground">${getLocationText("{fullName}")}</span>, ${description}`} />
 
         <!-- Feature boxes grid -->
         <div class="grid grid-cols-2 gap-4">
@@ -70,7 +68,7 @@ const iconMap: Record<string, string> = {
               </div>
               <div>
                 <h4 class="font-semibold text-foreground text-sm">{feature.title}</h4>
-                <p class="text-muted-foreground text-xs mt-1">{feature.description}</p>
+                <p class="text-muted-foreground text-xs mt-1" set:html={feature.description} />
               </div>
             </div>
           ))}

@@ -33,7 +33,7 @@ const testimonials = rawTestimonials.map(t => ({
     <div class="text-center mb-12" data-animate="fade-up">
       <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wide border-b-2 border-accent pb-1">{badge}</span>
       <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4">{title}</h2>
-      {description && <p class="text-muted-foreground max-w-3xl mx-auto">{description}</p>}
+      {description && <p class="text-muted-foreground max-w-3xl mx-auto" set:html={description} />}
     </div>
 
     <div class="testimonials-carousel overflow-hidden cursor-grab active:cursor-grabbing select-none" data-animate="fade-up">
@@ -54,7 +54,7 @@ const testimonials = rawTestimonials.map(t => ({
               <div class="flex text-yellow-500 mb-3" aria-label={`${testimonial.rating} out of 5 stars`}>
                 {Array.from({ length: testimonial.rating }).map(() => "★").join("")}
               </div>
-              <p class="text-sm text-muted-foreground flex-1">{testimonial.content}</p>
+              <p class="text-sm text-muted-foreground flex-1" set:html={testimonial.content} />
             </div>
           </div>
         ))}

@@ -54,7 +54,7 @@ const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
           <span class="text-accent">{titleHighlight}</span>
         )}
       </h2>
-      <p class="text-muted-foreground mt-4 max-w-3xl mx-auto">{description}</p>
+      <p class="text-muted-foreground mt-4 max-w-3xl mx-auto" set:html={description} />
     </div>
 
     {/* Two column layout */}
@@ -92,7 +92,7 @@ const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
                   </div>
                   <div>
                     <h4 class="font-semibold text-foreground">{feature.title}</h4>
-                    <p class="text-muted-foreground text-sm mt-1">{feature.description}</p>
+                    <p class="text-muted-foreground text-sm mt-1" set:html={feature.description} />
                   </div>
                 </li>
               ))}

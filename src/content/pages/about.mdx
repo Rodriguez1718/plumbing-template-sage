@@ -91,15 +91,15 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
   faqs={[
     {
       question: "What plumbing services do you offer?",
-      answer: "We offer a full range of residential and commercial plumbing services including leak detection and repair, drain cleaning, water heater installation and repair, bathroom and kitchen plumbing, sewer line services, and 24/7 emergency plumbing."
+      answer: "We offer a full range of residential and <a href='/commercial'><strong>commercial plumbing</strong></a> services including <a href='/residential/leak/detection'><strong>leak detection</strong></a> and repair, <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>, <a href='/residential/water-heaters/standard'><strong>water heater installation</strong></a> and repair, bathroom and <a href='/residential/kitchen/faucet-sink'><strong>kitchen plumbing</strong></a>, <a href='/residential/drain/sewer-line'><strong>sewer line</strong></a> services, and 24/7 <a href='/residential/specialty/emergency-plumbing/emergency-leak-repair'><strong>emergency plumbing</strong></a>."
     },
     {
       question: "What areas do you serve?",
-      answer: `We proudly serve {city} and surrounding areas. Contact us to find out if we cover your neighborhood.`
+      answer: `We proudly serve {city} and surrounding areas. <a href="/contact"><strong>Contact us</strong></a> to find out if we cover your neighborhood.`
     },
     {
       question: "How much do your services cost?",
-      answer: "We offer transparent, upfront pricing with no hidden fees. The cost depends on the specific service needed. Contact us for a free estimate and we'll provide a detailed quote before any work begins. We also offer financing options to make services more affordable."
+      answer: "We offer transparent, upfront pricing with no hidden fees. The cost depends on the specific service needed. <a href='/contact'><strong>Contact us</strong></a> for a free estimate and we'll provide a detailed quote before any work begins. We also offer <a href='/financing'><strong>financing options</strong></a> to make services more affordable."
     }
   ]}
 />
@@ -117,7 +117,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
 <ServiceAreaSection
   title="Proudly Serving {city}"
-  description="We provide expert residential and commercial plumbing solutions across the city. Whether you need leak detection, drain cleaning, water heater repairs, or advanced options like trenchless sewer repair and whole-house water filtration, our team is here to help. We also offer routine maintenance and 24/7 emergency services to keep your plumbing in top shape."
+  description="We provide expert residential and <a href='/commercial'><strong>commercial plumbing</strong></a> solutions across the city. Whether you need <a href='/residential/leak/detection'><strong>leak detection</strong></a>, <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>, <a href='/residential/water-heaters/standard'><strong>water heater</strong></a> repairs, or advanced options like <a href='/residential/specialty/sewer-line-services/trenchless-sewer-repair'><strong>trenchless sewer repair</strong></a> and whole-house <a href='/residential/specialty/water-filtration/whole-house-filtration'><strong>water filtration</strong></a>, our team is here to help. We also offer routine maintenance and 24/7 emergency services to keep your plumbing in top shape."
   areas={[
     "Santa Monica", "Pasadena", "Glendale", "Downtown {city}", "Hollywood",
     "Beverly Hills", "Venice", "Westwood", "Culver City", "San Fernando Valley",
