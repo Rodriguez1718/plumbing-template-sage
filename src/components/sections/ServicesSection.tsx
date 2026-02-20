@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
+import { Wrench } from 'lucide-react';
 
 interface Service {
   title: string;
   description: string;
   href?: string;
+  icon?: string;
 }
 
 interface ServiceCategory {
@@ -16,6 +18,14 @@ interface Props {
   description: string;
   categories: ServiceCategory[];
 }
+
+// Map category titles to banner images
+const CATEGORY_IMAGES: Record<string, string> = {
+  'Residential Plumbing Services': 'https://img.freepik.com/free-photo/male-plumber-working-fix-problems-client-s-house_23-2150990700.jpg?t=st=1771554058~exp=1771557658~hmac=70bda38cc308ec76dbbbc26ebd49f349d3937ee69d95003ff1b0274174832fbb',
+  'Commercial Plumbing Services':  'https://img.freepik.com/free-photo/man-installs-heating-system-house-checks-pipes-with-wrench_169016-55834.jpg?t=st=1771554128~exp=1771557728~hmac=5f7f397bf2be86cea0dcbcd1d300e04321de78f81ce1760b57de665e059aa5c2',
+  'Specialty Plumbing Services':   'https://img.freepik.com/free-photo/female-plumber-working-fix-problems-client-s-house_23-2150990725.jpg?t=st=1771554168~exp=1771557768~hmac=850854d4b59501de954307a15b86e7dfe2cfc0fa05030415c9df3397f7c6ea0e',
+  'Maintenance Services':          'https://happyplumbing.com/wp-content/uploads/2023/02/plumber-at-work-in-a-bathroom.jpg',
+};
 
 export function ServicesSection({ title, description, categories }: Props) {
   const [activeTab, setActiveTab] = useState(0);
@@ -73,12 +83,22 @@ export function ServicesSection({ title, description, categories }: Props) {
                   : 'opacity-0 absolute inset-0 pointer-events-none'
               }`}
             >
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-bold inline-block">
-                  {category.title}
-                </h3>
-                <div className="w-16 h-0.5 bg-accent mx-auto mt-2 rounded-full"></div>
-              </div>
+              {/* Category image banner */}
+              {CATEGORY_IMAGES[category.title] && (
+                <div className="relative w-full max-w-5xl mx-auto mb-8 rounded-xl overflow-hidden h-48 md:h-64">
+                  <img
+                    src={CATEGORY_IMAGES[category.title]}
+                    alt={category.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                    <div>
+                      <h3 className="text-xl md:text-2xl font-bold text-white">{category.title}</h3>
+                      <div className="w-12 h-0.5 bg-accent mt-2 rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+              )}
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
                 {category.services.map((service, serviceIndex) => {
                   const Tag = service.href ? 'a' : 'div';
@@ -86,13 +106,22 @@ export function ServicesSection({ title, description, categories }: Props) {
                     <Tag
                       key={serviceIndex}
                       {...(service.href ? { href: service.href } : {})}
-                      className={`group bg-card border rounded-lg p-5 transition-all animate-in fade-in slide-in-from-bottom-2 duration-300 ${service.href ? 'hover:shadow-md hover:border-accent/30 cursor-pointer' : 'cursor-default'}`}
+                      className={`group bg-card border rounded-lg p-6 transition-all animate-in fade-in slide-in-from-bottom-2 duration-300 flex flex-col items-center text-center gap-3 ${service.href ? 'hover:shadow-md hover:border-accent/30 cursor-pointer' : 'cursor-default'}`}
                       style={{ animationDelay: `${serviceIndex * 50}ms` }}
                     >
-                      <h4 className={`font-semibold mb-1 ${service.href ? 'group-hover:text-accent' : ''} transition-colors`}>
-                        {service.title}
-                      </h4>
-                      <p className="text-sm text-muted-foreground">{service.description}</p>
+                      <div className="shrink-0 w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center overflow-hidden">
+                        {service.icon ? (
+                          <img src={service.icon} alt="" className="w-10 h-10 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(10%) sepia(90%) saturate(5000%) hue-rotate(340deg) brightness(80%)' }} />
+                        ) : (
+                          <Wrench size={24} className="text-accent" />
+                        )}
+                      </div>
+                      <div>
+                        <h4 className={`font-semibold mb-1 ${service.href ? 'group-hover:text-accent' : ''} transition-colors`}>
+                          {service.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground">{service.description}</p>
+                      </div>
                     </Tag>
                   );
                 })}

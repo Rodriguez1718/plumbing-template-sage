@@ -42,9 +42,16 @@ const iconMap = {
 const borderStyle = borderColor ? `border-top: 4px solid ${borderColor}; border-bottom: 4px solid ${borderColor};` : "";
 ---
 
-<section class="py-8 bg-primary text-primary-foreground" style={borderStyle}>
-  <div class="container mx-auto px-4">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-6" data-animate="fade-up">
+<section class="py-8 bg-primary text-primary-foreground relative overflow-visible" style={borderStyle}>
+  <div class="container mx-auto px-4 relative">
+    <img
+      src="/images/plumber.png"
+      alt=""
+      class="hidden md:block absolute bottom-0 left-0 w-28 lg:w-36 -translate-x-4 z-10 pointer-events-none"
+      style="bottom: -2rems;"
+      aria-hidden="true"
+    />
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6 md:pl-36 lg:pl-44" data-animate="fade-up">
       <div class="flex flex-col sm:flex-row items-center gap-6">
         <a href={buttonHref} class="inline-flex items-center justify-center rounded-md bg-background text-foreground px-8 py-4 text-lg font-semibold hover:bg-background/90 transition-colors">
           {buttonText}
