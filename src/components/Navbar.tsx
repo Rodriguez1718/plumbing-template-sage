@@ -135,7 +135,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* Top Bar - Dark Blue */}
-      <div className="bg-brand-primary text-white">
+      <div className="hidden lg:block bg-brand-primary text-white">
         <div className="container mx-auto px-4">
           <div className="flex h-9 items-center justify-end gap-6">
             {topNavItems.map((item) => (
