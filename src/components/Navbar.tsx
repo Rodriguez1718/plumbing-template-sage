@@ -279,6 +279,49 @@ function MobileNav({ onClose }: { onClose: () => void }) {
         ))}
       </div>
 
+      {/* Main Links */}
+      <div className="p-4 border-b">
+        {topNavItems.map((item) => (
+          <div key={item.href} className="border-b border-gray-100 last:border-b-0">
+            {item.children ? (
+              <>
+                <button
+                  onClick={() => setExpandedTop(expandedTop === item.href ? null : item.href)}
+                  className="flex items-center justify-between w-full py-3 text-left"
+                >
+                  <span className="font-semibold text-gray-800">{item.title}</span>
+                  <ChevronDown
+                    className={`h-4 w-4 text-gray-400 transition-transform ${expandedTop === item.href ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                {expandedTop === item.href && (
+                  <div className="pb-3 pl-4">
+                    {item.children.map((child) => (
+                      <a
+                        key={child.href}
+                        href={child.href}
+                        className="block py-2 text-sm text-gray-600 hover:text-brand-secondary"
+                        onClick={onClose}
+                      >
+                        {child.title}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </>
+            ) : (
+              <a
+                href={item.href}
+                className="block py-3 font-semibold text-gray-800 hover:text-brand-secondary"
+                onClick={onClose}
+              >
+                {item.title}
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+
       {/* Main Services */}
       <div className="p-4">
         <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Services</p>
@@ -328,52 +371,6 @@ function MobileNav({ onClose }: { onClose: () => void }) {
                   </div>
                 ))}
               </div>
-            )}
-          </div>
-        ))}
-      </div>
-
-      {/* Top Nav Items */}
-      <div className="p-4 bg-gray-50">
-        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">More</p>
-        {topNavItems.map((item) => (
-          <div key={item.href} className="border-b border-gray-200 last:border-b-0">
-            {item.children ? (
-              <>
-                <button
-                  onClick={() => setExpandedTop(expandedTop === item.href ? null : item.href)}
-                  className="flex items-center justify-between w-full py-3 text-left"
-                >
-                  <span className="text-sm text-gray-700">{item.title}</span>
-                  <ChevronDown 
-                    className={`h-4 w-4 text-gray-400 transition-transform ${
-                      expandedTop === item.href ? 'rotate-180' : ''
-                    }`} 
-                  />
-                </button>
-                {expandedTop === item.href && (
-                  <div className="pb-3 pl-4">
-                    {item.children.map((child) => (
-                      <a
-                        key={child.href}
-                        href={child.href}
-                        className="block py-2 text-sm text-gray-500 hover:text-brand-secondary"
-                        onClick={onClose}
-                      >
-                        {child.title}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </>
-            ) : (
-              <a
-                href={item.href}
-                className="block py-3 text-sm text-gray-700"
-                onClick={onClose}
-              >
-                {item.title}
-              </a>
             )}
           </div>
         ))}
