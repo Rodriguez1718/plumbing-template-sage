@@ -205,47 +205,60 @@ const hasSlideshow = slides.length > 1;
                 ]}
                 data-promo-index={i}
               >
-                <div class="promo-card relative max-w-[280px] w-full">
-                  <!-- Decorative corner accent -->
-                  <div class="absolute -top-3 -right-3 w-16 h-16 bg-secondary rounded-full opacity-30 blur-md"></div>
-                  <div class="absolute -bottom-2 -left-2 w-12 h-12 bg-secondary rounded-full opacity-20 blur-md"></div>
+                <div class="promo-card relative max-w-[300px] w-full">
+                  <!-- Pulsing glow behind card -->
+                  <div class="promo-glow absolute -inset-4 rounded-2xl blur-2xl" style="background: var(--brand-secondary);"></div>
 
-                  <!-- Card body -->
-                  <div class="relative overflow-hidden rounded-lg border border-white/10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)]">
-                    <!-- Top ribbon -->
-                    <div class="bg-secondary px-5 py-2.5 text-center">
-                      <span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary-foreground">Limited Time Offer</span>
-                    </div>
+                  <!-- Outer solid border (navy) -->
+                  <div class="relative rounded-lg overflow-hidden shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)]" style="background: var(--brand-primary); padding: 4px;">
 
-                    <!-- Main content area -->
-                    <div class="bg-accent px-6 py-8 text-center relative">
-                      <!-- Subtle radial glow behind the number -->
-                      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.08)_0%,_transparent_70%)]"></div>
+                    <!-- Dashed border layer -->
+                    <div class="rounded-md" style="border: 3px dashed var(--brand-secondary); background: white;">
 
-                      <!-- Discount value -->
-                      <div class="relative">
-                        <div class="promo-value text-5xl md:text-6xl font-black text-accent-foreground leading-none tracking-tight">
-                          {slide.promoTitle}
+                      <!-- Decorative circles -->
+                      <div class="absolute -top-6 -left-6 w-28 h-28 rounded-full opacity-30" style="background: var(--brand-tertiary);"></div>
+                      <div class="absolute -bottom-8 -right-8 w-32 h-32 rounded-full opacity-25" style="background: var(--brand-tertiary);"></div>
+
+                      <!-- Card content -->
+                      <div class="relative px-6 pt-6 pb-5 text-center">
+                        <!-- "Coupon" heading -->
+                        <p class="text-xs font-bold uppercase tracking-[0.2em] mb-1" style="color: var(--brand-primary);">
+                          <span class="relative inline-flex items-center gap-1.5">
+                            <span class="relative flex h-1.5 w-1.5">
+                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full" style="background: var(--brand-accent); opacity: 0.6;"></span>
+                              <span class="relative inline-flex rounded-full h-1.5 w-1.5" style="background: var(--brand-accent);"></span>
+                            </span>
+                            Limited Offer
+                          </span>
+                        </p>
+                        <h3 class="promo-coupon-title text-3xl md:text-4xl font-black leading-tight mb-3" style="color: var(--brand-secondary);">
+                          Coupon
+                        </h3>
+                        <p class="text-xs mb-4" style="color: var(--brand-primary); opacity: 0.7;">Redeem &amp; Save Today</p>
+
+                        <!-- Discount value box -->
+                        <div class="promo-value-box inline-flex items-baseline gap-1 rounded-md px-5 py-2.5 mb-4" style="background: var(--brand-primary);">
+                          <span class="promo-value text-3xl md:text-4xl font-black leading-none tracking-tight text-white">
+                            {slide.promoTitle}
+                          </span>
                         </div>
+
+                        <!-- Description -->
+                        <p class="text-sm leading-relaxed font-medium mb-1" style="color: var(--brand-primary);">
+                          {slide.promoText}
+                        </p>
                       </div>
 
-                      <!-- Divider -->
-                      <div class="flex items-center gap-3 my-5">
-                        <div class="flex-1 h-px bg-accent-foreground/20"></div>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-accent-foreground/40" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M12 0L13.5 9.5L24 12L13.5 14.5L12 24L10.5 14.5L0 12L10.5 9.5Z" />
-                        </svg>
-                        <div class="flex-1 h-px bg-accent-foreground/20"></div>
-                      </div>
+                      <!-- Dashed divider -->
+                      <div class="mx-4 mb-0" style="border-top: 2px dashed var(--brand-secondary); opacity: 0.35;"></div>
 
-                      <!-- Description -->
-                      <p class="relative text-sm md:text-base text-accent-foreground/90 leading-relaxed">
-                        {slide.promoText}
-                      </p>
+                      <!-- Footer with expiry -->
+                      <div class="relative px-6 py-3 text-center">
+                        <p class="text-xs font-semibold italic" style="color: var(--brand-accent);">
+                          * Call now to redeem
+                        </p>
+                      </div>
                     </div>
-
-                    <!-- Bottom edge accent -->
-                    <div class="h-1.5 bg-gradient-to-r from-secondary via-accent to-secondary"></div>
                   </div>
                 </div>
               </div>
@@ -325,13 +338,13 @@ const hasSlideshow = slides.length > 1;
   .promo-value {
     background: linear-gradient(
       110deg,
-      var(--accent-foreground) 0%,
-      var(--accent-foreground) 40%,
-      rgba(255,255,255,0.95) 50%,
-      var(--accent-foreground) 60%,
-      var(--accent-foreground) 100%
+      #ffffff 0%,
+      #ffffff 35%,
+      var(--brand-secondary) 50%,
+      #ffffff 65%,
+      #ffffff 100%
     );
-    background-size: 250% 100%;
+    background-size: 300% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -343,14 +356,44 @@ const hasSlideshow = slides.length > 1;
     50% { background-position: 0% center; }
   }
 
-  /* Subtle float for the promo card */
+  /* Coupon title color pulse */
+  .promo-coupon-title {
+    animation: coupon-title-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes coupon-title-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  /* Value box subtle scale pulse */
+  .promo-value-box {
+    animation: value-box-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes value-box-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+  }
+
+  /* Float animation for the card */
   .promo-card {
     animation: promo-float 4s ease-in-out infinite;
   }
 
   @keyframes promo-float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* Pulsing outer glow */
+  .promo-glow {
+    animation: promo-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes promo-pulse {
+    0%, 100% { opacity: 0.15; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.06); }
   }
 </style>
 
