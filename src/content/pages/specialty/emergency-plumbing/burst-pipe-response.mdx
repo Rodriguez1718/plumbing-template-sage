@@ -1,0 +1,28 @@
+---
+title: "Burst Pipe Response"
+description: "Immediate burst pipe emergency response to minimize water damage and restore your plumbing."
+---
+
+import HeroSection from "@/components/sections/HeroSection.astro"
+import PlaceholderContentSection from "@/components/sections/PlaceholderContentSection.astro"
+import PromoTilesSection from "@/components/sections/PromoTilesSection.astro"
+import FinancingPlansSection from "@/components/sections/FinancingPlansSection.astro"
+import FAQSection from "@/components/sections/FAQSection.astro"
+import CTAStrip from "@/components/sections/CTAStrip.astro"
+import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
+import pageData from "../../../../data/pages/specialty/emergency-plumbing/burst-pipe-response.json"
+
+
+<HeroSection {...pageData.sections[0].props} />
+
+<PlaceholderContentSection {...pageData.sections[1].props} />
+
+<PromoTilesSection {...pageData.sections[2].props} />
+
+<FinancingPlansSection {...pageData.sections[3].props} />
+
+<FAQSection {...pageData.sections[4].props} />
+
+<CTAStrip {...pageData.sections[5].props} />
+
+<ServiceAreaSection {...pageData.sections[6].props} />

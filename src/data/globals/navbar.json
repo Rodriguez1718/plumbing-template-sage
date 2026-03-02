@@ -153,47 +153,47 @@
           "title": "Advanced Leak Detection",
           "icon": "search",
           "items": [
-            { "title": "Infrared Camera Leak Detection", "href": "/residential/specialty/advanced-leak-detection/infrared-camera" },
-            { "title": "Hydrostatic Pressure Testing", "href": "/residential/specialty/advanced-leak-detection/hydrostatic-pressure-testing" }
+            { "title": "Infrared Camera Leak Detection", "href": "/specialty/advanced-leak-detection/infrared-camera" },
+            { "title": "Hydrostatic Pressure Testing", "href": "/specialty/advanced-leak-detection/hydrostatic-pressure-testing" }
           ]
         },
         {
           "title": "Hydro Jetting",
           "icon": "zap",
           "items": [
-            { "title": "High-Pressure Drain Cleaning for Tough Clogs", "href": "/residential/specialty/hydro-jetting/high-pressure-drain-cleaning" }
+            { "title": "High-Pressure Drain Cleaning for Tough Clogs", "href": "/specialty/hydro-jetting/high-pressure-drain-cleaning" }
           ]
         },
         {
           "title": "Sewer Line Services",
           "icon": "pipette",
           "items": [
-            { "title": "Trenchless Sewer Repair", "href": "/residential/specialty/sewer-line-services/trenchless-sewer-repair" },
-            { "title": "Pipe Bursting and Lining", "href": "/residential/specialty/sewer-line-services/pipe-bursting-lining" }
+            { "title": "Trenchless Sewer Repair", "href": "/specialty/sewer-line-services/trenchless-sewer-repair" },
+            { "title": "Pipe Bursting and Lining", "href": "/specialty/sewer-line-services/pipe-bursting-lining" }
           ]
         },
         {
           "title": "Emergency Plumbing",
           "icon": "alert",
           "items": [
-            { "title": "24/7 Emergency Leak and Repair Services", "href": "/residential/specialty/emergency-plumbing/emergency-leak-repair" },
-            { "title": "Burst Pipe Response", "href": "/residential/specialty/emergency-plumbing/burst-pipe-response" }
+            { "title": "24/7 Emergency Leak and Repair Services", "href": "/specialty/emergency-plumbing/emergency-leak-repair" },
+            { "title": "Burst Pipe Response", "href": "/specialty/emergency-plumbing/burst-pipe-response" }
           ]
         },
         {
           "title": "Water Filtration",
           "icon": "filter",
           "items": [
-            { "title": "Whole-House Water Filtration Systems", "href": "/residential/specialty/water-filtration/whole-house-filtration" },
-            { "title": "Water Softener Installation", "href": "/residential/specialty/water-filtration/water-softener" }
+            { "title": "Whole-House Water Filtration Systems", "href": "/specialty/water-filtration/whole-house-filtration" },
+            { "title": "Water Softener Installation", "href": "/specialty/water-filtration/water-softener" }
           ]
         },
         {
           "title": "Green Plumbing Solutions",
           "icon": "leaf",
           "items": [
-            { "title": "Water Conservation Retrofits", "href": "/residential/specialty/green-plumbing/water-conservation-retrofits" },
-            { "title": "Solar Water Heater Installation", "href": "/residential/specialty/green-plumbing/solar-water-heater" }
+            { "title": "Water Conservation Retrofits", "href": "/specialty/green-plumbing/water-conservation-retrofits" },
+            { "title": "Solar Water Heater Installation", "href": "/specialty/green-plumbing/solar-water-heater" }
           ]
         }
       ]
@@ -206,40 +206,40 @@
           "title": "Preventative Maintenance",
           "icon": "clipboard",
           "items": [
-            { "title": "Regular Plumbing Inspections", "href": "/residential/maintenance/preventative/plumbing-inspections" },
-            { "title": "Water Heater Flushing and Maintenance", "href": "/residential/maintenance/preventative/water-heater-flushing" }
+            { "title": "Regular Plumbing Inspections", "href": "/maintenance/preventative/plumbing-inspections" },
+            { "title": "Water Heater Flushing and Maintenance", "href": "/maintenance/preventative/water-heater-flushing" }
           ]
         },
         {
           "title": "Drain and Sewer Maintenance",
           "icon": "waves",
           "items": [
-            { "title": "Routine Drain Cleaning", "href": "/residential/maintenance/drain-sewer/routine-drain-cleaning" },
-            { "title": "Scheduled Sewer Inspections", "href": "/residential/maintenance/drain-sewer/sewer-inspections" }
+            { "title": "Routine Drain Cleaning", "href": "/maintenance/drain-sewer/routine-drain-cleaning" },
+            { "title": "Scheduled Sewer Inspections", "href": "/maintenance/drain-sewer/sewer-inspections" }
           ]
         },
         {
           "title": "Leak Prevention",
           "icon": "droplet",
           "items": [
-            { "title": "Valve and Seal Checks", "href": "/residential/maintenance/leak-prevention/valve-seal-checks" },
-            { "title": "Pressure Testing for Pipes", "href": "/residential/maintenance/leak-prevention/pressure-testing" }
+            { "title": "Valve and Seal Checks", "href": "/maintenance/leak-prevention/valve-seal-checks" },
+            { "title": "Pressure Testing for Pipes", "href": "/maintenance/leak-prevention/pressure-testing" }
           ]
         },
         {
           "title": "Gas System Maintenance",
           "icon": "zap",
           "items": [
-            { "title": "Annual Testing for Gas Appliances", "href": "/residential/maintenance/gas-system/annual-gas-testing" },
-            { "title": "Gas Line Inspection", "href": "/residential/maintenance/gas-system/gas-line-inspection" }
+            { "title": "Annual Testing for Gas Appliances", "href": "/maintenance/gas-system/annual-gas-testing" },
+            { "title": "Gas Line Inspection", "href": "/maintenance/gas-system/gas-line-inspection" }
           ]
         },
         {
           "title": "Appliance Maintenance",
           "icon": "settings",
           "items": [
-            { "title": "Garbage Disposal Cleaning", "href": "/residential/maintenance/appliance/garbage-disposal-cleaning" },
-            { "title": "Dishwasher Plumbing Checks", "href": "/residential/maintenance/appliance/dishwasher-plumbing-checks" }
+            { "title": "Garbage Disposal Cleaning", "href": "/maintenance/appliance/garbage-disposal-cleaning" },
+            { "title": "Dishwasher Plumbing Checks", "href": "/maintenance/appliance/dishwasher-plumbing-checks" }
           ]
         }
       ]

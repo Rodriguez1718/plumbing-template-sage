@@ -104,7 +104,7 @@
         "faqs": [
           {
             "question": "What plumbing services do you offer?",
-            "answer": "We offer a full range of residential and <a href='/commercial'><strong>commercial plumbing</strong></a> services including <a href='/residential/leak/detection'><strong>leak detection</strong></a> and repair, <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>, <a href='/residential/water-heaters/standard'><strong>water heater installation</strong></a> and repair, bathroom and <a href='/residential/kitchen/faucet-sink'><strong>kitchen plumbing</strong></a>, <a href='/residential/drain/sewer-line'><strong>sewer line</strong></a> services, and 24/7 <a href='/residential/specialty/emergency-plumbing/emergency-leak-repair'><strong>emergency plumbing</strong></a>."
+            "answer": "We offer a full range of residential and <a href='/commercial'><strong>commercial plumbing</strong></a> services including <a href='/residential/leak/detection'><strong>leak detection</strong></a> and repair, <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>, <a href='/residential/water-heaters/standard'><strong>water heater installation</strong></a> and repair, bathroom and <a href='/residential/kitchen/faucet-sink'><strong>kitchen plumbing</strong></a>, <a href='/residential/drain/sewer-line'><strong>sewer line</strong></a> services, and 24/7 <a href='/specialty/emergency-plumbing/emergency-leak-repair'><strong>emergency plumbing</strong></a>."
           },
           {
             "question": "What areas do you serve?",
@@ -140,7 +140,7 @@
       "component": "ServiceAreaSection",
       "props": {
         "title": "Proudly Serving {city}",
-        "description": "We provide expert residential and <a href='/commercial'><strong>commercial plumbing</strong></a> solutions across the city. Whether you need <a href='/residential/leak/detection'><strong>leak detection</strong></a>, <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>, <a href='/residential/water-heaters/standard'><strong>water heater</strong></a> repairs, or advanced options like <a href='/residential/specialty/sewer-line-services/trenchless-sewer-repair'><strong>trenchless sewer repair</strong></a> and whole-house <a href='/residential/specialty/water-filtration/whole-house-filtration'><strong>water filtration</strong></a>, our team is here to help. We also offer routine maintenance and 24/7 emergency services to keep your plumbing in top shape.",
+        "description": "We provide expert residential and <a href='/commercial'><strong>commercial plumbing</strong></a> solutions across the city. Whether you need <a href='/residential/leak/detection'><strong>leak detection</strong></a>, <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>, <a href='/residential/water-heaters/standard'><strong>water heater</strong></a> repairs, or advanced options like <a href='/specialty/sewer-line-services/trenchless-sewer-repair'><strong>trenchless sewer repair</strong></a> and whole-house <a href='/specialty/water-filtration/whole-house-filtration'><strong>water filtration</strong></a>, our team is here to help. We also offer routine maintenance and 24/7 emergency services to keep your plumbing in top shape.",
         "areas": [
           "Santa Monica",
           "Pasadena",

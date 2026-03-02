@@ -58,31 +58,31 @@
             "image": "https://ucarecdn.com/904d12f4-36c2-4c11-99c9-c22ebbc905fe/-/preview/1000x666/",
             "icon": "pipe",
             "title": "Preventative Maintenance",
-            "href": "/residential/maintenance/preventative/plumbing-inspections"
+            "href": "/maintenance/preventative/plumbing-inspections"
           },
           {
             "image": "https://ucarecdn.com/b2b720dc-bf04-4366-a627-124001e3746e/-/preview/1000x666/",
             "icon": "drain",
             "title": "Drain & Sewer Maintenance",
-            "href": "/residential/maintenance/drain-sewer/routine-drain-cleaning"
+            "href": "/maintenance/drain-sewer/routine-drain-cleaning"
           },
           {
             "image": "https://ucarecdn.com/075a53c5-b442-4211-bd8d-baf6977b3f87/-/preview/1000x666/",
             "icon": "leak",
             "title": "Leak Prevention",
-            "href": "/residential/maintenance/leak-prevention/valve-seal-checks"
+            "href": "/maintenance/leak-prevention/valve-seal-checks"
           },
           {
             "image": "https://ucarecdn.com/f0f1f6f3-d381-4c74-8d86-0a5cb24648f0/-/preview/1000x666/",
             "icon": "pipe",
             "title": "Gas System Maintenance",
-            "href": "/residential/maintenance/gas-system/annual-gas-testing"
+            "href": "/maintenance/gas-system/annual-gas-testing"
           },
           {
             "image": "https://ucarecdn.com/a6fafe41-c916-4595-adf6-9657af91fbbc/ReliableGarbageDisposalRepairandReplacement.webp",
             "icon": "kitchen",
             "title": "Appliance Maintenance",
-            "href": "/residential/maintenance/appliance/garbage-disposal-cleaning"
+            "href": "/maintenance/appliance/garbage-disposal-cleaning"
           }
         ]
       }
@@ -173,7 +173,7 @@
         "faqs": [
           {
             "question": "How often should I have my plumbing inspected?",
-            "answer": "We recommend an annual <a href='/residential/maintenance/preventative/plumbing-inspections'><strong>plumbing inspection</strong></a> for most homes. Older homes or properties with known issues may benefit from more frequent checkups."
+            "answer": "We recommend an annual <a href='/maintenance/preventative/plumbing-inspections'><strong>plumbing inspection</strong></a> for most homes. Older homes or properties with known issues may benefit from more frequent checkups."
           },
           {
             "question": "What does a plumbing maintenance visit include?",

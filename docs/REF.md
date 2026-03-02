@@ -248,7 +248,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
       initials: "RK",
       date: "8 months ago",
       rating: 5,
-      content: "Had a <a href='/residential/specialty/emergency-plumbing/burst-pipe-response'><strong>burst pipe</strong></a> at 2 AM and they were at my door within 45 minutes. Saved us from serious water damage. True emergency pros!"
+      content: "Had a <a href='/specialty/emergency-plumbing/burst-pipe-response'><strong>burst pipe</strong></a> at 2 AM and they were at my door within 45 minutes. Saved us from serious water damage. True emergency pros!"
     },
     {
       name: "Tom Alvarez",
@@ -297,7 +297,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
       initials: "CR",
       date: "1 week ago",
       rating: 5,
-      content: "Whole-house <a href='/residential/specialty/water-filtration/whole-house-filtration'><strong>water filtration</strong></a> install was seamless. The water quality difference is night and day. Great team, great results."
+      content: "Whole-house <a href='/specialty/water-filtration/whole-house-filtration'><strong>water filtration</strong></a> install was seamless. The water quality difference is night and day. Great team, great results."
     }
   ]}
 />
@@ -315,7 +315,7 @@ import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
 
 <ServiceAreaSection
   title="Expert Plumbing Services in {city} and Surrounding Areas"
-  description="Looking for reliable plumbing services in {city}? We provide expert residential and commercial solutions across the city. Whether you need <a href='/residential/leak/detection'><strong>leak detection</strong></a>, <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>, <a href='/residential/water-heaters/standard'><strong>water heater</strong></a> repairs, or advanced options like <a href='/residential/specialty/sewer-line-services/trenchless-sewer-repair'><strong>trenchless sewer repair</strong></a> and whole-house <a href='/residential/specialty/water-filtration/whole-house-filtration'><strong>water filtration</strong></a>, our team is here to help. We also offer routine maintenance and 24/7 emergency services to keep your plumbing in top shape. Call us today to schedule your service!"
+  description="Looking for reliable plumbing services in {city}? We provide expert residential and commercial solutions across the city. Whether you need <a href='/residential/leak/detection'><strong>leak detection</strong></a>, <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>, <a href='/residential/water-heaters/standard'><strong>water heater</strong></a> repairs, or advanced options like <a href='/specialty/sewer-line-services/trenchless-sewer-repair'><strong>trenchless sewer repair</strong></a> and whole-house <a href='/specialty/water-filtration/whole-house-filtration'><strong>water filtration</strong></a>, our team is here to help. We also offer routine maintenance and 24/7 emergency services to keep your plumbing in top shape. Call us today to schedule your service!"
   areas={[
     "Santa Monica", "Pasadena", "Glendale", "Downtown {city}", "Hollywood",
     "Beverly Hills", "Venice", "Westwood", "Culver City", "San Fernando Valley",

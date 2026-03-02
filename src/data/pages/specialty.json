@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Specialty Plumbing Services",
-    "description": "Advanced specialty plumbing services in {city}. <a href='/residential/leak/detection'><strong>Leak detection</strong></a>, <a href='/residential/specialty/hydro-jetting/high-pressure-drain-cleaning'><strong>hydro jetting</strong></a>, <a href='/residential/specialty/sewer-line-services/trenchless-sewer-repair'><strong>trenchless sewer repair</strong></a>, <a href='/residential/specialty/emergency-plumbing/emergency-leak-repair'><strong>emergency plumbing</strong></a>, <a href='/residential/specialty/water-filtration/whole-house-filtration'><strong>water filtration</strong></a>, and green plumbing solutions."
+    "description": "Advanced specialty plumbing services in {city}. <a href='/residential/leak/detection'><strong>Leak detection</strong></a>, <a href='/specialty/hydro-jetting/high-pressure-drain-cleaning'><strong>hydro jetting</strong></a>, <a href='/specialty/sewer-line-services/trenchless-sewer-repair'><strong>trenchless sewer repair</strong></a>, <a href='/specialty/emergency-plumbing/emergency-leak-repair'><strong>emergency plumbing</strong></a>, <a href='/specialty/water-filtration/whole-house-filtration'><strong>water filtration</strong></a>, and green plumbing solutions."
   },
   "sections": [
     {
@@ -10,7 +10,7 @@
         "variant": "category",
         "badge": "Advanced Plumbing Technology",
         "title": "Specialty Plumbing Services",
-        "subtitle": "State-of-the-art plumbing solutions using the latest technology — from infrared <a href='/residential/leak/detection'><strong>leak detection</strong></a> to <a href='/residential/specialty/sewer-line-services/trenchless-sewer-repair'><strong>trenchless sewer repair</strong></a> and whole-house <a href='/residential/specialty/water-filtration/whole-house-filtration'><strong>water filtration</strong></a>.",
+        "subtitle": "State-of-the-art plumbing solutions using the latest technology — from infrared <a href='/residential/leak/detection'><strong>leak detection</strong></a> to <a href='/specialty/sewer-line-services/trenchless-sewer-repair'><strong>trenchless sewer repair</strong></a> and whole-house <a href='/specialty/water-filtration/whole-house-filtration'><strong>water filtration</strong></a>.",
         "buttonText": "SCHEDULE SERVICE",
         "buttonHref": "/contact",
         "image": "https://ucarecdn.com/075a53c5-b442-4211-bd8d-baf6977b3f87/-/preview/1000x666/"
@@ -58,37 +58,37 @@
             "image": "https://ucarecdn.com/904d12f4-36c2-4c11-99c9-c22ebbc905fe/-/preview/1000x666/",
             "icon": "leak",
             "title": "Advanced Leak Detection",
-            "href": "/residential/specialty/advanced-leak-detection/infrared-camera"
+            "href": "/specialty/advanced-leak-detection/infrared-camera"
           },
           {
             "image": "https://ucarecdn.com/b2b720dc-bf04-4366-a627-124001e3746e/-/preview/1000x666/",
             "icon": "drain",
             "title": "Hydro Jetting",
-            "href": "/residential/specialty/hydro-jetting/high-pressure-drain-cleaning"
+            "href": "/specialty/hydro-jetting/high-pressure-drain-cleaning"
           },
           {
             "image": "https://ucarecdn.com/f0f1f6f3-d381-4c74-8d86-0a5cb24648f0/-/preview/1000x666/",
             "icon": "pipe",
             "title": "Sewer Line Services",
-            "href": "/residential/specialty/sewer-line-services/trenchless-sewer-repair"
+            "href": "/specialty/sewer-line-services/trenchless-sewer-repair"
           },
           {
             "image": "https://ucarecdn.com/f2844f4a-fb1f-4bae-af04-38db79fe8902/-/preview/1000x562/",
             "icon": "leak",
             "title": "Emergency Plumbing",
-            "href": "/residential/specialty/emergency-plumbing/emergency-leak-repair"
+            "href": "/specialty/emergency-plumbing/emergency-leak-repair"
           },
           {
             "image": "https://ucarecdn.com/14cf294e-225e-4857-a4cb-6b31611cffec/-/preview/1000x750/",
             "icon": "drain",
             "title": "Water Filtration",
-            "href": "/residential/specialty/water-filtration/whole-house-filtration"
+            "href": "/specialty/water-filtration/whole-house-filtration"
           },
           {
             "image": "https://ucarecdn.com/c43ed716-6e4c-4c93-9461-5fcd2aa79166/-/preview/1000x753/",
             "icon": "pipe",
             "title": "Green Plumbing Solutions",
-            "href": "/residential/specialty/green-plumbing/water-conservation-retrofits"
+            "href": "/specialty/green-plumbing/water-conservation-retrofits"
           }
         ]
       }
@@ -137,13 +137,13 @@
           {
             "label": "Water Filtration",
             "discount": "$200 OFF",
-            "description": "Whole-Home <a href='/residential/specialty/water-filtration/whole-house-filtration'><strong>Water Filtration</strong></a> System Installation.",
+            "description": "Whole-Home <a href='/specialty/water-filtration/whole-house-filtration'><strong>Water Filtration</strong></a> System Installation.",
             "expires": "December 2026"
           },
           {
             "label": "Emergency",
             "discount": "20% OFF",
-            "description": "All <a href='/residential/specialty/emergency-plumbing/emergency-leak-repair'><strong>Emergency Plumbing</strong></a> Services.",
+            "description": "All <a href='/specialty/emergency-plumbing/emergency-leak-repair'><strong>Emergency Plumbing</strong></a> Services.",
             "expires": "December 2026"
           }
         ]
@@ -156,7 +156,7 @@
         "faqs": [
           {
             "question": "What is trenchless sewer repair?",
-            "answer": "<a href='/residential/specialty/sewer-line-services/trenchless-sewer-repair'><strong>Trenchless sewer repair</strong></a> is a minimally invasive method of repairing or replacing sewer lines without digging large trenches. We use techniques like pipe lining and <a href='/residential/specialty/sewer-line-services/pipe-bursting-lining'><strong>pipe bursting</strong></a> to restore your <a href='/residential/drain/sewer-line'><strong>sewer line</strong></a> with minimal disruption to your property."
+            "answer": "<a href='/specialty/sewer-line-services/trenchless-sewer-repair'><strong>Trenchless sewer repair</strong></a> is a minimally invasive method of repairing or replacing sewer lines without digging large trenches. We use techniques like pipe lining and <a href='/specialty/sewer-line-services/pipe-bursting-lining'><strong>pipe bursting</strong></a> to restore your <a href='/residential/drain/sewer-line'><strong>sewer line</strong></a> with minimal disruption to your property."
           },
           {
             "question": "How does infrared leak detection work?",
@@ -164,11 +164,11 @@
           },
           {
             "question": "Is hydro jetting safe for older pipes?",
-            "answer": "Our technicians assess the condition of your pipes before recommending <a href='/residential/specialty/hydro-jetting/high-pressure-drain-cleaning'><strong>hydro jetting</strong></a>. For older or fragile pipes, we may suggest alternative cleaning methods to avoid damage."
+            "answer": "Our technicians assess the condition of your pipes before recommending <a href='/specialty/hydro-jetting/high-pressure-drain-cleaning'><strong>hydro jetting</strong></a>. For older or fragile pipes, we may suggest alternative cleaning methods to avoid damage."
           },
           {
             "question": "Do you offer 24/7 emergency plumbing?",
-            "answer": "Yes, we provide round-the-clock <a href='/residential/specialty/emergency-plumbing/emergency-leak-repair'><strong>emergency plumbing</strong></a> services. Whether it is a <a href='/residential/specialty/emergency-plumbing/burst-pipe-response'><strong>burst pipe</strong></a>, major leak, or sewer backup, our team is ready to respond quickly."
+            "answer": "Yes, we provide round-the-clock <a href='/specialty/emergency-plumbing/emergency-leak-repair'><strong>emergency plumbing</strong></a> services. Whether it is a <a href='/specialty/emergency-plumbing/burst-pipe-response'><strong>burst pipe</strong></a>, major leak, or sewer backup, our team is ready to respond quickly."
           }
         ]
       }
