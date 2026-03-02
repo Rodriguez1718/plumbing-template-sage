@@ -6,7 +6,7 @@
     "description": "Professional HVAC Services"
   },
   "location": {
-    "city": "New York",
+    "city": "Dinbers",
     "state": "SC",
     "address": "3648 Rorance Road",
     "fullAddress": "3648 Rorance Road, New York, SC 29170"
@@ -26,13 +26,6 @@
   "logo": {
     "src": "https://ntv-template-1.vercel.app/logo/dealer-logo.avif",
     "alt": "Acme Inc. Logo"
-  },
-  "social": {
-    "facebook": "",
-    "instagram": "",
-    "linkedin": "",
-    "twitter": "",
-    "youtube": ""
   },
   "seo": {
     "siteName": "Acme Inc.",
