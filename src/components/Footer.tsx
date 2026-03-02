@@ -47,7 +47,7 @@ export function Footer() {
               We specialize in residential and commercial plumbing solutions. From repairs and maintenance to advanced leak detection and installations, our team is here to keep your plumbing running smoothly. Contact us today!
             </p>
             <div className="flex gap-2">
-              {siteConfig.social.facebook && (
+              {siteConfig.social?.facebook && (
                 <a
                   href={siteConfig.social.facebook}
                   target="_blank"
@@ -58,7 +58,7 @@ export function Footer() {
                   <Facebook className="w-4 h-4" aria-hidden="true" />
                 </a>
               )}
-              {siteConfig.social.twitter && (
+              {siteConfig.social?.twitter && (
                 <a
                   href={siteConfig.social.twitter}
                   target="_blank"
@@ -70,7 +70,7 @@ export function Footer() {
                 </a>
               )}
               {/* Default social icons if none configured */}
-              {!siteConfig.social.facebook && !siteConfig.social.twitter && (
+              {!siteConfig.social?.facebook && !siteConfig.social?.twitter && (
                 <>
                   <a
                     href="#"
@@ -139,13 +139,13 @@ export function Footer() {
             </h3>
             <ul className="space-y-2">
               <li className="text-sm text-white/70">
-                PHONE:  {siteConfig.contact.phoneFormatted}
+                PHONE:  {siteConfig.contact?.phoneFormatted}
               </li>
               <li className="text-sm text-white/70">
-                EMAIL:  {siteConfig.contact.email.toUpperCase()}
+                EMAIL:  {siteConfig.contact?.email?.toUpperCase()}
               </li>
               <li className="text-sm text-white/70">
-                ADDRESS:  {siteConfig.location.city.toUpperCase()}, {siteConfig.location.state.toUpperCase()}
+                ADDRESS:  {siteConfig.location?.city?.toUpperCase()}, {siteConfig.location?.state?.toUpperCase()}
               </li>
             </ul>
           </div>
@@ -156,7 +156,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container mx-auto px-4 py-4">
           <p className="text-sm text-white/50 text-center">
-            © Copyright {currentYear} {siteConfig.business.name}
+            © Copyright {currentYear} {siteConfig.business?.name}
           </p>
         </div>
       </div>

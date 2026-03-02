@@ -152,8 +152,8 @@ export function Navbar() {
             {/* Logo */}
             <a href="/" className="flex items-center gap-3">
               <img 
-                src={siteConfig.logo.src} 
-                alt={siteConfig.logo.alt} 
+                src={siteConfig.logo?.src} 
+                alt={siteConfig.logo?.alt || "Logo"} 
                 className="h-14 w-14 object-contain"
                 width={56}
                 height={56}
@@ -162,7 +162,7 @@ export function Navbar() {
                 fetchPriority="high"
               />
               <div className="hidden sm:block">
-                <span className="font-bold text-lg text-brand-secondary">{siteConfig.business.name}</span>
+                <span className="font-bold text-lg text-brand-secondary">{siteConfig.business?.name}</span>
               </div>
             </a>
 
@@ -193,8 +193,8 @@ export function Navbar() {
               </div>
               <div className="text-right">
                 <p className="text-xs text-gray-500 uppercase tracking-wide">Call Us Now</p>
-                <a href={`tel:${siteConfig.contact.phone}`} className="font-bold text-lg text-brand-primary">
-                  {siteConfig.contact.phoneFormatted}
+                <a href={`tel:${siteConfig.contact?.phone}`} className="font-bold text-lg text-brand-primary">
+                  {siteConfig.contact?.phoneFormatted}
                 </a>
               </div>
             </div>
@@ -250,11 +250,11 @@ function MobileNav({ onClose }: { onClose: () => void }) {
       {/* Phone CTA */}
       <div className="bg-brand-primary p-4">
         <a 
-          href={`tel:${siteConfig.contact.phone}`}
+          href={`tel:${siteConfig.contact?.phone}`}
           className="flex items-center justify-center gap-2 text-white"
         >
           <Phone className="h-5 w-5" />
-          <span className="font-bold text-lg">{siteConfig.contact.phoneFormatted}</span>
+          <span className="font-bold text-lg">{siteConfig.contact?.phoneFormatted}</span>
         </a>
       </div>
 
