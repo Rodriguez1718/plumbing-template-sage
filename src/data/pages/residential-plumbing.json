@@ -1,0 +1,197 @@
+{
+  "meta": {
+    "title": "Residential Plumbing Services",
+    "description": "Professional residential plumbing services in {city}. From kitchen and <a href='/residential/bathroom/sink-faucet'><strong>bathroom plumbing</strong></a> to <a href='/residential/leak/detection'><strong>leak detection</strong></a>, water heaters, and drain services — {fullName} has you covered."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "category",
+        "badge": "Trusted by Thousands of LA Homeowners",
+        "title": "Residential Plumbing Services",
+        "subtitle": "From routine repairs to full-home <a href='/residential/piping/repiping'><strong>repiping</strong></a>, our licensed plumbers deliver reliable solutions for every room in your house.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "https://ucarecdn.com/514fa2a4-9e6c-417b-8e38-fdab8ec5364a/-/preview/999x1000/"
+      }
+    },
+    {
+      "component": "TrustBadges",
+      "props": {
+        "badges": [
+          {
+            "name": "BBB & Angie's List",
+            "image": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/BBB_Angies-List.webp"
+          },
+          {
+            "name": "Google Reviews",
+            "image": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/google-review.webp"
+          },
+          {
+            "name": "Nextdoor",
+            "image": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/Nextdoor-logo.webp",
+            "small": true
+          },
+          {
+            "name": "HomeAdvisor",
+            "image": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/HomeAdvisor.webp"
+          },
+          {
+            "name": "BBB A+",
+            "image": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/bbb-logo-a-plus.webp"
+          },
+          {
+            "name": "Google Reviews 2",
+            "image": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/google-review.webp"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ServiceCardsGridSection",
+      "props": {
+        "title": "Our Residential Plumbing Services",
+        "description": "We handle every aspect of home plumbing — from kitchens and bathrooms to water heaters and sewer lines.",
+        "services": [
+          {
+            "image": "https://ucarecdn.com/904d12f4-36c2-4c11-99c9-c22ebbc905fe/-/preview/1000x666/",
+            "icon": "kitchen",
+            "title": "Kitchen Plumbing",
+            "href": "/residential/kitchen/faucet-sink"
+          },
+          {
+            "image": "https://ucarecdn.com/b2b720dc-bf04-4366-a627-124001e3746e/-/preview/1000x666/",
+            "icon": "bathroom",
+            "title": "Bathroom Plumbing",
+            "href": "/residential/bathroom/toilet"
+          },
+          {
+            "image": "https://ucarecdn.com/075a53c5-b442-4211-bd8d-baf6977b3f87/-/preview/1000x666/",
+            "icon": "leak",
+            "title": "Leak Detection & Repair",
+            "href": "/residential/leak/detection"
+          },
+          {
+            "image": "https://ucarecdn.com/f0f1f6f3-d381-4c74-8d86-0a5cb24648f0/-/preview/1000x666/",
+            "icon": "drain",
+            "title": "Drain & Sewer Services",
+            "href": "/residential/drain/cleaning"
+          },
+          {
+            "image": "https://ucarecdn.com/f2844f4a-fb1f-4bae-af04-38db79fe8902/-/preview/1000x562/",
+            "icon": "waterheater",
+            "title": "Water Heaters",
+            "href": "/residential/water-heaters/standard"
+          },
+          {
+            "image": "https://ucarecdn.com/14cf294e-225e-4857-a4cb-6b31611cffec/-/preview/1000x750/",
+            "icon": "pipe",
+            "title": "Piping & Repiping",
+            "href": "/residential/piping/repiping"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ContentSection",
+      "props": {
+        "badge": "Why Choose {fullName}",
+        "title": "Your Home Deserves the Best Plumbing Care",
+        "description": "With over 20 years of experience serving {city} homeowners, {fullName} combines expert craftsmanship with honest pricing. We treat every home like our own, providing lasting repairs and installations backed by our satisfaction guarantee.",
+        "features": [
+          "Licensed, Insured & Background-Checked Plumbers",
+          "Upfront Pricing — No Surprises",
+          "Same-Day Service Available",
+          "Satisfaction Guaranteed on Every Job"
+        ],
+        "buttonText": "GET A FREE ESTIMATE",
+        "buttonHref": "/contact",
+        "images": [
+          "https://ucarecdn.com/315825d3-5856-474f-8ac1-f793441976f7/-/preview/1000x666/",
+          "https://ucarecdn.com/c43ed716-6e4c-4c93-9461-5fcd2aa79166/-/preview/1000x753/"
+        ],
+        "imagePosition": "right"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          {
+            "label": "Senior & Military",
+            "discount": "10% OFF",
+            "description": "Senior & Military Discount. Cannot be combined with any other offer.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Plumbing Repair",
+            "discount": "$50 OFF",
+            "description": "Any Repair of $500 or More. <a href='/contact'><strong>Contact us</strong></a> now to save.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Free Camera Inspection",
+            "discount": "FREE",
+            "description": "Sewer <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> with any standard <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>.",
+            "expires": "December 2026"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Residential Plumbing FAQs",
+        "faqs": [
+          {
+            "question": "What residential plumbing services do you offer?",
+            "answer": "We offer a full range of residential plumbing services including kitchen and <a href='/residential/bathroom/sink-faucet'><strong>bathroom plumbing</strong></a>, <a href='/residential/leak/detection'><strong>leak detection</strong></a> and repair, <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>, <a href='/residential/water-heaters/standard'><strong>water heater installation</strong></a> and repair, <a href='/residential/piping/repiping'><strong>repiping</strong></a>, and <a href='/residential/drain/sewer-line'><strong>sewer line</strong></a> services."
+          },
+          {
+            "question": "Do you offer same-day service?",
+            "answer": "Yes! We offer same-day service for most residential plumbing needs. Call us and we will do our best to get a plumber to your home as quickly as possible."
+          },
+          {
+            "question": "Are your plumbers licensed and insured?",
+            "answer": "Absolutely. All of our plumbers are fully licensed, insured, and background-checked for your peace of mind."
+          },
+          {
+            "question": "Do you provide free estimates?",
+            "answer": "Yes, we provide free estimates for most residential plumbing projects. <a href='/contact'><strong>Contact us</strong></a> to schedule yours today."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          {
+            "icon": "siren",
+            "text": "24/7 Emergency Service"
+          },
+          {
+            "icon": "award",
+            "text": "Experienced & Certified Technicians"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable residential plumbing services throughout {city} and nearby areas like <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> to see if we serve your neighborhood!",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas",
+        "mapAddress": "{city}, {state}"
+      }
+    }
+  ]
+}

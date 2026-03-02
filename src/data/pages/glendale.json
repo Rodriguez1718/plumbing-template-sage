@@ -1,0 +1,334 @@
+{
+  "meta": {
+    "title": "Glendale Plumbing Services",
+    "description": "Expert plumbing solutions for homes and businesses in Glendale, CA. Reliable and efficient services with 24/7 emergency support. Call {phone}!"
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Glendale",
+        "subtitle": "Providing expert plumbing solutions to homes and businesses in Glendale, ensuring reliable and efficient services every time. Call us at {phone} for expert assistance!",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "https://ucarecdn.com/f2844f4a-fb1f-4bae-af04-38db79fe8902/-/preview/1000x562/",
+        "trustIndicators": [
+          "Serving {city} for 20 Years",
+          "Quality Service",
+          "24-Hour Emergency Service Available"
+        ]
+      }
+    },
+    {
+      "component": "ContentSectionAlt",
+      "props": {
+        "badge": "SERVICE AREAS",
+        "title": "Trusted Plumbing Services in",
+        "titleHighlight": "Glendale",
+        "description": "For reliable, affordable plumbing solutions in Glendale, turn to {fullName}. Our licensed and insured experts handle everything from leaky faucets and clogged drains to emergency repairs and installations. With years of experience, {fullName} is dedicated to delivering high-quality, cost-effective services for homes and businesses.",
+        "featuresTitle": "Key Benefits",
+        "features": [
+          {
+            "title": "Experienced Professionals",
+            "description": "Our team brings years of expertise to every job, ensuring quality workmanship."
+          },
+          {
+            "title": "24/7 Emergency Services",
+            "description": "We're available around the clock for urgent plumbing needs."
+          },
+          {
+            "title": "Transparent Pricing",
+            "description": "No hidden fees — you'll know exactly what to expect before we start."
+          },
+          {
+            "title": "Modern Equipment",
+            "description": "We use the latest tools and technology for efficient, lasting repairs."
+          },
+          {
+            "title": "Customer Satisfaction Guaranteed",
+            "description": "Your satisfaction is our top priority on every project."
+          }
+        ],
+        "image": "https://ucarecdn.com/514fa2a4-9e6c-417b-8e38-fdab8ec5364a/-/preview/999x1000/",
+        "imagePosition": "left"
+      }
+    },
+    {
+      "component": "PromoTilesSection",
+      "props": {
+        "tiles": [
+          {
+            "type": "maintenance",
+            "title": "MAINTENANCE PLAN",
+            "priceLabel": [
+              "STARTS AT",
+              "$14.33",
+              "PER MONTH"
+            ],
+            "buttonText": "Contact Us",
+            "buttonHref": "/contact",
+            "phone": "{phone}",
+            "bgImage": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80"
+          },
+          {
+            "type": "financing",
+            "headline": [
+              "NO INTEREST",
+              "NO PAYMENT",
+              "UNTIL 2026"
+            ],
+            "subtext": "WITH APPROVED FINANCING",
+            "buttonText": "Explore Financing Options",
+            "buttonHref": "/financing",
+            "phone": "{phone}",
+            "bgImage": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
+          },
+          {
+            "type": "emergency",
+            "tag": "Emergency Plumbing Services",
+            "discount": "20% OFF",
+            "subheadline": [
+              "ALL EMERGENCY",
+              "PLUMBING SERVICES"
+            ],
+            "buttonText": "BOOK NOW",
+            "buttonHref": "/contact",
+            "phone": "{phone}",
+            "bgImage": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ServicesSection",
+      "props": {
+        "title": "Our Professional Plumbing Services",
+        "description": "We specialize in providing top-notch plumbing solutions tailored to meet your needs. Whether you're dealing with an urgent repair or planning a plumbing upgrade, our team is here to deliver reliable, efficient, and affordable services. Explore what we offer:",
+        "categories": [
+          {
+            "title": "Residential Plumbing Services",
+            "services": [
+              {
+                "title": "Kitchen Plumbing",
+                "description": "Complete <a href='/residential/kitchen/faucet-sink'><strong>kitchen plumbing</strong></a> solutions"
+              },
+              {
+                "title": "Bathroom Plumbing",
+                "description": "Expert <a href='/residential/bathroom/sink-faucet'><strong>bathroom plumbing</strong></a> services"
+              },
+              {
+                "title": "Leak Detection and Repair",
+                "description": "Find and fix leaks fast"
+              },
+              {
+                "title": "Water Heaters",
+                "description": "Installation and repair services"
+              },
+              {
+                "title": "Drain and Sewer Services",
+                "description": "Keep your drains flowing"
+              },
+              {
+                "title": "View All Residential Plumbing →",
+                "description": "See all our residential services"
+              }
+            ]
+          },
+          {
+            "title": "Commercial Plumbing Services",
+            "services": [
+              {
+                "title": "Building Plumbing Systems",
+                "description": "Complete commercial systems"
+              },
+              {
+                "title": "Drain and Sewer Services",
+                "description": "Commercial drain solutions"
+              },
+              {
+                "title": "Gas Plumbing",
+                "description": "Safe gas line services"
+              },
+              {
+                "title": "Backflow Prevention",
+                "description": "Protect your water supply"
+              },
+              {
+                "title": "Water Heaters",
+                "description": "Commercial water heating"
+              },
+              {
+                "title": "View All Commercial Plumbing →",
+                "description": "See all our commercial services"
+              }
+            ]
+          },
+          {
+            "title": "Specialty Plumbing Services",
+            "services": [
+              {
+                "title": "Advanced Leak Detection",
+                "description": "State-of-the-art detection"
+              },
+              {
+                "title": "Sewer Line Services",
+                "description": "Complete sewer solutions"
+              },
+              {
+                "title": "Water Filtration",
+                "description": "Clean water systems"
+              },
+              {
+                "title": "Green Plumbing Solutions",
+                "description": "Eco-friendly options"
+              },
+              {
+                "title": "Hydro Jetting",
+                "description": "High-pressure cleaning"
+              },
+              {
+                "title": "View All Specialty Plumbing →",
+                "description": "See all specialty services"
+              }
+            ]
+          },
+          {
+            "title": "Maintenance Services",
+            "services": [
+              {
+                "title": "Preventative Maintenance",
+                "description": "Stay ahead of problems"
+              },
+              {
+                "title": "Drain and Sewer Maintenance",
+                "description": "Keep drains clear"
+              },
+              {
+                "title": "Leak Prevention",
+                "description": "Prevent costly damage"
+              },
+              {
+                "title": "Appliance Maintenance",
+                "description": "Keep appliances running"
+              },
+              {
+                "title": "Gas System Maintenance",
+                "description": "Safe gas system care"
+              },
+              {
+                "title": "View All Maintenance Services →",
+                "description": "See all maintenance options"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "component": "PortfolioSection",
+      "props": {
+        "badge": "Portfolio",
+        "title": "Our Featured Works",
+        "images": [
+          "https://ucarecdn.com/904d12f4-36c2-4c11-99c9-c22ebbc905fe/-/preview/1000x666/",
+          "https://ucarecdn.com/b2b720dc-bf04-4366-a627-124001e3746e/-/preview/1000x666/",
+          "https://ucarecdn.com/075a53c5-b442-4211-bd8d-baf6977b3f87/-/preview/1000x666/",
+          "https://ucarecdn.com/f0f1f6f3-d381-4c74-8d86-0a5cb24648f0/-/preview/1000x666/",
+          "https://ucarecdn.com/a6fafe41-c916-4595-adf6-9657af91fbbc/ReliableGarbageDisposalRepairandReplacement.webp",
+          "https://ucarecdn.com/f2844f4a-fb1f-4bae-af04-38db79fe8902/-/preview/1000x562/",
+          "https://ucarecdn.com/14cf294e-225e-4857-a4cb-6b31611cffec/-/preview/1000x750/",
+          "https://ucarecdn.com/c43ed716-6e4c-4c93-9461-5fcd2aa79166/-/preview/1000x753/"
+        ]
+      }
+    },
+    {
+      "component": "ReviewsSection",
+      "props": {
+        "badge": "GOOGLE REVIEWS",
+        "title": "What Our Clients Say",
+        "description": "At {fullName}, we believe that every home and business deserves access to reliable plumbing services, no matter the budget. That's why we offer flexible <a href='/financing'><strong>financing options</strong></a> to make your plumbing projects more manageable and stress-free.",
+        "reviews": [
+          {
+            "name": "Eric Rogers",
+            "time": "1 year ago",
+            "content": "Over the past 15 years or so my wife and I have needed a few repairs or maintenance items in our home, and each time {fullName} has been there to take care of our needs.",
+            "readMoreHref": "#"
+          },
+          {
+            "name": "Michael Abrocincks",
+            "time": "1 year ago",
+            "content": "{fullName} has been such a great company to work with — from our initial consult to the final repair. Highly recommended!",
+            "readMoreHref": "#"
+          },
+          {
+            "name": "David Stanton",
+            "time": "1 year ago",
+            "content": "I couldn't be more grateful for the incredible service I received when my pipes burst. The team responded quickly and professionally.",
+            "readMoreHref": "#"
+          },
+          {
+            "name": "Domestic",
+            "time": "1 year ago",
+            "content": "Great company and great people!",
+            "readMoreHref": "#"
+          }
+        ],
+        "verifiedBy": "View Google Testimonials"
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          {
+            "icon": "siren",
+            "text": "24/7 Emergency Service"
+          },
+          {
+            "icon": "award",
+            "text": "Experienced and Certified Technicians"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "title": "Expert Plumbing Services in {city} and Surrounding Areas",
+        "description": "Looking for reliable plumbing services in {city}? We provide expert residential and commercial solutions across the city, from Hollywood Hills to <a href='/santa-monica'><strong>Santa Monica</strong></a>. Whether you need <a href='/residential/leak/detection'><strong>leak detection</strong></a>, <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>, <a href='/residential/water-heaters/standard'><strong>water heater</strong></a> repairs, or advanced pipe relining, our licensed team serves your area with speed, skill, and care. We offer reliable maintenance and 24/7 emergency services to keep your plumbing in top shape. Serving neighborhoods like Downtown LA, Beverly Hills, and Glendale, we are committed to quality, efficiency, and customer satisfaction. Call us today to schedule your service!",
+        "areas": [
+          "Santa Monica",
+          "Pasadena",
+          "Glendale",
+          "Culver City",
+          "Downtown {city}",
+          "Hollywood",
+          "Beverly Hills",
+          "Venice",
+          "Westwood",
+          "San Fernando Valley",
+          "San Diego",
+          "El Monte",
+          "Santa Monica",
+          "Beverly Hills",
+          "Torrance",
+          "Long Beach",
+          "Inglewood",
+          "El Segundo",
+          "Brentwood",
+          "Silver Lake",
+          "Echo Park",
+          "Hancock Park",
+          "Marina del Rey",
+          "Manhattan Beach"
+        ],
+        "mapAddress": "Glendale, CA"
+      }
+    }
+  ]
+}

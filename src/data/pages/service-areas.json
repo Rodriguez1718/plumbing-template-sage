@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "title": "Service Areas",
+    "description": "Providing expert plumbing solutions across {city} and surrounding areas. Residential and <a href='/commercial'><strong>commercial plumbing</strong></a> services with 24/7 emergency support. Call {phone}!"
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Service Areas",
+        "subtitle": "Providing expert plumbing solutions to homes and businesses across {city}, ensuring reliable and efficient services every time. Call us at {phone} for expert assistance!",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "https://images.unsplash.com/photo-1534190760961-74e8c1c5c3da?w=1000&q=80",
+        "trustIndicators": [
+          "Serving {city} for 20 Years",
+          "24-Hour Emergency Service Available",
+          "Quality Service"
+        ]
+      }
+    },
+    {
+      "component": "ContentSectionAlt",
+      "props": {
+        "badge": "SERVICE AREAS",
+        "title": "Expert Plumbing Solutions for",
+        "titleHighlight": "{city}, {state}",
+        "description": "At {fullName}, we proudly serve a wide range of communities across {city} and the surrounding areas. Our team of licensed and insured plumbing professionals is dedicated to providing top-quality plumbing services, covering everything from routine maintenance to emergency repairs.",
+        "featuresTitle": "Key Benefits",
+        "features": [
+          {
+            "title": "Local Expertise",
+            "description": "Deep knowledge of {city} plumbing systems and local building codes."
+          },
+          {
+            "title": "Mobile Service",
+            "description": "Fully equipped service vehicles ready to respond across all service areas."
+          },
+          {
+            "title": "24/7 Emergency Support",
+            "description": "Round-the-clock <a href='/residential/specialty/emergency-plumbing/emergency-leak-repair'><strong>emergency plumbing</strong></a> services available in all areas we serve."
+          }
+        ],
+        "image": "https://ucarecdn.com/514fa2a4-9e6c-417b-8e38-fdab8ec5364a/-/preview/999x1000/",
+        "imagePosition": "left"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          {
+            "label": "Senior & Military",
+            "discount": "10% OFF",
+            "description": "Senior & Military Discounts. Cannot be combined with any other offer.",
+            "expires": "Coupon Expires 12/31"
+          },
+          {
+            "label": "Free Camera Inspection",
+            "discount": "FREE",
+            "description": "Free <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> with any <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>. Call for details.",
+            "expires": "Coupon Expires 12/31"
+          },
+          {
+            "label": "Plumbing",
+            "discount": "50% OFF",
+            "description": "Any Typical Drill Line. Cannot be combined with any other offer.",
+            "expires": "Offer Expires 12/31"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ServiceCardsGridSection",
+      "props": {
+        "title": "Related Services",
+        "services": [
+          {
+            "image": "https://ucarecdn.com/904d12f4-36c2-4c11-99c9-c22ebbc905fe/-/preview/1000x666/",
+            "icon": "kitchen",
+            "title": "Residential Plumbing Services",
+            "href": "/residential-plumbing"
+          },
+          {
+            "image": "https://ucarecdn.com/b2b720dc-bf04-4366-a627-124001e3746e/-/preview/1000x666/",
+            "icon": "building",
+            "title": "Commercial Plumbing Services",
+            "href": "/commercial"
+          },
+          {
+            "image": "https://ucarecdn.com/075a53c5-b442-4211-bd8d-baf6977b3f87/-/preview/1000x666/",
+            "icon": "leak",
+            "title": "Specialty Plumbing Services",
+            "href": "/specialty"
+          },
+          {
+            "image": "https://ucarecdn.com/f0f1f6f3-d381-4c74-8d86-0a5cb24648f0/-/preview/1000x666/",
+            "icon": "pipe",
+            "title": "Maintenance Services",
+            "href": "/maintenance"
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          {
+            "icon": "siren",
+            "text": "24/7 Emergency Service"
+          },
+          {
+            "icon": "award",
+            "text": "Experienced and Certified Technicians"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "title": "Expert Plumbing Services in {city} and Surrounding Areas",
+        "description": "Looking for reliable plumbing services in {city}? We provide expert residential and commercial solutions across the city, from Hollywood Hills to <a href='/santa-monica'><strong>Santa Monica</strong></a>. Whether you need <a href='/residential/leak/detection'><strong>leak detection</strong></a>, <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>, <a href='/residential/water-heaters/standard'><strong>water heater</strong></a> repairs, or advanced pipe relining, our licensed team serves your area with speed, skill, and care. We offer reliable maintenance and 24/7 emergency services to keep your plumbing in top shape. Serving neighborhoods like Downtown LA, Beverly Hills, and <a href='/glendale'><strong>Glendale</strong></a>, we are committed to quality, efficiency, and customer satisfaction. Call us today to schedule your service!",
+        "areas": [
+          "Santa Monica",
+          "Pasadena",
+          "Glendale",
+          "Culver City",
+          "Downtown {city}",
+          "Hollywood",
+          "Beverly Hills",
+          "Venice",
+          "Westwood",
+          "San Fernando Valley",
+          "San Diego",
+          "El Monte",
+          "West Hollywood",
+          "Beverly Hills",
+          "Encino",
+          "Los Feliz/Silverlake",
+          "Burbank",
+          "San Gabriel Valley",
+          "Arcadia",
+          "Torrance",
+          "Long Beach",
+          "Inglewood",
+          "El Segundo",
+          "Brentwood",
+          "Silver Lake",
+          "Echo Park",
+          "Hancock Park",
+          "Marina del Rey",
+          "Manhattan Beach",
+          "El Segundo",
+          "Brentwood",
+          "Sherman Oaks",
+          "Torrance Park",
+          "Gardena/Harbor City",
+          "Silverlake/Echo"
+        ],
+        "mapAddress": "{city}, {state}"
+      }
+    }
+  ]
+}

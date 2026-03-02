@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "title": "Whole-House Water Filtration Systems",
+    "description": "Clean, safe water from every tap with professional whole-house water filtration installation."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Whole-House Water Filtration Systems",
+        "subtitle": "Pure, filtered water from every faucet in your home.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "PromoTilesSection",
+      "props": {
+        "tiles": [
+          {
+            "type": "maintenance",
+            "title": "MAINTENANCE PLAN",
+            "priceLabel": [
+              "Starting at",
+              "$94.33",
+              "per month"
+            ],
+            "phone": "{phone}",
+            "buttonText": "View Maintenance Plans",
+            "buttonHref": "/maintenance-plan",
+            "bgImage": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80"
+          },
+          {
+            "type": "financing",
+            "headline": [
+              "NO INTEREST",
+              "NO PAYMENT",
+              "UNTIL 2026"
+            ],
+            "subtext": "Subject to credit approval",
+            "phone": "{phone}",
+            "buttonText": "Explore Financing Options",
+            "buttonHref": "/financing",
+            "bgImage": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
+          },
+          {
+            "type": "emergency",
+            "tag": "Limited Time Offer",
+            "discount": "20% OFF",
+            "subheadline": [
+              "ALL PLUMBING",
+              "SERVICES"
+            ],
+            "phone": "{phone}",
+            "buttonText": "SCHEDULE NOW",
+            "buttonHref": "/contact",
+            "bgImage": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Water Softener Installation",
+            "text": "Eliminate hard water and protect your plumbing.",
+            "href": "/residential/specialty/water-filtration/water-softener",
+            "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+          },
+          {
+            "title": "Repiping Services",
+            "text": "Full and partial home repiping solutions.",
+            "href": "/residential/piping/repiping",
+            "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80"
+          },
+          {
+            "title": "Water Line Repair",
+            "text": "Professional water line repair and replacement.",
+            "href": "/residential/piping/water-line",
+            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80"
+          },
+          {
+            "title": "Maintenance Services",
+            "text": "Keep your plumbing running smoothly year-round.",
+            "href": "/maintenance-plan",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Frequently Asked Questions",
+        "faqs": [
+          {
+            "question": "What does a whole-house water filtration system do?",
+            "answer": "A whole-house system filters all the water entering your home at the main supply line. This means every tap, shower, and appliance gets clean, filtered water — removing sediment, chlorine, heavy metals, and other contaminants."
+          },
+          {
+            "question": "How often do whole-house filters need to be replaced?",
+            "answer": "Most whole-house filters need replacement every 3–6 months for sediment pre-filters and every 5–10 years for the main filtration media, depending on your water quality and usage. We offer <a href='/maintenance-plan'><strong>maintenance plans</strong></a> to keep your system running optimally."
+          },
+          {
+            "question": "Is a whole-house filtration system worth the investment?",
+            "answer": "Absolutely. It protects your plumbing and appliances from sediment and mineral buildup, improves the taste and smell of your water, and provides healthier water for drinking, cooking, and bathing throughout your entire home."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          {
+            "icon": "siren",
+            "text": "24/7 Emergency Service"
+          },
+          {
+            "icon": "award",
+            "text": "Experienced and Certified Technicians"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

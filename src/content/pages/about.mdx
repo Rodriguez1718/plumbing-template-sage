@@ -10,120 +10,19 @@ import FinancingPlansSection from "@/components/sections/FinancingPlansSection.a
 import FAQSection from "@/components/sections/FAQSection.astro"
 import CTAStrip from "@/components/sections/CTAStrip.astro"
 import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
+import pageData from "../../data/pages/about.json"
 
 
-<HeroSection
-  variant="subpage"
-  title="About Expert Plumbing Services You Can Trust"
-  subtitle="With a dedication to quality workmanship, customer satisfaction, and transparent pricing."
-  buttonText="SCHEDULE SERVICE"
-  buttonHref="/contact"
-  image="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1000&q=80"
-/>
+<HeroSection {...pageData.sections[0].props} />
 
-<PlaceholderContentSection
-  title="TO BE DETERMINED"
-  subtitle="BASED ON THE CLIENT DISCOVERY CONVERSATION"
-/>
+<PlaceholderContentSection {...pageData.sections[1].props} />
 
-<PromoTilesSection
-  tiles={[
-    {
-      type: "maintenance",
-      title: "Maintenance Plan",
-      priceLabel: ["Starting at", "$14.33", "Priority Service"],
-      phone: "{phone}",
-      buttonText: "View Maintenance Plans",
-      buttonHref: "/maintenance-plan",
-      bgImage: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80"
-    },
-    {
-      type: "financing",
-      headline: ["No Interest", "No Payment", "Until 2026!"],
-      subtext: "Affordable payment plans available",
-      phone: "{phone}",
-      buttonText: "Apply Now",
-      buttonHref: "/financing",
-      bgImage: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
-    },
-    {
-      type: "emergency",
-      tag: "24/7 Service",
-      discount: "20% OFF",
-      subheadline: ["All Plumbing", "Repair Services"],
-      phone: "{phone}",
-      buttonText: "Call Now",
-      buttonHref: "/contact",
-      bgImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
-    }
-  ]}
-/>
+<PromoTilesSection {...pageData.sections[2].props} />
 
-<FinancingPlansSection
-  title="Related Services"
-  items={[
-    {
-      title: "Residential Plumbing Services",
-      icon: "home",
-      href: "/residential-plumbing"
-    },
-    {
-      title: "Commercial Plumbing Services",
-      icon: "building",
-      href: "/commercial"
-    },
-    {
-      title: "Specialty Plumbing Services",
-      icon: "wrench",
-      href: "/specialty"
-    },
-    {
-      title: "Maintenance Services",
-      icon: "settings",
-      href: "/maintenance"
-    }
-  ]}
-  variant="plans"
-/>
+<FinancingPlansSection {...pageData.sections[3].props} />
 
-<FAQSection
-  title="Frequently Asked Questions"
-  faqs={[
-    {
-      question: "What plumbing services do you offer?",
-      answer: "We offer a full range of residential and <a href='/commercial'><strong>commercial plumbing</strong></a> services including <a href='/residential/leak/detection'><strong>leak detection</strong></a> and repair, <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>, <a href='/residential/water-heaters/standard'><strong>water heater installation</strong></a> and repair, bathroom and <a href='/residential/kitchen/faucet-sink'><strong>kitchen plumbing</strong></a>, <a href='/residential/drain/sewer-line'><strong>sewer line</strong></a> services, and 24/7 <a href='/residential/specialty/emergency-plumbing/emergency-leak-repair'><strong>emergency plumbing</strong></a>."
-    },
-    {
-      question: "What areas do you serve?",
-      answer: `We proudly serve {city} and surrounding areas. <a href="/contact"><strong>Contact us</strong></a> to find out if we cover your neighborhood.`
-    },
-    {
-      question: "How much do your services cost?",
-      answer: "We offer transparent, upfront pricing with no hidden fees. The cost depends on the specific service needed. <a href='/contact'><strong>Contact us</strong></a> for a free estimate and we'll provide a detailed quote before any work begins. We also offer <a href='/financing'><strong>financing options</strong></a> to make services more affordable."
-    }
-  ]}
-/>
+<FAQSection {...pageData.sections[4].props} />
 
-<CTAStrip
-  buttonText="SCHEDULE NOW"
-  buttonHref="/contact"
-  phoneLabel="Call or Text for Great Service"
-  phone="{phone}"
-  features={[
-    { icon: "siren", text: "24/7 Emergency Service" },
-    { icon: "award", text: "Experienced & Certified Technicians" }
-  ]}
-/>
+<CTAStrip {...pageData.sections[5].props} />
 
-<ServiceAreaSection
-  title="Proudly Serving {city}"
-  description="We provide expert residential and <a href='/commercial'><strong>commercial plumbing</strong></a> solutions across the city. Whether you need <a href='/residential/leak/detection'><strong>leak detection</strong></a>, <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>, <a href='/residential/water-heaters/standard'><strong>water heater</strong></a> repairs, or advanced options like <a href='/residential/specialty/sewer-line-services/trenchless-sewer-repair'><strong>trenchless sewer repair</strong></a> and whole-house <a href='/residential/specialty/water-filtration/whole-house-filtration'><strong>water filtration</strong></a>, our team is here to help. We also offer routine maintenance and 24/7 emergency services to keep your plumbing in top shape."
-  areas={[
-    "Santa Monica", "Pasadena", "Glendale", "Downtown {city}", "Hollywood",
-    "Beverly Hills", "Venice", "Westwood", "Culver City", "San Fernando Valley",
-    "Studio City", "North Hollywood", "Sherman Oaks", "Encino", "Burbank",
-    "Torrance", "Long Beach", "Inglewood", "El Segundo", "Brentwood",
-    "Silver Lake", "Echo Park", "Hancock Park", "Marina del Rey", "Manhattan Beach"
-  ]}
-  mapAddress="{city}, {state}"
-/>
+<ServiceAreaSection {...pageData.sections[6].props} />

@@ -14,221 +14,23 @@ import PortfolioSection from "@/components/sections/PortfolioSection.astro"
 import ReviewsSection from "@/components/sections/ReviewsSection.astro"
 import CTAStrip from "@/components/sections/CTAStrip.astro"
 import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
+import pageData from "../../data/pages/santa-monica.json"
 
 
-<HeroSection
-  variant="subpage"
-  title="Santa Monica"
-  subtitle="Providing expert plumbing solutions to homes and businesses in Santa Monica — ensuring reliable and efficient services every time. Call us at {phone} for expert assistance!"
-  buttonText="SCHEDULE SERVICE"
-  buttonHref="/contact"
-  image="https://ucarecdn.com/f2844f4a-fb1f-4bae-af04-38db79fe8902/-/preview/1000x562/"
-  trustIndicators={[
-    `Serving {city} for 20 Years`,
-    "Quality Service",
-    "24-Hour Emergency Service Available"
-  ]}
-/>
+<HeroSection {...pageData.sections[0].props} />
 
-<ContentSectionAlt
-  badge="SERVICE AREAS"
-  title="Reliable Plumbing Solutions in"
-  titleHighlight="Santa Monica, CA"
-  description="Regular maintenance is key to preventing costly repairs and ensuring the efficiency of your plumbing systems. At {fullName}, our Plumbing <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> are designed to keep your home or business running smoothly year-round."
-  featuresTitle="Why Santa Monica Residents Trust Us"
-  features={[
-    {
-      title: "Local Knowledge",
-      description: "With years of experience serving Santa Monica, we understand the specific plumbing requirements of the area."
-    },
-    {
-      title: "Prompt Response",
-      description: "We're committed to addressing your plumbing issues quickly and effectively."
-    },
-    {
-      title: "Comprehensive Services",
-      description: "From minor repairs to major installations, we handle it all with precision and care."
-    }
-  ]}
-  image="https://ucarecdn.com/514fa2a4-9e6c-417b-8e38-fdab8ec5364a/-/preview/999x1000/"
-  imagePosition="left"
-/>
+<ContentSectionAlt {...pageData.sections[1].props} />
 
-<FinancingPlansSection
-  variant="features"
-  title="Why Santa Monica Residents Trust Us"
-  items={[
-    {
-      icon: "map",
-      title: "Local Knowledge",
-      text: "With years of experience serving Santa Monica, we understand the specific plumbing needs of the area."
-    },
-    {
-      icon: "clock",
-      title: "Prompt Response",
-      text: "We prioritize fast and reliable service, ensuring issues are resolved quickly and efficiently."
-    },
-    {
-      icon: "wrench",
-      title: "Comprehensive Services",
-      text: "From minor repairs to major installations, we handle it all with precision and care."
-    }
-  ]}
-/>
+<FinancingPlansSection {...pageData.sections[2].props} />
 
-<PromoTilesSection
-  tiles={[
-    {
-      type: "maintenance",
-      title: "MAINTENANCE PLAN",
-      priceLabel: ["STARTS AT", "$14.33", "PER MONTH"],
-      buttonText: "Contact Us",
-      buttonHref: "/contact",
-      phone: "{phone}",
-      bgImage: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80"
-    },
-    {
-      type: "financing",
-      headline: ["NO INTEREST", "NO PAYMENT", "UNTIL 2026"],
-      subtext: "WITH APPROVED FINANCING",
-      buttonText: "Explore Financing Options",
-      buttonHref: "/financing",
-      phone: "{phone}",
-      bgImage: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
-    },
-    {
-      type: "emergency",
-      tag: "Emergency Plumbing Services",
-      discount: "20% OFF",
-      subheadline: ["ALL EMERGENCY", "PLUMBING SERVICES"],
-      buttonText: "BOOK NOW",
-      buttonHref: "/contact",
-      phone: "{phone}",
-      bgImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
-    }
-  ]}
-/>
+<PromoTilesSection {...pageData.sections[3].props} />
 
-<ServicesSection
-  client:load
-  title="Our Professional Plumbing Services"
-  description="We specialize in providing top-notch plumbing solutions tailored to meet your needs. Whether you're dealing with an urgent repair or planning a plumbing upgrade, our team is here to deliver reliable, efficient, and affordable services. Explore what we offer:"
-  categories={[
-    {
-      title: "Residential Plumbing Services",
-      services: [
-        { title: "Kitchen Plumbing", description: "Complete <a href='/residential/kitchen/faucet-sink'><strong>kitchen plumbing</strong></a> solutions" },
-        { title: "Bathroom Plumbing", description: "Expert <a href='/residential/bathroom/sink-faucet'><strong>bathroom plumbing</strong></a> services" },
-        { title: "Leak Detection and Repair", description: "Find and fix leaks fast" },
-        { title: "Water Heaters", description: "Installation and repair services" },
-        { title: "Drain and Sewer Services", description: "Keep your drains flowing" },
-        { title: "View All Residential Plumbing →", description: "See all our residential services" }
-      ]
-    },
-    {
-      title: "Commercial Plumbing Services",
-      services: [
-        { title: "Building Plumbing Systems", description: "Complete commercial systems" },
-        { title: "Drain and Sewer Services", description: "Commercial drain solutions" },
-        { title: "Gas Plumbing", description: "Safe gas line services" },
-        { title: "Backflow Prevention", description: "Protect your water supply" },
-        { title: "Water Heaters", description: "Commercial water heating" },
-        { title: "View All Commercial Plumbing →", description: "See all our commercial services" }
-      ]
-    },
-    {
-      title: "Specialty Plumbing Services",
-      services: [
-        { title: "Advanced Leak Detection", description: "State-of-the-art detection" },
-        { title: "Sewer Line Services", description: "Complete sewer solutions" },
-        { title: "Water Filtration", description: "Clean water systems" },
-        { title: "Green Plumbing Solutions", description: "Eco-friendly options" },
-        { title: "Hydro Jetting", description: "High-pressure cleaning" },
-        { title: "View All Specialty Plumbing →", description: "See all specialty services" }
-      ]
-    },
-    {
-      title: "Maintenance Services",
-      services: [
-        { title: "Preventative Maintenance", description: "Stay ahead of problems" },
-        { title: "Drain and Sewer Maintenance", description: "Keep drains clear" },
-        { title: "Leak Prevention", description: "Prevent costly damage" },
-        { title: "Appliance Maintenance", description: "Keep appliances running" },
-        { title: "Gas System Maintenance", description: "Safe gas system care" },
-        { title: "View All Maintenance Services →", description: "See all maintenance options" }
-      ]
-    }
-  ]}
-/>
+<ServicesSection client:load {...pageData.sections[4].props} />
 
-<PortfolioSection
-  badge="Portfolio"
-  title="Our Featured Works"
-  images={[
-    "https://ucarecdn.com/904d12f4-36c2-4c11-99c9-c22ebbc905fe/-/preview/1000x666/",
-    "https://ucarecdn.com/b2b720dc-bf04-4366-a627-124001e3746e/-/preview/1000x666/",
-    "https://ucarecdn.com/075a53c5-b442-4211-bd8d-baf6977b3f87/-/preview/1000x666/",
-    "https://ucarecdn.com/f0f1f6f3-d381-4c74-8d86-0a5cb24648f0/-/preview/1000x666/",
-    "https://ucarecdn.com/a6fafe41-c916-4595-adf6-9657af91fbbc/ReliableGarbageDisposalRepairandReplacement.webp",
-    "https://ucarecdn.com/f2844f4a-fb1f-4bae-af04-38db79fe8902/-/preview/1000x562/",
-    "https://ucarecdn.com/14cf294e-225e-4857-a4cb-6b31611cffec/-/preview/1000x750/",
-    "https://ucarecdn.com/c43ed716-6e4c-4c93-9461-5fcd2aa79166/-/preview/1000x753/"
-  ]}
-/>
+<PortfolioSection {...pageData.sections[5].props} />
 
-<ReviewsSection
-  badge="GOOGLE REVIEWS"
-  title="What Our Clients Say"
-  description="At {fullName}, we believe that every home and business deserves access to reliable plumbing services, no matter the budget. That's why we offer flexible <a href='/financing'><strong>financing options</strong></a> to make your plumbing projects more manageable and stress-free."
-  reviews={[
-    {
-      name: "Eric Rogers",
-      time: "1 year ago",
-      content: `Over the past 15 years or so my wife and I have needed a few repairs or maintenance items in our home, and each time {fullName} has been there to take care of our needs.`,
-      readMoreHref: "#"
-    },
-    {
-      name: "Michael Abrocincks",
-      time: "1 year ago",
-      content: `{fullName} has been such a great company to work with — from our initial consult to the final repair. Highly recommended!`,
-      readMoreHref: "#"
-    },
-    {
-      name: "David Stanton",
-      time: "1 year ago",
-      content: "I couldn't be more grateful for the incredible service I received when my pipes burst. The team responded quickly and professionally.",
-      readMoreHref: "#"
-    },
-    {
-      name: "Domestic",
-      time: "1 year ago",
-      content: "Great company and great people!",
-      readMoreHref: "#"
-    }
-  ]}
-  verifiedBy="View Google Testimonials"
-/>
+<ReviewsSection {...pageData.sections[6].props} />
 
-<CTAStrip
-  buttonText="SCHEDULE NOW"
-  buttonHref="/contact"
-  phoneLabel="Call or Text for Great Service"
-  phone="{phone}"
-  features={[
-    { icon: "siren", text: "24/7 Emergency Service" },
-    { icon: "award", text: "Experienced and Certified Technicians" }
-  ]}
-/>
+<CTAStrip {...pageData.sections[7].props} />
 
-<ServiceAreaSection
-  title="Expert Plumbing Services in {city} and Surrounding Areas"
-  description="Looking for reliable plumbing services in {city}? We provide expert residential and commercial solutions across the city, from Hollywood Hills to Santa Monica. Whether you need <a href='/residential/leak/detection'><strong>leak detection</strong></a>, <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>, <a href='/residential/water-heaters/standard'><strong>water heater</strong></a> repairs, or advanced pipe relining, our licensed team serves your area with speed, skill, and care. We offer reliable maintenance and 24/7 emergency services to keep your plumbing in top shape. Serving neighborhoods like Downtown LA, Beverly Hills, and <a href='/pasadena'><strong>Pasadena</strong></a>, we are committed to quality, efficiency, and customer satisfaction. Call us today to schedule your service!"
-  areas={[
-    "Santa Monica", "Pasadena", "Culver City", "Downtown {city}", "Hollywood",
-    "Beverly Hills", "Venice", "Westwood", "Culver City", "San Fernando Valley",
-    "San Diego", "El Monte", "Hollywood", "Santa Monica", "Beverly Hills",
-    "Torrance", "Long Beach", "Inglewood", "El Segundo", "Brentwood",
-    "Silver Lake", "Echo Park", "Hancock Park", "Marina del Rey", "Manhattan Beach"
-  ]}
-  mapAddress="Santa Monica, CA"
-/>
+<ServiceAreaSection {...pageData.sections[8].props} />

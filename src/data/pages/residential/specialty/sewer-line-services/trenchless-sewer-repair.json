@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "title": "Trenchless Sewer Repair",
+    "description": "Minimally invasive trenchless sewer repair that fixes your pipes without destroying your yard."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Trenchless Sewer Repair",
+        "subtitle": "Fix your <a href='/residential/drain/sewer-line'><strong>sewer line</strong></a> without tearing up your property.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "PromoTilesSection",
+      "props": {
+        "tiles": [
+          {
+            "type": "maintenance",
+            "title": "MAINTENANCE PLAN",
+            "priceLabel": [
+              "Starting at",
+              "$94.33",
+              "per month"
+            ],
+            "phone": "{phone}",
+            "buttonText": "View Maintenance Plans",
+            "buttonHref": "/maintenance-plan",
+            "bgImage": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80"
+          },
+          {
+            "type": "financing",
+            "headline": [
+              "NO INTEREST",
+              "NO PAYMENT",
+              "UNTIL 2026"
+            ],
+            "subtext": "Subject to credit approval",
+            "phone": "{phone}",
+            "buttonText": "Explore Financing Options",
+            "buttonHref": "/financing",
+            "bgImage": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
+          },
+          {
+            "type": "emergency",
+            "tag": "Limited Time Offer",
+            "discount": "20% OFF",
+            "subheadline": [
+              "ALL PLUMBING",
+              "SERVICES"
+            ],
+            "phone": "{phone}",
+            "buttonText": "SCHEDULE NOW",
+            "buttonHref": "/contact",
+            "bgImage": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Pipe Bursting and Lining",
+            "text": "Advanced no-dig pipe replacement solutions.",
+            "href": "/residential/specialty/sewer-line-services/pipe-bursting-lining",
+            "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+          },
+          {
+            "title": "Sewer Line Repair",
+            "text": "Complete sewer line inspection and repair services.",
+            "href": "/residential/drain/sewer-line",
+            "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80"
+          },
+          {
+            "title": "Hydro Jetting",
+            "text": "High-pressure drain cleaning for tough clogs.",
+            "href": "/residential/specialty/hydro-jetting/high-pressure-drain-cleaning",
+            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80"
+          },
+          {
+            "title": "Maintenance Services",
+            "text": "Keep your plumbing running smoothly year-round.",
+            "href": "/maintenance-plan",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Frequently Asked Questions",
+        "faqs": [
+          {
+            "question": "What is trenchless sewer repair?",
+            "answer": "Trenchless sewer repair is a minimally invasive method of fixing damaged sewer lines without digging large trenches in your yard. Techniques like pipe lining and <a href='/residential/specialty/sewer-line-services/pipe-bursting-lining'><strong>pipe bursting</strong></a> allow us to repair or replace pipes through small access points."
+          },
+          {
+            "question": "How long does trenchless sewer repair last?",
+            "answer": "Trenchless repairs are extremely durable. Cured-in-place pipe linings typically last 50 years or more, and <a href='/residential/specialty/sewer-line-services/pipe-bursting-lining'><strong>pipe bursting</strong></a> with new HDPE pipe can last even longer. It's a long-term solution for damaged sewer lines."
+          },
+          {
+            "question": "Is trenchless repair more expensive than traditional methods?",
+            "answer": "While the upfront cost can be similar, trenchless repair saves significantly on landscape restoration, driveway repair, and labor costs associated with traditional excavation. Most homeowners find it more cost-effective overall."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          {
+            "icon": "siren",
+            "text": "24/7 Emergency Service"
+          },
+          {
+            "icon": "award",
+            "text": "Experienced and Certified Technicians"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

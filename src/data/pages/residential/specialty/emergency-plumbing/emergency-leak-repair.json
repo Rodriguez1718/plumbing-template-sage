@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "title": "24/7 Emergency Leak and Repair Services",
+    "description": "Round-the-clock emergency plumbing services for leaks, floods, and urgent repairs."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "24/7 Emergency Leak and Repair Services",
+        "subtitle": "Fast response when you need it most — day or night.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "PromoTilesSection",
+      "props": {
+        "tiles": [
+          {
+            "type": "maintenance",
+            "title": "MAINTENANCE PLAN",
+            "priceLabel": [
+              "Starting at",
+              "$94.33",
+              "per month"
+            ],
+            "phone": "{phone}",
+            "buttonText": "View Maintenance Plans",
+            "buttonHref": "/maintenance-plan",
+            "bgImage": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80"
+          },
+          {
+            "type": "financing",
+            "headline": [
+              "NO INTEREST",
+              "NO PAYMENT",
+              "UNTIL 2026"
+            ],
+            "subtext": "Subject to credit approval",
+            "phone": "{phone}",
+            "buttonText": "Explore Financing Options",
+            "buttonHref": "/financing",
+            "bgImage": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
+          },
+          {
+            "type": "emergency",
+            "tag": "Limited Time Offer",
+            "discount": "20% OFF",
+            "subheadline": [
+              "ALL PLUMBING",
+              "SERVICES"
+            ],
+            "phone": "{phone}",
+            "buttonText": "SCHEDULE NOW",
+            "buttonHref": "/contact",
+            "bgImage": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Burst Pipe Response",
+            "text": "Immediate response for burst pipes and water damage.",
+            "href": "/residential/specialty/emergency-plumbing/burst-pipe-response",
+            "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+          },
+          {
+            "title": "Leak Detection",
+            "text": "Advanced methods to locate hidden leaks throughout your home.",
+            "href": "/residential/leak/detection",
+            "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80"
+          },
+          {
+            "title": "Slab Leak Repair",
+            "text": "Expert detection and repair of leaks beneath your foundation.",
+            "href": "/residential/leak/slab",
+            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80"
+          },
+          {
+            "title": "Maintenance Services",
+            "text": "Keep your plumbing running smoothly year-round.",
+            "href": "/maintenance-plan",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Frequently Asked Questions",
+        "faqs": [
+          {
+            "question": "What qualifies as a plumbing emergency?",
+            "answer": "A plumbing emergency includes burst pipes, major water leaks, sewage backups, no water supply, gas leaks, and any situation that could cause significant water damage or health hazards. If in doubt, call us — we're available 24/7."
+          },
+          {
+            "question": "How quickly can you respond to an emergency?",
+            "answer": "We aim to arrive within 60 minutes of your call for emergency situations in the {city} area. Our technicians are on standby around the clock to handle urgent plumbing issues."
+          },
+          {
+            "question": "What should I do while waiting for emergency service?",
+            "answer": "Shut off the main water supply valve to stop water flow. If safe, turn off the <a href='/residential/water-heaters/standard'><strong>water heater</strong></a>. Move valuables away from the affected area and document any damage with photos for insurance purposes."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          {
+            "icon": "siren",
+            "text": "24/7 Emergency Service"
+          },
+          {
+            "icon": "award",
+            "text": "Experienced and Certified Technicians"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

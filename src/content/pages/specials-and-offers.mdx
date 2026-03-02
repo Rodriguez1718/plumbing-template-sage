@@ -7,76 +7,13 @@ import HeroSection from "@/components/sections/HeroSection.astro"
 import CouponsSection from "@/components/sections/CouponsSection.astro"
 import CTAStrip from "@/components/sections/CTAStrip.astro"
 import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
+import pageData from "../../data/pages/specials-and-offers.json"
 
 
-<HeroSection
-  variant="subpage"
-  badge="Limited Time Offers"
-  title="Specials and Offers"
-  subtitle="Discover Exciting Specials and Unbeatable Offers!"
-  buttonText="CALL: {phone}"
-  buttonHref="tel:{phoneRaw}"
-  image="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1000&q=80"
-/>
+<HeroSection {...pageData.sections[0].props} />
 
-<CouponsSection
-  variant="minimal"
-  coupons={[
-    {
-      label: "Until March",
-      discount: "SAVE $75",
-      description: "on ANY Plumbing Repair. *Minimum $250 Invoice. Limit one per household. Cannot be combined with other offers or discounts.",
-      expires: "March 2026"
-    },
-    {
-      label: "March Offer",
-      discount: "20% OFF",
-      description: "ALL <a href='/residential/specialty/emergency-plumbing/emergency-leak-repair'><strong>Emergency Plumbing</strong></a> Services",
-      expires: "March 2026"
-    },
-    {
-      label: "March Offer",
-      discount: "ONLY $99",
-      description: "Water Leak Verification. *Does not include cost of repairs.",
-      expires: "March 2026"
-    },
-    {
-      label: "February Offer",
-      discount: "FREE ESTIMATE",
-      description: "Tankless Water Heaters",
-      expires: "February 2026"
-    },
-    {
-      label: "February Offer",
-      discount: "$200 OFF",
-      description: "Whole-Home Water Filtration",
-      expires: "February 2026"
-    },
-    {
-      label: "March Offer",
-      discount: "SAVE $100",
-      description: "On ANY New Toilet",
-      expires: "March 2026"
-    }
-  ]}
-/>
+<CouponsSection {...pageData.sections[1].props} />
 
-<CTAStrip
-  buttonText="SCHEDULE NOW"
-  buttonHref="/contact"
-  phoneLabel="Call or Text for Great Service"
-  phone="{phone}"
-  features={[
-    { icon: "siren", text: "24/7 Emergency Service" },
-    { icon: "award", text: "Experienced & Certified Technicians" }
-  ]}
-/>
+<CTAStrip {...pageData.sections[2].props} />
 
-<ServiceAreaSection
-  variant="compact"
-  title="Proudly Serving {city}"
-  description="We provide reliable <a href='/residential-plumbing'><strong>residential plumbing</strong></a> services throughout {city} and nearby areas like <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> to see if we serve your neighborhood!"
-  buttonText="SERVICE AREAS"
-  buttonHref="/service-areas"
-  mapAddress="{city}, {state}"
-/>
+<ServiceAreaSection {...pageData.sections[3].props} />

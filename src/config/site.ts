@@ -32,7 +32,7 @@ export const siteConfig = {
   colors: {
     primary: "#0b273f",      // Most dominant - text, headers
     secondary: "#196496",    // Semi dominant - buttons, highlights, accent
-    tertiary: "#e9f1fb",     // Subtle accent - muted backgrounds
+    tertiary: "#fbf7e9ff",     // Subtle accent - muted backgrounds
     quaternary: "#fafeff",   // Subtle accent - page background
     accent: "#A3032B",       // Secondary accent - red
   },
