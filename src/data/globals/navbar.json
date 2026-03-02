@@ -1,0 +1,248 @@
+{
+  "logo": {
+    "src": "https://ntv-template-1.vercel.app/logo/dealer-logo.avif",
+    "alt": "Acme Inc. Logo"
+  },
+  "topNav": [
+    { "title": "Home", "href": "/" },
+    {
+      "title": "About Us",
+      "href": "/about",
+      "children": [
+        { "title": "Specials and Offers", "href": "/specials-and-offers" },
+        { "title": "Reviews", "href": "/reviews" }
+      ]
+    },
+    { "title": "Contact Us", "href": "/contact" },
+    { "title": "Careers", "href": "/careers" },
+    {
+      "title": "Service Areas",
+      "href": "/service-areas",
+      "children": [
+        { "title": "Santa Monica", "href": "/santa-monica" },
+        { "title": "Pasadena", "href": "/pasadena" },
+        { "title": "Glendale", "href": "/glendale" }
+      ]
+    }
+  ],
+  "quickActions": [
+    { "title": "Maintenance Plan", "href": "/maintenance-plan", "icon": "settings" },
+    { "title": "Financing", "href": "/financing", "icon": "dollar" }
+  ]
+,
+  "mainNav": [
+    {
+      "title": "Residential Plumbing",
+      "href": "/residential-plumbing",
+      "categories": [
+        {
+          "title": "Kitchen Plumbing",
+          "icon": "utensils",
+          "items": [
+            { "title": "Faucet & Sink Installation/Repair", "href": "/residential/kitchen/faucet-sink" },
+            { "title": "Garbage Disposal Repair and Replacement", "href": "/residential/kitchen/garbage-disposal" },
+            { "title": "Dishwasher Hookups", "href": "/residential/kitchen/dishwasher" },
+            { "title": "Kitchen Remodel Plumbing", "href": "/residential/kitchen/remodel" }
+          ]
+        },
+        {
+          "title": "Bathroom",
+          "icon": "bath",
+          "items": [
+            { "title": "Toilet Repair and Replacement", "href": "/residential/bathroom/toilet" },
+            { "title": "Shower and Tub Installation/Repair", "href": "/residential/bathroom/shower-tub" },
+            { "title": "Sink and Faucet Installation/Repair", "href": "/residential/bathroom/sink-faucet" }
+          ]
+        },
+        {
+          "title": "Leak",
+          "icon": "droplet",
+          "items": [
+            { "title": "Water Leak Detection", "href": "/residential/leak/detection" },
+            { "title": "Slab Leak Repair", "href": "/residential/leak/slab" },
+            { "title": "Sewer Odor Investigation", "href": "/residential/leak/odor" }
+          ]
+        },
+        {
+          "title": "Drain",
+          "icon": "waves",
+          "items": [
+            { "title": "Drain Cleaning", "href": "/residential/drain/cleaning" },
+            { "title": "Sewer Line Repair and Replacement", "href": "/residential/drain/sewer-line" }
+          ]
+        },
+        {
+          "title": "Water Heaters",
+          "icon": "flame",
+          "items": [
+            { "title": "Standard Water Heater Repair and Replacement", "href": "/residential/water-heaters/standard" },
+            { "title": "Tankless Water Heater Installation and Maintenance", "href": "/residential/water-heaters/tankless" }
+          ]
+        },
+        {
+          "title": "Piping",
+          "icon": "pipette",
+          "items": [
+            { "title": "Copper and PEX Re-Piping", "href": "/residential/piping/repiping" },
+            { "title": "Water Line Repair/Replacement", "href": "/residential/piping/water-line" }
+          ]
+        }
+      ]
+    }
+,
+    {
+      "title": "Commercial Plumbing",
+      "href": "/commercial",
+      "categories": [
+        {
+          "title": "Building Plumbing Systems",
+          "icon": "building",
+          "items": [
+            { "title": "Design and Installation for New Construction", "href": "/commercial/building-plumbing/new-construction" },
+            { "title": "Plumbing Fixture Installation", "href": "/commercial/building-plumbing/fixture-installation" }
+          ]
+        },
+        {
+          "title": "Commercial Water Heaters",
+          "icon": "flame",
+          "items": [
+            { "title": "High-Capacity Water Heater Installation", "href": "/commercial/water-heaters/high-capacity" },
+            { "title": "Tankless Water Heater Systems", "href": "/commercial/water-heaters/tankless" }
+          ]
+        },
+        {
+          "title": "Drain and Sewer Services",
+          "icon": "waves",
+          "items": [
+            { "title": "Sewer Camera Inspections", "href": "/commercial/drain-sewer/camera-inspections" },
+            { "title": "Commercial Drain Cleaning", "href": "/commercial/drain-sewer/drain-cleaning" }
+          ]
+        },
+        {
+          "title": "Specialty Piping",
+          "icon": "pipette",
+          "items": [
+            { "title": "Grease Trap Installation", "href": "/commercial/specialty-piping/grease-trap" },
+            { "title": "Industrial Pipe Installation and Repair", "href": "/commercial/specialty-piping/industrial-pipe" }
+          ]
+        },
+        {
+          "title": "Gas Plumbing",
+          "icon": "zap",
+          "items": [
+            { "title": "Gas Line Installation and Repair", "href": "/commercial/gas-plumbing/gas-line" },
+            { "title": "Gas Leak Detection", "href": "/commercial/gas-plumbing/leak-detection" }
+          ]
+        },
+        {
+          "title": "Backflow Prevention",
+          "icon": "shield",
+          "items": [
+            { "title": "Backflow Testing and Certification", "href": "/commercial/backflow-prevention/testing-certification" },
+            { "title": "Installation and Repair of Backflow Prevention Devices", "href": "/commercial/backflow-prevention/device-installation" }
+          ]
+        }
+      ]
+    }
+,
+    {
+      "title": "Specialty Plumbing",
+      "href": "/specialty",
+      "categories": [
+        {
+          "title": "Advanced Leak Detection",
+          "icon": "search",
+          "items": [
+            { "title": "Infrared Camera Leak Detection", "href": "/residential/specialty/advanced-leak-detection/infrared-camera" },
+            { "title": "Hydrostatic Pressure Testing", "href": "/residential/specialty/advanced-leak-detection/hydrostatic-pressure-testing" }
+          ]
+        },
+        {
+          "title": "Hydro Jetting",
+          "icon": "zap",
+          "items": [
+            { "title": "High-Pressure Drain Cleaning for Tough Clogs", "href": "/residential/specialty/hydro-jetting/high-pressure-drain-cleaning" }
+          ]
+        },
+        {
+          "title": "Sewer Line Services",
+          "icon": "pipette",
+          "items": [
+            { "title": "Trenchless Sewer Repair", "href": "/residential/specialty/sewer-line-services/trenchless-sewer-repair" },
+            { "title": "Pipe Bursting and Lining", "href": "/residential/specialty/sewer-line-services/pipe-bursting-lining" }
+          ]
+        },
+        {
+          "title": "Emergency Plumbing",
+          "icon": "alert",
+          "items": [
+            { "title": "24/7 Emergency Leak and Repair Services", "href": "/residential/specialty/emergency-plumbing/emergency-leak-repair" },
+            { "title": "Burst Pipe Response", "href": "/residential/specialty/emergency-plumbing/burst-pipe-response" }
+          ]
+        },
+        {
+          "title": "Water Filtration",
+          "icon": "filter",
+          "items": [
+            { "title": "Whole-House Water Filtration Systems", "href": "/residential/specialty/water-filtration/whole-house-filtration" },
+            { "title": "Water Softener Installation", "href": "/residential/specialty/water-filtration/water-softener" }
+          ]
+        },
+        {
+          "title": "Green Plumbing Solutions",
+          "icon": "leaf",
+          "items": [
+            { "title": "Water Conservation Retrofits", "href": "/residential/specialty/green-plumbing/water-conservation-retrofits" },
+            { "title": "Solar Water Heater Installation", "href": "/residential/specialty/green-plumbing/solar-water-heater" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Maintenance Services",
+      "href": "/maintenance",
+      "categories": [
+        {
+          "title": "Preventative Maintenance",
+          "icon": "clipboard",
+          "items": [
+            { "title": "Regular Plumbing Inspections", "href": "/residential/maintenance/preventative/plumbing-inspections" },
+            { "title": "Water Heater Flushing and Maintenance", "href": "/residential/maintenance/preventative/water-heater-flushing" }
+          ]
+        },
+        {
+          "title": "Drain and Sewer Maintenance",
+          "icon": "waves",
+          "items": [
+            { "title": "Routine Drain Cleaning", "href": "/residential/maintenance/drain-sewer/routine-drain-cleaning" },
+            { "title": "Scheduled Sewer Inspections", "href": "/residential/maintenance/drain-sewer/sewer-inspections" }
+          ]
+        },
+        {
+          "title": "Leak Prevention",
+          "icon": "droplet",
+          "items": [
+            { "title": "Valve and Seal Checks", "href": "/residential/maintenance/leak-prevention/valve-seal-checks" },
+            { "title": "Pressure Testing for Pipes", "href": "/residential/maintenance/leak-prevention/pressure-testing" }
+          ]
+        },
+        {
+          "title": "Gas System Maintenance",
+          "icon": "zap",
+          "items": [
+            { "title": "Annual Testing for Gas Appliances", "href": "/residential/maintenance/gas-system/annual-gas-testing" },
+            { "title": "Gas Line Inspection", "href": "/residential/maintenance/gas-system/gas-line-inspection" }
+          ]
+        },
+        {
+          "title": "Appliance Maintenance",
+          "icon": "settings",
+          "items": [
+            { "title": "Garbage Disposal Cleaning", "href": "/residential/maintenance/appliance/garbage-disposal-cleaning" },
+            { "title": "Dishwasher Plumbing Checks", "href": "/residential/maintenance/appliance/dishwasher-plumbing-checks" }
+          ]
+        }
+      ]
+    }
+  ]
+}

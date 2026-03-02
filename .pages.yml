@@ -3,6 +3,347 @@ media:
   output: /images
 
 content:
+  # ─── Site Settings (singleton) ───
+  - name: site-settings
+    label: Site Settings
+    path: src/data/settings/site.json
+    type: file
+    format: json
+    icon: settings
+    fields:
+      - name: business
+        label: Business Info
+        type: object
+        icon: briefcase
+        fields:
+          - name: name
+            label: Business Name
+            type: string
+            required: true
+          - name: fullName
+            label: Contact Person Name
+            type: string
+          - name: tagline
+            label: Tagline
+            type: string
+          - name: description
+            label: Description
+            type: text
+      - name: location
+        label: Location
+        type: object
+        icon: pin
+        fields:
+          - name: city
+            label: City
+            type: string
+            required: true
+          - name: state
+            label: State
+            type: string
+            required: true
+          - name: address
+            label: Street Address
+            type: string
+          - name: fullAddress
+            label: Full Address
+            type: string
+      - name: contact
+        label: Contact
+        type: object
+        icon: phone
+        fields:
+          - name: email
+            label: Email
+            type: string
+          - name: phone
+            label: Phone (raw)
+            type: string
+          - name: phoneFormatted
+            label: Phone (formatted)
+            type: string
+      - name: colors
+        label: Brand Colors
+        type: object
+        icon: palette
+        fields:
+          - name: primary
+            label: Primary Color
+            type: string
+            description: "Most dominant - text, headers"
+          - name: secondary
+            label: Secondary Color
+            type: string
+            description: "Semi dominant - buttons, highlights"
+          - name: tertiary
+            label: Tertiary Color
+            type: string
+            description: "Subtle accent - muted backgrounds"
+          - name: quaternary
+            label: Quaternary Color
+            type: string
+            description: "Subtle accent - page background"
+          - name: accent
+            label: Accent Color
+            type: string
+            description: "Secondary accent - red"
+      - name: logo
+        label: Logo
+        type: object
+        icon: image
+        fields:
+          - name: src
+            label: Logo URL
+            type: string
+          - name: alt
+            label: Alt Text
+            type: string
+      - name: social
+        label: Social Media
+        type: object
+        icon: share
+        fields:
+          - name: facebook
+            label: Facebook URL
+            type: string
+          - name: instagram
+            label: Instagram URL
+            type: string
+          - name: linkedin
+            label: LinkedIn URL
+            type: string
+          - name: twitter
+            label: Twitter/X URL
+            type: string
+          - name: youtube
+            label: YouTube URL
+            type: string
+      - name: seo
+        label: SEO
+        type: object
+        icon: search
+        fields:
+          - name: siteName
+            label: Site Name
+            type: string
+          - name: defaultTitle
+            label: Default Title
+            type: string
+          - name: defaultDescription
+            label: Default Description
+            type: text
+          - name: keywords
+            label: Keywords
+            type: text
+          - name: siteUrl
+            label: Site URL
+            type: string
+          - name: ogImage
+            label: OG Image URL
+            type: string
+          - name: twitterHandle
+            label: Twitter Handle
+            type: string
+      - name: template
+        label: Template
+        type: object
+        fields:
+          - name: id
+            label: Template ID
+            type: string
+          - name: name
+            label: Template Name
+            type: string
+
+  # ─── Popup Modal (singleton) ───
+  - name: popup-modal
+    label: Popup Modal
+    path: src/data/globals/popup-modal.json
+    type: file
+    format: json
+    icon: square
+    fields:
+      - name: delay
+        label: Delay (ms)
+        type: number
+      - name: showOnce
+        label: Show Once Per Session
+        type: boolean
+      - name: image
+        label: Hero Image URL
+        type: string
+      - name: imageAlt
+        label: Image Alt Text
+        type: string
+      - name: badgeText
+        label: Badge Text
+        type: string
+      - name: discountText
+        label: Discount Text
+        type: string
+      - name: discountSubtext
+        label: Discount Subtext
+        type: string
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: stats
+        label: Stats
+        type: object
+        list: true
+        fields:
+          - name: value
+            label: Value
+            type: string
+          - name: label
+            label: Label
+            type: string
+      - name: ctaText
+        label: CTA Button Text
+        type: string
+      - name: ctaHref
+        label: CTA Button Link
+        type: string
+      - name: callLabel
+        label: Call Button Label
+        type: string
+
+  # ─── Navbar (singleton) ───
+  - name: navbar
+    label: Navbar
+    path: src/data/globals/navbar.json
+    type: file
+    format: json
+    icon: menu
+    fields:
+      - name: logo
+        label: Logo
+        type: object
+        fields:
+          - name: src
+            label: Logo URL
+            type: string
+          - name: alt
+            label: Alt Text
+            type: string
+      - name: topNav
+        label: Top Navigation
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: href
+            label: Link
+            type: string
+            required: true
+          - name: children
+            label: Dropdown Items
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: Title
+                type: string
+              - name: href
+                label: Link
+                type: string
+      - name: quickActions
+        label: Quick Actions
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: href
+            label: Link
+            type: string
+          - name: icon
+            label: Icon
+            type: string
+      - name: mainNav
+        label: Main Navigation (Mega Menu)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.title}"
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: href
+            label: Link
+            type: string
+            required: true
+          - name: categories
+            label: Categories
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fields.title}"
+            fields:
+              - name: title
+                label: Category Title
+                type: string
+              - name: icon
+                label: Icon
+                type: string
+              - name: items
+                label: Items
+                type: object
+                list: true
+                fields:
+                  - name: title
+                    label: Title
+                    type: string
+                  - name: href
+                    label: Link
+                    type: string
+
+  # ─── Footer (singleton) ───
+  - name: footer
+    label: Footer
+    path: src/data/globals/footer.json
+    type: file
+    format: json
+    icon: layout
+    fields:
+      - name: aboutText
+        label: About Us Text
+        type: text
+      - name: quickLinks
+        label: Quick Links
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: href
+            label: Link
+            type: string
+      - name: servicesOffer
+        label: Services Offered
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: href
+            label: Link
+            type: string
+
+  # ─── Pages (collection) ───
   - name: pages
     label: Pages
     path: src/data/pages
@@ -45,9 +386,37 @@ content:
             summary: "{fields.component} ({index})"
         fields:
           - name: component
-            label: Component
-            type: string
+            label: Section Type
+            type: select
             required: true
+            options:
+              values:
+                - HeroSection
+                - ContentSection
+                - ContentSectionAlt
+                - CTAStrip
+                - TrustBadges
+                - ServicesSection
+                - ServiceCardsGridSection
+                - ExpertServicesSection
+                - CouponsSection
+                - PromoTilesSection
+                - TestimonialsSection
+                - ReviewsSection
+                - FAQSection
+                - ContactFormSection
+                - ServiceAreaSection
+                - FinancingSection
+                - FinancingIntroSection
+                - FinancingPlansSection
+                - PricingPlansSection
+                - MaintenancePlanSection
+                - PortfolioSection
+                - ImageCardsSection
+                - CareersCTASection
+                - JobOpeningsSection
+                - SignupBannerSection
+                - PlaceholderContentSection
           - name: props
             label: Props
             type: object
@@ -309,6 +678,22 @@ content:
                 label: Areas
                 type: string
                 list: true
+
+  # ─── Location Pages (collection) ───
+  - name: location-pages
+    label: Location Pages
+    path: src/data/pages
+    type: collection
+    format: json
+    icon: pin
+    filename: "{primary}.json"
+    view:
+      primary: meta.title
+      fields:
+        - meta.title
+      filter:
+        field: meta.isLocationPage
+        value: true
 
 settings:
   content:

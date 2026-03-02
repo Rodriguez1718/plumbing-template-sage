@@ -1,0 +1,19 @@
+{
+  "delay": 5000,
+  "showOnce": true,
+  "image": "https://ucarecdn.com/315825d3-5856-474f-8ac1-f793441976f7/-/preview/1000x666/",
+  "imageAlt": "Professional plumbing team",
+  "badgeText": "New Customer Special",
+  "discountText": "$50 OFF",
+  "discountSubtext": "Any service of $500 or more",
+  "title": "Don't Let Plumbing Problems Wait",
+  "description": "Book today and save. Our licensed pros handle everything from leaks to full remodels.",
+  "stats": [
+    { "value": "20+", "label": "Years" },
+    { "value": "24/7", "label": "Service" },
+    { "value": "5★", "label": "Rated" }
+  ],
+  "ctaText": "Claim Your $50 Discount",
+  "ctaHref": "/contact",
+  "callLabel": "Call Now"
+}

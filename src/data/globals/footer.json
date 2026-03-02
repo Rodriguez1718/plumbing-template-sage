@@ -1,0 +1,20 @@
+{
+  "aboutText": "We specialize in residential and commercial plumbing solutions. From repairs and maintenance to advanced leak detection and installations, our team is here to keep your plumbing running smoothly. Contact us today!",
+  "quickLinks": [
+    { "title": "HOME", "href": "/" },
+    { "title": "ABOUT US", "href": "/about" },
+    { "title": "SPECIALS", "href": "/specials-and-offers" },
+    { "title": "MAINTENANCE PLAN", "href": "/maintenance-plan" },
+    { "title": "FINANCING", "href": "/financing" },
+    { "title": "REVIEWS", "href": "/reviews" },
+    { "title": "CAREERS", "href": "/careers" },
+    { "title": "SERVICES AREAS", "href": "/service-areas" },
+    { "title": "CONTACT US", "href": "/contact" }
+  ],
+  "servicesOffer": [
+    { "title": "RESIDENTIAL PLUMBING SERVICES", "href": "/residential-plumbing" },
+    { "title": "COMMERCIAL PLUMBING SERVICES", "href": "/commercial" },
+    { "title": "SPECIALTY PLUMBING SERVICES", "href": "/specialty" },
+    { "title": "MAINTENANCE SERVICES", "href": "/maintenance" }
+  ]
+}
