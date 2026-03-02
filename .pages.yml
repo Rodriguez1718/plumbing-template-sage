@@ -93,10 +93,10 @@ content:
         icon: image
         fields:
           - name: src
-            label: Logo URL
-            type: string
+            label: Logo
+            type: image
           - name: alt
-            label: Alt Text
+            label: Logo Alt Text
             type: string
       - name: social
         label: Social Media
@@ -139,8 +139,8 @@ content:
             label: Site URL
             type: string
           - name: ogImage
-            label: OG Image URL
-            type: string
+            label: OG Image
+            type: image
           - name: twitterHandle
             label: Twitter Handle
             type: string
@@ -170,8 +170,8 @@ content:
         label: Show Once Per Session
         type: boolean
       - name: image
-        label: Hero Image URL
-        type: string
+        label: Hero Image
+        type: image
       - name: imageAlt
         label: Image Alt Text
         type: string
@@ -224,10 +224,10 @@ content:
         type: object
         fields:
           - name: src
-            label: Logo URL
-            type: string
+            label: Logo
+            type: image
           - name: alt
-            label: Alt Text
+            label: Logo Alt Text
             type: string
       - name: topNav
         label: Top Navigation
@@ -444,7 +444,7 @@ content:
                 type: string
               - name: image
                 label: Image
-                type: string
+                type: image
               - name: imagePosition
                 label: Image Position
                 type: string
@@ -469,8 +469,8 @@ content:
                     label: Subtitle
                     type: text
                   - name: image
-                    label: Image
-                    type: string
+                    label: Slide Image
+                    type: image
                   - name: promoTitle
                     label: Promo Title
                     type: string
@@ -497,8 +497,8 @@ content:
                     label: Name
                     type: string
                   - name: image
-                    label: Image
-                    type: string
+                    label: Badge Image
+                    type: image
                   - name: small
                     label: Small
                     type: boolean
@@ -562,10 +562,10 @@ content:
                     type: string
                   - name: bgImage
                     label: Background Image
-                    type: string
+                    type: image
               - name: images
                 label: Images
-                type: string
+                type: image
                 list: true
               - name: categories
                 label: Categories
@@ -672,8 +672,8 @@ content:
                     label: Link
                     type: string
                   - name: image
-                    label: Image
-                    type: string
+                    label: Item Image
+                    type: image
               - name: areas
                 label: Areas
                 type: string
