@@ -23,7 +23,7 @@ const { badges = [
 const duplicatedBadges = [...badges, ...badges, ...badges];
 ---
 
-<section class="py-8 bg-brand-tertiary dark:bg-brand-primary/40 overflow-hidden border-y border-brand-secondary/20">
+<section class="py-8 bg-brand-tertiary dark:bg-brand-primary/40 overflow-hidden" style="border-top: 2px solid var(--brand-highlight, #45f9ff); border-bottom: 2px solid var(--brand-highlight, #45f9ff);">
   <div class="carousel-container">
     <div class="carousel-track">
       {duplicatedBadges.map((badge) => (

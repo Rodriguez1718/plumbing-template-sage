@@ -42,6 +42,7 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-highlight: var(--brand-highlight, #45f9ff);
 }
 
 :root {
@@ -133,6 +134,27 @@
   .container {
     @apply max-w-7xl;
   }
+  /* Highlight accent on interactive elements */
+  a:not([class]):hover {
+    color: var(--brand-highlight, #45f9ff);
+  }
+}
+
+/* Global button hover highlight */
+@layer components {
+  /* Accent buttons: hover to highlight bg */
+  a[class*="bg-accent"]:hover,
+  button[class*="bg-accent"]:hover,
+  [class*="bg-accent"] > a:hover {
+    background-color: var(--brand-highlight, #45f9ff) !important;
+    color: var(--brand-primary) !important;
+  }
+  /* Primary buttons: hover to highlight bg */
+  a[class*="bg-primary"]:not(section):hover,
+  button[class*="bg-primary"]:not(section):hover {
+    background-color: var(--brand-highlight, #45f9ff) !important;
+    color: var(--brand-primary) !important;
+  }
 }
 
 /* Brand color utilities with opacity support */
@@ -177,6 +199,17 @@
   }
   .border-brand-quaternary {
     border-color: var(--brand-quaternary);
+  }
+
+  /* Highlight color utilities */
+  .bg-highlight {
+    background-color: var(--brand-highlight, #45f9ff);
+  }
+  .text-highlight {
+    color: var(--brand-highlight, #45f9ff);
+  }
+  .border-highlight {
+    border-color: var(--brand-highlight, #45f9ff);
   }
 
   /* Opacity variants for backgrounds - common values */

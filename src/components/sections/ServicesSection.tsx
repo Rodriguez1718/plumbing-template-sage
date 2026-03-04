@@ -64,7 +64,7 @@ export function ServicesSection({ title, description, categories }: Props) {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeTab === index
                   ? 'bg-accent text-accent-foreground shadow-lg'
-                  : 'bg-muted hover:bg-muted/80 text-muted-foreground hover:text-foreground'
+                  : 'bg-muted hover:bg-highlight/20 text-muted-foreground hover:text-foreground'
               }`}
             >
               {category.title.replace(' Services', '').replace(' Plumbing', '')}
@@ -106,7 +106,7 @@ export function ServicesSection({ title, description, categories }: Props) {
                     <Tag
                       key={serviceIndex}
                       {...(service.href ? { href: service.href } : {})}
-                      className={`group bg-card border rounded-lg p-6 transition-all animate-in fade-in slide-in-from-bottom-2 duration-300 flex flex-col items-center text-center gap-3 ${service.href ? 'hover:shadow-md hover:border-accent/30 cursor-pointer' : 'cursor-default'}`}
+                      className={`group bg-card border rounded-lg p-6 transition-all animate-in fade-in slide-in-from-bottom-2 duration-300 flex flex-col items-center text-center gap-3 ${service.href ? 'hover:shadow-lg hover:border-highlight hover:-translate-y-1 cursor-pointer' : 'cursor-default'}`}
                       style={{ animationDelay: `${serviceIndex * 50}ms` }}
                     >
                       <div className="shrink-0 w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center overflow-hidden">

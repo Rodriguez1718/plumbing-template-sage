@@ -1,7 +1,7 @@
 ---
 import { siteConfig } from "@/config/site"
 
-const { primary, secondary, tertiary, quaternary, accent } = siteConfig.colors
+const { primary, secondary, tertiary, quaternary, accent, highlight } = siteConfig.colors as any
 ---
 
-<Fragment set:html={`<style>:root{--brand-primary:${primary};--brand-secondary:${secondary};--brand-tertiary:${tertiary};--brand-quaternary:${quaternary}${accent ? `;--brand-accent:${accent}` : ''}}</style>`} />
+<Fragment set:html={`<style>:root{--brand-primary:${primary};--brand-secondary:${secondary};--brand-tertiary:${tertiary};--brand-quaternary:${quaternary}${accent ? `;--brand-accent:${accent}` : ''}${highlight ? `;--brand-highlight:${highlight}` : ''}}</style>`} />

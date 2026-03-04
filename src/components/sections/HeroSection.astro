@@ -7,6 +7,7 @@ interface HeroSlide {
   image: string;
   promoTitle?: string;
   promoText?: string;
+  promoImage?: string;
   buttonText?: string;
 }
 
@@ -60,6 +61,7 @@ const slides = rawSlides.map(slide => ({
   subtitle: slide.subtitle ? getLocationText(slide.subtitle) : undefined,
   promoTitle: slide.promoTitle ? getLocationText(slide.promoTitle) : undefined,
   promoText: slide.promoText ? getLocationText(slide.promoText) : undefined,
+  promoImage: slide.promoImage || undefined,
   buttonText: slide.buttonText ? getLocationText(slide.buttonText) : undefined,
 }));
 
@@ -185,7 +187,7 @@ const hasSlideshow = slides.length > 1;
               <div>
                 <a
                   href={buttonHref}
-                  class="inline-flex items-center justify-center rounded-md bg-accent text-accent-foreground px-8 py-4 text-lg font-semibold hover:bg-accent/90 transition-colors"
+                  class="inline-flex items-center justify-center rounded-md bg-accent text-accent-foreground px-8 py-4 text-lg font-semibold hover:bg-accent/90 transition-colors shadow-lg shadow-accent/30"
                 >
                   {slide.buttonText || buttonText}
                 </a>
@@ -207,7 +209,7 @@ const hasSlideshow = slides.length > 1;
               >
                 <div class="promo-card relative max-w-[300px] w-full">
                   <!-- Pulsing glow behind card -->
-                  <div class="promo-glow absolute -inset-4 rounded-2xl blur-2xl" style="background: var(--brand-secondary);"></div>
+                  <div class="promo-glow absolute -inset-4 rounded-2xl blur-2xl" style="background: var(--brand-highlight, var(--brand-secondary));"></div>
 
                   <!-- Outer solid border (navy) -->
                   <div class="relative rounded-lg overflow-hidden shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)]" style="background: var(--brand-primary); padding: 4px;">
@@ -231,8 +233,16 @@ const hasSlideshow = slides.length > 1;
                             Limited Offer
                           </span>
                         </p>
+
+                        <!-- Promo image -->
+                        {slide.promoImage && (
+                          <div class="w-full h-24 rounded-md overflow-hidden mb-3">
+                            <img src={slide.promoImage} alt="" class="w-full h-full object-cover" loading="lazy" />
+                          </div>
+                        )}
+
                         <h3 class="promo-coupon-title text-3xl md:text-4xl font-black leading-tight mb-3" style="color: var(--brand-secondary);">
-                          Coupon
+                          Special Deal
                         </h3>
                         <p class="text-xs mb-4" style="color: var(--brand-primary); opacity: 0.7;">Redeem &amp; Save Today</p>
 
@@ -332,6 +342,7 @@ const hasSlideshow = slides.length > 1;
   }
   .animate-hero-fill {
     animation: hero-fill 5s linear forwards;
+    background: linear-gradient(90deg, var(--brand-accent), var(--brand-highlight, #45f9ff));
   }
 
   /* Promo card shimmer on the discount value */
@@ -340,7 +351,7 @@ const hasSlideshow = slides.length > 1;
       110deg,
       #ffffff 0%,
       #ffffff 35%,
-      var(--brand-secondary) 50%,
+      var(--brand-highlight, var(--brand-secondary)) 50%,
       #ffffff 65%,
       #ffffff 100%
     );

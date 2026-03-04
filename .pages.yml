@@ -424,26 +424,27 @@ content:
               - name: variant
                 label: Variant
                 type: select
+                description: "HeroSection: default, subpage, category | CouponsSection: default, minimal | ServiceAreaSection: full, compact | FinancingPlansSection: plans, services, features"
                 options:
                   values:
                     - value: default
-                      label: "Default (HeroSection, CouponsSection)"
+                      label: Default
                     - value: subpage
-                      label: "Subpage (HeroSection)"
+                      label: Subpage
                     - value: category
-                      label: "Category (HeroSection)"
+                      label: Category
                     - value: minimal
-                      label: "Minimal (CouponsSection)"
+                      label: Minimal
                     - value: full
-                      label: "Full (ServiceAreaSection)"
+                      label: Full
                     - value: compact
-                      label: "Compact (ServiceAreaSection)"
+                      label: Compact
                     - value: plans
-                      label: "Plans (FinancingPlansSection)"
+                      label: Plans
                     - value: services
-                      label: "Services (FinancingPlansSection)"
+                      label: Services
                     - value: features
-                      label: "Features (FinancingPlansSection)"
+                      label: Features
               - name: title
                 label: Title
                 type: string

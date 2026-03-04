@@ -102,7 +102,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-white/70 hover:text-white transition-colors"
+                    className="text-sm text-white/70 hover:text-highlight transition-colors"
                   >
                     {link.title}
                   </a>
@@ -122,7 +122,7 @@ export function Footer() {
                 <li key={service.href}>
                   <a
                     href={service.href}
-                    className="text-sm text-white/70 hover:text-white transition-colors"
+                    className="text-sm text-white/70 hover:text-highlight transition-colors"
                   >
                     {service.title}
                   </a>

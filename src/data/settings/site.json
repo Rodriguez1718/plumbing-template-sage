@@ -19,9 +19,10 @@
   "colors": {
     "primary": "#0b273f",
     "secondary": "#196496",
-    "tertiary": "#fbf7e9ff",
+    "tertiary": "#d4d2d2",
     "quaternary": "#fafeff",
-    "accent": "#A3032B"
+    "accent": "#A3032B",
+    "highlight": "#45f9ff"
   },
   "logo": {
     "src": "https://ntv-template-1.vercel.app/logo/dealer-logo.avif",

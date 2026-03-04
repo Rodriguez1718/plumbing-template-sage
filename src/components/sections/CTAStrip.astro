@@ -42,7 +42,7 @@ const iconMap = {
 const borderStyle = borderColor ? `border-top: 4px solid ${borderColor}; border-bottom: 4px solid ${borderColor};` : "";
 ---
 
-<section class="py-8 bg-primary text-primary-foreground relative overflow-visible" style={borderStyle}>
+<section class="py-8 bg-primary text-primary-foreground relative overflow-visible" style={`border-top: 4px solid var(--brand-highlight, #45f9ff); border-bottom: 4px solid var(--brand-highlight, #45f9ff);${borderStyle ? ' ' + borderStyle : ''}`}>
   <div class="container mx-auto px-4 relative">
     <img
       src="/images/plumber.png"
@@ -53,7 +53,7 @@ const borderStyle = borderColor ? `border-top: 4px solid ${borderColor}; border-
     />
     <div class="flex flex-col md:flex-row items-center justify-between gap-6 md:pl-36 lg:pl-44" data-animate="fade-up">
       <div class="flex flex-col sm:flex-row items-center gap-6">
-        <a href={buttonHref} class="inline-flex items-center justify-center rounded-md bg-background text-foreground px-8 py-4 text-lg font-semibold hover:bg-background/90 transition-colors">
+        <a href={buttonHref} class="inline-flex items-center justify-center rounded-md bg-accent text-accent-foreground px-8 py-4 text-lg font-semibold hover:bg-accent/90 transition-colors shadow-lg shadow-accent/30">
           {buttonText}
         </a>
         <div class="text-center sm:text-left">

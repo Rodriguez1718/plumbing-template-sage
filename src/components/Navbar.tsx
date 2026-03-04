@@ -93,7 +93,7 @@ function MegaMenu({ item, isOpen }: { item: MegaMenuItem; isOpen: boolean }) {
                   <li key={service.href}>
                     <a
                       href={service.href}
-                      className="text-sm text-gray-700 hover:text-accent hover:bg-brand-tertiary hover:pl-2 transition-all duration-200 block leading-snug py-1 rounded"
+                      className="text-sm text-gray-700 hover:text-highlight hover:bg-brand-tertiary hover:pl-2 transition-all duration-200 block leading-snug py-1 rounded"
                     >
                       {service.title}
                     </a>
