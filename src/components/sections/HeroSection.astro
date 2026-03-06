@@ -69,33 +69,60 @@ const hasSlideshow = slides.length > 1;
 ---
 
 {variant === "subpage" ? (
-  <section class="relative bg-primary">
-    <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-2 min-h-[400px] md:min-h-[450px]">
-        <div class="relative flex items-center py-12 md:py-16 pr-8">
+  <section class="subpage-hero relative bg-primary overflow-hidden">
+    {/* Subtle teal gradient overlay for depth */}
+    <div class="absolute inset-0 opacity-[0.07]" style="background: radial-gradient(ellipse at 30% 50%, var(--brand-highlight, #45f9ff), transparent 70%);"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="grid md:grid-cols-2 min-h-[420px] md:min-h-[480px]">
+        <div class="relative flex items-center py-14 md:py-20 pr-8">
           {badge_processed && (
             <div class="absolute top-0 left-0 right-0 pt-8">
-              <span class="inline-flex items-center gap-2 text-white/80 text-xs font-bold uppercase tracking-[0.2em]">
-                <span class="w-8 h-px bg-white/60"></span>
+              <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em]" style="color: var(--brand-highlight, #45f9ff);">
+                <span class="w-8 h-px" style="background: var(--brand-highlight, #45f9ff); opacity: 0.6;"></span>
                 {badge_processed}
               </span>
             </div>
           )}
           <div class="pt-8">
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4 leading-tight">
+            {/* Teal accent bar above title */}
+            <div class="w-12 h-1 rounded-full mb-5" style="background: var(--brand-highlight, #45f9ff);"></div>
+
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-5 leading-tight">
               {title}
             </h1>
             {subtitle && (
-              <p class="text-lg text-primary-foreground/80 mb-6 max-w-md" set:html={subtitle} />
+              <p class="text-lg text-primary-foreground/75 mb-8 max-w-lg leading-relaxed" set:html={subtitle} />
             )}
-            <a href={buttonHref} class="inline-flex items-center justify-center rounded-md bg-accent text-accent-foreground px-6 py-3 font-semibold hover:bg-accent/90 transition-colors">
-              {buttonText}
-            </a>
+
+            <div class="flex flex-wrap items-center gap-4">
+              <a href={buttonHref} class="subpage-hero-cta inline-flex items-center justify-center rounded-md bg-accent text-accent-foreground px-7 py-3.5 font-semibold transition-all duration-300 shadow-lg shadow-accent/25">
+                {buttonText}
+              </a>
+            </div>
+
+            {/* Trust indicators row */}
+            {trustIndicators && trustIndicators.length > 0 && (
+              <div class="flex flex-wrap gap-x-5 gap-y-2 mt-8">
+                {trustIndicators.map((indicator) => (
+                  <span class="inline-flex items-center gap-2 text-sm text-primary-foreground/60">
+                    <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--brand-highlight, #45f9ff);"></span>
+                    {indicator}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         </div>
         <div class="hidden md:block relative -mr-4 md:-mr-[calc((100vw-100%)/2+1rem)]">
           {image ? (
-            <img src={image} alt={title} class="absolute inset-0 w-full h-full object-cover" />
+            <Fragment>
+              <img src={image} alt={title} class="absolute inset-0 w-full h-full object-cover" />
+              {/* Teal edge glow where image meets content */}
+              <div class="absolute inset-y-0 left-0 w-24" style="background: linear-gradient(to right, var(--brand-primary), transparent);"></div>
+              {/* Bottom teal accent line */}
+              <div class="absolute bottom-0 left-0 right-0 h-[3px]" style="background: linear-gradient(to right, var(--brand-highlight, #45f9ff), transparent 60%);"></div>
+            </Fragment>
           ) : (
             <div class="absolute inset-0 bg-muted flex items-center justify-center">
               <span class="text-muted-foreground">Hero Image</span>
@@ -104,6 +131,9 @@ const hasSlideshow = slides.length > 1;
         </div>
       </div>
     </div>
+
+    {/* Bottom teal accent line spanning full width */}
+    <div class="absolute bottom-0 left-0 right-0 h-[3px] z-20" style="background: linear-gradient(to right, var(--brand-highlight, #45f9ff) 0%, var(--brand-highlight, #45f9ff) 40%, transparent 70%);"></div>
   </section>
 ) : variant === "category" ? (
   <!-- Category hero: gradient background with side image -->
@@ -336,6 +366,15 @@ const hasSlideshow = slides.length > 1;
 )}
 
 <style>
+  /* Subpage hero styles */
+  .subpage-hero-cta {
+    position: relative;
+  }
+  .subpage-hero-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px -5px color-mix(in srgb, var(--brand-accent) 40%, transparent);
+  }
+
   @keyframes hero-fill {
     from { width: 0%; }
     to { width: 100%; }

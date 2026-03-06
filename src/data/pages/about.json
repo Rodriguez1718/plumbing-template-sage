@@ -68,33 +68,37 @@
         ]
       }
     },
-    {
+   {
       "component": "FinancingPlansSection",
       "props": {
+        "variant": "services",
         "title": "Related Services",
         "items": [
           {
             "title": "Residential Plumbing Services",
-            "icon": "home",
-            "href": "/residential-plumbing"
+            "text": "Comprehensive plumbing solutions for your home including installations and maintenance.",
+            "href": "/residential",
+            "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80"
           },
           {
             "title": "Commercial Plumbing Services",
-            "icon": "building",
-            "href": "/commercial"
+            "text": "Professional plumbing services for businesses and commercial properties of all sizes.",
+            "href": "/commercial",
+            "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80"
           },
           {
             "title": "Specialty Plumbing Services",
-            "icon": "wrench",
-            "href": "/specialty"
+            "text": "Advanced plumbing solutions including leak detection, hydro jetting, and water filtration.",
+            "href": "/specialty",
+            "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80"
           },
           {
             "title": "Maintenance Services",
-            "icon": "settings",
-            "href": "/maintenance"
+            "text": "Preventative maintenance plans to keep your plumbing system running smoothly year-round.",
+            "href": "/maintenance",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80"
           }
-        ],
-        "variant": "plans"
+        ]
       }
     },
     {

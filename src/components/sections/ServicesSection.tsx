@@ -56,15 +56,15 @@ export function ServicesSection({ title, description, categories }: Props) {
           <p className="text-muted-foreground max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: description }} />
         </div>
 
-        <div className={`flex flex-wrap justify-center gap-2 mb-8 transition-all duration-600 ease-out delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`flex flex-wrap justify-center gap-3 mb-8 transition-all duration-600 ease-out delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {categories.map((category, index) => (
             <button
               key={index}
               onClick={() => setActiveTab(index)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full text-base font-semibold transition-all duration-300 ${
                 activeTab === index
-                  ? 'bg-accent text-accent-foreground shadow-lg'
-                  : 'bg-muted hover:bg-highlight/20 text-muted-foreground hover:text-foreground'
+                  ? 'bg-accent text-accent-foreground shadow-lg scale-105'
+                  : 'bg-muted hover:bg-highlight/20 text-muted-foreground hover:text-foreground hover:scale-105'
               }`}
             >
               {category.title.replace(' Services', '').replace(' Plumbing', '')}

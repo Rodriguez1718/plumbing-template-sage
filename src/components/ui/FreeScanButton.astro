@@ -4,16 +4,18 @@
 ---
 
 <div id="free-scan-wrapper" class="hidden md:block fixed bottom-8 right-8 z-40">
-  <!-- Floating tag / ribbon style -->
   <button
     id="free-scan-trigger"
-    class="relative flex items-center gap-3 pl-4 pr-5 py-3 bg-accent text-accent-foreground font-semibold text-sm rounded-full shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 group"
+    class="free-scan-btn relative flex items-center gap-0 bg-accent text-accent-foreground font-semibold text-sm rounded-full shadow-xl hover:shadow-2xl active:scale-[0.97] transition-all duration-300 group overflow-hidden"
     aria-label="Get $50 off your next service"
   >
-    <!-- Animated icon -->
-    <span class="relative flex items-center justify-center w-9 h-9 bg-white/20 rounded-full group-hover:bg-white/30 transition-colors">
+    {/* Pulsing attention ring */}
+    <span class="free-scan-ping absolute inset-0 rounded-full border-2 border-accent"></span>
+
+    {/* Icon circle — sits flush left */}
+    <span class="relative flex items-center justify-center w-14 h-14 rounded-full flex-shrink-0" style="background: var(--brand-primary);">
       <svg
-        class="w-5 h-5 group-hover:rotate-12 transition-transform duration-300"
+        class="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -21,13 +23,17 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
       </svg>
-
+      {/* Teal dot indicator */}
+      <span class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full border-2" style="background: var(--brand-highlight, #45f9ff); border-color: var(--brand-primary);"></span>
     </span>
 
-    <span class="flex flex-col items-start leading-tight">
-      <span class="text-[10px] font-normal opacity-80 uppercase tracking-wider">Limited Offer</span>
-      <span class="text-sm font-bold">$50 OFF — Claim Now</span>
+    {/* Text content */}
+    <span class="flex flex-col items-start pl-3 pr-6 py-3 leading-tight">
+      <span class="free-scan-label text-[10px] font-semibold uppercase tracking-widest">Limited Offer</span>
+      <span class="text-base font-bold tracking-tight">$50 OFF — Claim Now</span>
     </span>
+
+
   </button>
 </div>
 
@@ -44,6 +50,45 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  /* Pulsing ring for attention */
+  .free-scan-ping {
+    animation: scan-ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes scan-ping {
+    0% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    75%, 100% {
+      transform: scale(1.15);
+      opacity: 0;
+    }
+  }
+
+  /* Hover lift */
+  .free-scan-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Teal label, but inherit color on hover so it stays visible against teal bg */
+  .free-scan-label {
+    color: var(--brand-highlight, #45f9ff);
+  }
+  .free-scan-btn:hover .free-scan-label {
+    color: inherit;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .free-scan-ping {
+      animation: none;
+    }
+    #free-scan-wrapper {
+      animation: none;
+      opacity: 1;
     }
   }
 </style>
