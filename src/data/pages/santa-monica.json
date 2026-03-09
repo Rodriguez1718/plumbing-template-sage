@@ -42,7 +42,7 @@
             "description": "From minor repairs to major installations, we handle it all with precision and care."
           }
         ],
-        "image": "https://ucarecdn.com/514fa2a4-9e6c-417b-8e38-fdab8ec5364a/-/preview/999x1000/",
+        "image": "https://ideallabourhire.com.au/wp-content/uploads/2024/08/plumber-job-sydney.jpeg",
         "imagePosition": "left"
       }
     },
@@ -120,34 +120,40 @@
       "component": "ServicesSection",
       "props": {
         "title": "Our Professional Plumbing Services",
-        "description": "We specialize in providing top-notch plumbing solutions tailored to meet your needs. Whether you're dealing with an urgent repair or planning a plumbing upgrade, our team is here to deliver reliable, efficient, and affordable services. Explore what we offer:",
+        "description": "We specialize in providing top-notch plumbing solutions tailored to meet your needs. Whether you're dealing with an urgent repair or planning a plumbing upgrade, our team is here to deliver reliable, efficient, and affordable services.",
         "categories": [
           {
             "title": "Residential Plumbing Services",
             "services": [
               {
                 "title": "Kitchen Plumbing",
-                "description": "Complete <a href='/residential/kitchen/faucet-sink'><strong>kitchen plumbing</strong></a> solutions"
+                "description": "Complete <a href='/residential/kitchen/faucet-sink'><strong>kitchen plumbing</strong></a> solutions",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/water-faucet.webp"
               },
               {
                 "title": "Bathroom Plumbing",
-                "description": "Expert <a href='/residential/bathroom/sink-faucet'><strong>bathroom plumbing</strong></a> services"
+                "description": "Expert <a href='/residential/bathroom/sink-faucet'><strong>bathroom plumbing</strong></a> services",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/Bathroom-Plumbing-Icon.webp"
               },
               {
                 "title": "Leak Detection and Repair",
-                "description": "Find and fix leaks fast"
+                "description": "Find and fix leaks fast",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/leaking.webp"
               },
               {
                 "title": "Water Heaters",
-                "description": "Installation and repair services"
+                "description": "Installation and repair services",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/water-heater.webp"
               },
               {
                 "title": "Drain and Sewer Services",
-                "description": "Keep your drains flowing"
+                "description": "Keep your drains flowing",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/drain-sewer-icon.webp"
               },
               {
-                "title": "View All Residential Plumbing →",
-                "description": "See all our residential services"
+                "title": "View All Residential Plumbing",
+                "description": "New construction and remodels",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/plumbing-icon.webp"
               }
             ]
           },
@@ -156,27 +162,33 @@
             "services": [
               {
                 "title": "Building Plumbing Systems",
-                "description": "Complete commercial systems"
+                "description": "Complete commercial systems",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2025/01/building-plumbing-system-icon.webp"
               },
               {
                 "title": "Drain and Sewer Services",
-                "description": "Commercial drain solutions"
+                "description": "Commercial drain solutions",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/drain-sewer-icon.webp"
               },
               {
                 "title": "Gas Plumbing",
-                "description": "Safe gas line services"
+                "description": "Safe gas line services",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/gas-pipeline-icon.webp"
               },
               {
                 "title": "Backflow Prevention",
-                "description": "Protect your water supply"
+                "description": "Protect your water supply",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/pipe-prevention.webp"
               },
               {
                 "title": "Water Heaters",
-                "description": "Commercial water heating"
+                "description": "Commercial water heating",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/water-heater.webp"
               },
               {
-                "title": "View All Commercial Plumbing →",
-                "description": "See all our commercial services"
+                "title": "View All Commercial Plumbing",
+                "description": "See all our commercial services",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/plumbing-icon.webp"
               }
             ]
           },
@@ -185,27 +197,33 @@
             "services": [
               {
                 "title": "Advanced Leak Detection",
-                "description": "State-of-the-art detection"
+                "description": "State-of-the-art detection",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/leaking.webp"
               },
               {
                 "title": "Sewer Line Services",
-                "description": "Complete sewer solutions"
+                "description": "Complete sewer solutions",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2025/01/sewer-line-icon.webp"
               },
               {
                 "title": "Water Filtration",
-                "description": "Clean water systems"
+                "description": "Clean water systems",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2025/01/water-filter-icon.webp"
               },
               {
                 "title": "Green Plumbing Solutions",
-                "description": "Eco-friendly options"
+                "description": "Eco-friendly options",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2025/01/green-plumbing-icon.webp"
               },
               {
                 "title": "Hydro Jetting",
-                "description": "High-pressure cleaning"
+                "description": "High-pressure cleaning",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2025/01/hydro-jetting-icon.webp"
               },
               {
-                "title": "View All Specialty Plumbing →",
-                "description": "See all specialty services"
+                "title": "View All Specialty Plumbing",
+                "description": "See all specialty services",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/plumbing-icon.webp"
               }
             ]
           },
@@ -214,27 +232,33 @@
             "services": [
               {
                 "title": "Preventative Maintenance",
-                "description": "Stay ahead of problems"
+                "description": "Stay ahead of problems",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/pipe-prevention.webp"
               },
               {
                 "title": "Drain and Sewer Maintenance",
-                "description": "Keep drains clear"
+                "description": "Keep drains clear",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/drain-sewer-icon.webp"
               },
               {
                 "title": "Leak Prevention",
-                "description": "Prevent costly damage"
+                "description": "Prevent costly damage",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/leaking.webp"
               },
               {
                 "title": "Appliance Maintenance",
-                "description": "Keep appliances running"
+                "description": "Keep appliances running",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/appliance-maintenance-icon.webp"
               },
               {
                 "title": "Gas System Maintenance",
-                "description": "Safe gas system care"
+                "description": "Safe gas system care",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/gas-pipeline-icon.webp"
               },
               {
-                "title": "View All Maintenance Services →",
-                "description": "See all maintenance options"
+                "title": "View All Maintenance Services",
+                "description": "See all maintenance options",
+                "icon": "https://johnh1003.sg-host.com/wp-content/uploads/2024/12/plumbing-icon.webp"
               }
             ]
           }

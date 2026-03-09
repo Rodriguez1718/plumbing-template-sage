@@ -37,6 +37,7 @@ const {
 
 // Process text placeholders
 const title = raw_title ? getLocationText(raw_title) : raw_title;
+const titleHighlightProcessed = titleHighlight ? getLocationText(titleHighlight) : titleHighlight;
 const description = raw_description ? getLocationText(raw_description) : raw_description;
 const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
 ---
@@ -50,8 +51,8 @@ const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
       )}
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold">
         {title}{" "}
-        {titleHighlight && (
-          <span class="text-accent">{titleHighlight}</span>
+        {titleHighlightProcessed && (
+          <span class="text-accent">{titleHighlightProcessed}</span>
         )}
       </h2>
       <p class="text-muted-foreground mt-4 max-w-3xl mx-auto" set:html={description} />
