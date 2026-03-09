@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Specialty Piping Services",
+    "description": "Commercial specialty piping services in {city}. Grease trap installation, industrial pipe repair, and custom piping solutions."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Specialty Piping Services",
+        "subtitle": "Grease traps, industrial piping, and custom commercial piping solutions for your business.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          {
+            "label": "Senior & Military",
+            "discount": "10% OFF",
+            "description": "Senior & Military Discount. Cannot be combined with any other offer.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Plumbing Repair",
+            "discount": "$50 OFF",
+            "description": "Any Repair of $500 or More. <a href='/contact'><strong>Contact us</strong></a> now to save.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Free Camera Inspection",
+            "discount": "FREE",
+            "description": "Sewer <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> with any standard <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>.",
+            "expires": "December 2026"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Residential Plumbing",
+            "text": "Complete residential plumbing services for homes.",
+            "href": "/residential-plumbing",
+            "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+          },
+          {
+            "title": "Drain & Sewer Services",
+            "text": "Commercial drain cleaning and sewer maintenance.",
+            "href": "/commercial/drain-sewer",
+            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80"
+          },
+          {
+            "title": "Specialty Plumbing",
+            "text": "Advanced plumbing solutions for complex projects.",
+            "href": "/specialty",
+            "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80"
+          },
+          {
+            "title": "Maintenance Services",
+            "text": "Preventative maintenance to keep your systems running.",
+            "href": "/maintenance",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Specialty Piping FAQs",
+        "faqs": [
+          {
+            "question": "What specialty piping services do you offer?",
+            "answer": "We provide <a href='/commercial/specialty-piping/grease-trap'><strong>grease trap installation and maintenance</strong></a>, <a href='/commercial/specialty-piping/industrial-pipe'><strong>industrial pipe installation and repair</strong></a>, and custom piping solutions for commercial and industrial facilities."
+          },
+          {
+            "question": "How often should grease traps be cleaned?",
+            "answer": "Most municipalities require <a href='/commercial/specialty-piping/grease-trap'><strong>grease trap</strong></a> cleaning every 1–3 months depending on the size and volume of your operation. We help you stay compliant with local regulations."
+          },
+          {
+            "question": "What types of industrial piping do you work with?",
+            "answer": "We work with steel, copper, PVC, CPVC, and specialty alloy piping for <a href='/commercial/specialty-piping/industrial-pipe'><strong>industrial applications</strong></a> including process piping, compressed air systems, and chemical transfer lines."
+          },
+          {
+            "question": "Can you retrofit existing piping systems?",
+            "answer": "Yes. We assess your current system and design retrofit solutions that minimize downtime while upgrading your piping to meet current codes and performance requirements. <a href='/contact'><strong>Contact us</strong></a> for a consultation."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          { "icon": "siren", "text": "24/7 Emergency Service" },
+          { "icon": "award", "text": "Experienced and Certified Technicians" }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

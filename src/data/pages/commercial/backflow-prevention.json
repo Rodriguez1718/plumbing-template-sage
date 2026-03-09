@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Backflow Prevention Services",
+    "description": "Commercial backflow prevention services in {city}. Testing, certification, and device installation to keep your water supply safe."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Backflow Prevention Services",
+        "subtitle": "Protect your water supply with professional backflow testing, certification, and device installation.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          {
+            "label": "Senior & Military",
+            "discount": "10% OFF",
+            "description": "Senior & Military Discount. Cannot be combined with any other offer.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Plumbing Repair",
+            "discount": "$50 OFF",
+            "description": "Any Repair of $500 or More. <a href='/contact'><strong>Contact us</strong></a> now to save.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Free Camera Inspection",
+            "discount": "FREE",
+            "description": "Sewer <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> with any standard <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>.",
+            "expires": "December 2026"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Residential Plumbing",
+            "text": "Complete residential plumbing services for homes.",
+            "href": "/residential-plumbing",
+            "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+          },
+          {
+            "title": "Gas Plumbing",
+            "text": "Commercial gas line installation, repair, and leak detection.",
+            "href": "/commercial/gas-plumbing",
+            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80"
+          },
+          {
+            "title": "Specialty Plumbing",
+            "text": "Advanced plumbing solutions for complex projects.",
+            "href": "/specialty",
+            "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80"
+          },
+          {
+            "title": "Maintenance Services",
+            "text": "Preventative maintenance to keep your systems running.",
+            "href": "/maintenance",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Backflow Prevention FAQs",
+        "faqs": [
+          {
+            "question": "What is backflow and why is it dangerous?",
+            "answer": "Backflow occurs when contaminated water flows backward into the clean water supply. This can introduce chemicals, bacteria, and other hazardous substances into your drinking water, posing serious health risks."
+          },
+          {
+            "question": "How often does backflow testing need to be done?",
+            "answer": "Most municipalities require annual <a href='/commercial/backflow-prevention/testing-certification'><strong>backflow testing and certification</strong></a>. We handle the testing, paperwork, and filing with your local water authority."
+          },
+          {
+            "question": "What types of backflow prevention devices do you install?",
+            "answer": "We install and service all types of <a href='/commercial/backflow-prevention/device-installation'><strong>backflow prevention devices</strong></a> including reduced pressure zone (RPZ) assemblies, double check valves, and pressure vacuum breakers."
+          },
+          {
+            "question": "What happens if my backflow preventer fails inspection?",
+            "answer": "If your device fails, we can repair or replace it on the spot and retest to ensure compliance. We carry common parts and devices so most issues are resolved in a single visit. <a href='/contact'><strong>Contact us</strong></a> to schedule."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          { "icon": "siren", "text": "24/7 Emergency Service" },
+          { "icon": "award", "text": "Experienced and Certified Technicians" }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

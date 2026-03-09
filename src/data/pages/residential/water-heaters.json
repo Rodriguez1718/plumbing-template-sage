@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Water Heater Services",
+    "description": "Professional water heater installation, repair, and replacement in {city}. Standard tank and tankless water heater solutions."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Water Heater Services",
+        "subtitle": "Tank and tankless water heater installation, repair, and replacement — hot water when you need it.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          {
+            "label": "Senior & Military",
+            "discount": "10% OFF",
+            "description": "Senior & Military Discount. Cannot be combined with any other offer.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Plumbing Repair",
+            "discount": "$50 OFF",
+            "description": "Any Repair of $500 or More. <a href='/contact'><strong>Contact us</strong></a> now to save.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Free Camera Inspection",
+            "discount": "FREE",
+            "description": "Sewer <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> with any standard <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>.",
+            "expires": "December 2026"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Kitchen Plumbing",
+            "text": "Expert kitchen plumbing services from faucets to full remodels.",
+            "href": "/residential/kitchen",
+            "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+          },
+          {
+            "title": "Bathroom Plumbing",
+            "text": "Complete bathroom plumbing solutions for your home.",
+            "href": "/residential/bathroom",
+            "image": "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80"
+          },
+          {
+            "title": "Commercial Plumbing",
+            "text": "Professional plumbing services for businesses and commercial properties.",
+            "href": "/commercial",
+            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80"
+          },
+          {
+            "title": "Maintenance Services",
+            "text": "Preventative maintenance to keep your plumbing running smoothly.",
+            "href": "/maintenance",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Water Heater FAQs",
+        "faqs": [
+          {
+            "question": "How long does a water heater typically last?",
+            "answer": "A <a href='/residential/water-heaters/standard'><strong>standard tank water heater</strong></a> typically lasts 8–12 years, while a <a href='/residential/water-heaters/tankless'><strong>tankless water heater</strong></a> can last 15–20 years with proper maintenance. Regular flushing and inspections help extend its lifespan."
+          },
+          {
+            "question": "Should I switch to a tankless water heater?",
+            "answer": "Tankless water heaters are more energy-efficient and provide endless hot water on demand. They're a great option for homes with high hot water usage. We can help you evaluate whether a <a href='/residential/water-heaters/tankless'><strong>tankless system</strong></a> is right for your home."
+          },
+          {
+            "question": "What are signs my water heater needs to be replaced?",
+            "answer": "Common signs include rusty or discolored water, strange noises, inconsistent water temperature, leaks around the base, and the unit being over 10 years old. <a href='/contact'><strong>Contact us</strong></a> for a professional assessment."
+          },
+          {
+            "question": "Do you offer emergency water heater repair?",
+            "answer": "Yes. We provide 24/7 emergency water heater repair services. If you're without hot water, call us at {phone} and we'll get a technician to your home as soon as possible."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          { "icon": "siren", "text": "24/7 Emergency Service" },
+          { "icon": "award", "text": "Experienced and Certified Technicians" }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

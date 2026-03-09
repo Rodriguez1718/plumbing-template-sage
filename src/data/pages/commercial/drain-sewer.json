@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Drain and Sewer Services",
+    "description": "Commercial drain and sewer services in {city}. Camera inspections, drain cleaning, and sewer maintenance for businesses."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Commercial Drain & Sewer Services",
+        "subtitle": "Keep your business running with professional drain cleaning, camera inspections, and sewer solutions.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          {
+            "label": "Senior & Military",
+            "discount": "10% OFF",
+            "description": "Senior & Military Discount. Cannot be combined with any other offer.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Plumbing Repair",
+            "discount": "$50 OFF",
+            "description": "Any Repair of $500 or More. <a href='/contact'><strong>Contact us</strong></a> now to save.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Free Camera Inspection",
+            "discount": "FREE",
+            "description": "Sewer <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> with any standard <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>.",
+            "expires": "December 2026"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Residential Plumbing",
+            "text": "Complete residential plumbing services for homes.",
+            "href": "/residential-plumbing",
+            "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+          },
+          {
+            "title": "Gas Plumbing",
+            "text": "Commercial gas line installation, repair, and leak detection.",
+            "href": "/commercial/gas-plumbing",
+            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80"
+          },
+          {
+            "title": "Specialty Plumbing",
+            "text": "Advanced plumbing solutions for complex projects.",
+            "href": "/specialty",
+            "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80"
+          },
+          {
+            "title": "Maintenance Services",
+            "text": "Preventative maintenance to keep your systems running.",
+            "href": "/maintenance",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Commercial Drain & Sewer FAQs",
+        "faqs": [
+          {
+            "question": "What commercial drain and sewer services do you provide?",
+            "answer": "We offer <a href='/commercial/drain-sewer/drain-cleaning'><strong>commercial drain cleaning</strong></a>, <a href='/commercial/drain-sewer/camera-inspections'><strong>sewer camera inspections</strong></a>, hydro jetting, grease trap maintenance, and sewer line repair for businesses of all sizes."
+          },
+          {
+            "question": "How often should commercial drains be professionally cleaned?",
+            "answer": "Most commercial properties benefit from quarterly drain cleaning, though high-volume businesses like restaurants may need monthly service. Our <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> make scheduling easy."
+          },
+          {
+            "question": "What is a sewer camera inspection?",
+            "answer": "A <a href='/commercial/drain-sewer/camera-inspections'><strong>camera inspection</strong></a> uses a waterproof video camera to visually inspect the interior of your sewer and drain lines, identifying blockages, cracks, root intrusion, and other issues without excavation."
+          },
+          {
+            "question": "Can you handle emergency commercial drain issues?",
+            "answer": "Yes. We provide 24/7 emergency drain and sewer services to minimize downtime for your business. Call us at {phone} for immediate assistance."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          { "icon": "siren", "text": "24/7 Emergency Service" },
+          { "icon": "award", "text": "Experienced and Certified Technicians" }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

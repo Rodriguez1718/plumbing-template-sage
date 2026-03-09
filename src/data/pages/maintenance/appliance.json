@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "title": "Appliance Maintenance",
+    "description": "Appliance plumbing maintenance in {city}. Garbage disposal cleaning and dishwasher plumbing checks."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Appliance Maintenance",
+        "subtitle": "Keep your garbage disposal, dishwasher, and other appliances running smoothly with routine plumbing maintenance.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          { "label": "Senior & Military", "discount": "10% OFF", "description": "Senior & Military Discount. Cannot be combined with any other offer.", "expires": "December 2026" },
+          { "label": "Plumbing Repair", "discount": "$50 OFF", "description": "Any Repair of $500 or More. <a href='/contact'><strong>Contact us</strong></a> now to save.", "expires": "December 2026" },
+          { "label": "Free Camera Inspection", "discount": "FREE", "description": "Sewer <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> with any standard <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>.", "expires": "December 2026" }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Residential Plumbing",
+            "text": "Complete residential plumbing services for homes.",
+            "href": "/residential-plumbing",
+            "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+          },
+          {
+            "title": "Kitchen Plumbing",
+            "text": "Expert kitchen plumbing services for your home.",
+            "href": "/residential/kitchen",
+            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80"
+          },
+          {
+            "title": "Preventative Maintenance",
+            "text": "Regular inspections to prevent costly plumbing problems.",
+            "href": "/maintenance/preventative",
+            "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80"
+          },
+          {
+            "title": "Maintenance Plans",
+            "text": "Affordable plans for ongoing plumbing maintenance.",
+            "href": "/maintenance-plan",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Appliance Maintenance FAQs",
+        "faqs": [
+          {
+            "question": "How often should I clean my garbage disposal?",
+            "answer": "We recommend <a href='/maintenance/appliance/garbage-disposal-cleaning'><strong>garbage disposal cleaning</strong></a> every 1–2 months to prevent buildup, odors, and clogs. Regular cleaning extends the life of your disposal."
+          },
+          {
+            "question": "What does a dishwasher plumbing check include?",
+            "answer": "Our <a href='/maintenance/appliance/dishwasher-plumbing-checks'><strong>dishwasher plumbing checks</strong></a> inspect supply lines, drain hoses, connections, and seals for leaks, wear, and proper operation."
+          },
+          {
+            "question": "Can a faulty appliance connection cause water damage?",
+            "answer": "Yes. Loose or deteriorating connections on dishwashers, washing machines, and ice makers are common sources of hidden water damage. Regular checks catch these issues early."
+          },
+          {
+            "question": "Do you service all appliance brands?",
+            "answer": "We service the plumbing connections for all major appliance brands. Whether it's a hookup, repair, or maintenance check, we've got you covered. <a href='/contact'><strong>Contact us</strong></a> to schedule."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          { "icon": "siren", "text": "24/7 Emergency Service" },
+          { "icon": "award", "text": "Experienced and Certified Technicians" }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

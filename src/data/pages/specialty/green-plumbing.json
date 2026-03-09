@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Green Plumbing Solutions",
+    "description": "Eco-friendly plumbing solutions in {city}. Water conservation retrofits and solar water heater installation."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Green Plumbing Solutions",
+        "subtitle": "Eco-friendly plumbing upgrades that save water, reduce energy costs, and help the environment.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          {
+            "label": "Senior & Military",
+            "discount": "10% OFF",
+            "description": "Senior & Military Discount. Cannot be combined with any other offer.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Plumbing Repair",
+            "discount": "$50 OFF",
+            "description": "Any Repair of $500 or More. <a href='/contact'><strong>Contact us</strong></a> now to save.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Free Camera Inspection",
+            "discount": "FREE",
+            "description": "Sewer <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> with any standard <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>.",
+            "expires": "December 2026"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Residential Plumbing",
+            "text": "Complete residential plumbing services for homes.",
+            "href": "/residential-plumbing",
+            "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+          },
+          {
+            "title": "Commercial Plumbing",
+            "text": "Professional plumbing services for businesses.",
+            "href": "/commercial",
+            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80"
+          },
+          {
+            "title": "Water Filtration",
+            "text": "Whole-house filtration and water softener systems.",
+            "href": "/specialty/water-filtration",
+            "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80"
+          },
+          {
+            "title": "Maintenance Services",
+            "text": "Preventative maintenance to keep your systems running.",
+            "href": "/maintenance",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Green Plumbing FAQs",
+        "faqs": [
+          {
+            "question": "What are green plumbing solutions?",
+            "answer": "Green plumbing includes <a href='/specialty/green-plumbing/water-conservation-retrofits'><strong>water conservation retrofits</strong></a>, low-flow fixture installation, <a href='/specialty/green-plumbing/solar-water-heater'><strong>solar water heater installation</strong></a>, and other eco-friendly upgrades that reduce water and energy consumption."
+          },
+          {
+            "question": "How much water can I save with green plumbing upgrades?",
+            "answer": "Low-flow fixtures and <a href='/specialty/green-plumbing/water-conservation-retrofits'><strong>water conservation retrofits</strong></a> can reduce household water usage by 20–40%, significantly lowering your water bills while helping the environment."
+          },
+          {
+            "question": "Are solar water heaters worth the investment?",
+            "answer": "<a href='/specialty/green-plumbing/solar-water-heater'><strong>Solar water heaters</strong></a> can reduce water heating costs by 50–80%. With available tax credits and rebates, the payback period is typically 4–8 years, after which you enjoy free hot water from the sun."
+          },
+          {
+            "question": "Do you offer rebate assistance for green plumbing upgrades?",
+            "answer": "Yes. We help you identify and apply for available local and federal rebates and tax credits for qualifying green plumbing installations. <a href='/contact'><strong>Contact us</strong></a> to learn about current incentives."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          { "icon": "siren", "text": "24/7 Emergency Service" },
+          { "icon": "award", "text": "Experienced and Certified Technicians" }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

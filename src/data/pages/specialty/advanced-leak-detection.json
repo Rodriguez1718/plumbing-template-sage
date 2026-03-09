@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Advanced Leak Detection",
+    "description": "Advanced leak detection services in {city}. Infrared camera and hydrostatic pressure testing to find hidden leaks."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Advanced Leak Detection",
+        "subtitle": "Pinpoint hidden leaks with infrared cameras and hydrostatic pressure testing — no guesswork, no unnecessary damage.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          {
+            "label": "Senior & Military",
+            "discount": "10% OFF",
+            "description": "Senior & Military Discount. Cannot be combined with any other offer.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Plumbing Repair",
+            "discount": "$50 OFF",
+            "description": "Any Repair of $500 or More. <a href='/contact'><strong>Contact us</strong></a> now to save.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Free Camera Inspection",
+            "discount": "FREE",
+            "description": "Sewer <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> with any standard <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>.",
+            "expires": "December 2026"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Residential Plumbing",
+            "text": "Complete residential plumbing services for homes.",
+            "href": "/residential-plumbing",
+            "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+          },
+          {
+            "title": "Commercial Plumbing",
+            "text": "Professional plumbing services for businesses.",
+            "href": "/commercial",
+            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80"
+          },
+          {
+            "title": "Emergency Plumbing",
+            "text": "24/7 emergency plumbing response when you need it most.",
+            "href": "/specialty/emergency-plumbing",
+            "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80"
+          },
+          {
+            "title": "Maintenance Services",
+            "text": "Preventative maintenance to keep your systems running.",
+            "href": "/maintenance",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Advanced Leak Detection FAQs",
+        "faqs": [
+          {
+            "question": "What is infrared camera leak detection?",
+            "answer": "<a href='/specialty/advanced-leak-detection/infrared-camera'><strong>Infrared camera detection</strong></a> uses thermal imaging to identify temperature differences caused by hidden water leaks behind walls, under floors, and in ceilings — all without any demolition."
+          },
+          {
+            "question": "What is hydrostatic pressure testing?",
+            "answer": "<a href='/specialty/advanced-leak-detection/hydrostatic-pressure-testing'><strong>Hydrostatic pressure testing</strong></a> isolates sections of your plumbing system and pressurizes them to identify leaks in drain and sewer lines beneath your foundation."
+          },
+          {
+            "question": "When should I consider advanced leak detection?",
+            "answer": "If you have unexplained water damage, rising water bills, musty odors, or suspect a slab leak, advanced detection methods can pinpoint the exact location without unnecessary excavation. <a href='/contact'><strong>Contact us</strong></a> for an assessment."
+          },
+          {
+            "question": "Is advanced leak detection more expensive than traditional methods?",
+            "answer": "While the technology is specialized, it often saves money overall by avoiding unnecessary demolition and pinpointing leaks precisely on the first attempt, reducing total repair costs."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          { "icon": "siren", "text": "24/7 Emergency Service" },
+          { "icon": "award", "text": "Experienced and Certified Technicians" }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

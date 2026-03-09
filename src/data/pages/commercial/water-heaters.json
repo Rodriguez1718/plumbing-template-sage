@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Commercial Water Heaters",
+    "description": "Commercial water heater installation and service in {city}. High-capacity and tankless water heater systems for businesses."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Commercial Water Heaters",
+        "subtitle": "High-capacity and tankless water heater solutions built for the demands of your business.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          {
+            "label": "Senior & Military",
+            "discount": "10% OFF",
+            "description": "Senior & Military Discount. Cannot be combined with any other offer.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Plumbing Repair",
+            "discount": "$50 OFF",
+            "description": "Any Repair of $500 or More. <a href='/contact'><strong>Contact us</strong></a> now to save.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Free Camera Inspection",
+            "discount": "FREE",
+            "description": "Sewer <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> with any standard <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>.",
+            "expires": "December 2026"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Residential Plumbing",
+            "text": "Complete residential plumbing services for homes.",
+            "href": "/residential-plumbing",
+            "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+          },
+          {
+            "title": "Building Plumbing Systems",
+            "text": "Plumbing design and installation for commercial buildings.",
+            "href": "/commercial/building-plumbing",
+            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80"
+          },
+          {
+            "title": "Specialty Plumbing",
+            "text": "Advanced plumbing solutions for complex projects.",
+            "href": "/specialty",
+            "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80"
+          },
+          {
+            "title": "Maintenance Services",
+            "text": "Preventative maintenance to keep your systems running.",
+            "href": "/maintenance",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Commercial Water Heater FAQs",
+        "faqs": [
+          {
+            "question": "What types of commercial water heaters do you install?",
+            "answer": "We install <a href='/commercial/water-heaters/high-capacity'><strong>high-capacity tank water heaters</strong></a> and <a href='/commercial/water-heaters/tankless'><strong>tankless systems</strong></a> designed for restaurants, hotels, office buildings, and other commercial properties."
+          },
+          {
+            "question": "How do I know what size water heater my business needs?",
+            "answer": "The right size depends on your peak hot water demand, number of fixtures, and type of business. We perform a thorough assessment and recommend the most efficient system for your needs. <a href='/contact'><strong>Contact us</strong></a> for a free consultation."
+          },
+          {
+            "question": "What are the benefits of a commercial tankless water heater?",
+            "answer": "<a href='/commercial/water-heaters/tankless'><strong>Tankless systems</strong></a> provide endless hot water on demand, take up less space, and are more energy-efficient than traditional tanks — reducing your utility costs over time."
+          },
+          {
+            "question": "Do you offer maintenance plans for commercial water heaters?",
+            "answer": "Yes. Regular maintenance extends the life of your water heater and prevents costly breakdowns. Check out our <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> for scheduled service options."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          { "icon": "siren", "text": "24/7 Emergency Service" },
+          { "icon": "award", "text": "Experienced and Certified Technicians" }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

@@ -85,7 +85,13 @@ function MegaMenu({ item, isOpen }: { item: MegaMenuItem; isOpen: boolean }) {
                   {iconMap[category.icon] || <Settings className="h-5 w-5" />}
                 </span>
                 <h3 className="text-xs font-bold text-brand-primary uppercase tracking-wide whitespace-nowrap">
-                  {category.title}
+                  {category.href ? (
+                    <a href={category.href} className="hover:text-red-600 transition-colors duration-200">
+                      {category.title}
+                    </a>
+                  ) : (
+                    category.title
+                  )}
                 </h3>
               </div>
               <ul className="space-y-2">
@@ -356,6 +362,15 @@ function MobileNav({ onClose }: { onClose: () => void }) {
                     </button>
                     {expandedCategory === category.title && (
                       <div className="pl-6 pb-2">
+                        {category.href && (
+                          <a
+                            href={category.href}
+                            className="block py-1.5 text-sm font-semibold text-highlight hover:text-brand-secondary"
+                            onClick={onClose}
+                          >
+                            View All {category.title} →
+                          </a>
+                        )}
                         {category.items.map((item) => (
                           <a
                             key={item.href}

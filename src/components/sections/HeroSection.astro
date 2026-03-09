@@ -227,17 +227,17 @@ const hasSlideshow = slides.length > 1;
         </div>
 
         <!-- Right: promo box -->
-        <div class="md:col-span-2 hidden md:flex justify-center md:justify-end relative" style="min-height: 260px;">
+        <div class="md:col-span-2 hidden md:flex justify-center md:justify-center relative" style="min-height: 260px;">
           {slides.map((slide, i) => (
             slide.promoTitle && (
               <div
                 class:list={[
-                  "hero-promo absolute inset-0 flex items-center justify-center md:justify-end transition-all duration-700",
+                  "hero-promo absolute inset-0 flex items-center justify-center md:justify-center transition-all duration-700",
                   i === 0 ? "opacity-100 scale-100" : "opacity-0 scale-95"
                 ]}
                 data-promo-index={i}
               >
-                <div class="promo-card relative max-w-[300px] w-full">
+                <div class="promo-card relative max-w-[340px] w-full">
                   <!-- Pulsing glow behind card -->
                   <div class="promo-glow absolute -inset-4 rounded-2xl blur-2xl" style="background: var(--brand-highlight, var(--brand-secondary));"></div>
 

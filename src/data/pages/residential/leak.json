@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Leak Detection & Repair Services",
+    "description": "Professional leak detection and repair services in {city}. Slab leaks, hidden leaks, odor detection, and emergency leak repair."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Leak Detection & Repair",
+        "subtitle": "Advanced leak detection technology and fast, reliable repairs to protect your home.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "https://ucarecdn.com/ce315695-0b1e-4a89-9dcc-7a35ef585fc9/-/preview/1000x562/"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          {
+            "label": "Senior & Military",
+            "discount": "10% OFF",
+            "description": "Senior & Military Discount. Cannot be combined with any other offer.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Plumbing Repair",
+            "discount": "$50 OFF",
+            "description": "Any Repair of $500 or More. <a href='/contact'><strong>Contact us</strong></a> now to save.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Free Camera Inspection",
+            "discount": "FREE",
+            "description": "Sewer <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> with any standard <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>.",
+            "expires": "December 2026"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Kitchen Plumbing",
+            "text": "Expert kitchen plumbing services from faucets to full remodels.",
+            "href": "/residential/kitchen",
+            "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+          },
+          {
+            "title": "Bathroom Plumbing",
+            "text": "Complete bathroom plumbing solutions for your home.",
+            "href": "/residential/bathroom",
+            "image": "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80"
+          },
+          {
+            "title": "Commercial Plumbing",
+            "text": "Professional plumbing services for businesses and commercial properties.",
+            "href": "/commercial",
+            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80"
+          },
+          {
+            "title": "Maintenance Services",
+            "text": "Preventative maintenance to keep your plumbing running smoothly.",
+            "href": "/maintenance",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Leak Detection & Repair FAQs",
+        "faqs": [
+          {
+            "question": "How do I know if I have a hidden water leak?",
+            "answer": "Signs of a hidden leak include unexplained increases in your water bill, the sound of running water when fixtures are off, damp spots on walls or floors, mold or mildew growth, and low water pressure. If you notice any of these, <a href='/contact'><strong>contact us</strong></a> for a professional inspection."
+          },
+          {
+            "question": "What is a slab leak and how serious is it?",
+            "answer": "A <a href='/residential/leak/slab'><strong>slab leak</strong></a> occurs when pipes beneath your home's concrete foundation develop a leak. It can cause foundation damage, mold growth, and high water bills if left untreated. Early detection and repair are critical."
+          },
+          {
+            "question": "How do you detect leaks without tearing up my property?",
+            "answer": "We use advanced non-invasive <a href='/residential/leak/detection'><strong>leak detection</strong></a> technology including acoustic listening devices, thermal imaging, and electronic leak detection equipment to pinpoint leaks without unnecessary damage to your property."
+          },
+          {
+            "question": "How quickly can you respond to a leak emergency?",
+            "answer": "We offer 24/7 emergency leak repair services. Call us at {phone} and we'll dispatch a technician to your home as quickly as possible to minimize water damage."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          { "icon": "siren", "text": "24/7 Emergency Service" },
+          { "icon": "award", "text": "Experienced and Certified Technicians" }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

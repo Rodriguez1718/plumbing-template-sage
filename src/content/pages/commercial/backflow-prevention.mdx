@@ -1,0 +1,28 @@
+---
+title: "Backflow Prevention Services"
+description: "Commercial backflow prevention services in {city}. Testing, certification, and device installation to keep your water supply safe."
+---
+
+import HeroSection from "@/components/sections/HeroSection.astro"
+import PlaceholderContentSection from "@/components/sections/PlaceholderContentSection.astro"
+import CouponsSection from "@/components/sections/CouponsSection.astro"
+import FinancingPlansSection from "@/components/sections/FinancingPlansSection.astro"
+import FAQSection from "@/components/sections/FAQSection.astro"
+import CTAStrip from "@/components/sections/CTAStrip.astro"
+import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
+import pageData from "../../../data/pages/commercial/backflow-prevention.json"
+
+
+<HeroSection {...pageData.sections[0].props} />
+
+<PlaceholderContentSection {...pageData.sections[1].props} />
+
+<CouponsSection {...pageData.sections[2].props} />
+
+<FinancingPlansSection {...pageData.sections[3].props} />
+
+<FAQSection {...pageData.sections[4].props} />
+
+<CTAStrip {...pageData.sections[5].props} />
+
+<ServiceAreaSection {...pageData.sections[6].props} />
