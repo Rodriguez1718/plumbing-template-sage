@@ -33,7 +33,7 @@ function TopNavDropdown({ item }: { item: typeof topNavItems[0] }) {
   
   if (!item.children) {
     return (
-      <a href={item.href} className="text-sm font-medium text-white hover:opacity-80 transition-opacity">
+      <a href={item.href} className="text-sm font-medium text-white hover:text-highlight transition-colors duration-200 py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-[3px] after:bg-highlight after:transition-all after:duration-300 after:rounded-full">
         {item.title}
       </a>
     )
@@ -45,7 +45,7 @@ function TopNavDropdown({ item }: { item: typeof topNavItems[0] }) {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <div className="flex items-center gap-1 text-sm font-medium text-white hover:opacity-80 transition-opacity py-2">
+      <div className="flex items-center gap-1 text-sm font-medium text-white hover:text-highlight transition-colors duration-200 py-2 cursor-pointer relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-[3px] after:bg-highlight after:transition-all after:duration-300 after:rounded-full">
         <a href={item.href}>{item.title}</a>
         <ChevronDown className={`h-3 w-3 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </div>
@@ -58,7 +58,7 @@ function TopNavDropdown({ item }: { item: typeof topNavItems[0] }) {
               <a
                 key={child.href}
                 href={child.href}
-                className="block px-5 py-2.5 text-sm font-medium text-white hover:bg-white/10 transition-colors"
+                className="block px-5 py-2.5 text-sm font-medium text-white hover:text-highlight hover:bg-white/10 transition-colors duration-200"
               >
                 {child.title}
               </a>
@@ -123,11 +123,11 @@ function ServiceNavItem({ item }: { item: MegaMenuItem }) {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <div className="flex items-center gap-1 text-sm font-semibold text-white hover:bg-white/10 transition-colors px-4 h-full">
+      <div className="flex items-center gap-1 text-sm font-semibold text-white hover:text-highlight hover:bg-white/10 transition-all duration-200 px-4 h-full relative after:absolute after:bottom-0 after:left-2 after:right-2 after:h-[3px] after:bg-highlight after:rounded-t after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center">
         <a href={item.href}>
           {item.title}
         </a>
-        <ChevronDown className={`h-3 w-3 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
       </div>
       {isOpen && <MegaMenu item={item} isOpen={isOpen} />}
     </div>
@@ -178,32 +178,32 @@ export function Navbar() {
                 <a 
                   key={action.href} 
                   href={action.href}
-                  className="flex items-center gap-3 text-gray-700 hover:text-brand-secondary transition-colors"
+                  className="group flex items-center gap-3 transition-all duration-200 hover:-translate-y-0.5"
                 >
-                  <div className="w-10 h-10 rounded-full bg-brand-secondary flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-brand-secondary flex items-center justify-center transition-all duration-200 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-highlight/40">
                     {action.icon === "settings" ? (
                       <Settings className="h-5 w-5 text-white" />
                     ) : (
                       <DollarSign className="h-5 w-5 text-white" />
                     )}
                   </div>
-                  <span className="font-semibold text-brand-secondary">{action.title}</span>
+                  <span className="font-semibold text-brand-secondary transition-colors duration-200">{action.title}</span>
                 </a>
               ))}
             </div>
 
             {/* Phone Number - Desktop */}
-            <div className="hidden lg:flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-brand-secondary flex items-center justify-center">
-                <span className="text-white text-xs font-bold">24/7</span>
+            <a href={`tel:${siteConfig.contact?.phone}`} className="group hidden lg:flex items-center gap-3 hover:-translate-y-0.5 transition-transform duration-200">
+              <div className="w-10 h-10 rounded-full bg-brand-secondary flex items-center justify-center transition-all duration-200 group-hover:bg-highlight group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-highlight/30">
+                <span className="text-white text-xs font-bold group-hover:text-brand-primary transition-colors duration-200">24/7</span>
               </div>
               <div className="text-right">
                 <p className="text-xs text-gray-500 uppercase tracking-wide">Call Us Now</p>
-                <a href={`tel:${siteConfig.contact?.phone}`} className="font-bold text-lg text-brand-primary">
+                <span className="font-bold text-lg text-brand-primary group-hover:text-highlight transition-colors duration-200">
                   {siteConfig.contact?.phoneFormatted}
-                </a>
+                </span>
               </div>
-            </div>
+            </a>
 
             {/* Mobile Menu Button */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
