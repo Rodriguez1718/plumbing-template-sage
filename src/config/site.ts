@@ -5,9 +5,19 @@
 // All components will automatically use these values
 // ===========================================
 
-import siteData from "@/data/settings/site.json"
+import fs from "node:fs"
+import { fileURLToPath } from "node:url"
+import path from "node:path"
 
-export const siteConfig = siteData
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const siteJsonPath = path.resolve(__dirname, "../data/settings/site.json")
+
+function loadSiteConfig() {
+  const raw = fs.readFileSync(siteJsonPath, "utf-8")
+  return JSON.parse(raw)
+}
+
+export const siteConfig = loadSiteConfig()
 
 // Helper to get location-aware text
 export function getLocationText(text: string): string {

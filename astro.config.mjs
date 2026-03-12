@@ -6,17 +6,36 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 /**
- * Custom Vite plugin: when site.ts is saved, force a full page reload
- * so every component that imports getLocationText picks up the new values.
+ * Custom Vite plugin: when site.json or site.ts is saved, invalidate the
+ * site.ts module and force a full page reload so every component picks up
+ * the new values immediately.
  */
 function siteConfigReloadPlugin() {
   return {
     name: 'site-config-reload',
-    handleHotUpdate({ file, server }) {
+    configureServer(server) {
+      // Watch site.json for changes (it's read via fs, not imported,
+      // so Vite doesn't track it automatically)
+      const siteJsonPath = new URL('./src/data/settings/site.json', import.meta.url).pathname.replace(/^\/([A-Z]:)/, '$1');
+      server.watcher.add(siteJsonPath);
+    },
+    handleHotUpdate({ file, server, modules }) {
       const normalized = file.replace(/\\/g, '/');
-      if (normalized.endsWith('/src/config/site.ts')) {
+      if (
+        normalized.endsWith('/src/data/settings/site.json') ||
+        normalized.endsWith('/src/config/site.ts')
+      ) {
+        // Invalidate the site.ts module so it re-executes (re-reads JSON from disk)
+        const siteModule = server.moduleGraph.getModulesByFile(
+          [...server.moduleGraph.fileToModulesMap.keys()].find(f =>
+            f.replace(/\\/g, '/').endsWith('/src/config/site.ts')
+          )
+        );
+        if (siteModule) {
+          siteModule.forEach(mod => server.moduleGraph.invalidateModule(mod));
+        }
         server.ws.send({ type: 'full-reload' });
-        return []; // prevent default HMR (we already triggered reload)
+        return [];
       }
     },
   };
