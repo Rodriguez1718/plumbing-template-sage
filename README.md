@@ -6,7 +6,7 @@ bun create astro@latest -- --template minimal
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## 🚀 Projects Structure
+## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
 
