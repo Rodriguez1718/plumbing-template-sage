@@ -1,18 +1,21 @@
 ---
 import { getEntry } from "astro:content"
 import BaseLayout from "@/layouts/BaseLayout.astro"
+import DynamicSection from "@/components/DynamicSection.astro"
 import { getLocationText } from "@/config/site"
 
 const page = await getEntry("pages", "index")
-if (!page) throw new Error("index.mdx not found in src/content/pages/")
-const { Content } = await page.render()
+if (!page) throw new Error("index.json not found in src/content/pages/")
+const { meta, sections } = page.data
 ---
 
-<BaseLayout 
-  title={getLocationText(page.data.title)} 
-  description={getLocationText(page.data.description || "")}
-  keywords={page.data.keywords}
-  ogImage={page.data.ogImage}
+<BaseLayout
+  title={getLocationText(meta.title)}
+  description={getLocationText(meta.description || "")}
+  keywords={meta.keywords}
+  ogImage={meta.ogImage}
 >
-  <Content />
+  {sections.map((section) => (
+    <DynamicSection component={section.component} props={section.props} />
+  ))}
 </BaseLayout>

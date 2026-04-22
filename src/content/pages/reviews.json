@@ -1,0 +1,146 @@
+{
+  "meta": {
+    "title": "Reviews",
+    "description": "Read customer reviews and testimonials from satisfied {fullName} clients in {city} and surrounding areas."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "badge": "About Us",
+        "title": "Customer Reviews",
+        "subtitle": "Hear from our happy customers! See why {fullName} is your go-to for reliable, professional plumbing services in {city}.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "/images/photos/unsplash-1521791136064-7986c2920216-w1000.jpg"
+      }
+    },
+    {
+      "component": "ReviewsSection",
+      "props": {
+        "badge": "GOOGLE REVIEW",
+        "title": "What Our Customers Say",
+        "description": "Don't just take our word for it. See what our satisfied customers have to say about our plumbing services.",
+        "reviews": [
+          {
+            "name": "John Smith",
+            "time": "2 weeks ago",
+            "content": "Excellent service! The team arrived on time and fixed our <a href='/residential/water-heaters/standard'><strong>water heater</strong></a> quickly. Very professional and reasonably priced. Highly recommend!"
+          },
+          {
+            "name": "Sarah Johnson",
+            "time": "1 month ago",
+            "content": "{fullName} saved the day when we had a major leak. They responded within an hour and had everything fixed same day. Outstanding work!"
+          },
+          {
+            "name": "Mike Davis",
+            "time": "3 weeks ago",
+            "content": "Best plumbing service in LA! They installed our new bathroom fixtures perfectly. Clean, efficient, and great communication throughout."
+          },
+          {
+            "name": "Emily Chen",
+            "time": "1 week ago",
+            "content": "Called for a clogged drain and they came out the same day. Fair pricing and the technician explained everything clearly. Will use again!"
+          }
+        ],
+        "verifiedBy": "Verified by Trustindex"
+      }
+    },
+    {
+      "component": "PromoTilesSection",
+      "props": {
+        "tiles": [
+          {
+            "type": "maintenance",
+            "title": "Maintenance Plan",
+            "priceLabel": [
+              "Starting at",
+              "$19.99/mo",
+              "Priority Service"
+            ],
+            "phone": "{phone}",
+            "buttonText": "View Maintenance Plans",
+            "buttonHref": "/maintenance-plan",
+            "bgImage": "/images/photos/unsplash-1585704032915-c3400ca199e7-w800.jpg"
+          },
+          {
+            "type": "financing",
+            "headline": [
+              "Flexible",
+              "Financing Options"
+            ],
+            "subtext": "Affordable payment plans available",
+            "phone": "{phone}",
+            "buttonText": "Apply Now",
+            "buttonHref": "/financing",
+            "bgImage": "/images/photos/unsplash-1621905252507-b35492cc74b4-w800.jpg"
+          },
+          {
+            "type": "emergency",
+            "tag": "24/7 Service",
+            "discount": "$50 OFF",
+            "subheadline": [
+              "Emergency",
+              "Plumbing Service"
+            ],
+            "phone": "{phone}",
+            "buttonText": "Call Now",
+            "buttonHref": "/contact",
+            "bgImage": "/images/photos/unsplash-1504328345606-18bbc8c9d7d1-w800.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "title": "Why Choose {fullName}?",
+        "subtitle": "We're committed to providing exceptional plumbing services with integrity and professionalism.",
+        "items": [
+          {
+            "title": "Licensed & Insured",
+            "text": "Fully licensed, bonded, and insured for your peace of mind.",
+            "icon": "check"
+          },
+          {
+            "title": "Upfront Pricing",
+            "text": "No hidden fees or surprises. We provide clear quotes before any work begins.",
+            "icon": "percent"
+          },
+          {
+            "title": "24/7 Availability",
+            "text": "Emergency plumbing services available around the clock.",
+            "icon": "clock"
+          },
+          {
+            "title": "Satisfaction Guaranteed",
+            "text": "We stand behind our work with a 100% satisfaction guarantee.",
+            "icon": "check"
+          }
+        ],
+        "variant": "plans"
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "title": "Expert Plumbing Services in {city} and Surrounding Areas",
+        "description": "Looking for reliable plumbing services in {city}? We provide expert residential and commercial solutions across the city.",
+        "areas": [
+          "Santa Monica",
+          "Pasadena",
+          "Glendale",
+          "Downtown {city}",
+          "Hollywood",
+          "Beverly Hills",
+          "Venice",
+          "Westwood",
+          "Culver City",
+          "San Fernando Valley"
+        ],
+        "mapAddress": "{city}, {state}"
+      }
+    }
+  ]
+}

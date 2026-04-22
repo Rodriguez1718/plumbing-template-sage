@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "title": "Specialty Plumbing Services",
+    "description": "Advanced specialty plumbing services in {city}. <a href='/residential/leak/detection'><strong>Leak detection</strong></a>, <a href='/specialty/hydro-jetting/high-pressure-drain-cleaning'><strong>hydro jetting</strong></a>, <a href='/specialty/sewer-line-services/trenchless-sewer-repair'><strong>trenchless sewer repair</strong></a>, <a href='/specialty/emergency-plumbing/emergency-leak-repair'><strong>emergency plumbing</strong></a>, <a href='/specialty/water-filtration/whole-house-filtration'><strong>water filtration</strong></a>, and green plumbing solutions."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "category",
+        "badge": "Advanced Plumbing Technology",
+        "title": "Specialty Plumbing Services",
+        "subtitle": "State-of-the-art plumbing solutions using the latest technology — from infrared <a href='/residential/leak/detection'><strong>leak detection</strong></a> to <a href='/specialty/sewer-line-services/trenchless-sewer-repair'><strong>trenchless sewer repair</strong></a> and whole-house <a href='/specialty/water-filtration/whole-house-filtration'><strong>water filtration</strong></a>.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "/images/photos/ucare-075a53c5-1000x666.jpg"
+      }
+    },
+    {
+      "component": "TrustBadges",
+      "props": {
+        "badges": [
+          {
+            "name": "BBB & Angie's List",
+            "image": "/images/trust-badges/BBB_Angies-List.webp"
+          },
+          {
+            "name": "Google Reviews",
+            "image": "/images/trust-badges/google-review.webp"
+          },
+          {
+            "name": "Nextdoor",
+            "image": "/images/trust-badges/Nextdoor-logo.webp",
+            "small": true
+          },
+          {
+            "name": "HomeAdvisor",
+            "image": "/images/trust-badges/HomeAdvisor.webp"
+          },
+          {
+            "name": "BBB A+",
+            "image": "/images/trust-badges/bbb-logo-a-plus.webp"
+          },
+          {
+            "name": "Google Reviews 2",
+            "image": "/images/trust-badges/google-review.webp"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ServiceCardsGridSection",
+      "props": {
+        "title": "Our Specialty Plumbing Services",
+        "description": "When standard solutions aren't enough, our specialty services deliver advanced technology and expert techniques for complex plumbing challenges.",
+        "services": [
+          {
+            "image": "/images/photos/ucare-904d12f4-1000x666.jpg",
+            "icon": "leak",
+            "title": "Advanced Leak Detection",
+            "href": "/specialty/advanced-leak-detection/infrared-camera"
+          },
+          {
+            "image": "/images/photos/ucare-b2b720dc-1000x666.jpg",
+            "icon": "drain",
+            "title": "Hydro Jetting",
+            "href": "/specialty/hydro-jetting/high-pressure-drain-cleaning"
+          },
+          {
+            "image": "/images/photos/ucare-f0f1f6f3-1000x666.jpg",
+            "icon": "pipe",
+            "title": "Sewer Line Services",
+            "href": "/specialty/sewer-line-services/trenchless-sewer-repair"
+          },
+          {
+            "image": "/images/photos/ucare-f2844f4a-1000x562.jpg",
+            "icon": "leak",
+            "title": "Emergency Plumbing",
+            "href": "/specialty/emergency-plumbing/emergency-leak-repair"
+          },
+          {
+            "image": "/images/photos/ucare-14cf294e-1000x750.jpg",
+            "icon": "drain",
+            "title": "Water Filtration",
+            "href": "/specialty/water-filtration/whole-house-filtration"
+          },
+          {
+            "image": "/images/photos/ucare-c43ed716-1000x753.jpg",
+            "icon": "pipe",
+            "title": "Green Plumbing Solutions",
+            "href": "/specialty/green-plumbing/water-conservation-retrofits"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ContentSectionAlt",
+      "props": {
+        "badge": "Why Go Specialty?",
+        "title": "Advanced Solutions for",
+        "titleHighlight": "Complex Problems",
+        "description": "Some plumbing issues require more than a wrench and elbow grease. Our specialty services use cutting-edge technology like infrared cameras, hydrostatic pressure testing, and trenchless repair methods to solve problems faster, with less disruption to your property.",
+        "image": "/images/photos/ucare-315825d3-1000x666.jpg",
+        "imagePosition": "left",
+        "features": [
+          {
+            "title": "Infrared Leak Detection",
+            "description": "Pinpoint hidden leaks behind walls and under slabs without destructive exploration."
+          },
+          {
+            "title": "Trenchless Sewer Repair",
+            "description": "Repair or replace sewer lines without digging up your yard or driveway."
+          },
+          {
+            "title": "Hydro Jetting",
+            "description": "High-pressure water cleaning that removes the toughest clogs and buildup."
+          },
+          {
+            "title": "Whole-House Filtration",
+            "description": "Clean, filtered water from every tap in your home for better health and taste."
+          }
+        ],
+        "buttonText": "GET A FREE ESTIMATE",
+        "buttonHref": "/contact"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          {
+            "label": "Leak Detection",
+            "discount": "ONLY $99",
+            "description": "Water Leak Verification. Does not include cost of repairs.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Water Filtration",
+            "discount": "$200 OFF",
+            "description": "Whole-Home <a href='/specialty/water-filtration/whole-house-filtration'><strong>Water Filtration</strong></a> System Installation.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Emergency",
+            "discount": "20% OFF",
+            "description": "All <a href='/specialty/emergency-plumbing/emergency-leak-repair'><strong>Emergency Plumbing</strong></a> Services.",
+            "expires": "December 2026"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Specialty Plumbing FAQs",
+        "faqs": [
+          {
+            "question": "What is trenchless sewer repair?",
+            "answer": "<a href='/specialty/sewer-line-services/trenchless-sewer-repair'><strong>Trenchless sewer repair</strong></a> is a minimally invasive method of repairing or replacing sewer lines without digging large trenches. We use techniques like pipe lining and <a href='/specialty/sewer-line-services/pipe-bursting-lining'><strong>pipe bursting</strong></a> to restore your <a href='/residential/drain/sewer-line'><strong>sewer line</strong></a> with minimal disruption to your property."
+          },
+          {
+            "question": "How does infrared leak detection work?",
+            "answer": "Infrared cameras detect temperature differences behind walls, floors, and ceilings caused by moisture from hidden leaks. This allows us to locate leaks precisely without cutting into your walls or floors."
+          },
+          {
+            "question": "Is hydro jetting safe for older pipes?",
+            "answer": "Our technicians assess the condition of your pipes before recommending <a href='/specialty/hydro-jetting/high-pressure-drain-cleaning'><strong>hydro jetting</strong></a>. For older or fragile pipes, we may suggest alternative cleaning methods to avoid damage."
+          },
+          {
+            "question": "Do you offer 24/7 emergency plumbing?",
+            "answer": "Yes, we provide round-the-clock <a href='/specialty/emergency-plumbing/emergency-leak-repair'><strong>emergency plumbing</strong></a> services. Whether it is a <a href='/specialty/emergency-plumbing/burst-pipe-response'><strong>burst pipe</strong></a>, major leak, or sewer backup, our team is ready to respond quickly."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          {
+            "icon": "siren",
+            "text": "24/7 Emergency Service"
+          },
+          {
+            "icon": "award",
+            "text": "Experienced & Certified Technicians"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "Our specialty plumbing services are available throughout {city} and surrounding areas including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>.",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas",
+        "mapAddress": "{city}, {state}"
+      }
+    }
+  ]
+}

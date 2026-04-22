@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Piping & Repiping Services",
+    "description": "Professional piping and repiping services in {city}. Water line repair, whole-home repiping, and pipe replacement solutions."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Piping & Repiping Services",
+        "subtitle": "Water line repair, whole-home repiping, and modern pipe replacement to keep your water flowing clean.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "/images/photos/ucare-ce315695-1000x562.jpg"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          {
+            "label": "Senior & Military",
+            "discount": "10% OFF",
+            "description": "Senior & Military Discount. Cannot be combined with any other offer.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Plumbing Repair",
+            "discount": "$50 OFF",
+            "description": "Any Repair of $500 or More. <a href='/contact'><strong>Contact us</strong></a> now to save.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Free Camera Inspection",
+            "discount": "FREE",
+            "description": "Sewer <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> with any standard <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>.",
+            "expires": "December 2026"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Kitchen Plumbing",
+            "text": "Expert kitchen plumbing services from faucets to full remodels.",
+            "href": "/residential/kitchen",
+            "image": "/images/photos/unsplash-1556909114-f6e7ad7d3136-w600.jpg"
+          },
+          {
+            "title": "Bathroom Plumbing",
+            "text": "Complete bathroom plumbing solutions for your home.",
+            "href": "/residential/bathroom",
+            "image": "/images/photos/unsplash-1552321554-5fefe8c9ef14-w600.jpg"
+          },
+          {
+            "title": "Commercial Plumbing",
+            "text": "Professional plumbing services for businesses and commercial properties.",
+            "href": "/commercial",
+            "image": "/images/photos/unsplash-1621905252507-b35492cc74b4-w600.jpg"
+          },
+          {
+            "title": "Maintenance Services",
+            "text": "Preventative maintenance to keep your plumbing running smoothly.",
+            "href": "/maintenance",
+            "image": "/images/photos/unsplash-1581578731548-c64695cc6952-w600.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Piping & Repiping FAQs",
+        "faqs": [
+          {
+            "question": "How do I know if my home needs repiping?",
+            "answer": "Signs that your home may need <a href='/residential/piping/repiping'><strong>repiping</strong></a> include discolored water, frequent leaks, low water pressure, visible pipe corrosion, and your home being over 50 years old with original plumbing. We offer free assessments."
+          },
+          {
+            "question": "What materials do you use for repiping?",
+            "answer": "We primarily use copper and PEX (cross-linked polyethylene) piping. PEX is flexible, resistant to corrosion, and cost-effective. Copper is durable and time-tested. We'll recommend the best option for your home and budget."
+          },
+          {
+            "question": "How long does a whole-home repipe take?",
+            "answer": "A typical whole-home <a href='/residential/piping/repiping'><strong>repipe</strong></a> takes 2–5 days depending on the size of your home and complexity of the plumbing system. We minimize disruption and keep you informed throughout the process."
+          },
+          {
+            "question": "Will repiping increase my home's value?",
+            "answer": "Yes. Repiping with modern materials improves water quality, increases water pressure, and eliminates leak risks — all of which add value to your home and provide peace of mind for potential buyers."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          { "icon": "siren", "text": "24/7 Emergency Service" },
+          { "icon": "award", "text": "Experienced and Certified Technicians" }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

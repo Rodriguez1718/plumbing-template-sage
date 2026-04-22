@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Bathroom Plumbing Services",
+    "description": "Professional bathroom plumbing services in {city}. Toilet repair, shower and tub installation, sink and faucet services for your bathroom."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Bathroom Plumbing Services",
+        "subtitle": "Toilets, showers, tubs, sinks — complete bathroom plumbing solutions for your home.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "/images/photos/ucare-ce315695-1000x562.jpg"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          {
+            "label": "Senior & Military",
+            "discount": "10% OFF",
+            "description": "Senior & Military Discount. Cannot be combined with any other offer.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Plumbing Repair",
+            "discount": "$50 OFF",
+            "description": "Any Repair of $500 or More. <a href='/contact'><strong>Contact us</strong></a> now to save.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Free Camera Inspection",
+            "discount": "FREE",
+            "description": "Sewer <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> with any standard <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>.",
+            "expires": "December 2026"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Kitchen Plumbing",
+            "text": "Expert kitchen plumbing services from faucets to full remodels.",
+            "href": "/residential/kitchen",
+            "image": "/images/photos/unsplash-1556909114-f6e7ad7d3136-w600.jpg"
+          },
+          {
+            "title": "Drain & Sewer Services",
+            "text": "Professional drain cleaning and sewer line solutions.",
+            "href": "/residential/drain",
+            "image": "/images/photos/unsplash-1585704032915-c3400ca199e7-w600.jpg"
+          },
+          {
+            "title": "Commercial Plumbing",
+            "text": "Professional plumbing services for businesses and commercial properties.",
+            "href": "/commercial",
+            "image": "/images/photos/unsplash-1621905252507-b35492cc74b4-w600.jpg"
+          },
+          {
+            "title": "Maintenance Services",
+            "text": "Preventative maintenance to keep your plumbing running smoothly.",
+            "href": "/maintenance",
+            "image": "/images/photos/unsplash-1581578731548-c64695cc6952-w600.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Bathroom Plumbing FAQs",
+        "faqs": [
+          {
+            "question": "What are the most common bathroom plumbing problems?",
+            "answer": "The most common issues include running toilets, dripping faucets, slow drains, low water pressure, and leaking pipes behind walls. We handle all of these and more — <a href='/contact'><strong>contact us</strong></a> for a diagnosis."
+          },
+          {
+            "question": "How much does it cost to replace a toilet?",
+            "answer": "Toilet replacement costs vary depending on the model and any additional plumbing work needed. We provide upfront pricing with no hidden fees. <a href='/contact'><strong>Contact us</strong></a> for a free estimate."
+          },
+          {
+            "question": "Can you help with a bathroom remodel?",
+            "answer": "Yes. We handle all plumbing aspects of bathroom remodels including relocating supply and drain lines, installing new fixtures like <a href='/residential/bathroom/shower-tub'><strong>showers and tubs</strong></a>, <a href='/residential/bathroom/sink-faucet'><strong>sinks</strong></a>, and <a href='/residential/bathroom/toilet'><strong>toilets</strong></a>."
+          },
+          {
+            "question": "Why is my shower water pressure low?",
+            "answer": "Low shower pressure can be caused by clogged showerheads, faulty pressure regulators, pipe corrosion, or issues with your main water line. Our technicians can diagnose and fix the problem quickly."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          { "icon": "siren", "text": "24/7 Emergency Service" },
+          { "icon": "award", "text": "Experienced and Certified Technicians" }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

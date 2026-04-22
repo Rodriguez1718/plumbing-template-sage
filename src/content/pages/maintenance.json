@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "title": "Maintenance Services",
+    "description": "Preventative plumbing maintenance services in {city}. Regular inspections, <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>, leak prevention, gas system checks, and appliance maintenance to keep your plumbing running smoothly."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "category",
+        "badge": "Prevent Costly Repairs",
+        "title": "Plumbing Maintenance Services",
+        "subtitle": "Stay ahead of plumbing problems with routine inspections, cleaning, and preventative care that saves you money and extends the life of your system.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "/images/photos/ucare-2b601f20-968x644.jpg"
+      }
+    },
+    {
+      "component": "TrustBadges",
+      "props": {
+        "badges": [
+          {
+            "name": "BBB & Angie's List",
+            "image": "/images/trust-badges/BBB_Angies-List.webp"
+          },
+          {
+            "name": "Google Reviews",
+            "image": "/images/trust-badges/google-review.webp"
+          },
+          {
+            "name": "Nextdoor",
+            "image": "/images/trust-badges/Nextdoor-logo.webp",
+            "small": true
+          },
+          {
+            "name": "HomeAdvisor",
+            "image": "/images/trust-badges/HomeAdvisor.webp"
+          },
+          {
+            "name": "BBB A+",
+            "image": "/images/trust-badges/bbb-logo-a-plus.webp"
+          },
+          {
+            "name": "Google Reviews 2",
+            "image": "/images/trust-badges/google-review.webp"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ServiceCardsGridSection",
+      "props": {
+        "title": "Our Maintenance Services",
+        "description": "Regular maintenance keeps your plumbing efficient, prevents emergencies, and extends the life of your pipes, fixtures, and appliances.",
+        "services": [
+          {
+            "image": "/images/photos/ucare-904d12f4-1000x666.jpg",
+            "icon": "pipe",
+            "title": "Preventative Maintenance",
+            "href": "/maintenance/preventative/plumbing-inspections"
+          },
+          {
+            "image": "/images/photos/ucare-b2b720dc-1000x666.jpg",
+            "icon": "drain",
+            "title": "Drain & Sewer Maintenance",
+            "href": "/maintenance/drain-sewer/routine-drain-cleaning"
+          },
+          {
+            "image": "/images/photos/ucare-075a53c5-1000x666.jpg",
+            "icon": "leak",
+            "title": "Leak Prevention",
+            "href": "/maintenance/leak-prevention/valve-seal-checks"
+          },
+          {
+            "image": "/images/photos/ucare-f0f1f6f3-1000x666.jpg",
+            "icon": "pipe",
+            "title": "Gas System Maintenance",
+            "href": "/maintenance/gas-system/annual-gas-testing"
+          },
+          {
+            "image": "/images/photos/ucare-a6fafe41-ReliableGarbageDisposalRepairandReplacement.webp",
+            "icon": "kitchen",
+            "title": "Appliance Maintenance",
+            "href": "/maintenance/appliance/garbage-disposal-cleaning"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ContentSection",
+      "props": {
+        "badge": "Why Maintenance Matters",
+        "title": "Protect Your Plumbing Investment",
+        "description": "Most plumbing emergencies are preventable. Regular maintenance catches small issues before they become expensive repairs, keeps your water flowing efficiently, and extends the lifespan of your entire plumbing system. Our maintenance programs are designed to give you peace of mind year-round.",
+        "features": [
+          "Prevent Unexpected Breakdowns",
+          "Lower Utility Bills Through Efficiency",
+          "Extend the Life of Pipes and Fixtures",
+          "Priority Scheduling for Plan Members"
+        ],
+        "buttonText": "VIEW MAINTENANCE PLANS",
+        "buttonHref": "/maintenance-plan",
+        "images": [
+          "/images/photos/ucare-514fa2a4-999x1000.jpg",
+          "/images/photos/ucare-315825d3-1000x666.jpg"
+        ],
+        "imagePosition": "left"
+      }
+    },
+    {
+      "component": "PricingPlansSection",
+      "props": {
+        "title": "Maintenance Plans That Fit Your Budget",
+        "description": "Choose a plan that works for you and enjoy year-round protection for your plumbing system.",
+        "plans": [
+          {
+            "ribbon": "GREAT",
+            "ribbonColor": "great",
+            "title": "BASIC PLAN",
+            "price": "$9.99",
+            "period": "/month",
+            "features": [
+              "Annual plumbing system inspection",
+              "Priority scheduling for emergency repairs",
+              "5% discount on all repairs and services"
+            ]
+          },
+          {
+            "ribbon": "BEST DEAL",
+            "ribbonColor": "best",
+            "title": "PREMIUM PLAN",
+            "price": "$29.99",
+            "period": "/month",
+            "features": [
+              "Everything in the Standard Plan",
+              "Sewer line inspection with a camera",
+              "Emergency service fee waived",
+              "15% discount on all repairs and services"
+            ]
+          },
+          {
+            "ribbon": "BETTER",
+            "ribbonColor": "better",
+            "title": "STANDARD PLAN",
+            "price": "$19.99",
+            "period": "/month",
+            "features": [
+              "Everything in the Basic Plan",
+              "Annual water heater inspection and flush",
+              "Leak detection service for pipes and fixtures",
+              "10% discount on all repairs and services"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "component": "SignupBannerSection",
+      "props": {
+        "title": "Sign Up for a Maintenance Plan Today!",
+        "description": "Protect your home and save money with {fullName} <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a>. Choose the option that is right for you and enjoy peace of mind all year long.",
+        "calloutText": "Call us at {phone} or Sign Up Online today to get started!",
+        "phone": "{phone}",
+        "buttonText": "Sign Up Online",
+        "buttonHref": "/contact"
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Maintenance Services FAQs",
+        "faqs": [
+          {
+            "question": "How often should I have my plumbing inspected?",
+            "answer": "We recommend an annual <a href='/maintenance/preventative/plumbing-inspections'><strong>plumbing inspection</strong></a> for most homes. Older homes or properties with known issues may benefit from more frequent checkups."
+          },
+          {
+            "question": "What does a plumbing maintenance visit include?",
+            "answer": "A typical visit includes inspection of all visible pipes and fixtures, water pressure testing, drain flow checks, <a href='/residential/water-heaters/standard'><strong>water heater</strong></a> evaluation, and a written report of findings and recommendations."
+          },
+          {
+            "question": "Can maintenance really prevent emergencies?",
+            "answer": "Yes. The majority of plumbing emergencies like burst pipes, sewer backups, and <a href='/residential/water-heaters/standard'><strong>water heater</strong></a> failures can be prevented with regular maintenance and early detection of wear."
+          },
+          {
+            "question": "Do maintenance plan members get priority service?",
+            "answer": "Absolutely. All <a href='/maintenance-plan'><strong>maintenance plan</strong></a> members receive priority scheduling, which means faster response times when you need service."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          {
+            "icon": "siren",
+            "text": "24/7 Emergency Service"
+          },
+          {
+            "icon": "award",
+            "text": "Experienced & Certified Technicians"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "Our maintenance services are available throughout {city} and surrounding areas including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>.",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas",
+        "mapAddress": "{city}, {state}"
+      }
+    }
+  ]
+}

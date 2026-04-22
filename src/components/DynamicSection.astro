@@ -1,0 +1,76 @@
+---
+import CTAStrip from "@/components/sections/CTAStrip.astro"
+import CareersCTASection from "@/components/sections/CareersCTASection.astro"
+import ContactFormSection from "@/components/sections/ContactFormSection.astro"
+import ContentSection from "@/components/sections/ContentSection.astro"
+import ContentSectionAlt from "@/components/sections/ContentSectionAlt.astro"
+import CouponsSection from "@/components/sections/CouponsSection.astro"
+import ExpertServicesSection from "@/components/sections/ExpertServicesSection.astro"
+import FAQSection from "@/components/sections/FAQSection.astro"
+import FinancingIntroSection from "@/components/sections/FinancingIntroSection.astro"
+import FinancingPlansSection from "@/components/sections/FinancingPlansSection.astro"
+import FinancingSection from "@/components/sections/FinancingSection.astro"
+import HeroSection from "@/components/sections/HeroSection.astro"
+import JobOpeningsSection from "@/components/sections/JobOpeningsSection.astro"
+import MaintenancePlanSection from "@/components/sections/MaintenancePlanSection.astro"
+import PlaceholderContentSection from "@/components/sections/PlaceholderContentSection.astro"
+import PortfolioSection from "@/components/sections/PortfolioSection.astro"
+import PricingPlansSection from "@/components/sections/PricingPlansSection.astro"
+import PromoTilesSection from "@/components/sections/PromoTilesSection.astro"
+import ReviewsSection from "@/components/sections/ReviewsSection.astro"
+import ServiceAreaSection from "@/components/sections/ServiceAreaSection.astro"
+import ServiceCardsGridSection from "@/components/sections/ServiceCardsGridSection.astro"
+import ServicesSection from "@/components/sections/ServicesSection"
+import SignupBannerSection from "@/components/sections/SignupBannerSection.astro"
+import TestimonialsSection from "@/components/sections/TestimonialsSection.astro"
+import TrustBadges from "@/components/sections/TrustBadges.astro"
+
+// Astro components only - rendered via the dynamic variable
+const astroComponents: Record<string, any> = {
+  CTAStrip,
+  CareersCTASection,
+  ContactFormSection,
+  ContentSection,
+  ContentSectionAlt,
+  CouponsSection,
+  ExpertServicesSection,
+  FAQSection,
+  FinancingIntroSection,
+  FinancingPlansSection,
+  FinancingSection,
+  HeroSection,
+  JobOpeningsSection,
+  MaintenancePlanSection,
+  PlaceholderContentSection,
+  PortfolioSection,
+  PricingPlansSection,
+  PromoTilesSection,
+  ReviewsSection,
+  ServiceAreaSection,
+  ServiceCardsGridSection,
+  SignupBannerSection,
+  TestimonialsSection,
+  TrustBadges,
+}
+
+interface Props {
+  component: string
+  props?: Record<string, any>
+}
+
+const { component, props = {} } = Astro.props
+
+// React component must be referenced by its literal import for client directives
+// to wire up hydration correctly.
+const isServicesSection = component === "ServicesSection"
+const AstroComponent = isServicesSection ? null : astroComponents[component]
+
+if (!isServicesSection && !AstroComponent) {
+  throw new Error(`Unknown section component: "${component}". Add it to src/components/DynamicSection.astro.`)
+}
+---
+
+{isServicesSection
+  ? <ServicesSection client:visible {...props} />
+  : <AstroComponent {...props} />
+}

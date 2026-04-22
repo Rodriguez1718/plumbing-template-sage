@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "title": "Preventative Maintenance",
+    "description": "Preventative plumbing maintenance in {city}. Regular inspections and water heater flushing to keep your plumbing in top shape."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Preventative Maintenance",
+        "subtitle": "Regular inspections and proactive care to prevent costly plumbing problems before they start.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "/images/photos/ucare-ce315695-1000x562.jpg"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          { "label": "Senior & Military", "discount": "10% OFF", "description": "Senior & Military Discount. Cannot be combined with any other offer.", "expires": "December 2026" },
+          { "label": "Plumbing Repair", "discount": "$50 OFF", "description": "Any Repair of $500 or More. <a href='/contact'><strong>Contact us</strong></a> now to save.", "expires": "December 2026" },
+          { "label": "Free Camera Inspection", "discount": "FREE", "description": "Sewer <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> with any standard <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>.", "expires": "December 2026" }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Residential Plumbing",
+            "text": "Complete residential plumbing services for homes.",
+            "href": "/residential-plumbing",
+            "image": "/images/photos/unsplash-1556909114-f6e7ad7d3136-w600.jpg"
+          },
+          {
+            "title": "Commercial Plumbing",
+            "text": "Professional plumbing services for businesses.",
+            "href": "/commercial",
+            "image": "/images/photos/unsplash-1621905252507-b35492cc74b4-w600.jpg"
+          },
+          {
+            "title": "Leak Prevention",
+            "text": "Proactive leak prevention to protect your property.",
+            "href": "/maintenance/leak-prevention",
+            "image": "/images/photos/unsplash-1585704032915-c3400ca199e7-w600.jpg"
+          },
+          {
+            "title": "Maintenance Plans",
+            "text": "Affordable plans for ongoing plumbing maintenance.",
+            "href": "/maintenance-plan",
+            "image": "/images/photos/unsplash-1581578731548-c64695cc6952-w600.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Preventative Maintenance FAQs",
+        "faqs": [
+          {
+            "question": "What does a preventative plumbing inspection include?",
+            "answer": "Our <a href='/maintenance/preventative/plumbing-inspections'><strong>plumbing inspections</strong></a> cover all fixtures, supply lines, drain systems, water heater condition, water pressure, and visible pipe integrity. We identify potential issues before they become emergencies."
+          },
+          {
+            "question": "How often should I have my water heater flushed?",
+            "answer": "We recommend <a href='/maintenance/preventative/water-heater-flushing'><strong>water heater flushing</strong></a> at least once a year to remove sediment buildup, improve efficiency, and extend the life of your unit."
+          },
+          {
+            "question": "How often should I schedule preventative maintenance?",
+            "answer": "We recommend annual plumbing inspections for most homes. Older homes or properties with known issues may benefit from semi-annual visits. Our <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> make scheduling easy."
+          },
+          {
+            "question": "Can preventative maintenance really save me money?",
+            "answer": "Absolutely. Catching small issues early — like minor leaks, corroding pipes, or sediment buildup — prevents costly emergency repairs and water damage down the road."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          { "icon": "siren", "text": "24/7 Emergency Service" },
+          { "icon": "award", "text": "Experienced and Certified Technicians" }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

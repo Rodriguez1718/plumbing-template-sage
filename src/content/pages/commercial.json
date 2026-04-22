@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "title": "Commercial Plumbing Services",
+    "description": "Professional commercial plumbing services in {city}. Building systems, water heaters, drain and sewer, specialty piping, gas plumbing, and <a href='/commercial/backflow-prevention/device-installation'><strong>backflow prevention</strong></a>."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "category",
+        "badge": "5% OFF New Commercial Construction Projects",
+        "title": "Commercial Plumbing Services",
+        "subtitle": "Reliable, code-compliant plumbing solutions for businesses, restaurants, offices, and multi-unit properties across {city}.",
+        "buttonText": "REQUEST A QUOTE",
+        "buttonHref": "/contact",
+        "image": "/images/photos/unsplash-1504307651254-35680f356dfd-w1000.jpg"
+      }
+    },
+    {
+      "component": "TrustBadges",
+      "props": {
+        "badges": [
+          {
+            "name": "BBB & Angie's List",
+            "image": "/images/trust-badges/BBB_Angies-List.webp"
+          },
+          {
+            "name": "Google Reviews",
+            "image": "/images/trust-badges/google-review.webp"
+          },
+          {
+            "name": "Nextdoor",
+            "image": "/images/trust-badges/Nextdoor-logo.webp",
+            "small": true
+          },
+          {
+            "name": "HomeAdvisor",
+            "image": "/images/trust-badges/HomeAdvisor.webp"
+          },
+          {
+            "name": "BBB A+",
+            "image": "/images/trust-badges/bbb-logo-a-plus.webp"
+          },
+          {
+            "name": "Google Reviews 2",
+            "image": "/images/trust-badges/google-review.webp"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ServiceCardsGridSection",
+      "props": {
+        "title": "Our Commercial Plumbing Services",
+        "description": "From new construction to ongoing maintenance, we deliver professional plumbing solutions for commercial properties of all sizes.",
+        "services": [
+          {
+            "image": "/images/photos/ucare-904d12f4-1000x666.jpg",
+            "icon": "pipe",
+            "title": "Building Plumbing Systems",
+            "href": "/commercial/building-plumbing/new-construction"
+          },
+          {
+            "image": "/images/photos/ucare-f2844f4a-1000x562.jpg",
+            "icon": "waterheater",
+            "title": "Commercial Water Heaters",
+            "href": "/commercial/water-heaters/high-capacity"
+          },
+          {
+            "image": "/images/photos/ucare-b2b720dc-1000x666.jpg",
+            "icon": "drain",
+            "title": "Drain & Sewer Services",
+            "href": "/commercial/drain-sewer/camera-inspections"
+          },
+          {
+            "image": "/images/photos/ucare-075a53c5-1000x666.jpg",
+            "icon": "pipe",
+            "title": "Specialty Piping",
+            "href": "/commercial/specialty-piping/grease-trap"
+          },
+          {
+            "image": "/images/photos/ucare-f0f1f6f3-1000x666.jpg",
+            "icon": "leak",
+            "title": "Gas Plumbing",
+            "href": "/commercial/gas-plumbing/gas-line"
+          },
+          {
+            "image": "/images/photos/ucare-14cf294e-1000x750.jpg",
+            "icon": "pipe",
+            "title": "Backflow Prevention",
+            "href": "/commercial/backflow-prevention/testing-certification"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ExpertServicesSection",
+      "props": {
+        "title": "Why Businesses Trust",
+        "highlightedText": "{fullName}",
+        "description": "we understand that commercial plumbing requires precision, speed, and minimal disruption to your operations. Our team is experienced in handling complex commercial systems, ensuring code compliance and long-lasting results for your business.",
+        "image": "/images/photos/ucare-315825d3-1000x666.jpg",
+        "imageAlt": "Commercial plumbing team at work",
+        "features": [
+          {
+            "icon": "wrench",
+            "title": "Licensed Commercial Plumbers",
+            "description": "Fully licensed and insured for commercial projects of any scale."
+          },
+          {
+            "icon": "zap",
+            "title": "Minimal Downtime",
+            "description": "We work around your schedule to keep your business running."
+          },
+          {
+            "icon": "shield",
+            "title": "Code Compliant",
+            "description": "All work meets local building codes and inspection requirements."
+          },
+          {
+            "icon": "dollar",
+            "title": "Competitive Pricing",
+            "description": "Transparent quotes with no hidden fees for commercial clients."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          {
+            "label": "Commercial",
+            "discount": "5% OFF",
+            "description": "All plumbing services for new commercial construction projects.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Free Inspection",
+            "discount": "FREE",
+            "description": "Sewer <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> for commercial properties.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Maintenance",
+            "discount": "$100 OFF",
+            "description": "First year of a commercial <a href='/maintenance-plan'><strong>maintenance plan</strong></a>.",
+            "expires": "December 2026"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Commercial Plumbing FAQs",
+        "faqs": [
+          {
+            "question": "What types of commercial properties do you service?",
+            "answer": "We service all types of commercial properties including restaurants, office buildings, retail spaces, multi-unit residential buildings, warehouses, and industrial facilities."
+          },
+          {
+            "question": "Do you handle new construction plumbing?",
+            "answer": "Yes, we provide full design and installation services for new commercial construction, including plumbing system layout, fixture installation, and code compliance inspections."
+          },
+          {
+            "question": "Can you work after business hours?",
+            "answer": "Absolutely. We offer flexible scheduling including evenings and weekends to minimize disruption to your business operations."
+          },
+          {
+            "question": "Do you offer commercial maintenance plans?",
+            "answer": "Yes, we offer tailored <a href='/maintenance-plan'><strong>maintenance plans</strong></a> for commercial properties to help prevent costly emergencies and keep your plumbing systems running efficiently."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          {
+            "icon": "siren",
+            "text": "24/7 Emergency Service"
+          },
+          {
+            "icon": "award",
+            "text": "Experienced & Certified Technicians"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Serving Businesses Across {city}",
+        "description": "We provide commercial plumbing services throughout {city} and surrounding areas including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, <a href='/glendale'><strong>Glendale</strong></a>, and the San Fernando Valley.",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas",
+        "mapAddress": "{city}, {state}"
+      }
+    }
+  ]
+}

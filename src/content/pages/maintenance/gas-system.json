@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "title": "Gas System Maintenance",
+    "description": "Gas system maintenance services in {city}. Annual gas testing and gas line inspections for safety and compliance."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Gas System Maintenance",
+        "subtitle": "Annual gas appliance testing and gas line inspections to keep your home safe and code-compliant.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "/images/photos/ucare-ce315695-1000x562.jpg"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          { "label": "Senior & Military", "discount": "10% OFF", "description": "Senior & Military Discount. Cannot be combined with any other offer.", "expires": "December 2026" },
+          { "label": "Plumbing Repair", "discount": "$50 OFF", "description": "Any Repair of $500 or More. <a href='/contact'><strong>Contact us</strong></a> now to save.", "expires": "December 2026" },
+          { "label": "Free Camera Inspection", "discount": "FREE", "description": "Sewer <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> with any standard <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>.", "expires": "December 2026" }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Residential Plumbing",
+            "text": "Complete residential plumbing services for homes.",
+            "href": "/residential-plumbing",
+            "image": "/images/photos/unsplash-1556909114-f6e7ad7d3136-w600.jpg"
+          },
+          {
+            "title": "Commercial Gas Plumbing",
+            "text": "Gas line installation and repair for businesses.",
+            "href": "/commercial/gas-plumbing",
+            "image": "/images/photos/unsplash-1621905252507-b35492cc74b4-w600.jpg"
+          },
+          {
+            "title": "Preventative Maintenance",
+            "text": "Regular inspections to prevent costly plumbing problems.",
+            "href": "/maintenance/preventative",
+            "image": "/images/photos/unsplash-1585704032915-c3400ca199e7-w600.jpg"
+          },
+          {
+            "title": "Maintenance Plans",
+            "text": "Affordable plans for ongoing plumbing maintenance.",
+            "href": "/maintenance-plan",
+            "image": "/images/photos/unsplash-1581578731548-c64695cc6952-w600.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Gas System Maintenance FAQs",
+        "faqs": [
+          {
+            "question": "How often should gas appliances be tested?",
+            "answer": "We recommend <a href='/maintenance/gas-system/annual-gas-testing'><strong>annual gas appliance testing</strong></a> to ensure safe operation, proper combustion, and compliance with local codes."
+          },
+          {
+            "question": "What does a gas line inspection include?",
+            "answer": "Our <a href='/maintenance/gas-system/gas-line-inspection'><strong>gas line inspections</strong></a> check for leaks, corrosion, proper connections, adequate pressure, and code compliance throughout your gas piping system."
+          },
+          {
+            "question": "What are signs of a gas leak?",
+            "answer": "The smell of rotten eggs, hissing sounds near gas lines, dead vegetation near gas pipes, and unexplained increases in your gas bill. If you suspect a leak, evacuate immediately and call us at {phone}."
+          },
+          {
+            "question": "Is gas system maintenance required by law?",
+            "answer": "Requirements vary by municipality, but regular gas system maintenance is strongly recommended for safety. Many insurance policies also require proof of annual inspections. <a href='/contact'><strong>Contact us</strong></a> to schedule yours."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          { "icon": "siren", "text": "24/7 Emergency Service" },
+          { "icon": "award", "text": "Experienced and Certified Technicians" }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

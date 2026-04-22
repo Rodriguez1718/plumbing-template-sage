@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "title": "Solar Water Heater Installation",
+    "description": "Energy-efficient solar <a href='/residential/water-heaters/standard'><strong>water heater installation</strong></a> to reduce energy costs and your carbon footprint."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Solar Water Heater Installation",
+        "subtitle": "Harness the sun to heat your water and cut energy costs.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "/images/photos/ucare-ce315695-1000x562.jpg"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "PromoTilesSection",
+      "props": {
+        "tiles": [
+          {
+            "type": "maintenance",
+            "title": "MAINTENANCE PLAN",
+            "priceLabel": [
+              "Starting at",
+              "$94.33",
+              "per month"
+            ],
+            "phone": "{phone}",
+            "buttonText": "View Maintenance Plans",
+            "buttonHref": "/maintenance-plan",
+            "bgImage": "/images/photos/unsplash-1585704032915-c3400ca199e7-w800.jpg"
+          },
+          {
+            "type": "financing",
+            "headline": [
+              "NO INTEREST",
+              "NO PAYMENT",
+              "UNTIL 2026"
+            ],
+            "subtext": "Subject to credit approval",
+            "phone": "{phone}",
+            "buttonText": "Explore Financing Options",
+            "buttonHref": "/financing",
+            "bgImage": "/images/photos/unsplash-1621905252507-b35492cc74b4-w800.jpg"
+          },
+          {
+            "type": "emergency",
+            "tag": "Limited Time Offer",
+            "discount": "20% OFF",
+            "subheadline": [
+              "ALL PLUMBING",
+              "SERVICES"
+            ],
+            "phone": "{phone}",
+            "buttonText": "SCHEDULE NOW",
+            "buttonHref": "/contact",
+            "bgImage": "/images/photos/unsplash-1504328345606-18bbc8c9d7d1-w800.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Water Conservation Retrofits",
+            "text": "Eco-friendly upgrades to reduce water usage.",
+            "href": "/specialty/green-plumbing/water-conservation-retrofits",
+            "image": "/images/photos/unsplash-1556909114-f6e7ad7d3136-w600.jpg"
+          },
+          {
+            "title": "Tankless Water Heaters",
+            "text": "Energy-efficient on-demand hot water solutions.",
+            "href": "/residential/water-heaters/tankless",
+            "image": "/images/photos/unsplash-1585704032915-c3400ca199e7-w600.jpg"
+          },
+          {
+            "title": "Standard Water Heaters",
+            "text": "Reliable tank water heater installation and repair.",
+            "href": "/residential/water-heaters/standard",
+            "image": "/images/photos/unsplash-1621905252507-b35492cc74b4-w600.jpg"
+          },
+          {
+            "title": "Maintenance Services",
+            "text": "Keep your plumbing running smoothly year-round.",
+            "href": "/maintenance-plan",
+            "image": "/images/photos/unsplash-1581578731548-c64695cc6952-w600.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Frequently Asked Questions",
+        "faqs": [
+          {
+            "question": "How does a solar water heater work?",
+            "answer": "Solar water heaters use rooftop solar collectors to absorb heat from the sun and transfer it to your water supply. Most systems include a backup conventional heater for cloudy days, ensuring you always have hot water."
+          },
+          {
+            "question": "How much can I save with a solar water heater?",
+            "answer": "Solar water heaters can reduce your water heating costs by 50–80%. The exact savings depend on your hot water usage, system size, and local sunlight conditions. Most systems pay for themselves within 5–7 years."
+          },
+          {
+            "question": "Are there tax credits for solar water heaters?",
+            "answer": "Yes, federal tax credits are available for qualifying solar water heating systems. Additionally, California offers state incentives and local utility rebates. We can help you understand which incentives apply to your installation."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          {
+            "icon": "siren",
+            "text": "24/7 Emergency Service"
+          },
+          {
+            "icon": "award",
+            "text": "Experienced and Certified Technicians"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

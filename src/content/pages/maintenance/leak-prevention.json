@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "title": "Leak Prevention Services",
+    "description": "Leak prevention services in {city}. Valve and seal checks, pressure testing, and proactive leak prevention."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Leak Prevention Services",
+        "subtitle": "Valve checks, seal inspections, and pressure testing to catch leaks before they cause damage.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "/images/photos/ucare-ce315695-1000x562.jpg"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          { "label": "Senior & Military", "discount": "10% OFF", "description": "Senior & Military Discount. Cannot be combined with any other offer.", "expires": "December 2026" },
+          { "label": "Plumbing Repair", "discount": "$50 OFF", "description": "Any Repair of $500 or More. <a href='/contact'><strong>Contact us</strong></a> now to save.", "expires": "December 2026" },
+          { "label": "Free Camera Inspection", "discount": "FREE", "description": "Sewer <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> with any standard <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>.", "expires": "December 2026" }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Residential Plumbing",
+            "text": "Complete residential plumbing services for homes.",
+            "href": "/residential-plumbing",
+            "image": "/images/photos/unsplash-1556909114-f6e7ad7d3136-w600.jpg"
+          },
+          {
+            "title": "Commercial Plumbing",
+            "text": "Professional plumbing services for businesses.",
+            "href": "/commercial",
+            "image": "/images/photos/unsplash-1621905252507-b35492cc74b4-w600.jpg"
+          },
+          {
+            "title": "Advanced Leak Detection",
+            "text": "Pinpoint hidden leaks with advanced technology.",
+            "href": "/specialty/advanced-leak-detection",
+            "image": "/images/photos/unsplash-1585704032915-c3400ca199e7-w600.jpg"
+          },
+          {
+            "title": "Maintenance Plans",
+            "text": "Affordable plans for ongoing plumbing maintenance.",
+            "href": "/maintenance-plan",
+            "image": "/images/photos/unsplash-1581578731548-c64695cc6952-w600.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Leak Prevention FAQs",
+        "faqs": [
+          {
+            "question": "What is included in a leak prevention service?",
+            "answer": "Our leak prevention services include <a href='/maintenance/leak-prevention/valve-seal-checks'><strong>valve and seal checks</strong></a>, <a href='/maintenance/leak-prevention/pressure-testing'><strong>pressure testing</strong></a>, visual pipe inspections, and water pressure regulation to identify and address weak points before leaks develop."
+          },
+          {
+            "question": "How does pressure testing work?",
+            "answer": "<a href='/maintenance/leak-prevention/pressure-testing'><strong>Pressure testing</strong></a> involves pressurizing your plumbing system to detect drops that indicate hidden leaks. It's a non-invasive way to verify the integrity of your pipes."
+          },
+          {
+            "question": "How often should valves and seals be inspected?",
+            "answer": "We recommend <a href='/maintenance/leak-prevention/valve-seal-checks'><strong>valve and seal inspections</strong></a> annually. Older homes or properties with hard water may need more frequent checks as mineral buildup accelerates wear."
+          },
+          {
+            "question": "Can leak prevention save me money on my water bill?",
+            "answer": "Yes. Even small, undetected leaks can waste thousands of gallons per year. Proactive leak prevention catches these issues early, saving you money on water bills and avoiding costly water damage repairs."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          { "icon": "siren", "text": "24/7 Emergency Service" },
+          { "icon": "award", "text": "Experienced and Certified Technicians" }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

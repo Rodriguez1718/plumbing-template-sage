@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "title": "Careers",
+    "description": "Build your career with {fullName}. Join our team of skilled professionals and grow with us. View current job openings and apply today!"
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Build Your Career with {fullName}",
+        "subtitle": "Join a team that values your skills, supports your growth, and offers competitive benefits. At {fullName}, we're more than just a company—we're a family dedicated to excellence in plumbing services.",
+        "buttonText": "VIEW OPENINGS",
+        "buttonHref": "#openings",
+        "image": "/images/photos/unsplash-1504328345606-18bbc8c9d7d1-w1000.jpg"
+      }
+    },
+    {
+      "component": "JobOpeningsSection",
+      "props": {
+        "introTitle": "Careers at {fullName}",
+        "introDescription": "At {fullName}, we're not just a team—we're a family. We're dedicated to providing top-notch plumbing solutions while fostering a supportive and growth-oriented work environment. If you're passionate about delivering exceptional service and want to grow your career in the plumbing industry, we'd love to hear from you!",
+        "title": "Current Openings",
+        "jobs": [
+          {
+            "title": "Licensed Plumber",
+            "type": "Full-time position",
+            "responsibilities": "Perform installations, repairs, and maintenance for residential and commercial plumbing systems.",
+            "buttonText": "APPLY NOW",
+            "buttonHref": "/contact"
+          },
+          {
+            "title": "Plumbing Apprentice",
+            "type": "Full-time position",
+            "responsibilities": "Assist licensed plumbers with installations and repairs while gaining hands-on experience.",
+            "buttonText": "APPLY NOW",
+            "buttonHref": "/contact"
+          },
+          {
+            "title": "Customer Service Representative",
+            "type": "Full-time position",
+            "responsibilities": "Handle customer inquiries, schedule appointments, and provide excellent support.",
+            "buttonText": "APPLY NOW",
+            "buttonHref": "/contact"
+          }
+        ]
+      }
+    },
+    {
+      "component": "CareersCTASection",
+      "props": {
+        "title": "Join the {fullName} Family Today!",
+        "description": "If you're passionate about plumbing and want to be part of a team that values quality, integrity, and customer satisfaction, we want to hear from you. Submit your application today and take the first step toward a rewarding career.",
+        "buttonText": "APPLY TODAY",
+        "buttonHref": "/contact",
+        "image": "/images/photos/ucare-315825d3-1000x666.jpg"
+      }
+    },
+    {
+      "component": "ReviewsSection",
+      "props": {
+        "badge": "GOOGLE REVIEW",
+        "title": "What Our Client Says",
+        "description": "At {fullName}, we believe that every home and business deserves access to reliable plumbing services, no matter the budget. That's why we offer flexible <a href='/financing'><strong>financing options</strong></a> to make your plumbing projects manageable and stress-free.",
+        "reviews": [
+          {
+            "name": "Coleman Mockbee",
+            "time": "1 year ago",
+            "content": "I've been working with {fullName} for over 5 years now. The team is incredibly supportive and the management truly cares about employee growth.",
+            "readMoreHref": "#"
+          },
+          {
+            "name": "Angel Nicolai",
+            "time": "1 year ago",
+            "content": "Best decision I ever made was joining {fullName}. The training program helped me get my license and now I'm a lead technician.",
+            "readMoreHref": "#"
+          },
+          {
+            "name": "Armando Pena",
+            "time": "1 year ago",
+            "content": "Great company culture and excellent benefits. They really invest in their employees and it shows in the quality of work we deliver.",
+            "readMoreHref": "#"
+          },
+          {
+            "name": "Paul Moss",
+            "time": "1 year ago",
+            "content": "Started as an apprentice and worked my way up. {fullName} gave me the opportunity to build a real career in plumbing.",
+            "readMoreHref": "#"
+          }
+        ],
+        "verifiedBy": "Verified by Trustindex"
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          {
+            "icon": "siren",
+            "text": "24/7 Emergency Service"
+          },
+          {
+            "icon": "award",
+            "text": "Experienced & Certified Technicians"
+          }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "title": "Expert Plumbing Services in {city} and Surrounding Areas",
+        "description": "Looking for reliable plumbing services in {city}? We provide expert residential and commercial solutions across the city, from Hollywood Hills to <a href='/santa-monica'><strong>Santa Monica</strong></a>. Whether you need <a href='/residential/leak/detection'><strong>leak detection</strong></a>, <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>, <a href='/residential/water-heaters/standard'><strong>water heater</strong></a> repairs, or advanced options like <a href='/specialty/sewer-line-services/trenchless-sewer-repair'><strong>trenchless sewer repair</strong></a> and whole-house <a href='/specialty/water-filtration/whole-house-filtration'><strong>water filtration</strong></a>, our team is here to help. We also offer routine maintenance and 24/7 emergency services to keep your plumbing in top shape. Serving neighborhoods like Downtown LA, Beverly Hills, and <a href='/pasadena'><strong>Pasadena</strong></a>, we're committed to quality, efficiency, and customer satisfaction. Call us today to schedule your service!",
+        "areas": [
+          "Santa Monica",
+          "Pasadena",
+          "Glendale",
+          "Downtown {city}",
+          "Hollywood",
+          "Beverly Hills",
+          "Venice",
+          "Westwood",
+          "Culver City",
+          "San Fernando Valley",
+          "Studio City",
+          "North Hollywood",
+          "Sherman Oaks",
+          "Encino",
+          "Burbank",
+          "Torrance",
+          "Long Beach",
+          "Inglewood",
+          "El Segundo",
+          "Brentwood",
+          "Silver Lake",
+          "Echo Park",
+          "Hancock Park",
+          "Marina del Rey",
+          "Manhattan Beach"
+        ],
+        "mapAddress": "{city}, {state}"
+      }
+    }
+  ]
+}

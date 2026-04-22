@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Hydro Jetting Services",
+    "description": "Professional hydro jetting services in {city}. High-pressure drain cleaning for the toughest clogs and buildup."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Hydro Jetting Services",
+        "subtitle": "High-pressure water jetting to blast through the toughest clogs, grease, and root intrusions.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "/images/photos/ucare-ce315695-1000x562.jpg"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          {
+            "label": "Senior & Military",
+            "discount": "10% OFF",
+            "description": "Senior & Military Discount. Cannot be combined with any other offer.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Plumbing Repair",
+            "discount": "$50 OFF",
+            "description": "Any Repair of $500 or More. <a href='/contact'><strong>Contact us</strong></a> now to save.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Free Camera Inspection",
+            "discount": "FREE",
+            "description": "Sewer <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> with any standard <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>.",
+            "expires": "December 2026"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Residential Plumbing",
+            "text": "Complete residential plumbing services for homes.",
+            "href": "/residential-plumbing",
+            "image": "/images/photos/unsplash-1556909114-f6e7ad7d3136-w600.jpg"
+          },
+          {
+            "title": "Commercial Plumbing",
+            "text": "Professional plumbing services for businesses.",
+            "href": "/commercial",
+            "image": "/images/photos/unsplash-1621905252507-b35492cc74b4-w600.jpg"
+          },
+          {
+            "title": "Sewer Line Services",
+            "text": "Trenchless sewer repair and pipe lining solutions.",
+            "href": "/specialty/sewer-line-services",
+            "image": "/images/photos/unsplash-1585704032915-c3400ca199e7-w600.jpg"
+          },
+          {
+            "title": "Maintenance Services",
+            "text": "Preventative maintenance to keep your systems running.",
+            "href": "/maintenance",
+            "image": "/images/photos/unsplash-1581578731548-c64695cc6952-w600.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Hydro Jetting FAQs",
+        "faqs": [
+          {
+            "question": "What is hydro jetting?",
+            "answer": "Hydro jetting uses <a href='/specialty/hydro-jetting/high-pressure-drain-cleaning'><strong>high-pressure water streams</strong></a> (up to 4,000 PSI) to scour the inside of pipes, removing grease, scale, tree roots, and stubborn blockages that traditional snaking can't clear."
+          },
+          {
+            "question": "Is hydro jetting safe for older pipes?",
+            "answer": "We always perform a camera inspection first to assess pipe condition. Hydro jetting is safe for most pipe materials, but we adjust pressure levels for older or more fragile pipes to prevent damage."
+          },
+          {
+            "question": "How often should hydro jetting be done?",
+            "answer": "For residential properties, every 1–2 years is typical. Commercial properties like restaurants may benefit from quarterly service due to grease buildup. Our <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> include scheduled jetting."
+          },
+          {
+            "question": "What's the difference between hydro jetting and drain snaking?",
+            "answer": "Drain snaking breaks through clogs but leaves residue on pipe walls. Hydro jetting completely cleans the pipe interior, removing all buildup and restoring full flow capacity — a more thorough, longer-lasting solution."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          { "icon": "siren", "text": "24/7 Emergency Service" },
+          { "icon": "award", "text": "Experienced and Certified Technicians" }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}

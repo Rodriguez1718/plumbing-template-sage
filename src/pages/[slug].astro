@@ -1,31 +1,31 @@
 ---
 import { getCollection } from "astro:content"
 import BaseLayout from "@/layouts/BaseLayout.astro"
+import DynamicSection from "@/components/DynamicSection.astro"
 import { getLocationText } from "@/config/site"
 
 export async function getStaticPaths() {
   const pages = await getCollection("pages")
   return pages
-    .filter(page => !page.id.startsWith("index") && !page.id.includes("/") && !page.data.draft)
-    .map((page) => {
-      const slug = page.id.replace(/\.mdx?$/, '')
-      return {
-        params: { slug },
-        props: { page },
-      }
-    })
+    .filter(page => page.id !== "index" && !page.id.includes("/") && !page.data.draft)
+    .map((page) => ({
+      params: { slug: page.id },
+      props: { page },
+    }))
 }
 
 const { page } = Astro.props
-const { Content } = await page.render()
+const { meta, sections } = page.data
 ---
 
-<BaseLayout 
-  title={getLocationText(page.data.title)} 
-  description={getLocationText(page.data.description || "")}
-  keywords={page.data.keywords}
-  ogImage={page.data.ogImage}
+<BaseLayout
+  title={getLocationText(meta.title)}
+  description={getLocationText(meta.description || "")}
+  keywords={meta.keywords}
+  ogImage={meta.ogImage}
   noindex={page.data.noindex}
 >
-  <Content />
+  {sections.map((section) => (
+    <DynamicSection component={section.component} props={section.props} />
+  ))}
 </BaseLayout>

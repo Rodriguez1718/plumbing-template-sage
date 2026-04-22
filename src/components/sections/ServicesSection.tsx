@@ -21,10 +21,10 @@ interface Props {
 
 // Map category titles to banner images
 const CATEGORY_IMAGES: Record<string, string> = {
-  'Residential Plumbing Services': 'https://img.freepik.com/free-photo/male-plumber-working-fix-problems-client-s-house_23-2150990700.jpg?t=st=1771554058~exp=1771557658~hmac=70bda38cc308ec76dbbbc26ebd49f349d3937ee69d95003ff1b0274174832fbb',
-  'Commercial Plumbing Services':  'https://img.freepik.com/free-photo/man-installs-heating-system-house-checks-pipes-with-wrench_169016-55834.jpg?t=st=1771554128~exp=1771557728~hmac=5f7f397bf2be86cea0dcbcd1d300e04321de78f81ce1760b57de665e059aa5c2',
-  'Specialty Plumbing Services':   'https://img.freepik.com/free-photo/female-plumber-working-fix-problems-client-s-house_23-2150990725.jpg?t=st=1771554168~exp=1771557768~hmac=850854d4b59501de954307a15b86e7dfe2cfc0fa05030415c9df3397f7c6ea0e',
-  'Maintenance Services':          'https://happyplumbing.com/wp-content/uploads/2023/02/plumber-at-work-in-a-bathroom.jpg',
+  'Residential Plumbing Services': '/images/photos/freepik-male-plumber-working-fix-problems-client-s-house_23-2150990700.jpg',
+  'Commercial Plumbing Services':  '/images/photos/freepik-man-installs-heating-system-house-checks-pipes-with-wrench_169016-55834.jpg',
+  'Specialty Plumbing Services':   '/images/photos/freepik-female-plumber-working-fix-problems-client-s-house_23-2150990725.jpg',
+  'Maintenance Services':          '/images/photos/plumber-bathroom.jpg',
 };
 
 export function ServicesSection({ title, description, categories }: Props) {

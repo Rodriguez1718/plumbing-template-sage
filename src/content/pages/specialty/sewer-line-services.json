@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Sewer Line Services",
+    "description": "Specialty sewer line services in {city}. Trenchless sewer repair, pipe bursting, and pipe lining solutions."
+  },
+  "sections": [
+    {
+      "component": "HeroSection",
+      "props": {
+        "variant": "subpage",
+        "title": "Sewer Line Services",
+        "subtitle": "Trenchless sewer repair, pipe bursting, and pipe lining — modern solutions that save your yard and your wallet.",
+        "buttonText": "SCHEDULE SERVICE",
+        "buttonHref": "/contact",
+        "image": "/images/photos/ucare-ce315695-1000x562.jpg"
+      }
+    },
+    {
+      "component": "PlaceholderContentSection",
+      "props": {
+        "title": "TO BE DETERMINED",
+        "subtitle": "BASED ON THE CLIENT DISCOVERY CONVERSATION"
+      }
+    },
+    {
+      "component": "CouponsSection",
+      "props": {
+        "coupons": [
+          {
+            "label": "Senior & Military",
+            "discount": "10% OFF",
+            "description": "Senior & Military Discount. Cannot be combined with any other offer.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Plumbing Repair",
+            "discount": "$50 OFF",
+            "description": "Any Repair of $500 or More. <a href='/contact'><strong>Contact us</strong></a> now to save.",
+            "expires": "December 2026"
+          },
+          {
+            "label": "Free Camera Inspection",
+            "discount": "FREE",
+            "description": "Sewer <a href='/commercial/drain-sewer/camera-inspections'><strong>Camera Inspection</strong></a> with any standard <a href='/residential/drain/cleaning'><strong>drain cleaning</strong></a>.",
+            "expires": "December 2026"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FinancingPlansSection",
+      "props": {
+        "variant": "services",
+        "title": "Related Services",
+        "items": [
+          {
+            "title": "Residential Plumbing",
+            "text": "Complete residential plumbing services for homes.",
+            "href": "/residential-plumbing",
+            "image": "/images/photos/unsplash-1556909114-f6e7ad7d3136-w600.jpg"
+          },
+          {
+            "title": "Commercial Plumbing",
+            "text": "Professional plumbing services for businesses.",
+            "href": "/commercial",
+            "image": "/images/photos/unsplash-1621905252507-b35492cc74b4-w600.jpg"
+          },
+          {
+            "title": "Hydro Jetting",
+            "text": "High-pressure drain cleaning for tough clogs.",
+            "href": "/specialty/hydro-jetting",
+            "image": "/images/photos/unsplash-1585704032915-c3400ca199e7-w600.jpg"
+          },
+          {
+            "title": "Maintenance Services",
+            "text": "Preventative maintenance to keep your systems running.",
+            "href": "/maintenance",
+            "image": "/images/photos/unsplash-1581578731548-c64695cc6952-w600.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQSection",
+      "props": {
+        "title": "Sewer Line Services FAQs",
+        "faqs": [
+          {
+            "question": "What is trenchless sewer repair?",
+            "answer": "<a href='/specialty/sewer-line-services/trenchless-sewer-repair'><strong>Trenchless sewer repair</strong></a> fixes damaged sewer lines without digging up your yard. We use pipe lining or pipe bursting methods to restore your sewer line with minimal disruption."
+          },
+          {
+            "question": "What is pipe bursting?",
+            "answer": "<a href='/specialty/sewer-line-services/pipe-bursting-lining'><strong>Pipe bursting</strong></a> pulls a new pipe through the old one, breaking the damaged pipe apart while simultaneously replacing it. It's fast, effective, and preserves your landscaping."
+          },
+          {
+            "question": "How long does trenchless sewer repair last?",
+            "answer": "Trenchless repairs using modern materials like cured-in-place pipe (CIPP) lining can last 50+ years. It's a long-term solution that's often more durable than the original pipe."
+          },
+          {
+            "question": "How do I know if I need sewer line repair?",
+            "answer": "Warning signs include recurring drain backups, sewage odors, soggy patches in your yard, and foundation cracks. A <a href='/commercial/drain-sewer/camera-inspections'><strong>camera inspection</strong></a> can confirm the issue. <a href='/contact'><strong>Contact us</strong></a> for a diagnosis."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTAStrip",
+      "props": {
+        "buttonText": "SCHEDULE NOW",
+        "buttonHref": "/contact",
+        "phoneLabel": "Call or Text for Great Service",
+        "phone": "{phone}",
+        "features": [
+          { "icon": "siren", "text": "24/7 Emergency Service" },
+          { "icon": "award", "text": "Experienced and Certified Technicians" }
+        ]
+      }
+    },
+    {
+      "component": "ServiceAreaSection",
+      "props": {
+        "variant": "compact",
+        "title": "Proudly Serving {city}",
+        "description": "We provide reliable plumbing services for the entire {city} area, including <a href='/santa-monica'><strong>Santa Monica</strong></a>, <a href='/pasadena'><strong>Pasadena</strong></a>, and <a href='/glendale'><strong>Glendale</strong></a>. <a href='/contact'><strong>Contact us</strong></a> today for quality plumbing solutions and <a href='/maintenance-plan'><strong>Maintenance Plans</strong></a> to keep your home in top shape.",
+        "mapAddress": "{city}, {state}",
+        "buttonText": "SERVICE AREAS",
+        "buttonHref": "/service-areas"
+      }
+    }
+  ]
+}
