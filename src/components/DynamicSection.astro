@@ -71,6 +71,6 @@ if (!isServicesSection && !AstroComponent) {
 ---
 
 {isServicesSection
-  ? <ServicesSection client:visible {...props} />
+  ? <ServicesSection {...props as any} client:visible />
   : <AstroComponent {...props} />
 }

@@ -46,7 +46,7 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0rem;
   /* Brand colors are set dynamically by ThemeProvider.astro from site.ts */
   /* --brand-primary, --brand-secondary, --brand-tertiary, --brand-quaternary, --brand-accent */
   

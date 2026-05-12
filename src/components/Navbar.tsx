@@ -33,7 +33,7 @@ function TopNavDropdown({ item }: { item: typeof topNavItems[0] }) {
   
   if (!item.children) {
     return (
-      <a href={item.href} className="text-sm font-medium text-white hover:text-highlight transition-colors duration-200 py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-[3px] after:bg-highlight after:transition-all after:duration-300 after:rounded-full">
+      <a href={item.href} className="text-sm font-medium hover:text-accent transition-colors duration-200">
         {item.title}
       </a>
     )
@@ -45,20 +45,19 @@ function TopNavDropdown({ item }: { item: typeof topNavItems[0] }) {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <div className="flex items-center gap-1 text-sm font-medium text-white hover:text-highlight transition-colors duration-200 py-2 cursor-pointer relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-[3px] after:bg-highlight after:transition-all after:duration-300 after:rounded-full">
+      <div className="flex items-center gap-1 text-sm font-medium hover:text-accent transition-colors duration-200 cursor-pointer">
         <a href={item.href}>{item.title}</a>
         <ChevronDown className={`h-3 w-3 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </div>
       {isOpen && (
         <>
-          {/* Invisible bridge to prevent dropdown from closing */}
           <div className="absolute top-full left-0 right-0 h-2" />
-          <div className="absolute top-full right-0 mt-2 bg-brand-secondary rounded-lg shadow-xl py-3 min-w-[220px] border-2 border-white/20">
+          <div className="absolute top-full right-0 mt-2 bg-[#1a1a1a] rounded-lg shadow-2xl border border-white/10 py-2 min-w-[200px]">
             {item.children.map((child) => (
               <a
                 key={child.href}
                 href={child.href}
-                className="block px-5 py-2.5 text-sm font-medium text-white hover:text-highlight hover:bg-white/10 transition-colors duration-200"
+                className="block px-4 py-2.5 text-sm font-medium text-white/90 hover:text-accent hover:bg-white/5 transition-all duration-200"
               >
                 {child.title}
               </a>
@@ -75,18 +74,18 @@ function MegaMenu({ item, isOpen }: { item: MegaMenuItem; isOpen: boolean }) {
   if (!isOpen) return null
   
   return (
-    <div className="fixed left-0 right-0 bg-white shadow-2xl border-t-2 border-gray-200 z-[50]" style={{ top: '165px' }}>
+    <div className="fixed left-0 right-0 bg-[#0a0a0a] shadow-2xl border-t border-white/10 z-[50]" style={{ top: '120px' }}>
       <div className="w-full px-12 py-10">
         <div className="grid grid-cols-6 gap-x-8 gap-y-6 max-w-[1600px] mx-auto">
           {item.categories.map((category) => (
             <div key={category.title} className="min-w-0">
-              <div className="flex items-center gap-2 mb-4 pb-2 border-b-2 border-brand-secondary">
-                <span className="text-brand-secondary flex-shrink-0">
+              <div className="flex items-center gap-2 mb-4 pb-2 border-b border-accent/30">
+                <span className="text-accent flex-shrink-0">
                   {iconMap[category.icon] || <Settings className="h-5 w-5" />}
                 </span>
-                <h3 className="text-xs font-bold text-brand-primary uppercase tracking-wide whitespace-nowrap">
+                <h3 className="text-xs font-bold text-white uppercase tracking-wide whitespace-nowrap">
                   {category.href ? (
-                    <a href={category.href} className="hover:text-red-600 transition-colors duration-200">
+                    <a href={category.href} className="hover:text-accent transition-colors duration-200">
                       {category.title}
                     </a>
                   ) : (
@@ -99,7 +98,7 @@ function MegaMenu({ item, isOpen }: { item: MegaMenuItem; isOpen: boolean }) {
                   <li key={service.href}>
                     <a
                       href={service.href}
-                      className="text-sm text-gray-700 hover:text-highlight hover:bg-brand-tertiary hover:pl-2 transition-all duration-200 block leading-snug py-1 rounded"
+                      className="text-sm text-white/70 hover:text-accent hover:bg-white/5 hover:pl-2 transition-all duration-200 block leading-snug py-1.5 rounded"
                     >
                       {service.title}
                     </a>
@@ -123,11 +122,12 @@ function ServiceNavItem({ item }: { item: MegaMenuItem }) {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <div className="flex items-center gap-1 text-sm font-semibold text-white hover:text-highlight hover:bg-white/10 transition-all duration-200 px-4 h-full relative after:absolute after:bottom-0 after:left-2 after:right-2 after:h-[3px] after:bg-highlight after:rounded-t after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center">
+      <div className="flex items-center gap-1 text-sm font-semibold text-white hover:text-accent transition-all duration-200 px-4 h-full cursor-pointer group">
         <a href={item.href}>
           {item.title}
         </a>
         <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+        <div className={`absolute bottom-0 left-2 right-2 h-0.5 bg-accent rounded-t transition-all duration-300 ${isOpen ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} />
       </div>
       {isOpen && <MegaMenu item={item} isOpen={isOpen} />}
     </div>
@@ -137,107 +137,121 @@ function ServiceNavItem({ item }: { item: MegaMenuItem }) {
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
+  const [scrolled, setScrolled] = React.useState(false)
+
+  React.useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      {/* Top Bar - Dark Blue */}
-      <div className="hidden lg:block bg-brand-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="flex h-9 items-center justify-end gap-6">
-            {topNavItems.map((item) => (
-              <TopNavDropdown key={item.href} item={item} />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Middle Section - White with Logo, Quick Actions, Phone */}
-      <div className="bg-white border-b">
-        <div className="container mx-auto px-4">
-          <div className="flex h-20 items-center justify-between">
-            {/* Logo */}
-            <a href="/" className="flex items-center gap-3">
-              <img 
-                src={siteConfig.logo?.src} 
-                alt={siteConfig.logo?.alt || "Logo"} 
-                className="h-14 w-14 object-contain"
-                width={56}
-                height={56}
-                decoding="async"
-                loading="eager"
-                fetchPriority="high"
-              />
-              <div className="hidden sm:block">
-                <span className="font-bold text-lg text-brand-secondary">{siteConfig.business?.name}</span>
-              </div>
-            </a>
-
-            {/* Quick Actions - Desktop */}
-            <div className="hidden lg:flex items-center gap-12">
+      {/* Top Bar - Dark Gray */}
+      <div className="hidden lg:block bg-[#2a2a2a] text-white/90 border-b border-white/5">
+        <div className="container mx-auto px-6">
+          <div className="flex h-10 items-center justify-between text-sm">
+            <div className="flex items-center gap-6">
               {quickActions.map((action) => (
                 <a 
                   key={action.href} 
                   href={action.href}
-                  className="group flex items-center gap-3 transition-all duration-200 hover:-translate-y-0.5"
+                  className="flex items-center gap-2 hover:text-accent transition-colors duration-200"
                 >
-                  <div className="w-10 h-10 rounded-full bg-brand-secondary flex items-center justify-center transition-all duration-200 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-highlight/40">
-                    {action.icon === "settings" ? (
-                      <Settings className="h-5 w-5 text-white" />
-                    ) : (
-                      <DollarSign className="h-5 w-5 text-white" />
-                    )}
-                  </div>
-                  <span className="font-semibold text-brand-secondary transition-colors duration-200">{action.title}</span>
+                  {action.icon === "settings" ? (
+                    <Settings className="h-3.5 w-3.5" />
+                  ) : (
+                    <DollarSign className="h-3.5 w-3.5" />
+                  )}
+                  <span className="font-medium">{action.title}</span>
                 </a>
               ))}
             </div>
-
-            {/* Phone Number - Desktop */}
-            <a href={`tel:${siteConfig.contact?.phone}`} className="group hidden lg:flex items-center gap-3 hover:-translate-y-0.5 transition-transform duration-200">
-              <div className="w-10 h-10 rounded-full bg-brand-secondary flex items-center justify-center transition-all duration-200 group-hover:bg-highlight group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-highlight/30">
-                <span className="text-white text-xs font-bold group-hover:text-brand-primary transition-colors duration-200">24/7</span>
-              </div>
-              <div className="text-right">
-                <p className="text-xs text-gray-500 uppercase tracking-wide">Call Us Now</p>
-                <span className="font-bold text-lg text-brand-primary group-hover:text-highlight transition-colors duration-200">
-                  {siteConfig.contact?.phoneFormatted}
-                </span>
-              </div>
-            </a>
-
-            {/* Mobile Menu Button */}
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger asChild className="lg:hidden">
-                <Button variant="ghost" size="icon" aria-label="Open menu">
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-full sm:w-[400px] overflow-y-auto p-0">
-                <SheetHeader className="border-b p-4">
-                  <SheetTitle className="text-left">Menu</SheetTitle>
-                </SheetHeader>
-                <MobileNav onClose={() => setIsOpen(false)} />
-              </SheetContent>
-            </Sheet>
+            <div className="flex items-center gap-6">
+              {topNavItems.map((item) => (
+                <TopNavDropdown key={item.href} item={item} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom Nav Bar - Blue */}
-      <div className="hidden lg:block bg-brand-secondary relative z-[60]">
-        <div className="container mx-auto px-4">
-          <div className="flex h-12 items-center justify-between">
-            <nav className="flex items-center h-full -mx-2">
+      {/* Main Nav Bar - Black */}
+      <div className={`bg-[#0a0a0a] border-b border-white/10 transition-all duration-300 ${scrolled ? 'shadow-2xl shadow-black/50' : ''}`}>
+        <div className="container mx-auto px-6">
+          <div className="flex h-20 items-center justify-between">
+            {/* Logo */}
+            <a href="/" className="flex items-center gap-3 group">
+              <div className="relative">
+                <img 
+                  src={siteConfig.logo?.src} 
+                  alt={siteConfig.logo?.alt || "Logo"} 
+                  className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110"
+                  width={48}
+                  height={48}
+                  decoding="async"
+                  loading="eager"
+                  fetchPriority="high"
+                />
+                <div className="absolute inset-0 bg-accent/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              <div className="hidden sm:block">
+                <span className="font-bold text-xl text-white group-hover:text-accent transition-colors duration-200">
+                  {siteConfig.business?.name}
+                </span>
+              </div>
+            </a>
+
+            {/* Desktop Nav */}
+            <nav className="hidden lg:flex items-center h-full gap-1">
               {mainNavItems.map((item) => (
                 <ServiceNavItem key={item.href} item={item} />
               ))}
             </nav>
-            <Button 
-              className="bg-accent hover:bg-accent/90 text-white font-semibold px-6 rounded-full ml-4"
-              asChild
-            >
-              <a href="/contact">GET A QUOTE</a>
-            </Button>
+
+            {/* Phone + CTA */}
+            <div className="hidden lg:flex items-center gap-4">
+              <a 
+                href={`tel:${siteConfig.contact?.phone}`} 
+                className="group flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-white/5 transition-all duration-200"
+              >
+                <div className="w-11 h-11 bg-gradient-to-br from-accent to-highlight flex items-center justify-center shadow-lg shadow-accent/20 group-hover:shadow-accent/40 group-hover:scale-105 transition-all duration-200">
+                  <Phone className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <p className="text-xs text-white/60 uppercase tracking-wider font-medium">24/7 Emergency</p>
+                  <span className="font-bold text-lg text-white group-hover:text-accent transition-colors duration-200">
+                    {siteConfig.contact?.phoneFormatted}
+                  </span>
+                </div>
+              </a>
+              <Button 
+                className="rounded-none bg-gradient-to-r from-accent to-highlight hover:from-highlight hover:to-accent text-white font-bold px-8 py-6 shadow-lg shadow-accent/30 hover:shadow-accent/50 hover:scale-105 transition-all duration-200"
+                asChild
+              >
+                <a href="/contact">GET A QUOTE</a>
+              </Button>
+            </div>
+
+            {/* Mobile Menu */}
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild className="lg:hidden">
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  aria-label="Open menu"
+                  className="text-white hover:bg-white/10 hover:text-accent"
+                >
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-full sm:w-[400px] overflow-y-auto p-0 bg-[#0a0a0a] border-l border-white/10">
+                <SheetHeader className="border-b border-white/10 p-4">
+                  <SheetTitle className="text-left text-white">Menu</SheetTitle>
+                </SheetHeader>
+                <MobileNav onClose={() => setIsOpen(false)} />
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
@@ -252,9 +266,9 @@ function MobileNav({ onClose }: { onClose: () => void }) {
   const [expandedTop, setExpandedTop] = React.useState<string | null>(null)
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-[#0a0a0a]">
       {/* Phone CTA */}
-      <div className="bg-brand-primary p-4">
+      <div className="bg-gradient-to-r from-accent to-highlight p-4">
         <a 
           href={`tel:${siteConfig.contact?.phone}`}
           className="flex items-center justify-center gap-2 text-white"
@@ -265,39 +279,39 @@ function MobileNav({ onClose }: { onClose: () => void }) {
       </div>
 
       {/* Quick Actions */}
-      <div className="grid grid-cols-2 gap-2 p-4 bg-gray-50">
+      <div className="grid grid-cols-2 gap-3 p-4 bg-[#1a1a1a] border-b border-white/10">
         {quickActions.map((action) => (
           <a 
             key={action.href}
             href={action.href}
-            className="flex items-center gap-2 p-3 bg-white rounded-lg shadow-sm"
+            className="flex items-center gap-2 p-3 bg-[#2a2a2a] rounded-lg hover:bg-white/5 transition-colors duration-200"
             onClick={onClose}
           >
-            <div className="w-8 h-8 rounded-full bg-brand-secondary flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
               {action.icon === "settings" ? (
                 <Settings className="h-4 w-4 text-white" />
               ) : (
                 <DollarSign className="h-4 w-4 text-white" />
               )}
             </div>
-            <span className="text-sm font-medium text-gray-700">{action.title}</span>
+            <span className="text-sm font-medium text-white">{action.title}</span>
           </a>
         ))}
       </div>
 
-      {/* Main Links */}
-      <div className="p-4 border-b">
+      {/* Top Nav Links */}
+      <div className="p-4 border-b border-white/10">
         {topNavItems.map((item) => (
-          <div key={item.href} className="border-b border-gray-100 last:border-b-0">
+          <div key={item.href} className="border-b border-white/5 last:border-b-0">
             {item.children ? (
               <>
                 <button
                   onClick={() => setExpandedTop(expandedTop === item.href ? null : item.href)}
                   className="flex items-center justify-between w-full py-3 text-left"
                 >
-                  <span className="font-semibold text-gray-800">{item.title}</span>
+                  <span className="font-semibold text-white">{item.title}</span>
                   <ChevronDown
-                    className={`h-4 w-4 text-gray-400 transition-transform ${expandedTop === item.href ? 'rotate-180' : ''}`}
+                    className={`h-4 w-4 text-white/60 transition-transform ${expandedTop === item.href ? 'rotate-180' : ''}`}
                   />
                 </button>
                 {expandedTop === item.href && (
@@ -306,7 +320,7 @@ function MobileNav({ onClose }: { onClose: () => void }) {
                       <a
                         key={child.href}
                         href={child.href}
-                        className="block py-2 text-sm text-gray-600 hover:text-brand-secondary"
+                        className="block py-2 text-sm text-white/70 hover:text-accent"
                         onClick={onClose}
                       >
                         {child.title}
@@ -318,7 +332,7 @@ function MobileNav({ onClose }: { onClose: () => void }) {
             ) : (
               <a
                 href={item.href}
-                className="block py-3 font-semibold text-gray-800 hover:text-brand-secondary"
+                className="block py-3 font-semibold text-white hover:text-accent"
                 onClick={onClose}
               >
                 {item.title}
@@ -328,18 +342,18 @@ function MobileNav({ onClose }: { onClose: () => void }) {
         ))}
       </div>
 
-      {/* Main Services */}
+      {/* Services */}
       <div className="p-4">
-        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Services</p>
+        <p className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-3">Services</p>
         {mainNavItems.map((service) => (
-          <div key={service.href} className="border-b last:border-b-0">
+          <div key={service.href} className="border-b border-white/5 last:border-b-0">
             <button
               onClick={() => setExpandedService(expandedService === service.href ? null : service.href)}
               className="flex items-center justify-between w-full py-3 text-left"
             >
-              <span className="font-medium text-gray-800">{service.title}</span>
+              <span className="font-medium text-white">{service.title}</span>
               <ChevronDown 
-                className={`h-4 w-4 text-gray-400 transition-transform ${
+                className={`h-4 w-4 text-white/60 transition-transform ${
                   expandedService === service.href ? 'rotate-180' : ''
                 }`} 
               />
@@ -352,10 +366,10 @@ function MobileNav({ onClose }: { onClose: () => void }) {
                       onClick={() => setExpandedCategory(expandedCategory === category.title ? null : category.title)}
                       className="flex items-center gap-2 w-full py-2 text-left"
                     >
-                      <span className="text-brand-secondary">{iconMap[category.icon]}</span>
-                      <span className="text-sm font-semibold text-brand-secondary">{category.title}</span>
+                      <span className="text-accent">{iconMap[category.icon]}</span>
+                      <span className="text-sm font-semibold text-accent">{category.title}</span>
                       <ChevronDown 
-                        className={`h-3 w-3 text-gray-400 ml-auto transition-transform ${
+                        className={`h-3 w-3 text-white/60 ml-auto transition-transform ${
                           expandedCategory === category.title ? 'rotate-180' : ''
                         }`} 
                       />
@@ -365,7 +379,7 @@ function MobileNav({ onClose }: { onClose: () => void }) {
                         {category.href && (
                           <a
                             href={category.href}
-                            className="block py-1.5 text-sm font-semibold text-highlight hover:text-brand-secondary"
+                            className="block py-1.5 text-sm font-semibold text-highlight hover:text-accent"
                             onClick={onClose}
                           >
                             View All {category.title} →
@@ -375,7 +389,7 @@ function MobileNav({ onClose }: { onClose: () => void }) {
                           <a
                             key={item.href}
                             href={item.href}
-                            className="block py-1.5 text-sm text-gray-600 hover:text-brand-secondary"
+                            className="block py-1.5 text-sm text-white/70 hover:text-accent"
                             onClick={onClose}
                           >
                             {item.title}
@@ -391,10 +405,10 @@ function MobileNav({ onClose }: { onClose: () => void }) {
         ))}
       </div>
 
-      {/* CTA Button */}
+      {/* CTA */}
       <div className="p-4">
         <Button 
-          className="w-full bg-accent hover:bg-accent/90 text-white font-semibold py-6 rounded-full text-base"
+          className="w-full bg-gradient-to-r from-accent to-highlight hover:from-highlight hover:to-accent text-white font-bold py-6 rounded-lg shadow-lg shadow-accent/30 text-base"
           asChild
         >
           <a href="/contact" onClick={onClose}>GET A QUOTE</a>
