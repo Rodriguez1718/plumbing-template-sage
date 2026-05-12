@@ -4,91 +4,108 @@
 ---
 
 <div id="free-scan-wrapper" class="hidden md:block fixed bottom-8 right-8 z-40">
-  <button
-    id="free-scan-trigger"
-    class="free-scan-btn relative flex items-center gap-0 bg-accent text-accent-foreground font-semibold text-sm rounded-full shadow-xl hover:shadow-2xl active:scale-[0.97] transition-all duration-300 group overflow-hidden"
-    aria-label="Get $50 off your next service"
-  >
-    {/* Pulsing attention ring */}
-    <span class="free-scan-ping absolute inset-0 rounded-full border-2 border-accent"></span>
+	<button
+		id="free-scan-trigger"
+		class="free-scan-btn relative flex items-center gap-0 bg-accent text-accent-foreground font-semibold text-sm shadow-xl hover:shadow-2xl active:scale-[0.97] transition-all duration-300 group overflow-hidden cursor-pointer"
+		aria-label="Get $50 off your next service">
+		{/* Pulsing attention ring */}
+		<span
+			class="free-scan-ping absolute inset-0 rounded-full border-2 border-accent pointer-events-none"
+		></span>
 
-    {/* Icon circle — sits flush left */}
-    <span class="relative flex items-center justify-center w-14 h-14 rounded-full flex-shrink-0" style="background: var(--brand-primary);">
-      <svg
-        class="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-      </svg>
-      {/* Teal dot indicator */}
-      <span class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full border-2" style="background: var(--brand-highlight, #45f9ff); border-color: var(--brand-primary);"></span>
-    </span>
+		{/* Icon circle — sits flush left */}
+		<span
+			class="relative flex items-center justify-center w-14 h-14 flex-shrink-0"
+			style="background: var(--brand-primary);">
+			<svg
+				class="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24">
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"
+				></path>
+			</svg>
+			{/* Teal dot indicator */}
+			<span
+				class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full border-2"
+				style="background: var(--brand-highlight, #45f9ff); border-color: var(--brand-primary);"
+			></span>
+		</span>
 
-    {/* Text content */}
-    <span class="flex flex-col items-start pl-3 pr-6 py-3 leading-tight">
-      <span class="free-scan-label text-[10px] font-semibold uppercase tracking-widest">Limited Offer</span>
-      <span class="text-base font-bold tracking-tight">$50 OFF — Claim Now</span>
-    </span>
-
-
-  </button>
+		{/* Text content — hidden by default, expands on hover */}
+		<span
+			class="free-scan-text-container overflow-hidden max-w-0 opacity-0 group-hover:max-w-[300px] group-hover:opacity-100 transition-all duration-500 ease-in-out">
+			<span
+				class="flex flex-col items-start pl-3 pr-6 py-3 leading-tight whitespace-nowrap">
+				<span
+					class="free-scan-label text-[10px] font-semibold uppercase tracking-widest"
+					>Limited Offer</span
+				>
+				<span class="text-base font-bold tracking-tight"
+					>$50 OFF — Claim Now</span
+				>
+			</span>
+		</span>
+	</button>
 </div>
 
 <style>
-  #free-scan-wrapper {
-    animation: slide-up 0.5s ease-out 1s both;
-  }
+	#free-scan-wrapper {
+		animation: slide-up 0.5s ease-out 1s both;
+	}
 
-  @keyframes slide-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+	@keyframes slide-up {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
 
-  /* Pulsing ring for attention */
-  .free-scan-ping {
-    animation: scan-ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
+	/* Pulsing ring for attention */
+	.free-scan-ping {
+		animation: scan-ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+	}
 
-  @keyframes scan-ping {
-    0% {
-      transform: scale(1);
-      opacity: 0.5;
-    }
-    75%, 100% {
-      transform: scale(1.15);
-      opacity: 0;
-    }
-  }
+	@keyframes scan-ping {
+		0% {
+			transform: scale(1);
+			opacity: 0.5;
+		}
+		75%,
+		100% {
+			transform: scale(1.15);
+			opacity: 0;
+		}
+	}
 
-  /* Hover lift */
-  .free-scan-btn:hover {
-    transform: translateY(-2px);
-  }
+	/* Hover lift */
+	.free-scan-btn:hover {
+		transform: translateY(-2px);
+	}
 
-  /* Teal label, but inherit color on hover so it stays visible against teal bg */
-  .free-scan-label {
-    color: var(--brand-highlight, #45f9ff);
-  }
-  .free-scan-btn:hover .free-scan-label {
-    color: inherit;
-  }
+	/* Teal label, but inherit color on hover so it stays visible against teal bg */
+	.free-scan-label {
+		color: var(--brand-highlight, #45f9ff);
+	}
+	.free-scan-btn:hover .free-scan-label {
+		color: inherit;
+	}
 
-  @media (prefers-reduced-motion: reduce) {
-    .free-scan-ping {
-      animation: none;
-    }
-    #free-scan-wrapper {
-      animation: none;
-      opacity: 1;
-    }
-  }
+	@media (prefers-reduced-motion: reduce) {
+		.free-scan-ping {
+			animation: none;
+		}
+		#free-scan-wrapper {
+			animation: none;
+			opacity: 1;
+		}
+	}
 </style>
