@@ -23,55 +23,96 @@ const description = raw_description ? getLocationText(raw_description) : raw_des
 const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
 ---
 
-<section class="py-16 md:py-24">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-12" data-animate="fade-up">
-      <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wide border-b-2 border-accent pb-1">{badge}</span>
-      <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4">{title}</h2>
-      <p class="text-muted-foreground max-w-3xl mx-auto" set:html={description} />
-    </div>
-    
-    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12" data-animate-stagger>
-      <div class="financing-card bg-card border rounded-lg p-8 transition-all duration-300" style="border-left: 3px solid var(--brand-highlight, #45f9ff);">
-        <h3 class="text-xl font-bold mb-6">Flexible Payment Plans</h3>
-        <ul class="space-y-3">
-          {paymentPlans.map((plan) => (
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></span>
-              <span>{plan}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      
-      <div class="financing-card bg-card border rounded-lg p-8 transition-all duration-300" style="border-left: 3px solid var(--brand-highlight, #45f9ff);">
-        <h3 class="text-xl font-bold mb-6">What Can You Finance?</h3>
-        <ul class="space-y-3">
-          {financingOptions.map((option) => (
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></span>
-              <span>{option}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-    
-    <div class="max-w-5xl mx-auto">
-      <h3 class="text-2xl font-bold mb-10 text-center" data-animate="fade-up">How to Apply</h3>
-      <div class="relative grid md:grid-cols-3 gap-8" data-animate-stagger>
-        {/* Connecting line between steps (desktop only) */}
-        <div class="hidden md:block absolute top-10 left-[20%] right-[20%] h-0.5" style="background: linear-gradient(to right, transparent, var(--brand-highlight, #45f9ff), transparent);"></div>
-        {steps.map((step, index) => (
-          <div class="financing-step relative text-center bg-card border rounded-xl p-8 transition-all duration-300">
-            <div class="relative z-10 w-14 h-14 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-xl font-bold mx-auto mb-5 shadow-md ring-4 ring-background">{index + 1}</div>
-            <h4 class="font-bold text-lg mb-2">{step.title}</h4>
-            <p class="text-sm text-muted-foreground leading-relaxed" set:html={step.description} />
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
+<section class="py-20 md:py-32 bg-brand-quaternary/20 relative overflow-hidden">
+	<!-- Decorative Accent Line -->
+	<div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-primary/20"></div>
+
+	<div class="container mx-auto px-4 relative z-10">
+		<div class="text-center mb-16 md:mb-24 space-y-4" data-animate="fade-up">
+			<span class="inline-block bg-accent text-accent-foreground text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em]">
+				{badge}
+			</span>
+			<h2 class="text-4xl md:text-6xl font-black text-foreground leading-none tracking-tighter uppercase">
+				Flexible <br/><span class="text-primary">Payment</span> Solutions
+			</h2>
+			<p class="text-lg text-muted-foreground font-medium max-w-2xl mx-auto leading-relaxed" set:html={description} />
+		</div>
+		
+		<div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto mb-20" data-animate-stagger>
+			<!-- Card 1: Payment Plans -->
+			<div class="relative bg-card border-4 border-primary p-8 md:p-10 shadow-[12px_12px_0px_rgba(0,0,0,0.05)] hover:shadow-[16px_16px_0px_var(--accent)] transition-all duration-500">
+				<div class="absolute -top-4 -left-4 bg-primary text-white text-[10px] font-black px-3 py-1 uppercase tracking-widest">
+					0% APR Options
+				</div>
+				<h3 class="text-2xl font-black uppercase tracking-tight mb-8 text-primary">Payment Plans</h3>
+				<ul class="space-y-4">
+					{paymentPlans.map((plan) => (
+						<li class="flex items-start gap-4 group">
+							<div class="mt-1 w-5 h-5 flex-shrink-0 flex items-center justify-center bg-primary text-white group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+								<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+								</svg>
+							</div>
+							<span class="text-sm font-bold text-foreground/80 leading-tight uppercase tracking-wide">{plan}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+			
+			<!-- Card 2: Financing Options -->
+			<div class="relative bg-card border-4 border-primary p-8 md:p-10 shadow-[12px_12px_0px_rgba(0,0,0,0.05)] hover:shadow-[16px_16px_0px_var(--accent)] transition-all duration-500">
+				<div class="absolute -top-4 -right-4 bg-accent text-accent-foreground text-[10px] font-black px-3 py-1 uppercase tracking-widest">
+					Instant Approval
+				</div>
+				<h3 class="text-2xl font-black uppercase tracking-tight mb-8 text-primary">Coverage</h3>
+				<ul class="space-y-4">
+					{financingOptions.map((option) => (
+						<li class="flex items-start gap-4 group">
+							<div class="mt-1 w-5 h-5 flex-shrink-0 flex items-center justify-center bg-primary text-white group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+								<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+								</svg>
+							</div>
+							<span class="text-sm font-bold text-foreground/80 leading-tight uppercase tracking-wide">{option}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+		</div>
+		
+		<div class="max-w-6xl mx-auto">
+			<div class="flex items-center gap-6 mb-12">
+				<div class="h-px flex-grow bg-primary/20"></div>
+				<h3 class="text-xl font-black uppercase tracking-[0.3em] text-muted-foreground">Application Flow</h3>
+				<div class="h-px flex-grow bg-primary/20"></div>
+			</div>
+
+			<div class="relative grid md:grid-cols-3 gap-0" data-animate-stagger>
+				{steps.map((step, index) => (
+					<div class="group relative bg-card border-2 border-primary/10 p-10 hover:bg-primary hover:text-white transition-all duration-500">
+						<div class="flex flex-col h-full">
+							<div class="text-5xl font-black text-primary/10 mb-6 group-hover:text-accent transition-colors leading-none">
+								0{index + 1}
+							</div>
+							<h4 class="text-lg font-black uppercase tracking-tight mb-4">{step.title}</h4>
+							<p class="text-sm opacity-80 leading-relaxed font-medium" set:html={step.description} />
+						</div>
+						
+						{/* Sharp corner accent */}
+						<div class="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-accent opacity-0 group-hover:opacity-100 transition-all"></div>
+					</div>
+				))}
+			</div>
+
+			<!-- Sharp Bottom Accent -->
+			<div class="flex justify-center mt-16">
+				<a href="/contact" class="group relative inline-flex items-center justify-center px-12 py-5 bg-primary text-primary-foreground font-black text-xs uppercase tracking-widest transition-all">
+					<span class="relative z-10">Apply for Financing</span>
+					<div class="absolute inset-0 bg-accent translate-x-2 translate-y-2 -z-10 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform"></div>
+				</a>
+			</div>
+		</div>
+	</div>
 </section>
 
 <style>
