@@ -88,15 +88,15 @@ const hasSlideshow = slides.length > 1;
             {/* Teal accent bar above title */}
             <div class="w-12 h-1 rounded-full mb-5" style="background: var(--brand-highlight, #45f9ff);"></div>
 
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-5 leading-tight">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-primary-foreground mb-5 leading-[1.1] tracking-tight">
               {title}
             </h1>
             {subtitle && (
-              <p class="text-lg text-primary-foreground/75 mb-8 max-w-lg leading-relaxed" set:html={subtitle} />
+              <p class="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-lg leading-relaxed font-medium" set:html={subtitle} />
             )}
 
             <div class="flex flex-wrap items-center gap-4">
-              <a href={buttonHref} class="subpage-hero-cta inline-flex items-center justify-center rounded-md bg-accent text-accent-foreground px-7 py-3.5 font-semibold transition-all duration-300 shadow-lg shadow-accent/25">
+              <a href={buttonHref} class="subpage-hero-cta inline-flex items-center justify-center bg-accent text-accent-foreground px-8 py-4 font-bold text-base uppercase tracking-wide transition-all duration-300 shadow-lg shadow-accent/25">
                 {buttonText}
               </a>
             </div>
@@ -142,25 +142,25 @@ const hasSlideshow = slides.length > 1;
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="text-center md:text-left">
           {badge && (
-            <span class="inline-block bg-destructive text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
+            <span class="inline-block bg-destructive text-white text-sm font-bold uppercase tracking-wider px-5 py-2.5 mb-6">
               {badge}
             </span>
           )}
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-[1.05] tracking-tighter">
             {title}
           </h1>
           {subtitle && (
-            <p class="text-xl text-muted-foreground mb-8" set:html={subtitle} />
+            <p class="text-xl md:text-2xl text-muted-foreground mb-8 font-medium" set:html={subtitle} />
           )}
-          <a href={buttonHref} class="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-8 py-4 text-lg font-semibold hover:bg-primary/90 transition-colors">
+          <a href={buttonHref} class="inline-flex items-center justify-center bg-primary text-primary-foreground px-10 py-5 text-lg font-bold uppercase tracking-wide hover:bg-primary/90 transition-colors">
             {buttonText}
           </a>
         </div>
         <div class="hidden md:block">
           {image ? (
-            <img src={image} alt={title} class="rounded-lg w-full aspect-video object-cover" />
+            <img src={image} alt={title} class="w-full aspect-video object-cover" />
           ) : (
-            <div class="aspect-video bg-muted rounded-lg flex items-center justify-center">
+            <div class="aspect-video bg-muted flex items-center justify-center">
               <span class="text-muted-foreground">Hero Image</span>
             </div>
           )}
@@ -170,7 +170,7 @@ const hasSlideshow = slides.length > 1;
   </section>
 ) : slides.length > 0 ? (
   <!-- Slideshow hero -->
-  <section class="hero-slideshow relative overflow-hidden bg-primary" style="min-height: 540px;">
+  <section class="hero-slideshow relative overflow-hidden bg-primary" style="min-height: 86vh;">
     <!-- Background images -->
     {slides.map((slide, i) => (
       <div
@@ -206,18 +206,18 @@ const hasSlideshow = slides.length > 1;
               ]}
               data-text-index={i}
             >
-              <h1 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground mb-4 leading-tight">
+              <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-primary-foreground mb-4 leading-[1.1] tracking-tight">
                 {slide.title}
               </h1>
               {slide.subtitle && (
-                <p class="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-xl">
+                <p class="text-lg md:text-xl lg:text-2xl text-primary-foreground/85 mb-8 max-w-xl font-medium">
                   {slide.subtitle}
                 </p>
               )}
               <div>
                 <a
                   href={buttonHref}
-                  class="inline-flex items-center justify-center rounded-md bg-accent text-accent-foreground px-8 py-4 text-lg font-semibold hover:bg-accent/90 transition-colors shadow-lg shadow-accent/30"
+                  class="inline-flex items-center justify-center bg-accent text-accent-foreground px-10 py-5 text-lg font-bold uppercase tracking-wide hover:bg-accent/90 transition-colors shadow-lg shadow-accent/30"
                 >
                   {slide.buttonText || buttonText}
                 </a>
@@ -238,66 +238,53 @@ const hasSlideshow = slides.length > 1;
                 data-promo-index={i}
               >
                 <div class="promo-card relative max-w-[340px] w-full">
-                  <!-- Pulsing glow behind card -->
-                  <div class="promo-glow absolute -inset-4 rounded-2xl blur-2xl" style="background: var(--brand-highlight, var(--brand-secondary));"></div>
+                  <!-- Outer border -->
+                  <div class="relative overflow-hidden shadow-2xl" style="background: white; border: 4px solid var(--brand-primary);">
 
-                  <!-- Outer solid border (navy) -->
-                  <div class="relative rounded-lg overflow-hidden shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)]" style="background: var(--brand-primary); padding: 4px;">
+                    <!-- Top accent bar -->
+                    <div class="h-3" style="background: linear-gradient(90deg, var(--brand-accent), var(--brand-highlight, var(--brand-accent)));"></div>
 
-                    <!-- Dashed border layer -->
-                    <div class="rounded-md" style="border: 3px dashed var(--brand-secondary); background: white;">
+                    <!-- Card content -->
+                    <div class="relative px-6 pt-5 pb-5">
+                      <!-- "Limited Offer" badge -->
+                      <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-4" style="background: var(--brand-accent); color: white;">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                        </span>
+                        <span class="text-xs font-black uppercase tracking-widest">Limited Offer</span>
+                      </div>
 
-                      <!-- Decorative circles -->
-                      <div class="absolute -top-6 -left-6 w-28 h-28 rounded-full opacity-30" style="background: var(--brand-tertiary);"></div>
-                      <div class="absolute -bottom-8 -right-8 w-32 h-32 rounded-full opacity-25" style="background: var(--brand-tertiary);"></div>
-
-                      <!-- Card content -->
-                      <div class="relative px-6 pt-6 pb-5 text-center">
-                        <!-- "Coupon" heading -->
-                        <p class="text-xs font-bold uppercase tracking-[0.2em] mb-1" style="color: var(--brand-primary);">
-                          <span class="relative inline-flex items-center gap-1.5">
-                            <span class="relative flex h-1.5 w-1.5">
-                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full" style="background: var(--brand-accent); opacity: 0.6;"></span>
-                              <span class="relative inline-flex rounded-full h-1.5 w-1.5" style="background: var(--brand-accent);"></span>
-                            </span>
-                            Limited Offer
-                          </span>
-                        </p>
-
-                        <!-- Promo image -->
-                        {slide.promoImage && (
-                          <div class="w-full h-24 rounded-md overflow-hidden mb-3">
-                            <img src={slide.promoImage} alt="" class="w-full h-full object-cover" loading="lazy" />
-                          </div>
-                        )}
-
-                        <h3 class="promo-coupon-title text-3xl md:text-4xl font-black leading-tight mb-3" style="color: var(--brand-secondary);">
-                          Special Deal
-                        </h3>
-                        <p class="text-xs mb-4" style="color: var(--brand-primary); opacity: 0.7;">Redeem &amp; Save Today</p>
-
-                        <!-- Discount value box -->
-                        <div class="promo-value-box inline-flex items-baseline gap-1 rounded-md px-5 py-2.5 mb-4" style="background: var(--brand-primary);">
-                          <span class="promo-value text-3xl md:text-4xl font-black leading-none tracking-tight text-white">
-                            {slide.promoTitle}
-                          </span>
+                      <!-- Promo image -->
+                      {slide.promoImage && (
+                        <div class="w-full h-32 overflow-hidden mb-4" style="border: 2px solid var(--brand-tertiary);">
+                          <img src={slide.promoImage} alt="" class="w-full h-full object-cover" loading="lazy" />
                         </div>
+                      )}
 
-                        <!-- Description -->
-                        <p class="text-sm leading-relaxed font-medium mb-1" style="color: var(--brand-primary);">
-                          {slide.promoText}
-                        </p>
+                      <h3 class="promo-coupon-title text-3xl md:text-4xl font-black leading-none mb-2 uppercase tracking-tight" style="color: var(--brand-primary);">
+                        Special Deal
+                      </h3>
+                      <div class="w-16 h-1 mb-4" style="background: var(--brand-accent);"></div>
+
+                      <!-- Discount value box -->
+                      <div class="promo-value-box inline-flex items-baseline gap-1 rounded-md px-5 py-2.5 mb-4" style="background: var(--brand-primary);">
+                        <span class="promo-value text-3xl md:text-4xl font-black leading-none tracking-tight text-white">
+                          {slide.promoTitle}
+                        </span>
                       </div>
 
-                      <!-- Dashed divider -->
-                      <div class="mx-4 mb-0" style="border-top: 2px dashed var(--brand-secondary); opacity: 0.35;"></div>
+                      <!-- Description -->
+                      <p class="text-base leading-relaxed font-bold mb-4 uppercase tracking-wide" style="color: var(--brand-primary);">
+                        {slide.promoText}
+                      </p>
+                    </div>
 
-                      <!-- Footer with expiry -->
-                      <div class="relative px-6 py-3 text-center">
-                        <p class="text-xs font-semibold italic" style="color: var(--brand-accent);">
-                          * Call now to redeem
-                        </p>
-                      </div>
+                    <!-- Bottom bar -->
+                    <div class="px-6 py-4 text-center" style="background: var(--brand-tertiary); border-top: 2px dashed var(--brand-primary);">
+                      <p class="text-xs font-black uppercase tracking-widest" style="color: var(--brand-primary);">
+                        * Call now to redeem
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -329,6 +316,13 @@ const hasSlideshow = slides.length > 1;
         </div>
       )}
     </div>
+
+    <!-- Huge bottom text -->
+    <div class="absolute bottom-0 left-0 right-0 pointer-events-none overflow-hidden z-20 flex items-end">
+      <h2 class="text-[20vw] md:text-[18vw] lg:text-[15vw] font-black uppercase leading-none tracking-widest text-white select-none whitespace-nowrap -mb-[0.2em]" style="transform: scaleX(1.09); transform-origin: left;">
+        Plumbing
+      </h2>
+    </div>
   </section>
 ) : (
   <!-- Static single-image hero (original) -->
@@ -337,25 +331,25 @@ const hasSlideshow = slides.length > 1;
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="text-center md:text-left">
           {badge && (
-            <span class="inline-block bg-destructive text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
+            <span class="inline-block bg-destructive text-white text-sm font-bold uppercase tracking-wider px-5 py-2.5 mb-6">
               {badge}
             </span>
           )}
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-[1.05] tracking-tighter">
             {title}
           </h1>
           {subtitle && (
-            <p class="text-xl text-muted-foreground mb-8" set:html={subtitle} />
+            <p class="text-xl md:text-2xl text-muted-foreground mb-8 font-medium" set:html={subtitle} />
           )}
-          <a href={buttonHref} class="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-8 py-4 text-lg font-semibold hover:bg-primary/90 transition-colors">
+          <a href={buttonHref} class="inline-flex items-center justify-center bg-primary text-primary-foreground px-10 py-5 text-lg font-bold uppercase tracking-wide hover:bg-primary/90 transition-colors">
             {buttonText}
           </a>
         </div>
         <div class="hidden md:block">
           {image ? (
-            <img src={image} alt={title} class="rounded-lg w-full" />
+            <img src={image} alt={title} class="w-full" />
           ) : (
-            <div class="aspect-video bg-muted rounded-lg flex items-center justify-center">
+            <div class="aspect-video bg-muted flex items-center justify-center">
               <span class="text-muted-foreground">Hero Image</span>
             </div>
           )}
