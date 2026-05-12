@@ -52,7 +52,7 @@ function TopNavDropdown({ item }: { item: typeof topNavItems[0] }) {
       {isOpen && (
         <>
           <div className="absolute top-full left-0 right-0 h-2" />
-          <div className="absolute top-full right-0 mt-2 bg-[#1a1a1a] rounded-lg shadow-2xl border border-white/10 py-2 min-w-[200px]">
+          <div className="absolute top-full right-0 mt-2 bg-brand-secondary shadow-2xl border border-white/10 py-2 min-w-[200px]">
             {item.children.map((child) => (
               <a
                 key={child.href}
@@ -74,16 +74,16 @@ function MegaMenu({ item, isOpen }: { item: MegaMenuItem; isOpen: boolean }) {
   if (!isOpen) return null
   
   return (
-    <div className="fixed left-0 right-0 bg-[#0a0a0a] shadow-2xl border-t border-white/10 z-[50]" style={{ top: '120px' }}>
+    <div className="fixed left-0 right-0 bg-brand-primary shadow-2xl border-t border-white/10 z-[50]" style={{ top: '120px' }}>
       <div className="w-full px-12 py-10">
-        <div className="grid grid-cols-6 gap-x-8 gap-y-6 max-w-[1600px] mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-x-8 gap-y-6 max-w-[1600px] mx-auto">
           {item.categories.map((category) => (
             <div key={category.title} className="min-w-0">
               <div className="flex items-center gap-2 mb-4 pb-2 border-b border-accent/30">
                 <span className="text-accent flex-shrink-0">
                   {iconMap[category.icon] || <Settings className="h-5 w-5" />}
                 </span>
-                <h3 className="text-xs font-bold text-white uppercase tracking-wide whitespace-nowrap">
+                <h3 className="text-xs font-bold text-white uppercase tracking-wide truncate">
                   {category.href ? (
                     <a href={category.href} className="hover:text-accent transition-colors duration-200">
                       {category.title}
@@ -98,7 +98,8 @@ function MegaMenu({ item, isOpen }: { item: MegaMenuItem; isOpen: boolean }) {
                   <li key={service.href}>
                     <a
                       href={service.href}
-                      className="text-sm text-white/70 hover:text-accent hover:bg-white/5 hover:pl-2 transition-all duration-200 block leading-snug py-1.5 rounded"
+                      className="text-sm text-white/70 hover:text-accent hover:bg-white/5 hover:pl-2 transition-all duration-200 block leading-snug py-1.5 break-words"
+                      title={service.title}
                     >
                       {service.title}
                     </a>
@@ -148,7 +149,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* Top Bar - Dark Gray */}
-      <div className="hidden lg:block bg-[#2a2a2a] text-white/90 border-b border-white/5">
+      <div className="hidden lg:block bg-brand-secondary text-white/90 border-b border-white/5">
         <div className="container mx-auto px-6">
           <div className="flex h-10 items-center justify-between text-sm">
             <div className="flex items-center gap-6">
@@ -177,7 +178,7 @@ export function Navbar() {
       </div>
 
       {/* Main Nav Bar - Black */}
-      <div className={`bg-[#0a0a0a] border-b border-white/10 transition-all duration-300 ${scrolled ? 'shadow-2xl shadow-black/50' : ''}`}>
+      <div className={`bg-brand-primary border-b border-white/10 transition-all duration-300 ${scrolled ? 'shadow-2xl shadow-black/50' : ''}`}>
         <div className="container mx-auto px-6">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
@@ -192,8 +193,9 @@ export function Navbar() {
                   decoding="async"
                   loading="eager"
                   fetchPriority="high"
+                  style={{ filter: 'drop-shadow(0 0 2px rgba(255,255,255,0.8))' }}
                 />
-                <div className="absolute inset-0 bg-accent/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <div className="hidden sm:block">
                 <span className="font-bold text-xl text-white group-hover:text-accent transition-colors duration-200">
@@ -213,20 +215,20 @@ export function Navbar() {
             <div className="hidden lg:flex items-center gap-4">
               <a 
                 href={`tel:${siteConfig.contact?.phone}`} 
-                className="group flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-white/5 transition-all duration-200"
+                className="group flex items-center gap-3 px-4 py-2 hover:bg-white/5 transition-all duration-200"
               >
-                <div className="w-11 h-11 bg-gradient-to-br from-accent to-highlight flex items-center justify-center shadow-lg shadow-accent/20 group-hover:shadow-accent/40 group-hover:scale-105 transition-all duration-200">
+                <div className="w-11 h-11 bg-gradient-to-br from-accent to-highlight flex items-center justify-center shadow-lg shadow-accent/20 group-hover:shadow-accent/40 group-hover:scale-105 transition-all duration-200 flex-shrink-0">
                   <Phone className="h-5 w-5 text-white" />
                 </div>
-                <div>
-                  <p className="text-xs text-white/60 uppercase tracking-wider font-medium">24/7 Emergency</p>
-                  <span className="font-bold text-lg text-white group-hover:text-accent transition-colors duration-200">
+                <div className="min-w-0">
+                  <p className="text-xs text-white/60 uppercase tracking-wider font-medium whitespace-nowrap">24/7 Emergency</p>
+                  <span className="font-bold text-lg text-white group-hover:text-accent transition-colors duration-200 whitespace-nowrap">
                     {siteConfig.contact?.phoneFormatted}
                   </span>
                 </div>
               </a>
               <Button 
-                className="rounded-none bg-gradient-to-r from-accent to-highlight hover:from-highlight hover:to-accent text-white font-bold px-8 py-6 shadow-lg shadow-accent/30 hover:shadow-accent/50 hover:scale-105 transition-all duration-200"
+                className="rounded-none bg-gradient-to-r from-accent to-highlight hover:from-highlight hover:to-accent text-white font-bold px-8 py-6 shadow-lg shadow-accent/30 hover:shadow-accent/50 hover:scale-105 transition-all duration-200 flex-shrink-0"
                 asChild
               >
                 <a href="/contact">GET A QUOTE</a>
@@ -245,7 +247,7 @@ export function Navbar() {
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-full sm:w-[400px] overflow-y-auto p-0 bg-[#0a0a0a] border-l border-white/10">
+              <SheetContent side="right" className="w-full sm:w-[400px] overflow-y-auto p-0 bg-brand-primary border-l border-white/10">
                 <SheetHeader className="border-b border-white/10 p-4">
                   <SheetTitle className="text-left text-white">Menu</SheetTitle>
                 </SheetHeader>
@@ -266,7 +268,7 @@ function MobileNav({ onClose }: { onClose: () => void }) {
   const [expandedTop, setExpandedTop] = React.useState<string | null>(null)
 
   return (
-    <div className="flex flex-col bg-[#0a0a0a]">
+    <div className="flex flex-col bg-brand-primary">
       {/* Phone CTA */}
       <div className="bg-gradient-to-r from-accent to-highlight p-4">
         <a 
@@ -279,15 +281,15 @@ function MobileNav({ onClose }: { onClose: () => void }) {
       </div>
 
       {/* Quick Actions */}
-      <div className="grid grid-cols-2 gap-3 p-4 bg-[#1a1a1a] border-b border-white/10">
+      <div className="grid grid-cols-2 gap-3 p-4 bg-brand-secondary border-b border-white/10">
         {quickActions.map((action) => (
           <a 
             key={action.href}
             href={action.href}
-            className="flex items-center gap-2 p-3 bg-[#2a2a2a] rounded-lg hover:bg-white/5 transition-colors duration-200"
+            className="flex items-center gap-2 p-3 bg-brand-tertiary hover:bg-white/5 transition-colors duration-200"
             onClick={onClose}
           >
-            <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
+            <div className="w-8 h-8 bg-accent flex items-center justify-center">
               {action.icon === "settings" ? (
                 <Settings className="h-4 w-4 text-white" />
               ) : (
@@ -408,7 +410,7 @@ function MobileNav({ onClose }: { onClose: () => void }) {
       {/* CTA */}
       <div className="p-4">
         <Button 
-          className="w-full bg-gradient-to-r from-accent to-highlight hover:from-highlight hover:to-accent text-white font-bold py-6 rounded-lg shadow-lg shadow-accent/30 text-base"
+          className="w-full bg-gradient-to-r from-accent to-highlight hover:from-highlight hover:to-accent text-white font-bold py-6 shadow-lg shadow-accent/30 text-base"
           asChild
         >
           <a href="/contact" onClick={onClose}>GET A QUOTE</a>
