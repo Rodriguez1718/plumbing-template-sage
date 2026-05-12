@@ -42,35 +42,61 @@ const iconMap = {
 const borderStyle = borderColor ? `border-top: 4px solid ${borderColor}; border-bottom: 4px solid ${borderColor};` : "";
 ---
 
-<section class="py-8 bg-primary text-primary-foreground relative overflow-visible" style={`border-top: 4px solid var(--brand-highlight, #45f9ff); border-bottom: 4px solid var(--brand-highlight, #45f9ff);${borderStyle ? ' ' + borderStyle : ''}`}>
-  <div class="container mx-auto px-4 relative">
-    <img
-      src="/images/plumber.png"
-      alt=""
-      class="hidden md:block absolute bottom-0 left-0 w-28 lg:w-36 -translate-x-4 z-10 pointer-events-none"
-      style="bottom: -2rem;"
-      aria-hidden="true"
-    />
-    <div class="flex flex-col md:flex-row items-center justify-between gap-6 md:pl-36 lg:pl-44" data-animate="fade-up">
-      <div class="flex flex-col sm:flex-row items-center gap-6">
-        <a href={buttonHref} class="inline-flex items-center justify-center rounded-md bg-accent text-accent-foreground px-8 py-4 text-lg font-semibold hover:bg-accent/90 transition-colors shadow-lg shadow-accent/30">
-          {buttonText}
-        </a>
-        <div class="text-center sm:text-left">
-          <p class="text-sm opacity-90">{phoneLabel}</p>
-          <a href={`tel:${phone}`} class="text-2xl font-bold hover:underline">{phone}</a>
+<section class="py-10 bg-primary text-primary-foreground relative overflow-visible" style={`border-top: 6px solid var(--brand-accent, #45f9ff); border-bottom: 6px solid var(--brand-accent, #45f9ff);`}>
+  {/* Technical Background Pattern */}
+  <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(white 1px, transparent 0); background-size: 20px 20px;"></div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-10 md:pl-48">
+      
+      {/* Plumber Image with Sharp Treatment */}
+      <div class="hidden md:block absolute bottom-0 left-0 w-36 lg:w-44 -translate-x-4 z-20 pointer-events-none translate-y-10">
+        <div class="relative">
+           {/* Geometric frame around image base */}
+           <div class="absolute inset-0 border-4 border-accent translate-x-2 translate-y-2"></div>
+           <img
+            src="/images/plumber.png"
+            alt=""
+            class="relative z-10 grayscale hover:grayscale-0 transition-all duration-700"
+          />
         </div>
       </div>
-      <div class="flex flex-wrap items-center justify-center gap-6">
-        {features.map((feature) => {
-          const IconComponent = iconMap[feature.icon as keyof typeof iconMap];
-          return (
-            <div class="flex items-center gap-2">
-              {IconComponent && <IconComponent className="w-6 h-6" />}
-              <span class="text-sm font-medium">{feature.text}</span>
-            </div>
-          );
-        })}
+
+      <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 w-full lg:w-auto">
+        <div class="flex flex-col sm:flex-row items-center gap-8">
+          <a href={buttonHref} class="group relative inline-flex items-center justify-center px-10 py-5 bg-accent text-accent-foreground font-black text-xs uppercase tracking-[0.2em] transition-all">
+            <span class="relative z-10">{buttonText}</span>
+            <div class="absolute inset-0 bg-white translate-x-2 translate-y-2 -z-10 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform"></div>
+          </a>
+
+          <div class="text-center sm:text-left space-y-1">
+            <p class="text-[10px] font-black uppercase tracking-[0.3em] opacity-60 leading-none">{phoneLabel}</p>
+            <a href={`tel:${phone}`} class="text-3xl md:text-4xl font-black uppercase tracking-tighter hover:text-accent transition-colors leading-none">{phone}</a>
+          </div>
+        </div>
+
+        <div class="h-px w-full lg:w-px lg:h-12 bg-white/20"></div>
+
+        <div class="flex flex-wrap items-center justify-center gap-8">
+          {features.map((feature) => {
+            const IconComponent = iconMap[feature.icon as keyof typeof iconMap];
+            return (
+              <div class="flex items-center gap-4 group">
+                <div class="w-10 h-10 border-2 border-accent flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:text-primary transition-all">
+                  {IconComponent && <IconComponent className="w-5 h-5" strokeWidth={2.5} />}
+                </div>
+                <span class="text-[10px] font-black uppercase tracking-widest max-w-[120px] leading-tight">{feature.text}</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Decorative End-Block */}
+      <div class="hidden xl:flex flex-col gap-1 items-end opacity-20">
+         <div class="w-8 h-2 bg-accent"></div>
+         <div class="w-16 h-2 bg-accent"></div>
+         <div class="w-4 h-2 bg-accent"></div>
       </div>
     </div>
   </div>
