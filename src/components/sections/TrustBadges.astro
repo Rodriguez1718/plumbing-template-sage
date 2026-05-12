@@ -23,7 +23,7 @@ const { badges = [
 const duplicatedBadges = [...badges, ...badges, ...badges];
 ---
 
-<section class="py-8 bg-brand-tertiary dark:bg-brand-primary/40 overflow-hidden" style="border-top: 2px solid var(--brand-highlight, #45f9ff); border-bottom: 2px solid var(--brand-highlight, #45f9ff);">
+<section class="py-8 bg-brand-quaternary dark:bg-brand-primary/40 overflow-hidden">
   <div class="carousel-container">
     <div class="carousel-track">
       {duplicatedBadges.map((badge) => (
@@ -48,6 +48,9 @@ const duplicatedBadges = [...badges, ...badges, ...badges];
   .carousel-container {
     width: 100%;
     overflow: hidden;
+    /* Edge fade effect */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   }
 
   .carousel-track {
