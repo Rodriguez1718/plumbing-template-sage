@@ -1,14 +1,19 @@
 ---
-import { getLocationText } from "@/config/site"
+import { getLocationText } from "@/config/site";
 
 interface Props {
-  badge?: string;
-  title: string;
-  images?: string[];
-  columns?: number;
+	badge?: string;
+	title: string;
+	images?: string[];
+	columns?: number;
 }
 
-const { badge: raw_badge = "Portfolio", title: raw_title, images = [], columns = 4 } = Astro.props;
+const {
+	badge: raw_badge = "Portfolio",
+	title: raw_title,
+	images = [],
+	columns = 4,
+} = Astro.props;
 
 // Process text placeholders
 const title = raw_title ? getLocationText(raw_title) : raw_title;
@@ -16,27 +21,78 @@ const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
 const placeholderCount = images.length > 0 ? images.length : 8;
 ---
 
-<section class="py-16 md:py-24 bg-muted/30">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-12" data-animate="fade-up">
-      <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wide border-b-2 border-accent pb-1">{badge}</span>
-      <h2 class="text-3xl md:text-4xl font-bold mt-4">{title}</h2>
-    </div>
-    
-    <div class={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-${columns} gap-4`} data-animate-stagger>
-      {images.length > 0 ? (
-        images.map((img, i) => (
-          <div class="aspect-square rounded-lg overflow-hidden">
-            <img src={img} alt={`${title} - project ${i + 1}`} class="w-full h-full object-cover hover:scale-105 transition-transform ring-2 ring-transparent hover:ring-accent/50" loading="lazy" />
-          </div>
-        ))
-      ) : (
-        Array.from({ length: placeholderCount }).map((_, i) => (
-          <div class="aspect-square bg-muted rounded-lg flex items-center justify-center">
-            <span class="text-muted-foreground text-sm">Project {i + 1}</span>
-          </div>
-        ))
-      )}
-    </div>
-  </div>
+<section class="py-20 md:py-32 bg-card relative overflow-hidden">
+	<!-- Background Grid Accent -->
+	<div
+		class="absolute inset-0 opacity-[0.05] pointer-events-none"
+		style="background-image: linear-gradient(var(--brand-primary, #45f9ff) 1px, transparent 1px), linear-gradient(90deg, var(--brand-primary, #45f9ff) 1px, transparent 1px); background-size: 60px 60px;">
+	</div>
+
+	<div class="container mx-auto px-4 relative z-10">
+		<div
+			class="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8"
+			data-animate="fade-up">
+			<div class="max-w-3xl space-y-4">
+				<span
+					class="inline-block bg-primary text-white text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em]">
+					{badge}
+				</span>
+				<h2
+					class="text-4xl md:text-6xl font-black text-foreground leading-none tracking-tighter uppercase">
+					Proven <br /><span class="text-primary">Performance</span>
+				</h2>
+			</div>
+			<div class="hidden md:block w-32 h-1 bg-accent"></div>
+		</div>
+
+		<div
+			class={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-${columns} gap-6 md:gap-10`}
+			data-animate-stagger>
+			{
+				images.length > 0
+					? images.map((img, i) => (
+							<div class="group relative aspect-square">
+								{/* Brutalist Shadow Offset */}
+								<div class="absolute inset-0 bg-accent translate-x-2 translate-y-2 transition-transform group-hover:translate-x-4 group-hover:translate-y-4" />
+
+								<div class="relative h-full w-full border-4 border-primary bg-muted overflow-hidden">
+									<img
+										src={img}
+										alt={`${title} - project ${i + 1}`}
+										class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+										loading="lazy"
+									/>
+									<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors pointer-events-none" />
+
+									{/* Hover Overlay Label */}
+									<div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+										<div class="bg-primary text-white text-[10px] font-black px-3 py-2 uppercase tracking-widest text-center">
+											View Project 0{i + 1}
+										</div>
+									</div>
+								</div>
+							</div>
+						))
+					: Array.from({ length: placeholderCount }).map((_, i) => (
+							<div class="group relative aspect-square">
+								<div class="absolute inset-0 bg-accent translate-x-2 translate-y-2" />
+								<div class="relative h-full w-full border-4 border-primary bg-muted flex items-center justify-center">
+									<span class="text-primary/40 font-black uppercase text-xs tracking-widest">
+										Project {i + 1}
+									</span>
+								</div>
+							</div>
+						))
+			}
+		</div>
+
+		<!-- Sharp Bottom Accent -->
+		<div
+			class="mt-20 flex flex-col md:flex-row items-center justify-between gap-8 border-t-4 border-primary pt-12">
+			<p
+				class="text-sm font-bold text-muted-foreground uppercase tracking-[0.2em]">
+				Quality assurance in every square inch
+			</p>
+		</div>
+	</div>
 </section>
