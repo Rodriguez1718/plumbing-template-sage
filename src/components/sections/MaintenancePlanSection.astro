@@ -1,66 +1,160 @@
 ---
-import { getLocationText } from "@/config/site"
+import { getLocationText } from "@/config/site";
 
 interface IncludedItem {
-  title: string;
-  description: string;
+	title: string;
+	description: string;
 }
 
 interface Props {
-  title: string;
-  description: string;
-  includedItems: IncludedItem[];
-  benefits: string[];
-  buttonText?: string;
-  buttonHref?: string;
+	title: string;
+	description: string;
+	includedItems: IncludedItem[];
+	benefits: string[];
+	buttonText?: string;
+	buttonHref?: string;
 }
 
-const { title: raw_title, description: raw_description, includedItems, benefits, buttonText = "LEARN MORE", buttonHref = "/maintenance-plans" } = Astro.props;
+const {
+	title: raw_title,
+	description: raw_description,
+	includedItems,
+	benefits,
+	buttonText = "LEARN MORE",
+	buttonHref = "/maintenance-plans",
+} = Astro.props;
 
 // Process text placeholders
 const title = raw_title ? getLocationText(raw_title) : raw_title;
-const description = raw_description ? getLocationText(raw_description) : raw_description;
+const description = raw_description
+	? getLocationText(raw_description)
+	: raw_description;
 ---
 
-<section class="py-16 md:py-24 bg-primary/5">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-12" data-animate="fade-up">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
-      <p class="text-muted-foreground max-w-3xl mx-auto" set:html={description} />
-    </div>
-    
-    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto" data-animate-stagger>
-      <div class="bg-card border rounded-lg p-8">
-        <h3 class="text-xl font-bold mb-6">What's Included in Our Maintenance Plans?</h3>
-        <ul class="space-y-4">
-          {includedItems.map((item) => (
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></span>
-              <div>
-                <span class="font-semibold">{item.title}</span>
-                <p class="text-sm text-muted-foreground" set:html={item.description} />
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-      
-      <div class="bg-card border rounded-lg p-8 flex flex-col">
-        <h3 class="text-xl font-bold mb-6">Why Invest in a Maintenance Plan?</h3>
-        <ul class="space-y-4">
-          {benefits.map((benefit) => (
-            <li class="flex items-start gap-3">
-              <span class="w-6 h-6 rounded-full bg-accent/10 text-accent flex items-center justify-center text-sm shrink-0 mt-0.5 font-bold">✓</span>
-              <span>{benefit}</span>
-            </li>
-          ))}
-        </ul>
-        <div class="mt-auto pt-8">
-          <a href={buttonHref} class="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-6 py-3 font-semibold hover:bg-primary/90 transition-colors">
-            {buttonText}
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="py-20 md:py-32 bg-card relative overflow-hidden">
+	<!-- Background Geometric Pattern -->
+	<div
+		class="absolute inset-0 opacity-[0.03] pointer-events-none"
+		style="background-image: radial-gradient(var(--brand-primary, #45f9ff) 1px, transparent 0); background-size: 40px 40px;">
+	</div>
+
+	<div class="container mx-auto px-4 relative z-10">
+		<div
+			class="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8"
+			data-animate="fade-up">
+			<div class="max-w-3xl space-y-4">
+				<span
+					class="inline-block bg-accent text-accent-foreground text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em]">
+					Long-Term Value
+				</span>
+				<h2
+					class="text-4xl md:text-6xl font-black text-foreground leading-none tracking-tighter uppercase">
+					Priority <br /><span class="text-primary">Maintenance</span> Plans
+				</h2>
+				<p
+					class="text-lg text-muted-foreground font-medium max-w-2xl leading-relaxed"
+					set:html={description}
+				/>
+			</div>
+			<div class="hidden md:block w-24 h-1 bg-accent"></div>
+		</div>
+
+		<div
+			class="grid lg:grid-cols-12 gap-10 lg:gap-0 items-stretch"
+			data-animate-stagger>
+			<!-- Included Items Card -->
+			<div
+				class="lg:col-span-7 bg-card border-4 border-primary p-8 md:p-12 z-10 shadow-[12px_12px_0px_rgba(0,0,0,0.05)]">
+				<div class="space-y-8">
+					<div class="space-y-2">
+						<h3
+							class="text-xl md:text-2xl font-black uppercase tracking-tight text-primary">
+							What's Included?
+						</h3>
+						<p
+							class="text-xs font-bold text-muted-foreground uppercase tracking-widest">
+							Comprehensive checkups & protection
+						</p>
+					</div>
+
+					<ul class="grid md:grid-cols-2 gap-x-8 gap-y-6">
+						{
+							includedItems.map((item) => (
+								<li class="flex items-start gap-4 group">
+									<div class="mt-1 w-6 h-6 flex-shrink-0 flex items-center justify-center bg-primary text-white group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+										<svg
+											class="w-4 h-4"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24">
+											<path
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												stroke-width="3"
+												d="M5 13l4 4L19 7"
+											/>
+										</svg>
+									</div>
+									<div>
+										<span class="block text-sm font-black uppercase tracking-tight mb-1">
+											{item.title}
+										</span>
+										<p
+											class="text-xs text-muted-foreground leading-relaxed font-medium"
+											set:html={item.description}
+										/>
+									</div>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</div>
+
+			<!-- Benefits / Highlight Card -->
+			<div
+				class="lg:col-span-5 bg-primary text-white p-8 md:p-12 relative overflow-visible shadow-[20px_20px_0px_var(--accent)] lg:-translate-x-4 lg:translate-y-8">
+				<div class="space-y-8">
+					<div class="space-y-2">
+						<h3
+							class="text-xl md:text-2xl font-black uppercase tracking-tight text-accent">
+							Member Benefits
+						</h3>
+						<p
+							class="text-xs font-bold text-white/60 uppercase tracking-widest">
+							Why invest in a plan today?
+						</p>
+					</div>
+
+					<ul class="space-y-5">
+						{
+							benefits.map((benefit) => (
+								<li class="flex items-center gap-4 group">
+									<div class="w-2 h-2 bg-accent" />
+									<span class="text-sm font-bold uppercase tracking-wide group-hover:text-accent transition-colors">
+										{benefit}
+									</span>
+								</li>
+							))
+						}
+					</ul>
+
+					<div class="pt-6">
+						<a
+							href={buttonHref}
+							class="group relative inline-flex items-center justify-center w-full py-4 bg-white text-primary font-black text-xs uppercase tracking-widest transition-all hover:-translate-x-1 hover:-translate-y-1">
+							<span class="relative z-10">{buttonText}</span>
+							<div
+								class="absolute inset-0 bg-accent translate-x-0 translate-y-0 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-all">
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<!-- Sharp decorative corner -->
+				<div class="absolute top-0 right-0 w-12 h-12 bg-accent/20">
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
