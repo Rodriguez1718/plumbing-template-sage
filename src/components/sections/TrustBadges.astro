@@ -23,15 +23,27 @@ const { badges = [
 const duplicatedBadges = [...badges, ...badges, ...badges];
 ---
 
-<section class="py-8 bg-brand-quaternary dark:bg-brand-primary/40 overflow-hidden">
-  <div class="carousel-container">
+<section class="py-12 bg-white relative overflow-hidden border-y-4 border-primary/10">
+  {/* Technical Background */}
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(var(--brand-primary, #45f9ff) 2px, transparent 0); background-size: 20px 20px;"></div>
+
+  <div class="container mx-auto px-4 mb-6 relative z-10">
+    <div class="flex items-center gap-4">
+      <span class="inline-block bg-primary text-white text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em]">
+        Verified Status
+      </span>
+      <div class="h-px flex-grow bg-primary/10"></div>
+    </div>
+  </div>
+
+  <div class="carousel-container relative z-10">
     <div class="carousel-track">
       {duplicatedBadges.map((badge) => (
-        <div class="carousel-item">
+        <div class="carousel-item group">
           <img 
             src={badge.image} 
             alt={badge.alt || badge.name}
-            class={badge.small ? 'small' : ''}
+            class={`trust-logo ${badge.small ? 'small' : ''}`}
             width={badge.small ? 70 : 120}
             height={badge.small ? 35 : 50}
             loading="eager"
@@ -48,17 +60,17 @@ const duplicatedBadges = [...badges, ...badges, ...badges];
   .carousel-container {
     width: 100%;
     overflow: hidden;
-    /* Edge fade effect */
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    /* Industrial sharp fade effect */
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
   }
 
   .carousel-track {
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: 6rem;
     width: max-content;
-    animation: scroll 25s linear infinite;
+    animation: scroll 30s linear infinite;
     will-change: transform;
   }
 
@@ -67,16 +79,27 @@ const duplicatedBadges = [...badges, ...badges, ...badges];
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s ease;
   }
 
-  .carousel-item img {
-    height: 50px;
+  .carousel-item:hover {
+    transform: scale(1.1);
+  }
+
+  .trust-logo {
+    height: 45px;
     width: auto;
     object-fit: contain;
+    filter: grayscale(1) opacity(0.5) contrast(1.2);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .carousel-item img.small {
-    height: 35px;
+  .carousel-item:hover .trust-logo {
+    filter: grayscale(0) opacity(1) contrast(1);
+  }
+
+  .trust-logo.small {
+    height: 30px;
   }
 
   @keyframes scroll {
@@ -90,15 +113,15 @@ const duplicatedBadges = [...badges, ...badges, ...badges];
 
   @media (min-width: 768px) {
     .carousel-track {
-      gap: 5rem;
+      gap: 8rem;
     }
     
-    .carousel-item img {
-      height: 60px;
+    .trust-logo {
+      height: 55px;
     }
 
-    .carousel-item img.small {
-      height: 42px;
+    .trust-logo.small {
+      height: 38px;
     }
   }
 
