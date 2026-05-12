@@ -49,9 +49,9 @@ export function ServicesSection({ title, description, categories }: Props) {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-32 bg-card relative overflow-hidden">
-      {/* Background Geometric Accent */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-accent/5 -translate-x-1/2 -translate-y-1/2 rotate-12 pointer-events-none"></div>
+    <section ref={sectionRef} className="py-20 md:py-32 bg-card relative overflow-hidden" style={{ borderBottom: '3px solid var(--brand-primary, #45f9ff)' }}>
+      {/* Background Grid Accent */}
+      <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'linear-gradient(var(--brand-primary, #45f9ff) 1px, transparent 1px), linear-gradient(90deg, var(--brand-primary, #45f9ff) 1px, transparent 1px)', backgroundSize: '60px 60px' }}></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className={`mb-16 md:mb-24 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>

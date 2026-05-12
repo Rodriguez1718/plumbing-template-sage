@@ -21,7 +21,9 @@ const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
 const placeholderCount = images.length > 0 ? images.length : 8;
 ---
 
-<section class="py-20 md:py-32 bg-card relative overflow-hidden">
+<section
+	class="py-20 md:py-32 bg-card relative overflow-hidden"
+	style={{ borderBottom: "3px solid var(--brand-primary, #45f9ff)" }}>
 	<!-- Background Grid Accent -->
 	<div
 		class="absolute inset-0 opacity-[0.05] pointer-events-none"
