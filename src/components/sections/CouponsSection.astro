@@ -1,96 +1,141 @@
 ---
-import { Flame, Scissors, Clock } from '@lucide/astro';
-import { getLocationText } from "@/config/site"
+import { Flame, Scissors, Clock } from "@lucide/astro";
+import { getLocationText } from "@/config/site";
 
 interface Coupon {
-  label: string;
-  discount: string;
-  description: string;
-  expires: string;
+	label: string;
+	discount: string;
+	description: string;
+	expires: string;
 }
 
 interface Props {
-  coupons: Coupon[];
-  variant?: 'default' | 'minimal';
+	coupons: Coupon[];
+	variant?: "default" | "minimal";
 }
 
-const { coupons, variant = 'default' } = Astro.props;
-const isMinimal = variant === 'minimal';
+const { coupons, variant = "default" } = Astro.props;
+const isMinimal = variant === "minimal";
 ---
 
-<section class="py-16 md:py-24 bg-brand-tertiary/50 dark:bg-brand-primary/20">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-10" data-animate="fade-up">
-      {!isMinimal && (
-        <span class="inline-flex items-center gap-2 bg-accent text-accent-foreground text-sm font-bold px-5 py-2 rounded-full mb-4 shadow-md shadow-accent/30">
-          <Flame class="w-4 h-4" />
-          LIMITED TIME OFFERS
-        </span>
-      )}
-      <h2 class="text-3xl md:text-4xl font-bold text-primary">
-        {isMinimal ? 'Special Discounts & Promotions' : 'Save Big on Plumbing Services'}
-      </h2>
-      {isMinimal && (
-        <p class="text-muted-foreground mt-3 max-w-2xl mx-auto">
-          Check this page regularly for the latest special offers and promotions from {getLocationText("{fullName}")}. We also offer financing.
-        </p>
-      )}
-    </div>
-    <div class={isMinimal ? 'grid sm:grid-cols-2 lg:grid-cols-3 gap-4' : 'grid md:grid-cols-3 gap-6'} data-animate-stagger>
-      {coupons.map((coupon) => (
-        isMinimal ? (
-          <div class="bg-card border border-border rounded-lg p-5 hover:border-accent/50 transition-colors">
-            <div class="flex items-start justify-between gap-3 mb-3">
-              <span class="text-xs font-semibold text-accent uppercase tracking-wide">
-                {coupon.label}
-              </span>
-              <span class="text-xs text-muted-foreground whitespace-nowrap">
-                Expires: {coupon.expires}
-              </span>
-            </div>
-            <div class="text-2xl md:text-3xl font-bold text-accent mb-2">
-              {coupon.discount}
-            </div>
-            <p class="text-sm text-muted-foreground" set:html={coupon.description} />
-          </div>
-        ) : (
-          <div class="coupon-card group relative bg-card border-2 border-dashed border-accent/40 rounded-lg p-6 text-center shadow-lg hover:shadow-2xl hover:border-highlight transition-all duration-300 overflow-hidden hover:-translate-y-1">
-            <div class="absolute -right-8 top-4 bg-accent text-accent-foreground text-xs font-bold py-1 px-10 rotate-45 shadow-md">
-              SAVE
-            </div>
-            <div class="absolute -left-1 bottom-[52px] text-accent">
-              <Scissors class="w-5 h-5" />
-            </div>
-            <span class="inline-block bg-accent/10 text-accent text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-              {coupon.label}
-            </span>
-            <h3 class="text-lg font-bold mt-3 mb-2 text-brand-secondary">Special Deal</h3>
-            <p class="text-sm text-muted-foreground mb-3">Redeem & Save Today</p>
-            <div class="text-5xl md:text-6xl font-black text-accent mb-4 group-hover:scale-110 transition-transform duration-300">
-              {coupon.discount}
-            </div>
-            <p class="text-sm text-muted-foreground mb-4" set:html={coupon.description} />
-            <div class="border-t border-dashed border-accent/30 pt-3 mt-3">
-              <p class="inline-flex items-center gap-1 text-xs text-accent font-semibold">
-                <Clock class="w-3 h-3" />
-                Offer Expires: {coupon.expires}
-              </p>
-            </div>
-          </div>
-        )
-      ))}
-    </div>
-  </div>
+<section class="py-16 md:py-24 bg-brand-quaternary dark:bg-brand-primary/20" style="border-bottom: 3px solid var(--brand-primary, #45f9ff);">
+	<div class="container mx-auto px-4">
+		<div class="text-center mb-10" data-animate="fade-up">
+			{
+				!isMinimal && (
+					<span class="inline-flex items-center gap-2 bg-accent text-accent-foreground text-sm font-bold px-5 py-2 mb-4 shadow-md shadow-accent/30">
+						<Flame class="w-4 h-4" />
+						LIMITED TIME OFFERS
+					</span>
+				)
+			}
+			<h2 class="text-3xl md:text-4xl font-bold text-primary">
+				{
+					isMinimal
+						? "Special Discounts & Promotions"
+						: "Save Big on Plumbing Services"
+				}
+			</h2>
+			{
+				isMinimal && (
+					<p class="text-muted-foreground mt-3 max-w-2xl mx-auto">
+						Check this page regularly for the latest special offers
+						and promotions from {getLocationText("{fullName}")}. We
+						also offer financing.
+					</p>
+				)
+			}
+		</div>
+	<div
+		class={isMinimal
+			? "grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+			: "grid md:grid-cols-3 gap-10"}
+		data-animate-stagger>
+		{
+			coupons.map((coupon) =>
+				isMinimal ? (
+					<div class="group relative bg-card border-2 border-primary p-6 hover:shadow-[8px_8px_0px_rgba(0,0,0,0.1)] transition-all duration-300">
+						<div class="flex items-start justify-between gap-3 mb-4">
+							<span class="bg-accent text-accent-foreground text-[10px] font-black px-2 py-0.5 uppercase tracking-widest">
+								{coupon.label}
+							</span>
+							<span class="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
+								Exp: {coupon.expires}
+							</span>
+						</div>
+						<div class="text-3xl font-black text-primary mb-2 tracking-tighter">
+							{coupon.discount}
+						</div>
+						<p
+							class="text-sm text-muted-foreground leading-relaxed"
+							set:html={coupon.description}
+						/>
+						<!-- Sharp accent -->
+						<div class="absolute bottom-0 right-0 w-8 h-8 bg-accent/10 -z-10 group-hover:bg-accent/20 transition-colors" />
+					</div>
+				) : (
+					<div class="coupon-card group relative bg-card border-4 border-primary p-8 text-center shadow-[12px_12px_0px_rgba(0,0,0,0.05)] hover:shadow-[16px_16px_0px_var(--accent)] transition-all duration-500 overflow-visible">
+						<!-- Geometric "SAVE" Flag -->
+						<div class="absolute -top-3 left-6 bg-accent text-accent-foreground text-[10px] font-black py-1 px-4 uppercase tracking-[0.2em] shadow-sm">
+							Special Offer
+						</div>
+
+						<!-- Scissors Icon with Path -->
+						<div class="absolute -left-1.5 top-1/2 -translate-y-1/2 text-primary bg-card py-2">
+							<Scissors class="w-4 h-4 rotate-90" />
+						</div>
+
+						<div class="space-y-4">
+							<span class="inline-block border-2 border-accent text-accent text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em]">
+								{coupon.label}
+							</span>
+							
+							<div class="space-y-1">
+								<h3 class="text-sm font-black uppercase tracking-widest text-muted-foreground">
+									Value Deal
+								</h3>
+								<div class="text-5xl md:text-6xl font-black text-primary tracking-tighter group-hover:scale-105 transition-transform duration-500">
+									{coupon.discount}
+								</div>
+							</div>
+
+							<p
+								class="text-sm text-foreground font-medium leading-relaxed border-y border-dashed border-primary/20 py-4"
+								set:html={coupon.description}
+							/>
+
+							<div class="flex items-center justify-center gap-2 pt-2">
+								<Clock class="w-3.5 h-3.5 text-accent" />
+								<p class="text-[10px] text-muted-foreground font-black uppercase tracking-widest">
+									Expires: {coupon.expires}
+								</p>
+							</div>
+						</div>
+
+						<!-- Perforated Cut-outs -->
+						<div class="absolute top-1/2 -left-3 w-6 h-6 bg-brand-quaternary dark:bg-brand-primary border-4 border-primary rounded-full -translate-y-1/2" />
+						<div class="absolute top-1/2 -right-3 w-6 h-6 bg-brand-quaternary dark:bg-brand-primary border-4 border-primary rounded-full -translate-y-1/2" />
+					</div>
+				),
+			)
+		}
+	</div>
 </section>
 
 <style>
-  .coupon-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent), var(--brand-highlight, #45f9ff), var(--accent));
-  }
+	/* Sharp hover sweep for coupons */
+	.coupon-card {
+		background-image: linear-gradient(
+			45deg,
+			transparent 45%,
+			rgba(var(--accent-rgb, 255, 255, 255), 0.05) 50%,
+			transparent 55%
+		);
+		background-size: 200% 200%;
+		background-position: 100% 100%;
+	}
+
+	.coupon-card:hover {
+		background-position: 0% 0%;
+	}
 </style>
