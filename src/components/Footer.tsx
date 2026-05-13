@@ -47,11 +47,11 @@ export function Footer() {
             {/* Brand/About Column */}
             <div className="space-y-10">
               <div className="space-y-6">
-                <a href="/" className="flex items-center gap-4 group">
+                <a href="/" className="flex items-center gap-4 group" aria-label={`Home - ${siteConfig.business?.name}`}>
                   <div className="p-1 border-2 border-white/20 group-hover:border-accent transition-colors duration-300 bg-white/5">
                     <img
                       src={siteConfig.logo?.src}
-                      alt={siteConfig.logo?.alt || "Logo"}
+                      alt=""
                       className="h-10 w-10 object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
                       width={40}
                       height={40}
@@ -73,19 +73,19 @@ export function Footer() {
               </div>
 
               <div className="flex flex-wrap gap-2">
-                <a href="#" className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:text-black transition-all duration-0 group">
+                <a href="#" className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:text-black transition-all duration-0 group" aria-label="Follow us on Facebook">
                   <Facebook size={20} />
                 </a>
-                <a href="#" className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:text-black transition-all duration-0 group">
+                <a href="#" className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:text-black transition-all duration-0 group" aria-label="Follow us on X">
                   <XIcon className="w-5 h-5" />
                 </a>
-                <a href="#" className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:text-black transition-all duration-0 group">
+                <a href="#" className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:text-black transition-all duration-0 group" aria-label="Follow us on Instagram">
                   <Instagram size={20} />
                 </a>
-                <a href="#" className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:text-black transition-all duration-0 group">
+                <a href="#" className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:text-black transition-all duration-0 group" aria-label="Follow us on LinkedIn">
                   <Linkedin size={20} />
                 </a>
-                <a href="#" className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:text-black transition-all duration-0 group">
+                <a href="#" className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:text-black transition-all duration-0 group" aria-label="Follow us on YouTube">
                   <Youtube size={20} />
                 </a>
               </div>
@@ -100,7 +100,7 @@ export function Footer() {
               <ul className="grid grid-cols-1 gap-3">
                 {quickLinks.map((link) => (
                   <li key={link.href}>
-                    <a href={link.href} className="text-xs font-black uppercase tracking-widest text-white/40 hover:text-accent hover:translate-x-2 transition-all inline-block">
+                    <a href={link.href} className="text-xs font-black uppercase tracking-widest text-white/70 hover:text-accent hover:translate-x-2 transition-all inline-block">
                       {link.title}
                     </a>
                   </li>
@@ -117,7 +117,7 @@ export function Footer() {
               <ul className="space-y-3">
                 {servicesOffer.map((service) => (
                   <li key={service.href}>
-                    <a href={service.href} className="text-xs font-black uppercase tracking-widest text-white/40 hover:text-accent hover:translate-x-2 transition-all inline-block">
+                    <a href={service.href} className="text-xs font-black uppercase tracking-widest text-white/70 hover:text-accent hover:translate-x-2 transition-all inline-block">
                       {service.title}
                     </a>
                   </li>
@@ -134,7 +134,7 @@ export function Footer() {
               <div className="space-y-6">
                 <div className="space-y-2">
                   <span className="block text-[10px] font-black text-accent uppercase tracking-widest leading-none">Command Center</span>
-                  <p className="text-sm font-bold uppercase tracking-tight text-white/70">
+                  <p className="text-sm font-bold uppercase tracking-tight text-white/90">
                     {siteConfig.location.address}<br />
                     {siteConfig.location.city}, {siteConfig.location.state}
                   </p>
@@ -152,14 +152,14 @@ export function Footer() {
           {/* Sharp Bottom Divider */}
           <div className="mt-20 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex flex-wrap justify-center gap-8">
-              <a href="/privacy-policy" className="text-[10px] font-black uppercase tracking-widest text-white/30 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="/terms" className="text-[10px] font-black uppercase tracking-widest text-white/30 hover:text-white transition-colors">Terms of Engagement</a>
-              <a href="/sitemap" className="text-[10px] font-black uppercase tracking-widest text-white/30 hover:text-white transition-colors">Digital Sitemap</a>
+              <a href="/privacy-policy" className="text-[10px] font-black uppercase tracking-widest text-white/60 hover:text-white transition-colors">Privacy Policy</a>
+              <a href="/terms" className="text-[10px] font-black uppercase tracking-widest text-white/60 hover:text-white transition-colors">Terms of Engagement</a>
+              <a href="/sitemap" className="text-[10px] font-black uppercase tracking-widest text-white/60 hover:text-white transition-colors">Digital Sitemap</a>
             </div>
 
             <div className="flex items-center gap-4">
               <div className="w-12 h-1 bg-accent/20"></div>
-              <p className="text-[10px] font-black uppercase tracking-widest text-white/20">
+              <p className="text-[10px] font-black uppercase tracking-widest text-white/60">
                 © {currentYear} {siteConfig.business.name.toUpperCase()} SYSTEM INFRASTRUCTURE
               </p>
             </div>

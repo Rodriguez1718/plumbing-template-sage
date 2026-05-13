@@ -35,7 +35,7 @@ const description = raw_description ? getLocationText(raw_description) : raw_des
 				<h2 class="text-4xl md:text-6xl font-black text-foreground leading-none tracking-tighter uppercase">
 					Expert <br/><span class="text-primary">Plumbing</span> Solutions
 				</h2>
-				<p class="text-lg text-muted-foreground font-medium max-w-xl" set:html={description} />
+				<p class="text-lg text-foreground/80 font-medium max-w-xl" set:html={description} />
 			</div>
 			<!-- Sharp accent block -->
 			<div class="hidden md:block w-32 h-32 border-8 border-accent opacity-20 translate-y-8"></div>
@@ -51,7 +51,7 @@ const description = raw_description ? getLocationText(raw_description) : raw_des
 								{category.title}
 							</h3>
 							<div class="w-12 h-1 bg-accent"></div>
-							<p class="text-xs font-bold text-muted-foreground uppercase tracking-widest leading-loose">
+							<p class="text-xs font-bold text-foreground/80 uppercase tracking-widest leading-loose">
 								Professional standard <br/> Guaranteed quality
 							</p>
 						</div>
@@ -71,12 +71,12 @@ const description = raw_description ? getLocationText(raw_description) : raw_des
 												</svg>
 											</div>
 										</div>
-										<p class="text-sm text-muted-foreground leading-relaxed font-medium" set:html={service.description} />
+										<p class="text-sm text-foreground/80 leading-relaxed font-medium" set:html={service.description} />
 									</a>
 								) : (
 									<div class="relative bg-card border-2 border-primary p-6 shadow-[8px_8px_0px_rgba(0,0,0,0.05)]">
 										<h4 class="text-lg font-black uppercase tracking-tight mb-4">{service.title}</h4>
-										<p class="text-sm text-muted-foreground leading-relaxed font-medium" set:html={service.description} />
+										<p class="text-sm text-foreground/80 leading-relaxed font-medium" set:html={service.description} />
 									</div>
 								)
 							))}
