@@ -66,7 +66,7 @@ const embedUrl = mapEmbed || (mapAddress ? getMapEmbedUrl(mapAddress) : null);
 							</h2>
 						</div>
 						<p
-							class="text-lg text-muted-foreground font-medium leading-relaxed border-l-4 border-accent pl-6 md:pl-8"
+							class="text-lg text-foreground/80 font-medium leading-relaxed border-l-4 border-accent pl-6 md:pl-8"
 							set:html={description}
 						/>
 
@@ -136,7 +136,7 @@ const embedUrl = mapEmbed || (mapAddress ? getMapEmbedUrl(mapAddress) : null);
 						</div>
 
 						<p
-							class="text-lg md:text-xl text-muted-foreground font-medium leading-relaxed max-w-xl"
+							class="text-lg md:text-xl text-foreground/80 font-medium leading-relaxed max-w-xl"
 							set:html={description}
 						/>
 
@@ -149,7 +149,7 @@ const embedUrl = mapEmbed || (mapAddress ? getMapEmbedUrl(mapAddress) : null);
 								<div class="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-[250px] md:max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
 									{areas.map((area) => (
 										<div class="group relative bg-white border-2 border-primary/10 p-3 transition-all hover:border-primary hover:shadow-[4px_4px_0px_var(--accent)] hover:-translate-x-1 hover:-translate-y-1">
-											<span class="text-[10px] font-black uppercase tracking-widest text-primary/60 group-hover:text-primary transition-colors block truncate">
+											<span class="text-[10px] font-black uppercase tracking-widest text-primary/80 group-hover:text-primary transition-colors block truncate">
 												{area}
 											</span>
 										</div>
@@ -201,7 +201,7 @@ const embedUrl = mapEmbed || (mapAddress ? getMapEmbedUrl(mapAddress) : null);
 						{/* Floating Sharp Badge over map */}
 						<div class="absolute top-4 right-4 md:top-8 md:right-8 z-20 bg-primary text-white p-4 md:p-6 shadow-2xl border-2 border-accent">
 							<div class="flex flex-col gap-1">
-								<span class="text-[10px] font-black uppercase tracking-[0.3em] opacity-60">
+								<span class="text-[10px] font-black uppercase tracking-[0.3em] opacity-80">
 									Status
 								</span>
 								<span class="text-sm md:text-lg font-black uppercase tracking-tighter flex items-center gap-2">

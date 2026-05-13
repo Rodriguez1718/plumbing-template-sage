@@ -39,7 +39,7 @@ const introDescription = raw_introDescription ? getLocationText(raw_introDescrip
         <div class="mb-20" data-animate="fade-up">
           <div class="flex items-center gap-3 mb-6">
             <div class="w-12 h-1 bg-accent"></div>
-            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-primary/40">Recruitment_Protocol_V2</span>
+            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-primary/70">Recruitment_Protocol_V2</span>
           </div>
           <h2 class="text-4xl md:text-6xl font-black text-primary uppercase tracking-tighter leading-[1.1] mb-8">{introTitle}</h2>
           {introDescription && <p class="text-lg font-medium leading-relaxed text-primary max-w-2xl" set:html={introDescription} />}
@@ -66,7 +66,7 @@ const introDescription = raw_introDescription ? getLocationText(raw_introDescrip
                 <div class="w-8 h-8 bg-primary text-white flex items-center justify-center group-hover:bg-accent group-hover:text-primary transition-colors">
                   <Briefcase class="w-4 h-4 stroke-[3px]" />
                 </div>
-                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-primary/40">Operational_Role</span>
+                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-primary/70">Operational_Role</span>
               </div>
               <h3 class="text-2xl font-black text-primary uppercase tracking-tighter leading-tight group-hover:text-accent transition-colors">{job.title}</h3>
               <p class="text-xs font-black text-accent uppercase tracking-widest mt-2">{job.type || "Full-time position"}</p>
@@ -74,8 +74,7 @@ const introDescription = raw_introDescription ? getLocationText(raw_introDescrip
 
             <div class="flex-grow space-y-4 mb-10">
               <div class="flex items-center gap-3">
-                <Target class="w-4 h-4 text-primary/30" />
-                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40">Protocol_Parameters</span>
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-primary/70">Protocol_Parameters</span>
               </div>
               <p class="text-sm font-bold uppercase tracking-tight text-primary/80 border-t-2 border-dashed border-primary/10 pt-4 leading-relaxed">
                 {job.responsibilities}
