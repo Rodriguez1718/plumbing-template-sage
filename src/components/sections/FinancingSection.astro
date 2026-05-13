@@ -45,7 +45,7 @@ const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
 			class="text-center mb-16 md:mb-24 space-y-4"
 			data-animate="fade-up">
 			<span
-				class="inline-block bg-accent text-accent-foreground text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em]">
+				class="inline-block bg-accent text-primary text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em]">
 				{badge}
 			</span>
 			<h2
@@ -53,7 +53,7 @@ const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
 				Flexible <br /><span class="text-primary">Payment</span> Solutions
 			</h2>
 			<p
-				class="text-lg text-muted-foreground font-medium max-w-2xl mx-auto leading-relaxed"
+				class="text-lg text-foreground/80 font-medium max-w-2xl mx-auto leading-relaxed"
 				set:html={description}
 			/>
 		</div>
@@ -103,7 +103,7 @@ const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
 			<div
 				class="relative bg-card border-4 border-primary p-8 md:p-10 shadow-[12px_12px_0px_rgba(0,0,0,0.05)] hover:shadow-[16px_16px_0px_var(--accent)] transition-all duration-500">
 				<div
-					class="absolute -top-4 -right-4 bg-accent text-accent-foreground text-[10px] font-black px-3 py-1 uppercase tracking-widest">
+					class="absolute -top-4 -right-4 bg-accent text-primary text-[10px] font-black px-3 py-1 uppercase tracking-widest">
 					Instant Approval
 				</div>
 				<h3
@@ -142,7 +142,7 @@ const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
 			<div class="flex items-center gap-6 mb-12">
 				<div class="h-px flex-grow bg-primary/20"></div>
 				<h3
-					class="text-xl font-black uppercase tracking-[0.3em] text-muted-foreground">
+					class="text-xl font-black uppercase tracking-[0.3em] text-foreground/80">
 					Application Flow
 				</h3>
 				<div class="h-px flex-grow bg-primary/20"></div>
