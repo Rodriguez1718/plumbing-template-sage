@@ -1,5 +1,5 @@
 ---
-import { Flame, Scissors, Clock } from "@lucide/astro";
+import { Flame, Scissors, Settings } from "@lucide/astro";
 import { getLocationText } from "@/config/site";
 
 interface Coupon {
@@ -18,117 +18,103 @@ const { coupons, variant = "default" } = Astro.props;
 const isMinimal = variant === "minimal";
 ---
 
-<section class="py-16 md:py-24 bg-brand-quaternary dark:bg-brand-primary/20" style="border-bottom: 3px solid var(--brand-primary, #45f9ff);">
-	<div class="container mx-auto px-4">
-		<div class="text-center mb-10" data-animate="fade-up">
-			{
-				!isMinimal && (
-					<span class="inline-flex items-center gap-2 bg-accent text-accent-foreground text-sm font-bold px-5 py-2 mb-4 shadow-md shadow-accent/30">
-						<Flame class="w-4 h-4" />
-						LIMITED TIME OFFERS
-					</span>
-				)
-			}
-			<h2 class="text-3xl md:text-4xl font-bold text-primary">
+<section
+	class="py-24 md:py-32 bg-white relative overflow-hidden border-b-4 border-primary">
+	{/* Technical Background */}
+	<div
+		class="absolute inset-0 opacity-[0.04] pointer-events-none"
+		style="background-image: linear-gradient(var(--brand-primary, #000) 1px, transparent 1px), linear-gradient(90deg, var(--brand-primary, #000) 1px, transparent 1px); background-size: 40px 40px;">
+	</div>
+
+	<div class="container mx-auto px-4 relative z-10">
+		<div class="text-center mb-16 md:mb-24" data-animate="fade-up">
+			<div class="flex items-center justify-center gap-4 mb-8">
+				<div class="h-1 w-12 bg-accent"></div>
+				<span
+					class="inline-flex items-center gap-2 bg-primary text-white text-[10px] font-black px-4 py-1 uppercase tracking-[0.3em]">
+					<Flame class="w-3 h-3 text-accent" />
+					OFFER_DEPLOYMENT_ACTIVE
+				</span>
+				<div class="h-1 w-12 bg-accent"></div>
+			</div>
+
+			<h2
+				class="text-4xl md:text-6xl font-black text-primary uppercase tracking-tighter leading-[0.9] mb-8">
 				{
 					isMinimal
-						? "Special Discounts & Promotions"
-						: "Save Big on Plumbing Services"
+						? "Strategic Discounts & Promotions"
+						: "Infrastructure Maintenance Specials"
 				}
 			</h2>
+
 			{
-				isMinimal && (
-					<p class="text-muted-foreground mt-3 max-w-2xl mx-auto">
-						Check this page regularly for the latest special offers
-						and promotions from {getLocationText("{fullName}")}. We
-						also offer financing.
+				isMinimal ? (
+					<p
+						class="text-lg font-medium leading-relaxed text-primary max-w-2xl mx-auto"
+						set:html={`Current offers available for ${getLocationText("{fullName}")} customers. Select a module to initialize.`}
+					/>
+				) : (
+					<p class="text-lg font-medium leading-relaxed text-primary max-w-2xl mx-auto">
+						High-efficiency savings on core plumbing operations.
+						Valid through system expiration dates.
 					</p>
 				)
 			}
 		</div>
-	<div
-		class={isMinimal
-			? "grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
-			: "grid md:grid-cols-3 gap-10"}
-		data-animate-stagger>
-		{
-			coupons.map((coupon) =>
-				isMinimal ? (
-					<div class="group relative bg-card border-2 border-primary p-6 hover:shadow-[8px_8px_0px_rgba(0,0,0,0.1)] transition-all duration-300">
-						<div class="flex items-start justify-between gap-3 mb-4">
-							<span class="bg-accent text-accent-foreground text-[10px] font-black px-2 py-0.5 uppercase tracking-widest">
-								{coupon.label}
-							</span>
-							<span class="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
-								Exp: {coupon.expires}
-							</span>
-						</div>
-						<div class="text-3xl font-black text-primary mb-2 tracking-tighter">
-							{coupon.discount}
-						</div>
-						<p
-							class="text-sm text-muted-foreground leading-relaxed"
-							set:html={coupon.description}
-						/>
-						<!-- Sharp accent -->
-						<div class="absolute bottom-0 right-0 w-8 h-8 bg-accent/10 -z-10 group-hover:bg-accent/20 transition-colors" />
-					</div>
-				) : (
-					<div class="coupon-card group relative bg-card border-4 border-primary p-8 text-center shadow-[12px_12px_0px_rgba(0,0,0,0.05)] hover:shadow-[16px_16px_0px_var(--accent)] transition-all duration-500 overflow-visible">
-						<!-- Geometric "SAVE" Flag -->
-						<div class="absolute -top-3 left-6 bg-accent text-accent-foreground text-[10px] font-black py-1 px-4 uppercase tracking-[0.2em] shadow-sm">
-							Special Offer
+
+		<div
+			class={isMinimal
+				? "grid sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto"
+				: "grid md:grid-cols-3 gap-12 max-w-7xl mx-auto"}
+			data-animate-stagger>
+			{
+				coupons.map((coupon) => (
+					<div class="coupon-card group relative bg-white border-4 border-primary p-8 md:p-10 text-center shadow-[16px_16px_0px_rgba(0,0,0,0.05)] hover:shadow-[16px_16px_0px_var(--accent)] transition-all duration-500 overflow-visible">
+						{/* Geometric Flag */}
+						<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black py-1.5 px-6 uppercase tracking-[0.3em] shadow-lg border border-accent/20">
+							{coupon.label}
 						</div>
 
-						<!-- Scissors Icon with Path -->
-						<div class="absolute -left-1.5 top-1/2 -translate-y-1/2 text-primary bg-card py-2">
-							<Scissors class="w-4 h-4 rotate-90" />
-						</div>
-
-						<div class="space-y-4">
-							<span class="inline-block border-2 border-accent text-accent text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em]">
-								{coupon.label}
-							</span>
-							
+						<div class="space-y-6">
 							<div class="space-y-1">
-								<h3 class="text-sm font-black uppercase tracking-widest text-muted-foreground">
-									Value Deal
-								</h3>
-								<div class="text-5xl md:text-6xl font-black text-primary tracking-tighter group-hover:scale-105 transition-transform duration-500">
+								<p class="text-[10px] font-black uppercase tracking-[0.4em] text-primary/30 flex items-center justify-center gap-2">
+									<Settings class="w-3 h-3" />
+									UNIT_VALUE
+								</p>
+								<div class="text-5xl md:text-7xl font-black text-primary tracking-tighter group-hover:scale-105 transition-transform duration-500">
 									{coupon.discount}
 								</div>
 							</div>
 
 							<p
-								class="text-sm text-foreground font-medium leading-relaxed border-y border-dashed border-primary/20 py-4"
+								class="text-sm font-bold uppercase tracking-tight text-primary/70 leading-relaxed border-y-4 border-dashed border-primary/10 py-6"
 								set:html={coupon.description}
 							/>
 
-							<div class="flex items-center justify-center gap-2 pt-2">
-								<Clock class="w-3.5 h-3.5 text-accent" />
-								<p class="text-[10px] text-muted-foreground font-black uppercase tracking-widest">
-									Expires: {coupon.expires}
+							<div class="flex items-center justify-center gap-3 pt-2">
+								<div class="w-2 h-2 bg-accent animate-pulse" />
+								<p class="text-[10px] text-primary/40 font-black uppercase tracking-[0.2em]">
+									EXPIRATION_CODE: {coupon.expires}
 								</p>
 							</div>
 						</div>
 
-						<!-- Perforated Cut-outs -->
-						<div class="absolute top-1/2 -left-3 w-6 h-6 bg-brand-quaternary dark:bg-brand-primary border-4 border-primary rounded-full -translate-y-1/2" />
-						<div class="absolute top-1/2 -right-3 w-6 h-6 bg-brand-quaternary dark:bg-brand-primary border-4 border-primary rounded-full -translate-y-1/2" />
+						{/* Perforated Cut-outs */}
+						<div class="absolute top-1/2 -left-4 w-8 h-8 bg-white border-4 border-primary rounded-full -translate-y-1/2 z-10 shadow-[inset_-2px_0px_4px_rgba(0,0,0,0.05)]" />
+						<div class="absolute top-1/2 -right-4 w-8 h-8 bg-white border-4 border-primary rounded-full -translate-y-1/2 z-10 shadow-[inset_2px_0px_4px_rgba(0,0,0,0.05)]" />
 					</div>
-				),
-			)
-		}
+				))
+			}
+		</div>
 	</div>
 </section>
 
 <style>
-	/* Sharp hover sweep for coupons */
 	.coupon-card {
 		background-image: linear-gradient(
 			45deg,
 			transparent 45%,
-			rgba(var(--accent-rgb, 255, 255, 255), 0.05) 50%,
+			rgba(var(--brand-primary-rgb, 69, 249, 255), 0.03) 50%,
 			transparent 55%
 		);
 		background-size: 200% 200%;
