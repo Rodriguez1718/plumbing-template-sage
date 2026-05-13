@@ -1,22 +1,23 @@
 ---
-import { getLocationText } from "@/config/site"
+import { Phone, ArrowRight, ShieldCheck } from "@lucide/astro";
+import { getLocationText } from "@/config/site";
 
 interface Props {
-  title: string;
-  description: string;
-  calloutText: string;
-  phone?: string;
-  buttonText?: string;
-  buttonHref?: string;
+	title: string;
+	description: string;
+	calloutText: string;
+	phone?: string;
+	buttonText?: string;
+	buttonHref?: string;
 }
 
-const { 
-  title: raw_title, 
-  description: raw_description, 
-  calloutText: raw_calloutText,
-  phone: raw_phone = "{phone}",
-  buttonText = "Sign Up Online",
-  buttonHref = "/contact"
+const {
+	title: raw_title,
+	description: raw_description,
+	calloutText: raw_calloutText,
+	phone: raw_phone = "{phone}",
+	buttonText = "Sign Up Online",
+	buttonHref = "/contact",
 } = Astro.props;
 
 // Process text placeholders
@@ -27,20 +28,73 @@ const phone = getLocationText(raw_phone);
 const phoneRaw = getLocationText("{phoneRaw}");
 ---
 
-<section class="py-16 md:py-20 bg-primary text-primary-foreground">
-  <div class="container mx-auto px-4">
-    <div class="max-w-4xl mx-auto text-center" data-animate="fade-up">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
-      <p class="text-lg opacity-90 mb-8" set:html={description} />
-      <p class="text-xl font-semibold mb-8" set:html={calloutText} />
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href={`tel:${phoneRaw}`} class="inline-flex items-center justify-center rounded-md bg-background text-foreground px-8 py-4 text-lg font-semibold hover:bg-background/90 transition-colors">
-          Call {phone}
-        </a>
-        <a href={buttonHref} class="inline-flex items-center justify-center rounded-md border-2 border-primary-foreground px-8 py-4 text-lg font-semibold hover:bg-primary-foreground/10 transition-colors">
-          {buttonText}
-        </a>
-      </div>
-    </div>
-  </div>
+<section
+	class="py-24 md:py-32 bg-primary relative overflow-hidden border-y-4 border-accent">
+	{/* Brutalist Pattern */}
+	<div
+		class="absolute inset-0 opacity-10 pointer-events-none"
+		style="background-image: repeating-linear-gradient(45deg, var(--brand-accent, #ff3d00) 0, var(--brand-accent, #ff3d00) 2px, transparent 0, transparent 50%); background-size: 20px 20px;">
+	</div>
+	<div
+		class="absolute inset-0 opacity-[0.03] pointer-events-none"
+		style="background-image: radial-gradient(white 2px, transparent 0); background-size: 30px 30px;">
+	</div>
+
+	<div class="container mx-auto px-4 relative z-10">
+		<div class="max-w-5xl mx-auto text-center" data-animate="fade-up">
+			<div class="flex items-center justify-center gap-4 mb-10">
+				<div class="h-[2px] w-12 bg-accent"></div>
+				<ShieldCheck class="w-8 h-8 text-accent" />
+				<div class="h-[2px] w-12 bg-accent"></div>
+			</div>
+
+			<h2
+				class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[1.1] mb-8">
+				{title}
+			</h2>
+
+			<div class="max-w-3xl mx-auto mb-12">
+				<p
+					class="text-m md:text-lg font-medium tracking-tight text-white/70 leading-relaxed mb-8"
+					set:html={description}
+				/>
+
+				<div class="inline-block bg-accent text-primary px-8 py-3">
+					<p
+						class="text-lg md:text-xl font-black uppercase tracking-[0.1em]"
+						set:html={calloutText}
+					/>
+				</div>
+			</div>
+
+			<div
+				class="flex flex-col md:flex-row items-center justify-center gap-0 border-4 border-white/20 bg-white/5 backdrop-blur-sm p-4 md:p-0 max-w-3xl mx-auto">
+				<a
+					href={`tel:${phoneRaw}`}
+					class="w-full md:w-auto flex-1 inline-flex items-center justify-center gap-4 bg-white text-primary px-10 py-6 text-lg font-black uppercase tracking-widest hover:bg-accent hover:text-primary transition-all duration-0 border-b-4 md:border-b-0 md:border-r-4 border-primary">
+					<Phone class="w-6 h-6" />
+					{phone}
+				</a>
+				<a
+					href={buttonHref}
+					class="w-full md:w-auto flex-1 inline-flex items-center justify-center gap-4 bg-accent text-primary px-10 py-6 text-lg font-black uppercase tracking-widest hover:bg-white hover:text-primary transition-all duration-0">
+					{buttonText}
+					<ArrowRight class="w-6 h-6" />
+				</a>
+			</div>
+
+			<div
+				class="mt-12 flex items-center justify-center gap-8 opacity-20">
+				<span
+					class="text-[10px] font-black uppercase tracking-[0.5em] text-white"
+					>SECURE_ENCRYPTION_ACTIVE</span
+				>
+				<div class="h-1 w-1 bg-white rounded-full"></div>
+				<span
+					class="text-[10px] font-black uppercase tracking-[0.5em] text-white"
+					>SYSTEM_ID: 8492-X</span
+				>
+			</div>
+		</div>
+	</div>
 </section>
