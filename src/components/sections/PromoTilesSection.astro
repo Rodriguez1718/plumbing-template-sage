@@ -1,152 +1,178 @@
 ---
 import { Phone, ArrowRight } from "lucide-react";
-import { getLocationText } from "@/config/site"
+import { getLocationText } from "@/config/site";
 
 interface PromoTile {
-  type: "maintenance" | "financing" | "emergency";
-  tag?: string;
-  title?: string;
-  priceLabel?: string[];
-  headline?: string[];
-  subtext?: string;
-  discount?: string;
-  subheadline?: string[];
-  phone?: string;
-  buttonText: string;
-  buttonHref?: string;
-  bgImage?: string;
+	type: "maintenance" | "financing" | "emergency";
+	tag?: string;
+	title?: string;
+	priceLabel?: string[];
+	headline?: string[];
+	subtext?: string;
+	discount?: string;
+	subheadline?: string[];
+	phone?: string;
+	buttonText: string;
+	buttonHref?: string;
+	bgImage?: string;
 }
 
 interface Props {
-  tiles: PromoTile[];
+	tiles: PromoTile[];
 }
 
 const { tiles: rawTiles } = Astro.props;
 
 // Process all text in tiles through getLocationText
-const tiles = rawTiles.map(tile => ({
-  ...tile,
-  tag: tile.tag ? getLocationText(tile.tag) : undefined,
-  title: tile.title ? getLocationText(tile.title) : undefined,
-  priceLabel: tile.priceLabel ? tile.priceLabel.map(getLocationText) : undefined,
-  headline: tile.headline ? tile.headline.map(getLocationText) : undefined,
-  subtext: tile.subtext ? getLocationText(tile.subtext) : undefined,
-  discount: tile.discount ? getLocationText(tile.discount) : undefined,
-  subheadline: tile.subheadline ? tile.subheadline.map(getLocationText) : undefined,
-  phone: tile.phone ? getLocationText(tile.phone) : undefined,
-  buttonText: getLocationText(tile.buttonText),
+const tiles = rawTiles.map((tile) => ({
+	...tile,
+	tag: tile.tag ? getLocationText(tile.tag) : undefined,
+	title: tile.title ? getLocationText(tile.title) : undefined,
+	priceLabel: tile.priceLabel
+		? tile.priceLabel.map(getLocationText)
+		: undefined,
+	headline: tile.headline ? tile.headline.map(getLocationText) : undefined,
+	subtext: tile.subtext ? getLocationText(tile.subtext) : undefined,
+	discount: tile.discount ? getLocationText(tile.discount) : undefined,
+	subheadline: tile.subheadline
+		? tile.subheadline.map(getLocationText)
+		: undefined,
+	phone: tile.phone ? getLocationText(tile.phone) : undefined,
+	buttonText: getLocationText(tile.buttonText),
 }));
 ---
 
-<section class="py-24 md:py-32 bg-white relative overflow-hidden">
-  {/* Technical Background */}
-  <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(var(--brand-primary, #45f9ff) 2px, transparent 0); background-size: 30px 30px;"></div>
+<section
+	class="py-24 md:py-32 bg-white relative overflow-hidden"
+	style="border-bottom: 3px solid var(--brand-primary, #45f9ff);">
+	{/* Technical Background */}
+	<div
+		class="absolute inset-0 opacity-[0.03] pointer-events-none"
+		style="background-image: radial-gradient(var(--brand-primary, #45f9ff) 2px, transparent 0); background-size: 30px 30px;">
+	</div>
 
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="grid md:grid-cols-3 gap-8">
-      {tiles.map((tile, index) => (
-        <div class="group relative bg-white border-4 border-primary transition-all duration-300 hover:shadow-[12px_12px_0px_var(--accent)] hover:-translate-x-2 hover:-translate-y-2">
-          {/* Background Image Layer */}
-          {tile.bgImage && (
-            <div class="absolute inset-0 overflow-hidden pointer-events-none">
-              <img src={tile.bgImage} class="w-full h-full object-cover grayscale opacity-20 group-hover:grayscale-0 group-hover:opacity-40 transition-all duration-700 scale-110 group-hover:scale-100" />
-            </div>
-          )}
+	<div class="container mx-auto px-4 relative z-10">
+		<div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+			{
+				tiles.map((tile, index) => (
+					<div class="group relative bg-white border-4 border-primary transition-all duration-300 hover:shadow-[12px_12px_0px_var(--accent)] hover:-translate-x-2 hover:-translate-y-2">
+						{/* Background Image Layer */}
+						{tile.bgImage && (
+							<div class="absolute inset-0 overflow-hidden pointer-events-none">
+								<img
+									src={tile.bgImage}
+									class="w-full h-full object-cover grayscale opacity-20 group-hover:grayscale-0 group-hover:opacity-40 transition-all duration-700 scale-110 group-hover:scale-100"
+								/>
+							</div>
+						)}
 
-          {/* Technical Index */}
-          <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-black px-3 py-1 z-20">
-            OFFER-{String(index + 1).padStart(2, '0')}
-          </div>
+						{/* Technical Index */}
+						<div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-black px-3 py-1 z-20">
+							OFFER-{String(index + 1).padStart(2, "0")}
+						</div>
 
-          {tile.type === "maintenance" ? (
-            <div class="relative z-10 p-10 h-full flex flex-col justify-between min-h-[450px]">
-              <div>
-                <span class="inline-block bg-primary text-white text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em] mb-8">
-                  Infrastructure Care
-                </span>
-                <h3 class="text-3xl font-black text-primary uppercase tracking-tighter leading-none mb-6">{tile.title}</h3>
-                <div class="space-y-1 mb-8">
-                  {tile.priceLabel?.map((line, i) => (
-                    <p class={i === 1 ? "text-5xl font-black text-primary my-2 leading-none" : "text-xs font-bold uppercase tracking-widest text-primary/40"}>
-                      {line}
-                    </p>
-                  ))}
-                </div>
-              </div>
-              <div class="space-y-6">
-                <a 
-                  href={tile.buttonHref || "/contact"} 
-                  class="w-full inline-flex items-center justify-center bg-primary text-white px-8 py-5 font-black text-sm uppercase tracking-widest hover:bg-accent hover:text-primary transition-all border-2 border-primary"
-                >
-                  {tile.buttonText}
-                </a>
-                <div class="flex items-center justify-center gap-3 text-[10px] font-black text-primary/40 uppercase tracking-widest">
-                  <Phone className="w-3 h-3" />
-                  <span>Direct: {tile.phone}</span>
-                </div>
-              </div>
-            </div>
-          ) : tile.type === "financing" ? (
-            <div class="relative z-10 p-10 h-full flex flex-col justify-between min-h-[450px] bg-primary/5">
-              <div>
-                <span class="inline-block bg-accent text-primary text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em] mb-8">
-                  Capital Resource
-                </span>
-                <div class="space-y-2 mb-8">
-                  {tile.headline?.map((line) => (
-                    <p class="text-4xl font-black text-primary uppercase tracking-tighter leading-[0.9]">{line}</p>
-                  ))}
-                </div>
-                {tile.subtext && (
-                  <p class="text-sm font-bold uppercase tracking-tight text-primary/60">{tile.subtext}</p>
-                )}
-              </div>
-              <div class="space-y-6">
-                <a 
-                  href={tile.buttonHref || "/financing"} 
-                  class="w-full inline-flex items-center justify-center gap-3 bg-white text-primary border-4 border-primary px-8 py-5 font-black text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-[6px_6px_0px_var(--brand-primary)]"
-                >
-                  {tile.buttonText}
-                  <ArrowRight className="w-5 h-5" />
-                </a>
-                <div class="text-[10px] font-black text-primary/40 uppercase tracking-widest text-center">
-                  Support: {tile.phone}
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div class="relative z-10 p-10 h-full flex flex-col justify-between min-h-[450px] bg-accent">
-              <div>
-                {tile.tag && (
-                  <span class="inline-block bg-primary text-white text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em] mb-8">
-                    {tile.tag}
-                  </span>
-                )}
-                {tile.discount && (
-                  <p class="text-7xl font-black text-primary tracking-tighter leading-none mb-4">{tile.discount}</p>
-                )}
-                <div class="space-y-1 mb-8">
-                  {tile.subheadline?.map((line) => (
-                    <p class="text-xl font-black text-primary/80 uppercase tracking-tight">{line}</p>
-                  ))}
-                </div>
-              </div>
-              <div class="space-y-6">
-                <a 
-                  href={tile.buttonHref || "/contact"} 
-                  class="w-full inline-flex items-center justify-center bg-primary text-white px-8 py-5 font-black text-sm uppercase tracking-widest hover:bg-white hover:text-primary transition-all border-2 border-primary"
-                >
-                  {tile.buttonText}
-                </a>
-                <div class="flex items-center justify-center gap-3 text-[10px] font-black text-primary uppercase tracking-widest">
-                  <Phone className="w-3 h-3 text-primary" />
-                  <span>EMERGENCY: {tile.phone}</span>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
-  </div>
+						{tile.type === "maintenance" ? (
+							<div class="relative z-10 p-6 sm:p-10 h-full flex flex-col justify-between min-h-[450px]">
+								<div>
+									<span class="inline-block bg-primary text-white text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em] mb-8">
+										Infrastructure Care
+									</span>
+									<h3 class="text-2xl sm:text-3xl font-black text-primary uppercase tracking-tighter leading-none mb-6">
+										{tile.title}
+									</h3>
+									<div class="space-y-1 mb-8">
+										{tile.priceLabel?.map((line, i) => (
+											<p
+												class={
+													i === 1
+														? "text-4xl sm:text-5xl font-black text-primary my-2 leading-none"
+														: "text-xs font-bold uppercase tracking-widest text-primary/40"
+												}>
+												{line}
+											</p>
+										))}
+									</div>
+								</div>
+								<div class="space-y-6">
+									<a
+										href={tile.buttonHref || "/contact"}
+										class="w-full inline-flex items-center justify-center bg-primary text-white px-6 py-4 sm:px-8 sm:py-5 font-black text-sm uppercase tracking-widest hover:bg-accent hover:text-primary transition-all border-2 border-primary">
+										{tile.buttonText}
+									</a>
+									<div class="flex items-center justify-center gap-3 text-[10px] font-black text-primary/40 uppercase tracking-widest">
+										<Phone className="w-3 h-3" />
+										<span>Direct: {tile.phone}</span>
+									</div>
+								</div>
+							</div>
+						) : tile.type === "financing" ? (
+							<div class="relative z-10 p-6 sm:p-10 h-full flex flex-col justify-between min-h-[450px] bg-primary/5">
+								<div>
+									<span class="inline-block bg-accent text-primary text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em] mb-8">
+										Capital Resource
+									</span>
+									<div class="space-y-2 mb-8">
+										{tile.headline?.map((line) => (
+											<p class="text-2xl sm:text-4xl font-black text-primary uppercase tracking-tighter leading-[0.9]">
+												{line}
+											</p>
+										))}
+									</div>
+									{tile.subtext && (
+										<p class="text-sm font-bold uppercase tracking-tight text-primary/60">
+											{tile.subtext}
+										</p>
+									)}
+								</div>
+								<div class="space-y-6">
+									<a
+										href={tile.buttonHref || "/financing"}
+										class="w-full inline-flex items-center justify-center gap-3 bg-white text-primary border-4 border-primary px-6 py-4 sm:px-8 sm:py-5 font-black text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-[6px_6px_0px_var(--brand-primary)]">
+										{tile.buttonText}
+										<ArrowRight className="w-5 h-5" />
+									</a>
+									<div class="text-[10px] font-black text-primary/40 uppercase tracking-widest text-center">
+										Support: {tile.phone}
+									</div>
+								</div>
+							</div>
+						) : (
+							<div class="relative z-10 p-6 sm:p-10 h-full flex flex-col justify-between min-h-[450px] bg-accent">
+								<div>
+									{tile.tag && (
+										<span class="inline-block bg-primary text-white text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em] mb-8">
+											{tile.tag}
+										</span>
+									)}
+									{tile.discount && (
+										<p class="text-5xl sm:text-7xl font-black text-primary tracking-tighter leading-none mb-4">
+											{tile.discount}
+										</p>
+									)}
+									<div class="space-y-1 mb-8">
+										{tile.subheadline?.map((line) => (
+											<p class="text-lg sm:text-xl font-black text-primary/80 uppercase tracking-tight">
+												{line}
+											</p>
+										))}
+									</div>
+								</div>
+								<div class="space-y-6">
+									<a
+										href={tile.buttonHref || "/contact"}
+										class="w-full inline-flex items-center justify-center bg-primary text-white px-6 py-4 sm:px-8 sm:py-5 font-black text-sm uppercase tracking-widest hover:bg-white hover:text-primary transition-all border-2 border-primary">
+										{tile.buttonText}
+									</a>
+									<div class="flex items-center justify-center gap-3 text-[10px] font-black text-primary uppercase tracking-widest">
+										<Phone className="w-3 h-3 text-primary" />
+										<span>EMERGENCY: {tile.phone}</span>
+									</div>
+								</div>
+							</div>
+						)}
+					</div>
+				))
+			}
+		</div>
+	</div>
 </section>

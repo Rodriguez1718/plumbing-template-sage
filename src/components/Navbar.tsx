@@ -126,7 +126,7 @@ function ServiceNavItem({ item }: { item: MegaMenuItem }) {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <div className="flex items-center gap-1 text-[13px] font-black uppercase tracking-[0.15em] text-white hover:text-accent transition-all duration-200 px-6 h-full cursor-pointer group">
+      <div className="flex items-center gap-1 text-[13px] font-black uppercase tracking-[0.15em] text-white hover:text-accent transition-all duration-200 xl:px-4 2xl:px-6 h-full cursor-pointer group">
         <a href={item.href}>
           {item.title}
         </a>
@@ -152,7 +152,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* Top Bar - Dark Gray */}
-      <div className="hidden lg:block bg-brand-secondary text-white/90 border-b border-white/5">
+      <div className="hidden xl:block bg-brand-secondary text-white/90 border-b border-white/5">
         <div className="container mx-auto px-6">
           <div className="flex h-10 items-center justify-between text-sm">
             <div className="flex items-center gap-8">
@@ -201,24 +201,24 @@ export function Navbar() {
                 />
               </div>
               <div className="hidden sm:block flex-shrink-0">
-                <span className="font-black text-lg md:text-xl lg:text-2xl text-white uppercase tracking-tighter group-hover:text-accent transition-colors duration-200 whitespace-nowrap">
+                <span className="font-black text-lg md:text-xl lg:text-xl 2xl:text-2xl text-white uppercase tracking-tighter group-hover:text-accent transition-colors duration-200 whitespace-nowrap">
                   {siteConfig.business?.name}
                 </span>
               </div>
             </a>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center h-full gap-1">
+            <nav className="hidden xl:flex items-center h-full gap-1">
               {mainNavItems.map((item) => (
                 <ServiceNavItem key={item.href} item={item} />
               ))}
             </nav>
 
             {/* Phone + CTA */}
-            <div className="hidden lg:flex items-center gap-0 border-l border-white/10 h-full">
+            <div className="hidden xl:flex items-center gap-0 border-l border-white/10 h-full">
               <a
                 href={`tel:${siteConfig.contact?.phone}`}
-                className="group flex items-center gap-4 px-8 h-full hover:bg-white/5 transition-all duration-0"
+                className="group flex items-center gap-4 xl:px-4 2xl:px-8 h-full hover:bg-white/5 transition-all duration-0"
               >
                 <div className="w-10 h-10 bg-accent flex items-center justify-center group-hover:bg-white transition-colors duration-0">
                   <Phone className="h-5 w-5 text-white group-hover:text-black" />
@@ -231,7 +231,7 @@ export function Navbar() {
                 </div>
               </a>
               <Button
-                className="rounded-none bg-accent hover:bg-white text-white hover:text-black font-black px-10 h-full transition-all duration-0 border-l border-white/10"
+                className="rounded-none bg-accent hover:bg-white text-white hover:text-black font-black xl:px-6 2xl:px-10 h-full transition-all duration-0 border-l border-white/10"
                 asChild
               >
                 <a href="/contact" className="flex items-center justify-center h-full text-sm tracking-[0.2em]">INITIATE QUOTE</a>
@@ -240,7 +240,7 @@ export function Navbar() {
 
             {/* Mobile Menu */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger asChild className="lg:hidden">
+              <SheetTrigger asChild className="xl:hidden">
                 <Button
                   variant="ghost"
                   size="icon"
