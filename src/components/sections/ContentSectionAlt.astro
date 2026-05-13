@@ -1,126 +1,222 @@
 ---
-import { getLocationText } from "@/config/site"
+import {
+	CheckCircle,
+	Target,
+	ShieldCheck,
+	Settings,
+	ArrowRight,
+} from "@lucide/astro";
+import { getLocationText } from "@/config/site";
 
 interface FeatureItem {
-  icon?: string;
-  title: string;
-  description: string;
+	icon?: string;
+	title: string;
+	description: string;
 }
 
 interface Props {
-  badge?: string;
-  title: string;
-  titleHighlight?: string;
-  description: string;
-  featuresTitle?: string;
-  features?: FeatureItem[];
-  buttonText?: string;
-  buttonHref?: string;
-  imagePosition?: "left" | "right";
-  image?: string;
-  imageAlt?: string;
+	badge?: string;
+	title: string;
+	titleHighlight?: string;
+	description: string;
+	featuresTitle?: string;
+	features?: FeatureItem[];
+	buttonText?: string;
+	buttonHref?: string;
+	imagePosition?: "left" | "right";
+	image?: string;
+	imageAlt?: string;
 }
 
-const { 
-  badge: raw_badge, 
-  title: raw_title, 
-  titleHighlight,
-  description: raw_description, 
-  featuresTitle,
-  features = [], 
-  buttonText, 
-  buttonHref,
-  imagePosition = "left",
-  image,
-  imageAlt = "Section image"
+const {
+	badge: raw_badge,
+	title: raw_title,
+	titleHighlight,
+	description: raw_description,
+	featuresTitle,
+	features = [],
+	buttonText,
+	buttonHref,
+	imagePosition = "left",
+	image,
+	imageAlt = "Section image",
 } = Astro.props;
 
 // Process text placeholders
 const title = raw_title ? getLocationText(raw_title) : raw_title;
-const titleHighlightProcessed = titleHighlight ? getLocationText(titleHighlight) : titleHighlight;
-const description = raw_description ? getLocationText(raw_description) : raw_description;
+const titleHighlightProcessed = titleHighlight
+	? getLocationText(titleHighlight)
+	: titleHighlight;
+const description = raw_description
+	? getLocationText(raw_description)
+	: raw_description;
 const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
 ---
 
-<section class="py-16 md:py-24">
-  <div class="container mx-auto px-4">
-    {/* Header - centered above the two columns */}
-    <div class="text-center mb-12" data-animate="fade-up">
-      {badge && (
-        <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wide mb-4">{badge}</span>
-      )}
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold">
-        {title}{" "}
-        {titleHighlightProcessed && (
-          <span class="text-accent">{titleHighlightProcessed}</span>
-        )}
-      </h2>
-      <p class="text-muted-foreground mt-4 max-w-3xl mx-auto" set:html={description} />
-    </div>
+<section
+	class="py-24 md:py-32 bg-white relative overflow-hidden border-b-4 border-primary">
+	<div class="container mx-auto px-4 relative z-10">
+		<div class="max-w-6xl mx-auto">
+			{/* Header - centered above the two columns */}
+			<div class="text-center mb-20" data-animate="fade-up">
+				{
+					badge && (
+						<div class="flex items-center justify-center gap-3 mb-6">
+							<div class="w-12 h-1 bg-accent" />
+							<span class="bg-primary text-white text-[10px] font-black px-4 py-1 uppercase tracking-[0.2em]">
+								{badge}
+							</span>
+							<div class="w-12 h-1 bg-accent" />
+						</div>
+					)
+				}
+				<h2
+					class="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
+					{title}{" "}
+					{
+						titleHighlightProcessed && (
+							<span class="text-accent underline decoration-8 decoration-accent/30 underline-offset-8">
+								{titleHighlightProcessed}
+							</span>
+						)
+					}
+				</h2>
+				<p
+					class="text-lg font-medium text-primary max-w-3xl mx-auto leading-relaxed"
+					set:html={description}
+				/>
+			</div>
 
-    {/* Two column layout */}
-    <div class={`grid md:grid-cols-2 gap-8 lg:gap-12 items-start ${imagePosition === "right" ? "" : ""}`}>
-      {imagePosition === "left" && (
-        <div class="rounded-lg overflow-hidden max-h-[400px]" data-animate="fade-right">
-          {image ? (
-            <img src={image} alt={imageAlt} class="w-full h-full object-cover" />
-          ) : (
-            <div class="aspect-video bg-muted flex items-center justify-center">
-              <span class="text-muted-foreground text-sm">Image</span>
-            </div>
-          )}
-        </div>
-      )}
+			{/* Two column layout */}
+			<div class="grid md:grid-cols-2 gap-16 lg:gap-24 items-start">
+				{
+					imagePosition === "left" && (
+						<div class="relative group" data-animate="fade-right">
+							<div class="absolute inset-0 bg-accent translate-x-6 translate-y-6" />
+							<div class="relative bg-white border-4 border-white p-2 overflow-hidden shadow-2xl rounded-none">
+								{image ? (
+									<img
+										src={image}
+										alt={imageAlt}
+										class="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700 border-4 border-primary rounded-none"
+									/>
+								) : (
+									<div class="aspect-video bg-primary flex items-center justify-center">
+										<Settings class="w-12 h-12 text-accent/20 animate-spin-slow" />
+									</div>
+								)}
+								<div class="absolute bottom-6 right-6 bg-primary text-white text-[10px] font-black px-4 py-2 uppercase tracking-[0.2em] border border-accent/30">
+									MODULE_VIEW_01
+								</div>
+							</div>
+						</div>
+					)
+				}
 
-      <div class="space-y-2" data-animate="fade-up">
-        {features.length > 0 && (
-          <>
-            {featuresTitle && (
-              <h3 class="text-xl md:text-2xl font-bold mb-6">{featuresTitle}</h3>
-            )}
-            <ul class="space-y-6">
-              {features.map((feature) => (
-                <li class="flex gap-4">
-                  <div class="flex-shrink-0 w-10 h-10 rounded-full bg-accent/10 text-accent flex items-center justify-center">
-                    {feature.icon ? (
-                      <span class="text-lg" set:html={feature.icon} />
-                    ) : (
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                        <polyline points="22 4 12 14.01 9 11.01" />
-                      </svg>
-                    )}
-                  </div>
-                  <div>
-                    <h4 class="font-semibold text-foreground">{feature.title}</h4>
-                    <p class="text-muted-foreground text-sm mt-1" set:html={feature.description} />
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
+				<div class="space-y-12" data-animate="fade-up">
+					{
+						features.length > 0 && (
+							<div class="space-y-8">
+								{featuresTitle && (
+									<div class="flex items-center gap-4">
+										<Target class="w-6 h-6 text-accent" />
+										<h3 class="text-2xl font-black text-primary uppercase tracking-tight">
+											{featuresTitle}
+										</h3>
+									</div>
+								)}
+								<div class="grid gap-6">
+									{features.map((feature) => (
+										<div class="group bg-white border-4 border-primary p-6 shadow-[8px_8px_0px_var(--brand-secondary,rgba(0,0,0,0.1))] hover:shadow-[12px_12px_0px_var(--accent)] transition-all duration-300 rounded-none">
+											<div class="flex gap-6">
+												<div class="flex-shrink-0 w-12 h-12 bg-primary text-white flex items-center justify-center group-hover:bg-accent group-hover:text-primary transition-colors">
+													{feature.icon ? (
+														<span
+															class="text-xl"
+															set:html={
+																feature.icon
+															}
+														/>
+													) : (
+														<ShieldCheck class="w-6 h-6 stroke-[3px]" />
+													)}
+												</div>
+												<div>
+													<h4 class="text-lg font-black text-primary uppercase tracking-tighter mb-2">
+														{feature.title}
+													</h4>
+													<p class="text-[10px] font-black uppercase tracking-widest text-primary/40 mb-3">
+														Operational_Parameters
+													</p>
+													<p
+														class="text-sm font-bold uppercase tracking-tight text-primary/70 leading-relaxed"
+														set:html={
+															feature.description
+														}
+													/>
+												</div>
+											</div>
+										</div>
+									))}
+								</div>
+							</div>
+						)
+					}
 
-        {buttonText && buttonHref && (
-          <div class="pt-6">
-            <a href={buttonHref} class="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-6 py-3 font-semibold hover:bg-primary/90 transition-colors">
-              {buttonText}
-            </a>
-          </div>
-        )}
-      </div>
+					{
+						buttonText && buttonHref && (
+							<div class="pt-4">
+								<a
+									href={buttonHref}
+									class="group relative inline-flex items-center justify-center px-12 py-6 bg-primary text-white font-black text-xs uppercase tracking-[0.3em] transition-all hover:bg-accent hover:text-primary rounded-none shadow-[8px_8px_0px_var(--brand-secondary,rgba(0,0,0,0.1))]">
+									<span class="relative z-10 flex items-center gap-3">
+										{buttonText}
+										<ArrowRight class="w-4 h-4 stroke-[4px]" />
+									</span>
+								</a>
+							</div>
+						)
+					}
+				</div>
 
-      {imagePosition === "right" && (
-        <div class="rounded-lg overflow-hidden max-h-[300px]" data-animate="fade-left">
-          {image ? (
-            <img src={image} alt={imageAlt} class="w-full h-full object-cover" />
-          ) : (
-            <div class="aspect-video bg-muted flex items-center justify-center">
-              <span class="text-muted-foreground text-sm">Image</span>
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-  </div>
+				{
+					imagePosition === "right" && (
+						<div class="relative group" data-animate="fade-left">
+							<div class="absolute inset-0 bg-accent translate-x-6 translate-y-6" />
+							<div class="relative bg-white border-4 border-white p-2 overflow-hidden shadow-2xl rounded-none">
+								{image ? (
+									<img
+										src={image}
+										alt={imageAlt}
+										class="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700 border-4 border-primary rounded-none"
+									/>
+								) : (
+									<div class="aspect-video bg-primary flex items-center justify-center">
+										<Settings class="w-12 h-12 text-accent/20 animate-spin-slow" />
+									</div>
+								)}
+								<div class="absolute bottom-6 right-6 bg-primary text-white text-[10px] font-black px-4 py-2 uppercase tracking-[0.2em] border border-accent/30">
+									MODULE_VIEW_02
+								</div>
+							</div>
+						</div>
+					)
+				}
+			</div>
+		</div>
+	</div>
 </section>
+
+<style>
+	.animate-spin-slow {
+		animation: spin 12s linear infinite;
+	}
+	@keyframes spin {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+</style>
