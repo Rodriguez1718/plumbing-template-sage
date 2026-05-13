@@ -56,7 +56,7 @@ export function ServicesSection({ title, description, categories }: Props) {
       <div className="container mx-auto px-4 relative z-10">
         <div className={`mb-16 md:mb-24 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="max-w-3xl">
-            <span className="inline-block bg-accent text-accent-foreground text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em] mb-4">
+            <span className="inline-block bg-accent text-primary text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em] mb-4">
               Our Expertise
             </span>
             <h2 className="text-4xl md:text-6xl font-black text-foreground leading-[1.1] tracking-tighter uppercase mb-6">
