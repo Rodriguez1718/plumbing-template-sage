@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
-import { 
-  Menu, ChevronDown, Phone, Settings, DollarSign, 
+import {
+  Menu, ChevronDown, Phone, Settings, DollarSign,
   Utensils, Bath, Droplet, Waves, Flame, Pipette,
   Building, Zap, Shield, Search, AlertCircle, Filter,
   Leaf, ClipboardList
@@ -30,7 +30,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 function TopNavDropdown({ item }: { item: typeof topNavItems[0] }) {
   const [isOpen, setIsOpen] = React.useState(false)
-  
+
   if (!item.children) {
     return (
       <a href={item.href} className="text-sm font-medium hover:text-accent transition-colors duration-200">
@@ -40,7 +40,7 @@ function TopNavDropdown({ item }: { item: typeof topNavItems[0] }) {
   }
 
   return (
-    <div 
+    <div
       className="relative z-[70]"
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
@@ -72,7 +72,7 @@ function TopNavDropdown({ item }: { item: typeof topNavItems[0] }) {
 
 function MegaMenu({ item, isOpen }: { item: MegaMenuItem; isOpen: boolean }) {
   if (!isOpen) return null
-  
+
   return (
     <div className="fixed left-0 right-0 bg-brand-primary shadow-2xl border-t border-white/10 z-[50]" style={{ top: '120px' }}>
       <div className="w-full px-12 py-10">
@@ -116,9 +116,9 @@ function MegaMenu({ item, isOpen }: { item: MegaMenuItem; isOpen: boolean }) {
 
 function ServiceNavItem({ item }: { item: MegaMenuItem }) {
   const [isOpen, setIsOpen] = React.useState(false)
-  
+
   return (
-    <div 
+    <div
       className="relative h-full flex items-center"
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
@@ -154,8 +154,8 @@ export function Navbar() {
           <div className="flex h-10 items-center justify-between text-sm">
             <div className="flex items-center gap-6">
               {quickActions.map((action) => (
-                <a 
-                  key={action.href} 
+                <a
+                  key={action.href}
                   href={action.href}
                   className="flex items-center gap-2 hover:text-accent transition-colors duration-200"
                 >
@@ -184,9 +184,9 @@ export function Navbar() {
             {/* Logo */}
             <a href="/" className="flex items-center gap-3 group">
               <div className="relative">
-                <img 
-                  src={siteConfig.logo?.src} 
-                  alt={siteConfig.logo?.alt || "Logo"} 
+                <img
+                  src={siteConfig.logo?.src}
+                  alt={siteConfig.logo?.alt || "Logo"}
                   className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110"
                   width={48}
                   height={48}
@@ -213,8 +213,8 @@ export function Navbar() {
 
             {/* Phone + CTA */}
             <div className="hidden lg:flex items-center gap-4">
-              <a 
-                href={`tel:${siteConfig.contact?.phone}`} 
+              <a
+                href={`tel:${siteConfig.contact?.phone}`}
                 className="group flex items-center gap-3 px-4 py-2 hover:bg-white/5 transition-all duration-200"
               >
                 <div className="w-11 h-11 bg-gradient-to-br from-accent to-highlight flex items-center justify-center shadow-lg shadow-accent/20 group-hover:shadow-accent/40 group-hover:scale-105 transition-all duration-200 flex-shrink-0">
@@ -227,7 +227,7 @@ export function Navbar() {
                   </span>
                 </div>
               </a>
-              <Button 
+              <Button
                 className="rounded-none bg-gradient-to-r from-accent to-highlight hover:from-highlight hover:to-accent text-white font-bold px-8 py-6 shadow-lg shadow-accent/30 hover:shadow-accent/50 hover:scale-105 transition-all duration-200 flex-shrink-0"
                 asChild
               >
@@ -238,9 +238,9 @@ export function Navbar() {
             {/* Mobile Menu */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild className="lg:hidden">
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
+                <Button
+                  variant="ghost"
+                  size="icon"
                   aria-label="Open menu"
                   className="text-white hover:bg-white/10 hover:text-accent"
                 >
@@ -271,7 +271,7 @@ function MobileNav({ onClose }: { onClose: () => void }) {
     <div className="flex flex-col bg-brand-primary">
       {/* Phone CTA */}
       <div className="bg-gradient-to-r from-accent to-highlight p-4">
-        <a 
+        <a
           href={`tel:${siteConfig.contact?.phone}`}
           className="flex items-center justify-center gap-2 text-white"
         >
@@ -283,7 +283,7 @@ function MobileNav({ onClose }: { onClose: () => void }) {
       {/* Quick Actions */}
       <div className="grid grid-cols-2 gap-3 p-4 bg-brand-secondary border-b border-white/10">
         {quickActions.map((action) => (
-          <a 
+          <a
             key={action.href}
             href={action.href}
             className="flex items-center gap-2 p-3 bg-brand-tertiary hover:bg-white/5 transition-colors duration-200"
@@ -354,10 +354,9 @@ function MobileNav({ onClose }: { onClose: () => void }) {
               className="flex items-center justify-between w-full py-3 text-left"
             >
               <span className="font-medium text-white">{service.title}</span>
-              <ChevronDown 
-                className={`h-4 w-4 text-white/60 transition-transform ${
-                  expandedService === service.href ? 'rotate-180' : ''
-                }`} 
+              <ChevronDown
+                className={`h-4 w-4 text-white/60 transition-transform ${expandedService === service.href ? 'rotate-180' : ''
+                  }`}
               />
             </button>
             {expandedService === service.href && (
@@ -370,10 +369,9 @@ function MobileNav({ onClose }: { onClose: () => void }) {
                     >
                       <span className="text-accent">{iconMap[category.icon]}</span>
                       <span className="text-sm font-semibold text-accent">{category.title}</span>
-                      <ChevronDown 
-                        className={`h-3 w-3 text-white/60 ml-auto transition-transform ${
-                          expandedCategory === category.title ? 'rotate-180' : ''
-                        }`} 
+                      <ChevronDown
+                        className={`h-3 w-3 text-white/60 ml-auto transition-transform ${expandedCategory === category.title ? 'rotate-180' : ''
+                          }`}
                       />
                     </button>
                     {expandedCategory === category.title && (
@@ -409,7 +407,7 @@ function MobileNav({ onClose }: { onClose: () => void }) {
 
       {/* CTA */}
       <div className="p-4">
-        <Button 
+        <Button
           className="w-full bg-gradient-to-r from-accent to-highlight hover:from-highlight hover:to-accent text-white font-bold py-6 shadow-lg shadow-accent/30 text-base"
           asChild
         >
