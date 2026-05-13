@@ -38,115 +38,114 @@ const tiles = rawTiles.map(tile => ({
 }));
 ---
 
-<section class="py-16 md:py-24">
-  <div class="container mx-auto px-4">
-    <div class="grid md:grid-cols-3 gap-6" data-animate-stagger>
-      {tiles.map((tile) => (
-        tile.type === "maintenance" ? (
-          <div 
-            class="rounded-lg p-8 text-center text-white relative overflow-hidden"
-            style={tile.bgImage ? `background-image: url('${tile.bgImage}'); background-size: cover; background-position: center;` : ""}
-          >
-            {tile.bgImage ? (
-              <div class="absolute inset-0 bg-brand-primary opacity-70"></div>
-            ) : (
-              <div class="absolute inset-0 bg-brand-primary"></div>
-            )}
-            <div class="absolute top-0 left-0 w-full h-1 bg-accent z-10"></div>
-            <div class="relative z-10">
-              <h3 class="text-xl font-bold mb-4 uppercase tracking-wide">{tile.title}</h3>
-              <div class="mb-6">
-                {tile.priceLabel?.map((line, i) => (
-                  <p class={i === 1 ? "text-4xl md:text-5xl font-black text-sky-300 my-2" : "text-sm uppercase tracking-wide opacity-80"}>
-                    {line}
-                  </p>
-                ))}
-              </div>
-              <a 
-                href={tile.buttonHref || "/contact"} 
-                class="inline-flex items-center justify-center rounded-md bg-accent text-white px-6 py-3 font-semibold hover:bg-accent/90 transition-colors mb-4"
-                aria-label={`${tile.buttonText} - ${tile.title || 'maintenance plan'}`}
-              >
-                {tile.buttonText}
-              </a>
-              <div class="flex items-center justify-center gap-2 text-sm opacity-80">
-                <Phone className="w-4 h-4" />
-                <span>{tile.phone}</span>
-              </div>
+<section class="py-24 md:py-32 bg-white relative overflow-hidden">
+  {/* Technical Background */}
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(var(--brand-primary, #45f9ff) 2px, transparent 0); background-size: 30px 30px;"></div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="grid md:grid-cols-3 gap-8">
+      {tiles.map((tile, index) => (
+        <div class="group relative bg-white border-4 border-primary transition-all duration-300 hover:shadow-[12px_12px_0px_var(--accent)] hover:-translate-x-2 hover:-translate-y-2">
+          {/* Background Image Layer */}
+          {tile.bgImage && (
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+              <img src={tile.bgImage} class="w-full h-full object-cover grayscale opacity-20 group-hover:grayscale-0 group-hover:opacity-40 transition-all duration-700 scale-110 group-hover:scale-100" />
             </div>
+          )}
+
+          {/* Technical Index */}
+          <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-black px-3 py-1 z-20">
+            OFFER-{String(index + 1).padStart(2, '0')}
           </div>
-        ) : tile.type === "financing" ? (
-          <div 
-            class="rounded-lg p-8 text-center text-white relative overflow-hidden"
-            style={tile.bgImage ? `background-image: url('${tile.bgImage}'); background-size: cover; background-position: center;` : ""}
-          >
-            {tile.bgImage ? (
-              <div class="absolute inset-0 bg-brand-secondary opacity-70"></div>
-            ) : (
-              <div class="absolute inset-0 bg-brand-secondary"></div>
-            )}
-            <div class="absolute top-0 left-0 w-full h-1 bg-accent z-10"></div>
-            <div class="relative z-10">
-              <div class="mb-4">
-                {tile.headline?.map((line) => (
-                  <p class="text-2xl md:text-3xl font-black uppercase leading-tight">{line}</p>
-                ))}
-              </div>
-              {tile.subtext && (
-                <p class="text-sm uppercase tracking-wide opacity-80 mb-6">{tile.subtext}</p>
-              )}
-              <a 
-                href={tile.buttonHref || "/financing"} 
-                class="inline-flex items-center justify-center gap-2 rounded-md bg-white text-brand-secondary px-6 py-3 font-semibold hover:bg-white/90 transition-colors mb-4"
-                aria-label={`${tile.buttonText} - ${tile.headline?.join(' ') || 'financing options'}`}
-              >
-                {tile.buttonText}
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <div class="text-sm opacity-80">
-                <span class="block">Phone Number:</span>
-                <span class="font-semibold">{tile.phone}</span>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div 
-            class="rounded-lg p-8 text-center text-white relative overflow-hidden"
-            style={tile.bgImage ? `background-image: url('${tile.bgImage}'); background-size: cover; background-position: center;` : ""}
-          >
-            {tile.bgImage ? (
-              <div class="absolute inset-0 bg-accent opacity-70"></div>
-            ) : (
-              <div class="absolute inset-0 bg-accent"></div>
-            )}
-            <div class="relative z-10">
-              {tile.tag && (
-                <span class="inline-block bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
-                  {tile.tag}
+
+          {tile.type === "maintenance" ? (
+            <div class="relative z-10 p-10 h-full flex flex-col justify-between min-h-[450px]">
+              <div>
+                <span class="inline-block bg-primary text-white text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em] mb-8">
+                  Infrastructure Care
                 </span>
-              )}
-              {tile.discount && (
-                <p class="text-4xl md:text-5xl font-black mb-2">{tile.discount}</p>
-              )}
-              <div class="mb-6">
-                {tile.subheadline?.map((line) => (
-                  <p class="text-lg font-bold uppercase">{line}</p>
-                ))}
+                <h3 class="text-3xl font-black text-primary uppercase tracking-tighter leading-none mb-6">{tile.title}</h3>
+                <div class="space-y-1 mb-8">
+                  {tile.priceLabel?.map((line, i) => (
+                    <p class={i === 1 ? "text-5xl font-black text-primary my-2 leading-none" : "text-xs font-bold uppercase tracking-widest text-primary/40"}>
+                      {line}
+                    </p>
+                  ))}
+                </div>
               </div>
-              <div class="flex items-center justify-center gap-2 text-sm mb-4">
-                <Phone className="w-4 h-4" />
-                <span>{tile.phone}</span>
+              <div class="space-y-6">
+                <a 
+                  href={tile.buttonHref || "/contact"} 
+                  class="w-full inline-flex items-center justify-center bg-primary text-white px-8 py-5 font-black text-sm uppercase tracking-widest hover:bg-accent hover:text-primary transition-all border-2 border-primary"
+                >
+                  {tile.buttonText}
+                </a>
+                <div class="flex items-center justify-center gap-3 text-[10px] font-black text-primary/40 uppercase tracking-widest">
+                  <Phone className="w-3 h-3" />
+                  <span>Direct: {tile.phone}</span>
+                </div>
               </div>
-              <a 
-                href={tile.buttonHref || "/contact"} 
-                class="inline-flex items-center justify-center rounded-md bg-white text-accent px-6 py-3 font-semibold hover:bg-white/90 transition-colors"
-                aria-label={`${tile.buttonText} - ${tile.discount || ''} ${tile.subheadline?.join(' ') || 'special offer'}`}
-              >
-                {tile.buttonText}
-              </a>
             </div>
-          </div>
-        )
+          ) : tile.type === "financing" ? (
+            <div class="relative z-10 p-10 h-full flex flex-col justify-between min-h-[450px] bg-primary/5">
+              <div>
+                <span class="inline-block bg-accent text-primary text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em] mb-8">
+                  Capital Resource
+                </span>
+                <div class="space-y-2 mb-8">
+                  {tile.headline?.map((line) => (
+                    <p class="text-4xl font-black text-primary uppercase tracking-tighter leading-[0.9]">{line}</p>
+                  ))}
+                </div>
+                {tile.subtext && (
+                  <p class="text-sm font-bold uppercase tracking-tight text-primary/60">{tile.subtext}</p>
+                )}
+              </div>
+              <div class="space-y-6">
+                <a 
+                  href={tile.buttonHref || "/financing"} 
+                  class="w-full inline-flex items-center justify-center gap-3 bg-white text-primary border-4 border-primary px-8 py-5 font-black text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-[6px_6px_0px_var(--brand-primary)]"
+                >
+                  {tile.buttonText}
+                  <ArrowRight className="w-5 h-5" />
+                </a>
+                <div class="text-[10px] font-black text-primary/40 uppercase tracking-widest text-center">
+                  Support: {tile.phone}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div class="relative z-10 p-10 h-full flex flex-col justify-between min-h-[450px] bg-accent">
+              <div>
+                {tile.tag && (
+                  <span class="inline-block bg-primary text-white text-[10px] font-black px-3 py-1 uppercase tracking-[0.2em] mb-8">
+                    {tile.tag}
+                  </span>
+                )}
+                {tile.discount && (
+                  <p class="text-7xl font-black text-primary tracking-tighter leading-none mb-4">{tile.discount}</p>
+                )}
+                <div class="space-y-1 mb-8">
+                  {tile.subheadline?.map((line) => (
+                    <p class="text-xl font-black text-primary/80 uppercase tracking-tight">{line}</p>
+                  ))}
+                </div>
+              </div>
+              <div class="space-y-6">
+                <a 
+                  href={tile.buttonHref || "/contact"} 
+                  class="w-full inline-flex items-center justify-center bg-primary text-white px-8 py-5 font-black text-sm uppercase tracking-widest hover:bg-white hover:text-primary transition-all border-2 border-primary"
+                >
+                  {tile.buttonText}
+                </a>
+                <div class="flex items-center justify-center gap-3 text-[10px] font-black text-primary uppercase tracking-widest">
+                  <Phone className="w-3 h-3 text-primary" />
+                  <span>EMERGENCY: {tile.phone}</span>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
       ))}
     </div>
   </div>
