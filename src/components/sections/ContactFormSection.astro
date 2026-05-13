@@ -1,26 +1,42 @@
 ---
-import { getLocationText } from "@/config/site"
+import {
+	Phone,
+	Mail,
+	MapPin,
+	Send,
+	ShieldCheck,
+	Clock,
+	Settings,
+} from "@lucide/astro";
+import { getLocationText } from "@/config/site";
 
 interface Props {
-  title?: string;
-  description?: string;
-  image?: string;
-  phone?: string;
-  email?: string;
-  address?: string;
-  serviceOptions?: string[];
-  planOptions?: string[];
+	title?: string;
+	description?: string;
+	image?: string;
+	phone?: string;
+	email?: string;
+	address?: string;
+	serviceOptions?: string[];
+	planOptions?: string[];
 }
 
 const {
-  title: raw_title = "Get in Touch with {fullName}",
-  description: raw_description = "Fill out the form, and a member of our team will get back to you promptly. Whether you're looking for a quick repair, a detailed quote, or general advice, we've got you covered.",
-  image = "/images/photos/unsplash-1621905251189-08b45d6a269e-w800.jpg",
-  phone: raw_phone = "{phone}",
-  email: raw_email = "{email}",
-  address: raw_address = "{city}, {state}",
-  serviceOptions = ["Residential Plumbing", "Commercial Plumbing", "Emergency Service", "Maintenance", "Other"],
-  planOptions = ["Yes", "No", "Not Sure"]
+	title: raw_title = "Get in Touch with {fullName}",
+	description:
+		raw_description = "Fill out the form, and a member of our team will get back to you promptly. Whether you're looking for a quick repair, a detailed quote, or general advice, we've got you covered.",
+	image = "/images/photos/unsplash-1621905251189-08b45d6a269e-w800.jpg",
+	phone: raw_phone = "{phone}",
+	email: raw_email = "{email}",
+	address: raw_address = "{city}, {state}",
+	serviceOptions = [
+		"Residential Plumbing",
+		"Commercial Plumbing",
+		"Emergency Service",
+		"Maintenance",
+		"Other",
+	],
+	planOptions = ["Yes", "No", "Not Sure"],
 } = Astro.props;
 
 // Process text placeholders
@@ -31,229 +47,282 @@ const email = getLocationText(raw_email);
 const address = getLocationText(raw_address);
 ---
 
-<!-- Contact Info Header -->
-<section class="py-16 md:py-20 bg-background">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-12" data-animate="fade-up">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
-      <p class="text-muted-foreground max-w-2xl mx-auto mb-10" set:html={description} />
-      
-      <div class="flex flex-wrap justify-center gap-6 md:gap-10">
-        <div class="flex items-center gap-4 bg-muted/50 rounded-xl px-6 py-4">
-          <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-          </div>
-          <div class="text-left">
-            <p class="text-xs text-muted-foreground uppercase tracking-wide font-medium">Phone</p>
-            <a href={`tel:${phone}`} class="font-bold text-lg text-primary hover:text-accent transition-colors">{phone}</a>
-          </div>
-        </div>
-        
-        <div class="flex items-center gap-4 bg-muted/50 rounded-xl px-6 py-4">
-          <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect width="20" height="16" x="2" y="4" rx="2"/>
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-            </svg>
-          </div>
-          <div class="text-left">
-            <p class="text-xs text-muted-foreground uppercase tracking-wide font-medium">Email Address</p>
-            <a href={`mailto:${email}`} class="font-bold text-lg text-primary hover:text-accent transition-colors">{email}</a>
-          </div>
-        </div>
-        
-        <div class="flex items-center gap-4 bg-muted/50 rounded-xl px-6 py-4">
-          <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-          </div>
-          <div class="text-left">
-            <p class="text-xs text-muted-foreground uppercase tracking-wide font-medium">Address</p>
-            <span class="font-bold text-lg">{address}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+{/* Header and Info Section */}
+<section
+	class="py-24 md:py-32 bg-white relative overflow-hidden border-b-4 border-primary">
+	{/* Technical Background */}
+	<div
+		class="absolute inset-0 opacity-[0.03] pointer-events-none"
+		style="background-image: radial-gradient(var(--brand-primary, #000) 2px, transparent 0); background-size: 30px 30px;">
+	</div>
+
+	<div class="container mx-auto px-4 relative z-10">
+		<div class="max-w-6xl mx-auto">
+			<div class="mb-16" data-animate="fade-up">
+				<div class="flex items-center gap-3 mb-6">
+					<div class="w-12 h-1 bg-accent"></div>
+					<span
+						class="text-[10px] font-black uppercase tracking-[0.4em] text-primary/40"
+						>Communications_Hub_Mainframe</span
+					>
+				</div>
+				<h2
+					class="text-4xl md:text-6xl font-black text-primary uppercase tracking-tighter leading-[1.1] mb-8">
+					{title}
+				</h2>
+				<p
+					class="text-lg font-medium tracking-tight leading-relaxed text-primary max-w-2xl"
+					set:html={description}
+				/>
+			</div>
+
+			<div class="grid md:grid-cols-3 gap-8">
+				{
+					[
+						{
+							label: "Direct_Link",
+							value: phone,
+							href: `tel:${phone}`,
+							icon: Phone,
+						},
+						{
+							label: "Data_Transmission",
+							value: email,
+							href: `mailto:${email}`,
+							icon: Mail,
+						},
+						{
+							label: "Operational_Base",
+							value: address,
+							icon: MapPin,
+						},
+					].map((item) => (
+						<div class="group relative bg-white border-4 border-primary p-8 shadow-[8px_8px_0px_var(--accent)] hover:shadow-[12px_12px_0px_var(--accent)] transition-all duration-300">
+							<div class="flex items-center gap-4 mb-4">
+								<div class="w-10 h-10 bg-primary text-white flex items-center justify-center group-hover:bg-accent group-hover:text-primary transition-colors">
+									<item.icon class="w-5 h-5 stroke-[3px]" />
+								</div>
+								<span class="text-[10px] font-black uppercase tracking-[0.2em] text-primary/40 group-hover:text-primary transition-colors">
+									{item.label}
+								</span>
+							</div>
+							{item.href ? (
+								<a
+									href={item.href}
+									class="text-xl font-black text-primary uppercase tracking-tight hover:text-accent transition-colors block truncate">
+									{item.value}
+								</a>
+							) : (
+								<span class="text-xl font-black text-primary uppercase tracking-tight block truncate">
+									{item.value}
+								</span>
+							)}
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</div>
 </section>
 
-<!-- Form Section with Image -->
-<section class="py-16 md:py-24 bg-primary relative overflow-hidden">
-  <!-- Decorative Background Elements -->
-  <div class="absolute inset-0 overflow-hidden">
-  </div>
+{/* Form Section with Image */}
+<section
+	class="py-24 md:py-32 bg-primary relative overflow-hidden border-b-4 border-accent">
+	{/* Technical Pattern */}
+	<div
+		class="absolute inset-0 opacity-10 pointer-events-none"
+		style="background-image: repeating-linear-gradient(45deg, var(--brand-accent, #ff3d00) 0, var(--brand-accent, #ff3d00) 2px, transparent 0, transparent 50%); background-size: 20px 20px;">
+	</div>
 
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
-      <!-- Image Side -->
-      <div class="relative order-2 lg:order-1" data-animate="fade-right">
-        <!-- Main Image Container -->
-        <div class="relative">
-          <!-- Decorative frame -->
-          <div class="absolute -inset-4 bg-accent rounded-3xl"></div>
-          
-          <!-- Phone/Device Frame -->
-          <div class="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-[2.5rem] p-3 shadow-2xl max-w-sm mx-auto">
-            <div class="absolute top-6 left-1/2 -translate-x-1/2 w-20 h-1.5 bg-gray-700 rounded-full"></div>
-            <div class="bg-white rounded-[2rem] overflow-hidden">
-              <img 
-                src={image} 
-                alt="Professional plumber ready to help" 
-                class="w-full h-auto object-cover aspect-[3/4]"
-              />
-            </div>
-          </div>
+	<div class="container mx-auto px-4 relative z-10">
+		<div class="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+			<!-- Image Side -->
+			<div class="relative order-2 lg:order-1" data-animate="fade-right">
+				<div
+					class="absolute inset-0 bg-accent translate-x-6 translate-y-6">
+				</div>
+				<div
+					class="relative bg-white border-4 border-white p-2 shadow-2xl overflow-hidden">
+					<img
+						src={image}
+						alt="Operational Personnel"
+						class="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700 border-4 border-primary"
+					/>
+					<div
+						class="absolute bottom-4 left-4 bg-primary text-white text-[10px] font-black px-4 py-2 uppercase tracking-[0.2em]">
+						SYSTEM_ID: VERIFIED_TECH
+					</div>
+				</div>
+			</div>
 
-        </div>
-      </div>
-      
-      <!-- Form Side -->
-      <div class="order-1 lg:order-2" data-animate="fade-left">
-        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden">
-          <!-- Form Header Accent -->
-          <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-accent via-brand-secondary to-accent"></div>
-          
-          <h3 class="text-xl md:text-2xl font-bold text-center mb-1 text-brand-primary">Contact Form</h3>
-          <p class="text-center text-muted-foreground text-xs mb-5">We'll get back to you within 24 hours</p>
-          
-          <form class="space-y-3">
-            <div>
-              <label for="name" class="block text-xs font-semibold mb-1 text-gray-700">Name*</label>
-              <input 
-                type="text" 
-                id="name" 
-                name="name" 
-                required
-                class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all bg-gray-50/50 text-sm"
-                placeholder="Your full name"
-              />
-            </div>
-            
-            <div class="grid sm:grid-cols-2 gap-3">
-              <div>
-                <label for="email" class="block text-xs font-semibold mb-1 text-gray-700">Email Address*</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  name="email" 
-                  required
-                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all bg-gray-50/50 text-sm"
-                  placeholder="you@email.com"
-                />
-              </div>
-              <div>
-                <label for="phone" class="block text-xs font-semibold mb-1 text-gray-700">Phone</label>
-                <input 
-                  type="tel" 
-                  id="phone" 
-                  name="phone"
-                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all bg-gray-50/50 text-sm"
-                  placeholder="(123) 456-7890"
-                />
-              </div>
-            </div>
-            
-            <div class="grid sm:grid-cols-2 gap-3">
-              <div>
-                <label for="plan" class="block text-xs font-semibold mb-1 text-gray-700">Are You Interested In A Plan?</label>
-                <div class="relative">
-                  <select 
-                    id="plan" 
-                    name="plan"
-                    class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all bg-gray-50/50 appearance-none cursor-pointer text-sm"
-                  >
-                    <option value="">Select an option</option>
-                    {planOptions.map((option) => (
-                      <option value={option.toLowerCase()}>{option}</option>
-                    ))}
-                  </select>
-                  <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6"/>
-                  </svg>
-                </div>
-              </div>
-              <div>
-                <label for="service" class="block text-xs font-semibold mb-1 text-gray-700">Which Service Do You Need?</label>
-                <div class="relative">
-                  <select 
-                    id="service" 
-                    name="service"
-                    class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all bg-gray-50/50 appearance-none cursor-pointer text-sm"
-                  >
-                    <option value="">Select a service</option>
-                    {serviceOptions.map((option) => (
-                      <option value={option.toLowerCase().replace(/\s+/g, '-')}>{option}</option>
-                    ))}
-                  </select>
-                  <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <label for="message" class="block text-xs font-semibold mb-1 text-gray-700">Message*</label>
-              <textarea 
-                id="message" 
-                name="message" 
-                rows="3"
-                required
-                class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all bg-gray-50/50 resize-none text-sm"
-                placeholder="Tell us about your plumbing needs..."
-              ></textarea>
-            </div>
-            
-            <div>
-              <label for="verification" class="block text-xs font-semibold mb-1 text-gray-700">Verification*</label>
-              <input 
-                type="text" 
-                id="verification" 
-                name="verification"
-                placeholder="Enter the code shown"
-                required
-                class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all bg-gray-50/50 text-sm"
-              />
-            </div>
-            
-            <button 
-              type="submit"
-              class="w-full bg-accent text-white py-3 px-6 rounded-lg font-bold hover:bg-accent/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform"
-            >
-              SUBMIT
-            </button>
-          </form>
+			<!-- Form Side -->
+			<div class="order-1 lg:order-2" data-animate="fade-left">
+				<div
+					class="bg-white border-4 border-primary p-8 md:p-12 shadow-[16px_16px_0px_var(--accent)] relative">
+					<div
+						class="absolute top-0 right-10 bg-primary text-white text-[10px] font-black px-6 py-2 uppercase tracking-[0.3em]">
+						FORM_SUBMISSION_MODULE
+					</div>
 
-          <!-- Trust indicators -->
-          <div class="mt-4 pt-4 border-t border-gray-100 flex flex-wrap justify-center gap-4 text-xs text-gray-500">
-            <span class="flex items-center gap-1">
-              <svg class="w-3.5 h-3.5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
-                <path d="m9 12 2 2 4-4"/>
-              </svg>
-              Secure Form
-            </span>
-            <span class="flex items-center gap-1">
-              <svg class="w-3.5 h-3.5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-              Fast Response
-            </span>
-            <span class="flex items-center gap-1">
-              <svg class="w-3.5 h-3.5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                <polyline points="22 4 12 14.01 9 11.01"/>
-              </svg>
-              No Spam
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+					<div class="mb-10 pt-4">
+						<h3
+							class="text-3xl font-black text-primary uppercase tracking-tighter mb-2">
+							INITIALIZE_REQUEST
+						</h3>
+						<p
+							class="text-[10px] font-black text-primary/40 uppercase tracking-widest">
+							Processing Time: &lt; 24.00_HRS
+						</p>
+					</div>
+
+					<form class="space-y-6">
+						<div class="grid md:grid-cols-2 gap-6">
+							<div class="space-y-2">
+								<label
+									for="name"
+									class="text-[10px] font-black uppercase tracking-widest text-primary/60"
+									>Personnel_Name</label
+								>
+								<input
+									type="text"
+									id="name"
+									name="name"
+									required
+									class="w-full bg-white border-4 border-primary p-4 text-sm font-bold uppercase tracking-tight focus:bg-accent/5 focus:outline-none transition-colors placeholder:text-primary/20 rounded-none"
+									placeholder="Enter_Full_Name"
+								/>
+							</div>
+							<div class="space-y-2">
+								<label
+									for="phone"
+									class="text-[10px] font-black uppercase tracking-widest text-primary/60"
+									>Comm_Frequency</label
+								>
+								<input
+									type="tel"
+									id="phone"
+									name="phone"
+									class="w-full bg-white border-4 border-primary p-4 text-sm font-bold uppercase tracking-tight focus:bg-accent/5 focus:outline-none transition-colors placeholder:text-primary/20 rounded-none"
+									placeholder="(000) 000-0000"
+								/>
+							</div>
+						</div>
+
+						<div class="space-y-2">
+							<label
+								for="email"
+								class="text-[10px] font-black uppercase tracking-widest text-primary/60"
+								>Digital_Address</label
+							>
+							<input
+								type="email"
+								id="email"
+								name="email"
+								required
+								class="w-full bg-white border-4 border-primary p-4 text-sm font-bold uppercase tracking-tight focus:bg-accent/5 focus:outline-none transition-colors placeholder:text-primary/20 rounded-none"
+								placeholder="USER@NETWORK.COM"
+							/>
+						</div>
+
+						<div class="grid md:grid-cols-2 gap-6">
+							<div class="space-y-2">
+								<label
+									for="service"
+									class="text-[10px] font-black uppercase tracking-widest text-primary/60"
+									>Operations_Type</label
+								>
+								<div class="relative">
+									<select
+										id="service"
+										name="service"
+										class="w-full bg-white border-4 border-primary p-4 text-sm font-bold uppercase tracking-tight focus:bg-accent/5 focus:outline-none appearance-none cursor-pointer rounded-none">
+										<option value="">SELECT_SERVICE</option>
+										{
+											serviceOptions.map((option) => (
+												<option
+													value={option
+														.toLowerCase()
+														.replace(/\s+/g, "-")}>
+													{option.toUpperCase()}
+												</option>
+											))
+										}
+									</select>
+									<Settings
+										class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-primary/40 pointer-events-none"
+									/>
+								</div>
+							</div>
+							<div class="space-y-2">
+								<label
+									for="plan"
+									class="text-[10px] font-black uppercase tracking-widest text-primary/60"
+									>Module_Subscription</label
+								>
+								<div class="relative">
+									<select
+										id="plan"
+										name="plan"
+										class="w-full bg-white border-4 border-primary p-4 text-sm font-bold uppercase tracking-tight focus:bg-accent/5 focus:outline-none appearance-none cursor-pointer rounded-none">
+										<option value="">TIER_INTEREST</option>
+										{
+											planOptions.map((option) => (
+												<option
+													value={option.toLowerCase()}>
+													{option.toUpperCase()}
+												</option>
+											))
+										}
+									</select>
+									<Settings
+										class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-primary/40 pointer-events-none"
+									/>
+								</div>
+							</div>
+						</div>
+
+						<div class="space-y-2">
+							<label
+								for="message"
+								class="text-[10px] font-black uppercase tracking-widest text-primary/60"
+								>Transmission_Data</label
+							>
+							<textarea
+								id="message"
+								name="message"
+								rows="4"
+								required
+								class="w-full bg-white border-4 border-primary p-4 text-sm font-bold uppercase tracking-tight focus:bg-accent/5 focus:outline-none transition-colors resize-none placeholder:text-primary/20 rounded-none"
+								placeholder="DESCRIBE_SITUATION_HERE..."
+							></textarea>
+						</div>
+
+						<button
+							type="submit"
+							class="w-full bg-primary text-white py-6 px-10 font-black text-xs uppercase tracking-[0.4em] border-4 border-primary hover:bg-accent hover:text-primary transition-all active:translate-y-1 shadow-[8px_8px_0px_rgba(0,0,0,0.1)] flex items-center justify-center gap-4 rounded-none">
+							INITIALIZE_UPLINK
+							<Send class="w-4 h-4 stroke-[3px]" />
+						</button>
+					</form>
+
+					{/* System Indicators */}
+					<div
+						class="mt-10 pt-6 border-t-4 border-primary/5 flex flex-wrap justify-between gap-4 text-[10px] font-black uppercase tracking-widest text-primary/40">
+						<span class="flex items-center gap-2">
+							<ShieldCheck class="w-3 h-3 text-accent" />
+							SECURE_LINK
+						</span>
+						<span class="flex items-center gap-2">
+							<Clock class="w-3 h-3 text-accent" />
+							PRIORITY_ROUTING
+						</span>
+						<span class="flex items-center gap-2 text-accent">
+							<div class="w-2 h-2 bg-accent animate-pulse"></div>
+							SYSTEM_ACTIVE
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
