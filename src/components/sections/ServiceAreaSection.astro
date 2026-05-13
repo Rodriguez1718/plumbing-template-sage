@@ -87,6 +87,7 @@ const embedUrl = mapEmbed || (mapAddress ? getMapEmbedUrl(mapAddress) : null);
 							{embedUrl ? (
 								<iframe
 									src={embedUrl}
+									title="Service Area Map"
 									width="100%"
 									height="350"
 									style="border:0; filter: grayscale(1) contrast(1.1) brightness(0.9);"
@@ -175,6 +176,7 @@ const embedUrl = mapEmbed || (mapAddress ? getMapEmbedUrl(mapAddress) : null);
 							{embedUrl ? (
 								<iframe
 									src={embedUrl}
+									title="Service Area Map"
 									width="100%"
 									height="100%"
 									class="absolute inset-0 grayscale-map hover:grayscale-0 transition-all duration-700 h-full w-full min-h-[350px] md:min-h-[500px]"
