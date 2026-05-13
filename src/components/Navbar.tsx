@@ -33,7 +33,7 @@ function TopNavDropdown({ item }: { item: typeof topNavItems[0] }) {
 
   if (!item.children) {
     return (
-      <a href={item.href} className="text-sm font-medium hover:text-accent transition-colors duration-200">
+      <a href={item.href} className="text-xs font-bold uppercase tracking-widest hover:text-accent transition-colors duration-200">
         {item.title}
       </a>
     )
@@ -45,19 +45,19 @@ function TopNavDropdown({ item }: { item: typeof topNavItems[0] }) {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <div className="flex items-center gap-1 text-sm font-medium hover:text-accent transition-colors duration-200 cursor-pointer">
+      <div className="flex items-center gap-1 text-xs font-bold uppercase tracking-widest hover:text-accent transition-colors duration-200 cursor-pointer">
         <a href={item.href}>{item.title}</a>
         <ChevronDown className={`h-3 w-3 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </div>
       {isOpen && (
         <>
           <div className="absolute top-full left-0 right-0 h-2" />
-          <div className="absolute top-full right-0 mt-2 bg-brand-secondary shadow-2xl border border-white/10 py-2 min-w-[200px]">
+          <div className="absolute top-full right-0 mt-0 bg-brand-primary border-2 border-white py-0 min-w-[220px] shadow-[8px_8px_0px_0px_rgba(255,255,255,0.1)]">
             {item.children.map((child) => (
               <a
                 key={child.href}
                 href={child.href}
-                className="block px-4 py-2.5 text-sm font-medium text-white/90 hover:text-accent hover:bg-white/5 transition-all duration-200"
+                className="block px-6 py-3 text-xs font-bold uppercase tracking-widest text-white hover:bg-accent hover:text-white transition-all duration-0 border-b border-white/10 last:border-b-0"
               >
                 {child.title}
               </a>
@@ -74,16 +74,16 @@ function MegaMenu({ item, isOpen }: { item: MegaMenuItem; isOpen: boolean }) {
   if (!isOpen) return null
 
   return (
-    <div className="fixed left-0 right-0 bg-brand-primary shadow-2xl border-t border-white/10 z-[50]" style={{ top: '120px' }}>
-      <div className="w-full px-12 py-10">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-x-8 gap-y-6 max-w-[1600px] mx-auto">
+    <div className="fixed left-0 right-0 bg-brand-primary border-y-2 border-white/20 z-[50]" style={{ top: '120px' }}>
+      <div className="w-full px-12 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-10 max-w-[1600px] mx-auto">
           {item.categories.map((category) => (
             <div key={category.title} className="min-w-0">
-              <div className="flex items-center gap-2 mb-4 pb-2 border-b border-accent/30">
+              <div className="flex items-center gap-3 mb-6 pb-2 border-b-2 border-accent">
                 <span className="text-accent flex-shrink-0">
                   {iconMap[category.icon] || <Settings className="h-5 w-5" />}
                 </span>
-                <h3 className="text-xs font-bold text-white uppercase tracking-wide truncate">
+                <h3 className="text-xs font-black text-white uppercase tracking-[0.2em] truncate">
                   {category.href ? (
                     <a href={category.href} className="hover:text-accent transition-colors duration-200">
                       {category.title}
@@ -93,12 +93,12 @@ function MegaMenu({ item, isOpen }: { item: MegaMenuItem; isOpen: boolean }) {
                   )}
                 </h3>
               </div>
-              <ul className="space-y-2">
+              <ul className="space-y-1">
                 {category.items.map((service) => (
                   <li key={service.href}>
                     <a
                       href={service.href}
-                      className="text-sm text-white/70 hover:text-accent hover:bg-white/5 hover:pl-2 transition-all duration-200 block leading-snug py-1.5 break-words"
+                      className="text-[11px] font-bold uppercase tracking-wider text-white/60 hover:text-white hover:bg-accent px-2 py-1.5 transition-all duration-0 block leading-tight break-words"
                       title={service.title}
                     >
                       {service.title}
@@ -109,6 +109,9 @@ function MegaMenu({ item, isOpen }: { item: MegaMenuItem; isOpen: boolean }) {
             </div>
           ))}
         </div>
+      </div>
+      <div className="bg-accent/5 h-12 border-t border-white/10 flex items-center px-12">
+        <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30">TECHNICAL SPECIFICATIONS & SERVICE MODULES</p>
       </div>
     </div>
   )
@@ -123,12 +126,12 @@ function ServiceNavItem({ item }: { item: MegaMenuItem }) {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <div className="flex items-center gap-1 text-sm font-semibold text-white hover:text-accent transition-all duration-200 px-4 h-full cursor-pointer group">
+      <div className="flex items-center gap-1 text-[13px] font-black uppercase tracking-[0.15em] text-white hover:text-accent transition-all duration-200 px-6 h-full cursor-pointer group">
         <a href={item.href}>
           {item.title}
         </a>
         <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
-        <div className={`absolute bottom-0 left-2 right-2 h-0.5 bg-accent rounded-t transition-all duration-300 ${isOpen ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} />
+        <div className={`absolute bottom-0 left-0 right-0 h-[3px] bg-accent transition-all duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`} />
       </div>
       {isOpen && <MegaMenu item={item} isOpen={isOpen} />}
     </div>
@@ -152,19 +155,21 @@ export function Navbar() {
       <div className="hidden lg:block bg-brand-secondary text-white/90 border-b border-white/5">
         <div className="container mx-auto px-6">
           <div className="flex h-10 items-center justify-between text-sm">
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-8">
               {quickActions.map((action) => (
                 <a
                   key={action.href}
                   href={action.href}
-                  className="flex items-center gap-2 hover:text-accent transition-colors duration-200"
+                  className="flex items-center gap-2 hover:text-accent transition-colors duration-0"
                 >
-                  {action.icon === "settings" ? (
-                    <Settings className="h-3.5 w-3.5" />
-                  ) : (
-                    <DollarSign className="h-3.5 w-3.5" />
-                  )}
-                  <span className="font-medium">{action.title}</span>
+                  <div className="text-accent">
+                    {action.icon === "settings" ? (
+                      <Settings className="h-3 w-3" />
+                    ) : (
+                      <DollarSign className="h-3 w-3" />
+                    )}
+                  </div>
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em]">{action.title}</span>
                 </a>
               ))}
             </div>
@@ -182,23 +187,21 @@ export function Navbar() {
         <div className="container mx-auto px-6">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
-            <a href="/" className="flex items-center gap-3 group">
-              <div className="relative">
+            <a href="/" className="flex items-center gap-4 group">
+              <div className="relative p-1 border-2 border-white/10 group-hover:border-accent transition-colors duration-300">
                 <img
                   src={siteConfig.logo?.src}
                   alt={siteConfig.logo?.alt || "Logo"}
-                  className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110"
-                  width={48}
-                  height={48}
+                  className="h-10 w-10 object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                  width={40}
+                  height={40}
                   decoding="async"
                   loading="eager"
                   fetchPriority="high"
-                  style={{ filter: 'drop-shadow(0 0 2px rgba(255,255,255,0.8))' }}
                 />
-                <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <div className="hidden sm:block">
-                <span className="font-bold text-xl text-white group-hover:text-accent transition-colors duration-200">
+                <span className="font-black text-xl text-white uppercase tracking-tighter group-hover:text-accent transition-colors duration-200">
                   {siteConfig.business?.name}
                 </span>
               </div>
@@ -212,26 +215,26 @@ export function Navbar() {
             </nav>
 
             {/* Phone + CTA */}
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-0 border-l border-white/10 h-full">
               <a
                 href={`tel:${siteConfig.contact?.phone}`}
-                className="group flex items-center gap-3 px-4 py-2 hover:bg-white/5 transition-all duration-200"
+                className="group flex items-center gap-4 px-8 h-full hover:bg-white/5 transition-all duration-0"
               >
-                <div className="w-11 h-11 bg-gradient-to-br from-accent to-highlight flex items-center justify-center shadow-lg shadow-accent/20 group-hover:shadow-accent/40 group-hover:scale-105 transition-all duration-200 flex-shrink-0">
-                  <Phone className="h-5 w-5 text-white" />
+                <div className="w-10 h-10 bg-accent flex items-center justify-center group-hover:bg-white transition-colors duration-0">
+                  <Phone className="h-5 w-5 text-white group-hover:text-black" />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-xs text-white/60 uppercase tracking-wider font-medium whitespace-nowrap">24/7 Emergency</p>
-                  <span className="font-bold text-lg text-white group-hover:text-accent transition-colors duration-200 whitespace-nowrap">
+                  <p className="text-[10px] text-white/40 uppercase tracking-[0.2em] font-black leading-none mb-1">SYSTEM STATUS: ACTIVE</p>
+                  <span className="font-black text-xl text-white group-hover:text-accent transition-colors duration-0 whitespace-nowrap tracking-tight">
                     {siteConfig.contact?.phoneFormatted}
                   </span>
                 </div>
               </a>
               <Button
-                className="rounded-none bg-gradient-to-r from-accent to-highlight hover:from-highlight hover:to-accent text-white font-bold px-8 py-6 shadow-lg shadow-accent/30 hover:shadow-accent/50 hover:scale-105 transition-all duration-200 flex-shrink-0"
+                className="rounded-none bg-accent hover:bg-white text-white hover:text-black font-black px-10 h-full transition-all duration-0 border-l border-white/10"
                 asChild
               >
-                <a href="/contact">GET A QUOTE</a>
+                <a href="/contact" className="flex items-center justify-center h-full text-sm tracking-[0.2em]">INITIATE QUOTE</a>
               </Button>
             </div>
 
@@ -242,14 +245,14 @@ export function Navbar() {
                   variant="ghost"
                   size="icon"
                   aria-label="Open menu"
-                  className="text-white hover:bg-white/10 hover:text-accent"
+                  className="text-white hover:bg-accent hover:text-white rounded-none border border-white/10"
                 >
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-full sm:w-[400px] overflow-y-auto p-0 bg-brand-primary border-l border-white/10">
-                <SheetHeader className="border-b border-white/10 p-4">
-                  <SheetTitle className="text-left text-white">Menu</SheetTitle>
+              <SheetContent side="right" className="w-full sm:w-[400px] overflow-y-auto p-0 bg-brand-primary border-l-4 border-accent">
+                <SheetHeader className="border-b-2 border-white/10 p-6 bg-brand-secondary">
+                  <SheetTitle className="text-left text-white uppercase font-black tracking-[0.3em] text-sm">NAVIGATION_MODULE</SheetTitle>
                 </SheetHeader>
                 <MobileNav onClose={() => setIsOpen(false)} />
               </SheetContent>
@@ -270,59 +273,62 @@ function MobileNav({ onClose }: { onClose: () => void }) {
   return (
     <div className="flex flex-col bg-brand-primary">
       {/* Phone CTA */}
-      <div className="bg-gradient-to-r from-accent to-highlight p-4">
+      <div className="bg-accent p-6">
         <a
           href={`tel:${siteConfig.contact?.phone}`}
-          className="flex items-center justify-center gap-2 text-white"
+          className="flex items-center justify-between gap-4 text-white group"
         >
-          <Phone className="h-5 w-5" />
-          <span className="font-bold text-lg">{siteConfig.contact?.phoneFormatted}</span>
+          <div className="flex flex-col">
+            <span className="text-[10px] font-black uppercase tracking-widest opacity-60 mb-1">EMERGENCY_UPLINK</span>
+            <span className="font-black text-2xl tracking-tighter">{siteConfig.contact?.phoneFormatted}</span>
+          </div>
+          <Phone className="h-8 w-8 group-hover:scale-110 transition-transform" />
         </a>
       </div>
 
       {/* Quick Actions */}
-      <div className="grid grid-cols-2 gap-3 p-4 bg-brand-secondary border-b border-white/10">
+      <div className="grid grid-cols-2 gap-0 border-b-2 border-white/10">
         {quickActions.map((action) => (
           <a
             key={action.href}
             href={action.href}
-            className="flex items-center gap-2 p-3 bg-brand-tertiary hover:bg-white/5 transition-colors duration-200"
+            className="flex flex-col gap-2 p-6 bg-brand-secondary hover:bg-accent group transition-colors duration-0 border-r border-white/10 last:border-r-0"
             onClick={onClose}
           >
-            <div className="w-8 h-8 bg-accent flex items-center justify-center">
+            <div className="w-10 h-10 bg-brand-primary flex items-center justify-center group-hover:bg-white transition-colors">
               {action.icon === "settings" ? (
-                <Settings className="h-4 w-4 text-white" />
+                <Settings className="h-5 w-5 text-accent group-hover:text-black" />
               ) : (
-                <DollarSign className="h-4 w-4 text-white" />
+                <DollarSign className="h-5 w-5 text-accent group-hover:text-black" />
               )}
             </div>
-            <span className="text-sm font-medium text-white">{action.title}</span>
+            <span className="text-[10px] font-black text-white uppercase tracking-widest">{action.title}</span>
           </a>
         ))}
       </div>
 
       {/* Top Nav Links */}
-      <div className="p-4 border-b border-white/10">
+      <div className="p-0 border-b-2 border-white/10">
         {topNavItems.map((item) => (
           <div key={item.href} className="border-b border-white/5 last:border-b-0">
             {item.children ? (
               <>
                 <button
                   onClick={() => setExpandedTop(expandedTop === item.href ? null : item.href)}
-                  className="flex items-center justify-between w-full py-3 text-left"
+                  className="flex items-center justify-between w-full p-6 text-left hover:bg-white/5"
                 >
-                  <span className="font-semibold text-white">{item.title}</span>
+                  <span className="text-xs font-black text-white uppercase tracking-[0.2em]">{item.title}</span>
                   <ChevronDown
-                    className={`h-4 w-4 text-white/60 transition-transform ${expandedTop === item.href ? 'rotate-180' : ''}`}
+                    className={`h-4 w-4 text-accent transition-transform ${expandedTop === item.href ? 'rotate-180' : ''}`}
                   />
                 </button>
                 {expandedTop === item.href && (
-                  <div className="pb-3 pl-4">
+                  <div className="bg-brand-secondary/50 border-y border-white/10">
                     {item.children.map((child) => (
                       <a
                         key={child.href}
                         href={child.href}
-                        className="block py-2 text-sm text-white/70 hover:text-accent"
+                        className="block px-8 py-4 text-[10px] font-bold text-white/60 uppercase tracking-widest hover:text-accent border-b border-white/5 last:border-b-0"
                         onClick={onClose}
                       >
                         {child.title}
@@ -334,7 +340,7 @@ function MobileNav({ onClose }: { onClose: () => void }) {
             ) : (
               <a
                 href={item.href}
-                className="block py-3 font-semibold text-white hover:text-accent"
+                className="block p-6 text-xs font-black text-white uppercase tracking-[0.2em] hover:bg-white/5"
                 onClick={onClose}
               >
                 {item.title}
@@ -345,51 +351,53 @@ function MobileNav({ onClose }: { onClose: () => void }) {
       </div>
 
       {/* Services */}
-      <div className="p-4">
-        <p className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-3">Services</p>
+      <div className="p-0">
+        <div className="bg-brand-secondary px-6 py-2 border-b border-white/10">
+          <p className="text-[10px] font-black text-accent uppercase tracking-[0.3em]">SERVICE_MATRIX</p>
+        </div>
         {mainNavItems.map((service) => (
-          <div key={service.href} className="border-b border-white/5 last:border-b-0">
+          <div key={service.href} className="border-b border-white/10 last:border-b-0">
             <button
               onClick={() => setExpandedService(expandedService === service.href ? null : service.href)}
-              className="flex items-center justify-between w-full py-3 text-left"
+              className="flex items-center justify-between w-full p-6 text-left hover:bg-white/5"
             >
-              <span className="font-medium text-white">{service.title}</span>
+              <span className="text-sm font-black text-white uppercase tracking-widest">{service.title}</span>
               <ChevronDown
-                className={`h-4 w-4 text-white/60 transition-transform ${expandedService === service.href ? 'rotate-180' : ''
+                className={`h-5 w-5 text-accent transition-transform ${expandedService === service.href ? 'rotate-180' : ''
                   }`}
               />
             </button>
             {expandedService === service.href && (
-              <div className="pb-3 pl-2">
+              <div className="bg-brand-secondary/30">
                 {service.categories.map((category) => (
-                  <div key={category.title} className="mb-2">
+                  <div key={category.title} className="border-b border-white/5 last:border-b-0">
                     <button
                       onClick={() => setExpandedCategory(expandedCategory === category.title ? null : category.title)}
-                      className="flex items-center gap-2 w-full py-2 text-left"
+                      className="flex items-center gap-4 w-full px-8 py-4 text-left hover:bg-white/5"
                     >
                       <span className="text-accent">{iconMap[category.icon]}</span>
-                      <span className="text-sm font-semibold text-accent">{category.title}</span>
+                      <span className="text-xs font-black text-white uppercase tracking-wider">{category.title}</span>
                       <ChevronDown
-                        className={`h-3 w-3 text-white/60 ml-auto transition-transform ${expandedCategory === category.title ? 'rotate-180' : ''
+                        className={`h-3 w-3 text-accent ml-auto transition-transform ${expandedCategory === category.title ? 'rotate-180' : ''
                           }`}
                       />
                     </button>
                     {expandedCategory === category.title && (
-                      <div className="pl-6 pb-2">
+                      <div className="bg-brand-primary/50 px-12 py-4 space-y-4">
                         {category.href && (
                           <a
                             href={category.href}
-                            className="block py-1.5 text-sm font-semibold text-highlight hover:text-accent"
+                            className="block text-[10px] font-black text-accent uppercase tracking-[0.2em] border-b border-accent/20 pb-2 mb-2"
                             onClick={onClose}
                           >
-                            View All {category.title} →
+                            ACCESS FULL CATEGORY →
                           </a>
                         )}
                         {category.items.map((item) => (
                           <a
                             key={item.href}
                             href={item.href}
-                            className="block py-1.5 text-sm text-white/70 hover:text-accent"
+                            className="block text-[11px] font-bold text-white/50 uppercase tracking-widest hover:text-white"
                             onClick={onClose}
                           >
                             {item.title}
@@ -406,12 +414,12 @@ function MobileNav({ onClose }: { onClose: () => void }) {
       </div>
 
       {/* CTA */}
-      <div className="p-4">
+      <div className="p-6 bg-brand-secondary border-t-2 border-white/10">
         <Button
-          className="w-full bg-gradient-to-r from-accent to-highlight hover:from-highlight hover:to-accent text-white font-bold py-6 shadow-lg shadow-accent/30 text-base"
+          className="w-full bg-white hover:bg-accent text-black hover:text-white font-black py-8 rounded-none border-2 border-white transition-all duration-0 text-base uppercase tracking-[0.2em]"
           asChild
         >
-          <a href="/contact" onClick={onClose}>GET A QUOTE</a>
+          <a href="/contact" onClick={onClose}>INITIATE QUOTE</a>
         </Button>
       </div>
     </div>

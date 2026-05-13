@@ -1,5 +1,5 @@
 import { siteConfig } from "@/config/site"
-import { Facebook } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Youtube, Settings } from "lucide-react"
 
 // X (Twitter) icon component since lucide doesn't have the new X logo
 function XIcon({ className }: { className?: string }) {
@@ -45,23 +45,48 @@ export function Footer() {
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16">
             {/* Brand/About Column */}
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <h3 className="text-sm font-black tracking-[0.3em] uppercase flex items-center gap-3">
-                  <span className="w-1.5 h-6 bg-accent"></span>
-                  Strategic Overview
-                </h3>
-                <p className="text-sm font-medium text-white/50 leading-relaxed tracking-tight">
-                  Engineering high-performance plumbing infrastructure for residential and commercial assets. Precision repairs, leak detection, and advanced system maintenance.
-                </p>
+            <div className="space-y-10">
+              <div className="space-y-6">
+                <a href="/" className="flex items-center gap-4 group">
+                  <div className="p-1 border-2 border-white/20 group-hover:border-accent transition-colors duration-300 bg-white/5">
+                    <img
+                      src={siteConfig.logo?.src}
+                      alt={siteConfig.logo?.alt || "Logo"}
+                      className="h-10 w-10 object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                      width={40}
+                      height={40}
+                    />
+                  </div>
+                  <span className="font-black text-2xl text-white uppercase tracking-tighter leading-none">
+                    {siteConfig.business?.name}
+                  </span>
+                </a>
+                <div className="space-y-4">
+                  <h3 className="text-sm font-black tracking-[0.3em] uppercase flex items-center gap-3">
+                    <span className="w-1.5 h-6 bg-accent"></span>
+                    Strategic Overview
+                  </h3>
+                  <p className="text-sm font-medium text-white/50 leading-relaxed tracking-tight">
+                    Engineering high-performance plumbing infrastructure for residential and commercial assets. Precision repairs, leak detection, and advanced system maintenance.
+                  </p>
+                </div>
               </div>
 
-              <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 bg-white/10 flex items-center justify-center hover:bg-accent hover:text-primary transition-all group">
-                  <Facebook size={18} />
+              <div className="flex flex-wrap gap-2">
+                <a href="#" className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:text-black transition-all duration-0 group">
+                  <Facebook size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/10 flex items-center justify-center hover:bg-accent hover:text-primary transition-all group">
-                  <XIcon className="w-[18px] h-[18px]" />
+                <a href="#" className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:text-black transition-all duration-0 group">
+                  <XIcon className="w-5 h-5" />
+                </a>
+                <a href="#" className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:text-black transition-all duration-0 group">
+                  <Instagram size={20} />
+                </a>
+                <a href="#" className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:text-black transition-all duration-0 group">
+                  <Linkedin size={20} />
+                </a>
+                <a href="#" className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:text-black transition-all duration-0 group">
+                  <Youtube size={20} />
                 </a>
               </div>
             </div>
