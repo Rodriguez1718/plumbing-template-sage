@@ -187,11 +187,11 @@ export function Navbar() {
         <div className="container mx-auto px-6">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
-            <a href="/" className="flex items-center gap-2 md:gap-4 group flex-shrink-0">
+            <a href="/" className="flex items-center gap-2 md:gap-4 group flex-shrink-0" aria-label={`Home - ${siteConfig.business?.name}`}>
               <div className="relative p-1 border-2 border-white/10 group-hover:border-accent transition-colors duration-300 flex-shrink-0">
                 <img
                   src={siteConfig.logo?.src}
-                  alt={siteConfig.logo?.alt || "Logo"}
+                  alt=""
                   className="h-10 w-10 object-contain grayscale group-hover:grayscale-0 transition-all duration-500 flex-shrink-0"
                   width={40}
                   height={40}
