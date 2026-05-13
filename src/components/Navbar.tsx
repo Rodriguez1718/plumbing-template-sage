@@ -224,14 +224,14 @@ export function Navbar() {
                   <Phone className="h-5 w-5 text-white group-hover:text-black" />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-[10px] text-white/40 uppercase tracking-[0.2em] font-black leading-none mb-1">SYSTEM STATUS: ACTIVE</p>
+                  <p className="text-[10px] text-white/70 uppercase tracking-[0.2em] font-black leading-none mb-1">SYSTEM STATUS: ACTIVE</p>
                   <span className="font-black text-xl text-white group-hover:text-accent transition-colors duration-0 whitespace-nowrap tracking-tight">
                     {siteConfig.contact?.phoneFormatted}
                   </span>
                 </div>
               </a>
               <Button
-                className="rounded-none bg-accent hover:bg-white text-white hover:text-black font-black xl:px-6 2xl:px-10 h-full transition-all duration-0 border-l border-white/10"
+                className="rounded-none bg-accent hover:bg-white text-primary hover:text-black font-black xl:px-6 2xl:px-10 h-full transition-all duration-0 border-l border-white/10 shadow-none"
                 asChild
               >
                 <a href="/contact" className="flex items-center justify-center h-full text-sm tracking-[0.2em]">INITIATE QUOTE</a>
