@@ -69,7 +69,7 @@ const testimonials = rawTestimonials.map(t => ({
 									</div>
 								</div>
 
-								<div class="flex gap-1 mb-6" aria-label={`Rating: ${testimonial.rating} out of 5 stars`}>
+								<div class="flex gap-1 mb-6" role="img" aria-label={`Rating: ${testimonial.rating} out of 5 stars`}>
 									{Array.from({ length: 5 }).map((_, i) => (
 										<div class={`w-4 h-4 ${i < testimonial.rating ? 'bg-accent' : 'bg-primary/10'}`} aria-hidden="true"></div>
 									))}
