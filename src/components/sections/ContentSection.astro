@@ -87,7 +87,7 @@ const badge = raw_badge ? getLocationText(raw_badge) : raw_badge;
           <div class="w-16 h-1.5 bg-accent"></div>
         </div>
 
-        <p class="text-lg text-muted-foreground leading-relaxed font-medium" set:html={description} />
+        <p class="text-lg text-foreground/80 leading-relaxed font-medium" set:html={description} />
 
         {features.length > 0 && (
           <ul class="grid sm:grid-cols-2 gap-4">
